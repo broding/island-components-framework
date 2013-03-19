@@ -7,15 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B62A25016F8673400016A62 /* SubSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B62A24E16F8673400016A62 /* SubSystem.cpp */; };
+		4B68153216F8A0000032EF5E /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153016F89FFF0032EF5E /* Event.cpp */; };
+		4B68153516F8C6C40032EF5E /* PhysicsSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153316F8C6C30032EF5E /* PhysicsSystem.cpp */; };
+		4B68153B16F8C72B0032EF5E /* PhysicsComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153916F8C72B0032EF5E /* PhysicsComponent.cpp */; };
+		4BC25A2716F86B7C00B36B1E /* RenderComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC25A2516F86B7C00B36B1E /* RenderComponent.cpp */; };
+		4BC25A2B16F86C7700B36B1E /* RenderSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC25A2916F86C7700B36B1E /* RenderSystem.cpp */; };
+		4BC25A5016F885AB00B36B1E /* TransformComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC25A4E16F885AB00B36B1E /* TransformComponent.cpp */; };
+		4BC25A5316F885F200B36B1E /* TransformSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC25A5116F885F200B36B1E /* TransformSystem.cpp */; };
 		4BDA14B016F7796700359B94 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4BDA14AF16F7796700359B94 /* ResourcePath.mm */; };
 		4BDA14B316F7796700359B94 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BDA14B216F7796700359B94 /* main.cpp */; };
 		4BDA14B616F7796700359B94 /* cute_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4BDA14B516F7796700359B94 /* cute_image.jpg */; };
 		4BDA14B816F7796700359B94 /* nice_music.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 4BDA14B716F7796700359B94 /* nice_music.ogg */; };
 		4BDA14BA16F7796700359B94 /* sansation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BDA14B916F7796700359B94 /* sansation.ttf */; };
 		4BDA14BC16F7796700359B94 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDA14BB16F7796700359B94 /* icon.png */; };
+		4BDA14C516F7799A00359B94 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BDA14C316F7799A00359B94 /* Scene.cpp */; };
+		4BDA14C816F779C300359B94 /* Core.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BDA14C616F779C300359B94 /* Core.cpp */; };
+		4BDA14CB16F77B4600359B94 /* Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BDA14C916F77B4600359B94 /* Component.cpp */; };
+		4BDA14CE16F77B5900359B94 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BDA14CC16F77B5900359B94 /* Entity.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B62A24E16F8673400016A62 /* SubSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SubSystem.cpp; sourceTree = "<group>"; };
+		4B62A24F16F8673400016A62 /* SubSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubSystem.h; sourceTree = "<group>"; };
+		4B68152F16F89C7C0032EF5E /* ComponentType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComponentType.h; sourceTree = "<group>"; };
+		4B68153016F89FFF0032EF5E /* Event.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Event.cpp; sourceTree = "<group>"; };
+		4B68153116F89FFF0032EF5E /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		4B68153316F8C6C30032EF5E /* PhysicsSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsSystem.cpp; sourceTree = "<group>"; };
+		4B68153416F8C6C30032EF5E /* PhysicsSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsSystem.h; sourceTree = "<group>"; };
+		4B68153916F8C72B0032EF5E /* PhysicsComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsComponent.cpp; sourceTree = "<group>"; };
+		4B68153A16F8C72B0032EF5E /* PhysicsComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsComponent.h; sourceTree = "<group>"; };
+		4BC25A2516F86B7C00B36B1E /* RenderComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RenderComponent.cpp; sourceTree = "<group>"; };
+		4BC25A2616F86B7C00B36B1E /* RenderComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderComponent.h; sourceTree = "<group>"; };
+		4BC25A2916F86C7700B36B1E /* RenderSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RenderSystem.cpp; sourceTree = "<group>"; };
+		4BC25A2A16F86C7700B36B1E /* RenderSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderSystem.h; sourceTree = "<group>"; };
+		4BC25A4E16F885AB00B36B1E /* TransformComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransformComponent.cpp; sourceTree = "<group>"; };
+		4BC25A4F16F885AB00B36B1E /* TransformComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransformComponent.h; sourceTree = "<group>"; };
+		4BC25A5116F885F200B36B1E /* TransformSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransformSystem.cpp; sourceTree = "<group>"; };
+		4BC25A5216F885F200B36B1E /* TransformSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransformSystem.h; sourceTree = "<group>"; };
 		4BDA14AA16F7796700359B94 /* Island.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Island.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BDA14AE16F7796700359B94 /* Island-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Island-Info.plist"; sourceTree = "<group>"; };
 		4BDA14AF16F7796700359B94 /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
@@ -25,6 +54,14 @@
 		4BDA14B716F7796700359B94 /* nice_music.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = nice_music.ogg; sourceTree = "<group>"; };
 		4BDA14B916F7796700359B94 /* sansation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sansation.ttf; sourceTree = "<group>"; };
 		4BDA14BB16F7796700359B94 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		4BDA14C316F7799A00359B94 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
+		4BDA14C416F7799A00359B94 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
+		4BDA14C616F779C300359B94 /* Core.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Core.cpp; sourceTree = "<group>"; };
+		4BDA14C716F779C300359B94 /* Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
+		4BDA14C916F77B4600359B94 /* Component.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Component.cpp; sourceTree = "<group>"; };
+		4BDA14CA16F77B4600359B94 /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Component.h; sourceTree = "<group>"; };
+		4BDA14CC16F77B5900359B94 /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
+		4BDA14CD16F77B5900359B94 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +75,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B62A25416F868DD00016A62 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4BC25A2516F86B7C00B36B1E /* RenderComponent.cpp */,
+				4BC25A2616F86B7C00B36B1E /* RenderComponent.h */,
+				4BC25A4E16F885AB00B36B1E /* TransformComponent.cpp */,
+				4BC25A4F16F885AB00B36B1E /* TransformComponent.h */,
+				4B68153916F8C72B0032EF5E /* PhysicsComponent.cpp */,
+				4B68153A16F8C72B0032EF5E /* PhysicsComponent.h */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		4BC25A2816F86C6C00B36B1E /* SubSystems */ = {
+			isa = PBXGroup;
+			children = (
+				4BC25A2916F86C7700B36B1E /* RenderSystem.cpp */,
+				4BC25A2A16F86C7700B36B1E /* RenderSystem.h */,
+				4BC25A5116F885F200B36B1E /* TransformSystem.cpp */,
+				4BC25A5216F885F200B36B1E /* TransformSystem.h */,
+				4B68153316F8C6C30032EF5E /* PhysicsSystem.cpp */,
+				4B68153416F8C6C30032EF5E /* PhysicsSystem.h */,
+			);
+			path = SubSystems;
+			sourceTree = "<group>";
+		};
+		4BC25A5416F88AD600B36B1E /* Events */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
 		4BDA14A016F7796700359B94 = {
 			isa = PBXGroup;
 			children = (
@@ -57,11 +127,27 @@
 		4BDA14AC16F7796700359B94 /* Island */ = {
 			isa = PBXGroup;
 			children = (
+				4BC25A5416F88AD600B36B1E /* Events */,
+				4BC25A2816F86C6C00B36B1E /* SubSystems */,
+				4B62A25416F868DD00016A62 /* Components */,
+				4BDA14C416F7799A00359B94 /* Scene.h */,
+				4BDA14C316F7799A00359B94 /* Scene.cpp */,
 				4BDA14AF16F7796700359B94 /* ResourcePath.mm */,
 				4BDA14B116F7796700359B94 /* ResourcePath.hpp */,
 				4BDA14B216F7796700359B94 /* main.cpp */,
 				4BDA14B416F7796700359B94 /* Resources */,
 				4BDA14AD16F7796700359B94 /* Supporting Files */,
+				4BDA14C616F779C300359B94 /* Core.cpp */,
+				4BDA14C716F779C300359B94 /* Core.h */,
+				4B68153016F89FFF0032EF5E /* Event.cpp */,
+				4B68153116F89FFF0032EF5E /* Event.h */,
+				4BDA14C916F77B4600359B94 /* Component.cpp */,
+				4BDA14CA16F77B4600359B94 /* Component.h */,
+				4B68152F16F89C7C0032EF5E /* ComponentType.h */,
+				4BDA14CC16F77B5900359B94 /* Entity.cpp */,
+				4BDA14CD16F77B5900359B94 /* Entity.h */,
+				4B62A24E16F8673400016A62 /* SubSystem.cpp */,
+				4B62A24F16F8673400016A62 /* SubSystem.h */,
 			);
 			path = Island;
 			sourceTree = "<group>";
@@ -169,6 +255,18 @@
 			files = (
 				4BDA14B016F7796700359B94 /* ResourcePath.mm in Sources */,
 				4BDA14B316F7796700359B94 /* main.cpp in Sources */,
+				4BDA14C516F7799A00359B94 /* Scene.cpp in Sources */,
+				4BDA14C816F779C300359B94 /* Core.cpp in Sources */,
+				4BDA14CB16F77B4600359B94 /* Component.cpp in Sources */,
+				4BDA14CE16F77B5900359B94 /* Entity.cpp in Sources */,
+				4B62A25016F8673400016A62 /* SubSystem.cpp in Sources */,
+				4BC25A2716F86B7C00B36B1E /* RenderComponent.cpp in Sources */,
+				4BC25A2B16F86C7700B36B1E /* RenderSystem.cpp in Sources */,
+				4BC25A5016F885AB00B36B1E /* TransformComponent.cpp in Sources */,
+				4BC25A5316F885F200B36B1E /* TransformSystem.cpp in Sources */,
+				4B68153216F8A0000032EF5E /* Event.cpp in Sources */,
+				4B68153516F8C6C40032EF5E /* PhysicsSystem.cpp in Sources */,
+				4B68153B16F8C72B0032EF5E /* PhysicsComponent.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +380,8 @@
 		4BDA14C016F7796700359B94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				INFOPLIST_FILE = "Island/Island-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -290,6 +390,8 @@
 		4BDA14C116F7796700359B94 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				INFOPLIST_FILE = "Island/Island-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -314,6 +416,7 @@
 				4BDA14C116F7796700359B94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
