@@ -85,8 +85,7 @@
 				4B68153916F8C72B0032EF5E /* PhysicsComponent.cpp */,
 				4B68153A16F8C72B0032EF5E /* PhysicsComponent.h */,
 			);
-			name = Components;
-			path = ../Components;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		4B68153C16F8DC9C0032EF5E /* src */ = {
@@ -125,16 +124,14 @@
 				4B68153316F8C6C30032EF5E /* PhysicsSystem.cpp */,
 				4B68153416F8C6C30032EF5E /* PhysicsSystem.h */,
 			);
-			name = SubSystems;
-			path = ../SubSystems;
+			path = SubSystems;
 			sourceTree = "<group>";
 		};
 		4BC25A5416F88AD600B36B1E /* Events */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Events;
-			path = ../Events;
+			path = Events;
 			sourceTree = "<group>";
 		};
 		4BDA14A016F7796700359B94 = {
@@ -393,7 +390,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
-				INFOPLIST_FILE = "Island/Island-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Island/OSX/Island-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -403,7 +400,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
-				INFOPLIST_FILE = "Island/Island-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Island/OSX/Island-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
