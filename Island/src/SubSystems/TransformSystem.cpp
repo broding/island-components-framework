@@ -10,7 +10,7 @@
 #include "TransformComponent.h"
 #include "Event.h"
 
-void TransformSystem::ProcessGameTick(double lastFrameTime)
+void TransformSystem::ProcessGameTick(float lastFrameTime)
 {
 }
 

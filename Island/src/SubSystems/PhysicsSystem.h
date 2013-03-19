@@ -11,13 +11,17 @@
 
 #include <iostream>
 #include "SubSystem.h"
+#include "PhysicsComponent.h"
+#include "TransformComponent.h"
 
 class PhysicsSystem : public SubSystem
 {
+private:
+    void Integrate(PhysicsComponent* physicsComponent, TransformComponent* transformComponent, float lastFrameTime);
 protected:
     void ProcessEvent(Component* component, Event* event);
 public:
-    void ProcessGameTick(double lastFrameTime);
+    void ProcessGameTick(float lastFrameTime);
 };
 
 #endif /* defined(__Island__PhysicsSystem__) */

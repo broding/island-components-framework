@@ -17,6 +17,10 @@ PhysicsComponent::PhysicsComponent()
     _type = COMPONENT_PHYSICS;
     _subSystem = physicsSystem;
     physicsSystem->AddComponent(this);
+    
+    this->AddComponentSubscription(COMPONENT_TRANSFORM);
+    
+    mass = 1;
 }
 
 PhysicsComponent::~PhysicsComponent()

@@ -36,9 +36,12 @@ int main(int, char const**)
     window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
     
     Core core = Core(&window);
+    sf::Clock deltaClock;
     
     while (window.isOpen())
     {
+        sf::Time dt = deltaClock.restart();
+        
         sf::Event event;
         while (window.pollEvent(event))
         {
@@ -54,8 +57,8 @@ int main(int, char const**)
         }
         
         window.clear();
-        
-        core.Update(1);
+    
+        core.Update(dt.asSeconds());
 
         // Update the window
         window.display();

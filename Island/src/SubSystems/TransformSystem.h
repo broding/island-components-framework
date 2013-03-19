@@ -18,7 +18,7 @@ class TransformSystem : public SubSystem
 protected:
     void ProcessEvent(Component* component, Event* event);
 public:
-    void ProcessGameTick(double lastFrameTime);
+    void ProcessGameTick(float lastFrameTime);
 };
 
 #endif /* defined(__Island__TransformSystem__) */

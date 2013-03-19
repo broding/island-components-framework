@@ -11,7 +11,9 @@
 
 #include <iostream>
 #include "Component.h"
-#include "PhysicsSystem.h"
+
+// forward declare
+class PhysicsSystem;
 
 class PhysicsComponent : public Component
 {

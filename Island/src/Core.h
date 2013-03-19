@@ -20,7 +20,7 @@ private:
 public:
     Core(sf::RenderWindow* window);
     ~Core();
-    void Update(double lastFrameTime);
+    void Update(float lastFrameTime);
     void AddSubSystem(SubSystem* system);
 };
 

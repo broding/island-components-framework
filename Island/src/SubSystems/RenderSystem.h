@@ -25,7 +25,7 @@ protected:
 public:
     RenderSystem(sf::RenderWindow* renderWindow);
     ~RenderSystem();
-    void ProcessGameTick(double lastFrameTime);
+    void ProcessGameTick(float lastFrameTime);
 };
 
 #endif /* defined(__Island__RenderSystem__) */

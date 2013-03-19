@@ -7,10 +7,15 @@
 //
 
 #include "Core.h"
+
 #include "RenderSystem.h"
 #include "TransformSystem.h"
+#include "PhysicsSystem.h"
+
 #include "RenderComponent.h"
 #include "TransformComponent.h"
+#include "PhysicsComponent.h"
+
 #include "Entity.h"
 #include "ResourcePath.hpp"
 
@@ -18,13 +23,16 @@ Core::Core(sf::RenderWindow* window)
 {
     RenderSystem* renderSystem = new RenderSystem(window);
     TransformSystem* transformSystem = new TransformSystem();
+    PhysicsSystem* physicsSystem = new PhysicsSystem();
     
-    AddSubSystem(renderSystem);
+    AddSubSystem(physicsSystem);
     AddSubSystem(transformSystem);
+    AddSubSystem(renderSystem);
     
     // setup subsystems in components
     RenderComponent::renderSystem = renderSystem;
     TransformComponent::transformSystem = transformSystem;
+    PhysicsComponent::physicsSystem = physicsSystem;
     
     Entity* player = new Entity();
     RenderComponent* renderComponent = new RenderComponent();
@@ -34,9 +42,13 @@ Core::Core(sf::RenderWindow* window)
     renderComponent->sprite.setTexture(*texture);
     TransformComponent* transformComponent = new TransformComponent();
     transformComponent->position = sf::Vector2f(40, 40);
+    PhysicsComponent* physicsComponent = new PhysicsComponent();
+    physicsComponent->forceAccumulated = sf::Vector2f(850, 150);
+    //physicsComponent->velocity = sf::Vector2f(1000, 10);
     
     player->AddComponent(renderComponent);
     player->AddComponent(transformComponent);
+    player->AddComponent(physicsComponent);
 }
 
 Core::~Core()
@@ -49,7 +61,7 @@ void Core::AddSubSystem(SubSystem *subSystem)
     _subSystems.push_back(subSystem);
 }
 
-void Core::Update(double lastFrameTime)
+void Core::Update(float lastFrameTime)
 {
     for (std::vector<SubSystem*>::const_iterator iterator = _subSystems.begin(), end = _subSystems.end(); iterator != end; ++iterator)
     {

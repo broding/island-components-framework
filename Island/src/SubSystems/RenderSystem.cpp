@@ -20,17 +20,20 @@ RenderSystem::~RenderSystem()
     
 }
 
-void RenderSystem::ProcessGameTick(double lastFrameTime)
+void RenderSystem::ProcessGameTick(float lastFrameTime)
 {
     for (std::list<Component*>::const_iterator iterator = _components.begin(), end = _components.end(); iterator != end; ++iterator)
     {
         RenderComponent* component = dynamic_cast<RenderComponent*>(*iterator);
         TransformComponent* transformComponent = static_cast<TransformComponent*>(component->GetNeighbourComponent(COMPONENT_TRANSFORM));
         
-        component->sprite.setPosition(transformComponent->position);
-        component->sprite.setScale(transformComponent->scale);
-        component->sprite.setRotation(transformComponent->rotation);
-        component->sprite.setOrigin(transformComponent->origin);
+        if(transformComponent != 0)
+        {
+            component->sprite.setPosition(transformComponent->position);
+            component->sprite.setScale(transformComponent->scale);
+            component->sprite.setRotation(transformComponent->rotation);
+            component->sprite.setOrigin(transformComponent->origin);
+        }
         
         _renderWindow->draw(component->sprite);
     }

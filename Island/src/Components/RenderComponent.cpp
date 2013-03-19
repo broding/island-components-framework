@@ -15,7 +15,8 @@ RenderComponent::RenderComponent()
     _type = COMPONENT_RENDER;
     _subSystem = renderSystem;
     renderSystem->AddComponent(this);
-    AddComponentSubscription(COMPONENT_TRANSFORM);
+    
+    this->AddComponentSubscription(COMPONENT_TRANSFORM);
 }
 
 RenderComponent::~RenderComponent()
