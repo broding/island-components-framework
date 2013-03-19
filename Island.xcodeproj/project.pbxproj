@@ -85,7 +85,34 @@
 				4B68153916F8C72B0032EF5E /* PhysicsComponent.cpp */,
 				4B68153A16F8C72B0032EF5E /* PhysicsComponent.h */,
 			);
-			path = Components;
+			name = Components;
+			path = ../Components;
+			sourceTree = "<group>";
+		};
+		4B68153C16F8DC9C0032EF5E /* src */ = {
+			isa = PBXGroup;
+			children = (
+				4BC25A5416F88AD600B36B1E /* Events */,
+				4BC25A2816F86C6C00B36B1E /* SubSystems */,
+				4B62A25416F868DD00016A62 /* Components */,
+				4BDA14C416F7799A00359B94 /* Scene.h */,
+				4BDA14C316F7799A00359B94 /* Scene.cpp */,
+				4BDA14AF16F7796700359B94 /* ResourcePath.mm */,
+				4BDA14B116F7796700359B94 /* ResourcePath.hpp */,
+				4BDA14B216F7796700359B94 /* main.cpp */,
+				4BDA14C616F779C300359B94 /* Core.cpp */,
+				4BDA14C716F779C300359B94 /* Core.h */,
+				4B68153016F89FFF0032EF5E /* Event.cpp */,
+				4B68153116F89FFF0032EF5E /* Event.h */,
+				4BDA14C916F77B4600359B94 /* Component.cpp */,
+				4BDA14CA16F77B4600359B94 /* Component.h */,
+				4B68152F16F89C7C0032EF5E /* ComponentType.h */,
+				4BDA14CC16F77B5900359B94 /* Entity.cpp */,
+				4BDA14CD16F77B5900359B94 /* Entity.h */,
+				4B62A24E16F8673400016A62 /* SubSystem.cpp */,
+				4B62A24F16F8673400016A62 /* SubSystem.h */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 		4BC25A2816F86C6C00B36B1E /* SubSystems */ = {
@@ -98,14 +125,16 @@
 				4B68153316F8C6C30032EF5E /* PhysicsSystem.cpp */,
 				4B68153416F8C6C30032EF5E /* PhysicsSystem.h */,
 			);
-			path = SubSystems;
+			name = SubSystems;
+			path = ../SubSystems;
 			sourceTree = "<group>";
 		};
 		4BC25A5416F88AD600B36B1E /* Events */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Events;
+			name = Events;
+			path = ../Events;
 			sourceTree = "<group>";
 		};
 		4BDA14A016F7796700359B94 = {
@@ -127,40 +156,22 @@
 		4BDA14AC16F7796700359B94 /* Island */ = {
 			isa = PBXGroup;
 			children = (
-				4BC25A5416F88AD600B36B1E /* Events */,
-				4BC25A2816F86C6C00B36B1E /* SubSystems */,
-				4B62A25416F868DD00016A62 /* Components */,
-				4BDA14C416F7799A00359B94 /* Scene.h */,
-				4BDA14C316F7799A00359B94 /* Scene.cpp */,
-				4BDA14AF16F7796700359B94 /* ResourcePath.mm */,
-				4BDA14B116F7796700359B94 /* ResourcePath.hpp */,
-				4BDA14B216F7796700359B94 /* main.cpp */,
-				4BDA14B416F7796700359B94 /* Resources */,
-				4BDA14AD16F7796700359B94 /* Supporting Files */,
-				4BDA14C616F779C300359B94 /* Core.cpp */,
-				4BDA14C716F779C300359B94 /* Core.h */,
-				4B68153016F89FFF0032EF5E /* Event.cpp */,
-				4B68153116F89FFF0032EF5E /* Event.h */,
-				4BDA14C916F77B4600359B94 /* Component.cpp */,
-				4BDA14CA16F77B4600359B94 /* Component.h */,
-				4B68152F16F89C7C0032EF5E /* ComponentType.h */,
-				4BDA14CC16F77B5900359B94 /* Entity.cpp */,
-				4BDA14CD16F77B5900359B94 /* Entity.h */,
-				4B62A24E16F8673400016A62 /* SubSystem.cpp */,
-				4B62A24F16F8673400016A62 /* SubSystem.h */,
+				4BDA14AD16F7796700359B94 /* OSX */,
+				4B68153C16F8DC9C0032EF5E /* src */,
+				4BDA14B416F7796700359B94 /* assets */,
 			);
 			path = Island;
 			sourceTree = "<group>";
 		};
-		4BDA14AD16F7796700359B94 /* Supporting Files */ = {
+		4BDA14AD16F7796700359B94 /* OSX */ = {
 			isa = PBXGroup;
 			children = (
 				4BDA14AE16F7796700359B94 /* Island-Info.plist */,
 			);
-			name = "Supporting Files";
+			path = OSX;
 			sourceTree = "<group>";
 		};
-		4BDA14B416F7796700359B94 /* Resources */ = {
+		4BDA14B416F7796700359B94 /* assets */ = {
 			isa = PBXGroup;
 			children = (
 				4BDA14B516F7796700359B94 /* cute_image.jpg */,
@@ -168,7 +179,7 @@
 				4BDA14B916F7796700359B94 /* sansation.ttf */,
 				4BDA14BB16F7796700359B94 /* icon.png */,
 			);
-			name = Resources;
+			path = assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
