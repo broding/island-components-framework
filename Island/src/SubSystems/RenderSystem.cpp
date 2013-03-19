@@ -24,18 +24,18 @@ void RenderSystem::ProcessGameTick(float lastFrameTime)
 {
     for (std::list<Component*>::const_iterator iterator = _components.begin(), end = _components.end(); iterator != end; ++iterator)
     {
-        RenderComponent* component = dynamic_cast<RenderComponent*>(*iterator);
-        TransformComponent* transformComponent = static_cast<TransformComponent*>(component->GetNeighbourComponent(COMPONENT_TRANSFORM));
+        RenderComponent* renderComponent = dynamic_cast<RenderComponent*>(*iterator);
+        TransformComponent* transformComponent = static_cast<TransformComponent*>(renderComponent->GetNeighbourComponent(COMPONENT_TRANSFORM));
         
         if(transformComponent != 0)
         {
-            component->sprite.setPosition(transformComponent->position);
-            component->sprite.setScale(transformComponent->scale);
-            component->sprite.setRotation(transformComponent->rotation);
-            component->sprite.setOrigin(transformComponent->origin);
+            renderComponent->sprite.setPosition(transformComponent->position);
+            renderComponent->sprite.setScale(transformComponent->scale);
+            renderComponent->sprite.setRotation(transformComponent->rotation);
+            renderComponent->sprite.setOrigin(transformComponent->origin);
         }
         
-        _renderWindow->draw(component->sprite);
+        _renderWindow->draw(renderComponent->sprite);
     }
 }
 
