@@ -7,3 +7,11 @@
 //
 
 #include "Core.h"
+
+void Core::Update(double delta)
+{
+}
+
+void Core::Draw(sf::RenderWindow* window, double delta)
+{
+}

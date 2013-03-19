@@ -11,4 +11,20 @@
 
 #include <iostream>
 
+// forward declare Entity to prevent circular depandency
+class Entity;
+
+class Component
+{
+private:
+public:
+    Component();
+    ~Component();
+    
+    virtual void Update(double delta) = 0;
+    
+    void SetOwner(Entity* entity);
+    Entity* GetOwner();
+};
+
 #endif /* defined(__Island__Component__) */

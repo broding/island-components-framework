@@ -10,5 +10,14 @@
 #define __Island__Core__
 
 #include <iostream>
+#include <SFML/Graphics.hpp>
+
+class Core
+{
+private:
+public:
+    void Update(double delta);
+    void Draw(sf::RenderWindow* window, double delta);
+};
 
 #endif /* defined(__Island__Core__) */
