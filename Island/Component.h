@@ -10,21 +10,35 @@
 #define __Island__Component__
 
 #include <iostream>
+#include <map>
 
-// forward declare Entity to prevent circular depandency
-class Entity;
+#include "Event.h"
+#include "SubSystem.h"
+#include "ComponentType.h"
+#include "Entity.h"
 
 class Component
 {
 private:
+    Entity* _owner;
+protected:
+    ComponentType _type;
+    SubSystem* _subSystem;
+    std::map<ComponentType, Component*> _componentSubscriptions;
 public:
     Component();
-    ~Component();
+    virtual ~Component();
     
-    virtual void Update(double delta) = 0;
-    
+    ComponentType GetComponentType();
     void SetOwner(Entity* entity);
     Entity* GetOwner();
+    void HandleEvent(Event* event);
+    void AddComponentSubscription(ComponentType type);
+    void RemoveComponentSubscription(ComponentType type);
+    void AddNeighbourComponent(Component* component);
+    void RemoveNeighbourComponent(Component* component);
+    
+    Component* GetNeighbourComponent(ComponentType type);
 };
 
 #endif /* defined(__Island__Component__) */

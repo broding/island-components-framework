@@ -10,22 +10,26 @@
 #define __Island__Entity__
 
 #include <iostream>
-#include <map>
-#include "Component.h"
+#include <list>
+#include "ComponentType.h"
+#include "Event.h"
+
+// forward declare Component
+class Component;
 
 class Entity
 {
 private:
     std::string _name;
     unsigned int _id;
-    std::map<std::string, Component*> _components;
+    std::list<Component*> _components;
 public:
     Entity();
     Entity(std::string name);
     ~Entity();
     void AddComponent(Component* component);
-    void RemoveComponent(std::string);
-    void RemoveComponent(unsigned int);
+    void RemoveComponent(ComponentType type);
+    void HandleEvent(Event* event);
 };
 
 #endif /* defined(__Island__Entity__) */

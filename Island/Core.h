@@ -11,13 +11,17 @@
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include "SubSystem.h"
 
 class Core
 {
 private:
+    std::vector<SubSystem*> _subSystems;
 public:
-    void Update(double delta);
-    void Draw(sf::RenderWindow* window, double delta);
+    Core(sf::RenderWindow* window);
+    ~Core();
+    void Update(double lastFrameTime);
+    void AddSubSystem(SubSystem* system);
 };
 
 #endif /* defined(__Island__Core__) */
