@@ -43,8 +43,6 @@ Core::Core(sf::RenderWindow* window)
     TransformComponent* transformComponent = new TransformComponent();
     transformComponent->position = sf::Vector2f(40, 40);
     PhysicsComponent* physicsComponent = new PhysicsComponent();
-    physicsComponent->forceAccumulated = sf::Vector2f(850, 150);
-    //physicsComponent->velocity = sf::Vector2f(1000, 10);
     
     player->AddComponent(renderComponent);
     player->AddComponent(transformComponent);
