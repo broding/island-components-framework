@@ -11,6 +11,17 @@
 		4B68153216F8A0000032EF5E /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153016F89FFF0032EF5E /* Event.cpp */; };
 		4B68153516F8C6C40032EF5E /* PhysicsSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153316F8C6C30032EF5E /* PhysicsSystem.cpp */; };
 		4B68153B16F8C72B0032EF5E /* PhysicsComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153916F8C72B0032EF5E /* PhysicsComponent.cpp */; };
+		4B7C20FB1700B15D00C9D2A6 /* callbacks.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C20F31700B15D00C9D2A6 /* callbacks.c */; };
+		4B7C20FC1700B15D00C9D2A6 /* compress.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C20F41700B15D00C9D2A6 /* compress.c */; };
+		4B7C20FD1700B15D00C9D2A6 /* host.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C20F51700B15D00C9D2A6 /* host.c */; };
+		4B7C20FE1700B15D00C9D2A6 /* list.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C20F61700B15D00C9D2A6 /* list.c */; };
+		4B7C20FF1700B15D00C9D2A6 /* packet.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C20F71700B15D00C9D2A6 /* packet.c */; };
+		4B7C21001700B15D00C9D2A6 /* peer.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C20F81700B15D00C9D2A6 /* peer.c */; };
+		4B7C21011700B15D00C9D2A6 /* unix.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C20F91700B15D00C9D2A6 /* unix.c */; };
+		4B7C21021700B15D00C9D2A6 /* win32.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C20FA1700B15D00C9D2A6 /* win32.c */; };
+		4B7C21041700B19D00C9D2A6 /* protocol.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C21031700B19D00C9D2A6 /* protocol.c */; };
+		4B7C21071700B6F600C9D2A6 /* NetworkComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C21051700B6F600C9D2A6 /* NetworkComponent.cpp */; };
+		4B900C4917004F3400D247FE /* NetworkSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B900C4717004F3400D247FE /* NetworkSystem.cpp */; };
 		4BB7881516F9E3A200AC62F4 /* PlayerInputComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BB7881316F9E3A200AC62F4 /* PlayerInputComponent.cpp */; };
 		4BB7881816F9E57000AC62F4 /* PlayerInputSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BB7881616F9E57000AC62F4 /* PlayerInputSystem.cpp */; };
 		4BC25A2716F86B7C00B36B1E /* RenderComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC25A2516F86B7C00B36B1E /* RenderComponent.cpp */; };
@@ -39,6 +50,19 @@
 		4B68153416F8C6C30032EF5E /* PhysicsSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsSystem.h; sourceTree = "<group>"; };
 		4B68153916F8C72B0032EF5E /* PhysicsComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsComponent.cpp; sourceTree = "<group>"; };
 		4B68153A16F8C72B0032EF5E /* PhysicsComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsComponent.h; sourceTree = "<group>"; };
+		4B7C20F31700B15D00C9D2A6 /* callbacks.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = callbacks.c; path = lib/enet/callbacks.c; sourceTree = "<group>"; };
+		4B7C20F41700B15D00C9D2A6 /* compress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = compress.c; path = lib/enet/compress.c; sourceTree = "<group>"; };
+		4B7C20F51700B15D00C9D2A6 /* host.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = host.c; path = lib/enet/host.c; sourceTree = "<group>"; };
+		4B7C20F61700B15D00C9D2A6 /* list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = list.c; path = lib/enet/list.c; sourceTree = "<group>"; };
+		4B7C20F71700B15D00C9D2A6 /* packet.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = packet.c; path = lib/enet/packet.c; sourceTree = "<group>"; };
+		4B7C20F81700B15D00C9D2A6 /* peer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = peer.c; path = lib/enet/peer.c; sourceTree = "<group>"; };
+		4B7C20F91700B15D00C9D2A6 /* unix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = unix.c; path = lib/enet/unix.c; sourceTree = "<group>"; };
+		4B7C20FA1700B15D00C9D2A6 /* win32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = win32.c; path = lib/enet/win32.c; sourceTree = "<group>"; };
+		4B7C21031700B19D00C9D2A6 /* protocol.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = protocol.c; path = lib/enet/protocol.c; sourceTree = "<group>"; };
+		4B7C21051700B6F600C9D2A6 /* NetworkComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkComponent.cpp; sourceTree = "<group>"; };
+		4B7C21061700B6F600C9D2A6 /* NetworkComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkComponent.h; sourceTree = "<group>"; };
+		4B900C4717004F3400D247FE /* NetworkSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkSystem.cpp; sourceTree = "<group>"; };
+		4B900C4817004F3400D247FE /* NetworkSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkSystem.h; sourceTree = "<group>"; };
 		4BB7881316F9E3A200AC62F4 /* PlayerInputComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerInputComponent.cpp; sourceTree = "<group>"; };
 		4BB7881416F9E3A200AC62F4 /* PlayerInputComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerInputComponent.h; sourceTree = "<group>"; };
 		4BB7881616F9E57000AC62F4 /* PlayerInputSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerInputSystem.cpp; sourceTree = "<group>"; };
@@ -92,6 +116,8 @@
 				4B68153A16F8C72B0032EF5E /* PhysicsComponent.h */,
 				4BB7881316F9E3A200AC62F4 /* PlayerInputComponent.cpp */,
 				4BB7881416F9E3A200AC62F4 /* PlayerInputComponent.h */,
+				4B7C21051700B6F600C9D2A6 /* NetworkComponent.cpp */,
+				4B7C21061700B6F600C9D2A6 /* NetworkComponent.h */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -122,6 +148,30 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		4B7C20EF1700B11D00C9D2A6 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				4B7C20F01700B12200C9D2A6 /* enet */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+		4B7C20F01700B12200C9D2A6 /* enet */ = {
+			isa = PBXGroup;
+			children = (
+				4B7C21031700B19D00C9D2A6 /* protocol.c */,
+				4B7C20F31700B15D00C9D2A6 /* callbacks.c */,
+				4B7C20F41700B15D00C9D2A6 /* compress.c */,
+				4B7C20F51700B15D00C9D2A6 /* host.c */,
+				4B7C20F61700B15D00C9D2A6 /* list.c */,
+				4B7C20F71700B15D00C9D2A6 /* packet.c */,
+				4B7C20F81700B15D00C9D2A6 /* peer.c */,
+				4B7C20F91700B15D00C9D2A6 /* unix.c */,
+				4B7C20FA1700B15D00C9D2A6 /* win32.c */,
+			);
+			name = enet;
+			sourceTree = "<group>";
+		};
 		4BC25A2816F86C6C00B36B1E /* SubSystems */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +183,8 @@
 				4B68153416F8C6C30032EF5E /* PhysicsSystem.h */,
 				4BB7881616F9E57000AC62F4 /* PlayerInputSystem.cpp */,
 				4BB7881716F9E57000AC62F4 /* PlayerInputSystem.h */,
+				4B900C4717004F3400D247FE /* NetworkSystem.cpp */,
+				4B900C4817004F3400D247FE /* NetworkSystem.h */,
 			);
 			path = SubSystems;
 			sourceTree = "<group>";
@@ -163,6 +215,7 @@
 		4BDA14AC16F7796700359B94 /* Island */ = {
 			isa = PBXGroup;
 			children = (
+				4B7C20EF1700B11D00C9D2A6 /* lib */,
 				4BDA14AD16F7796700359B94 /* OSX */,
 				4B68153C16F8DC9C0032EF5E /* src */,
 				4BDA14B416F7796700359B94 /* assets */,
@@ -287,6 +340,17 @@
 				4B68153B16F8C72B0032EF5E /* PhysicsComponent.cpp in Sources */,
 				4BB7881516F9E3A200AC62F4 /* PlayerInputComponent.cpp in Sources */,
 				4BB7881816F9E57000AC62F4 /* PlayerInputSystem.cpp in Sources */,
+				4B900C4917004F3400D247FE /* NetworkSystem.cpp in Sources */,
+				4B7C20FB1700B15D00C9D2A6 /* callbacks.c in Sources */,
+				4B7C20FC1700B15D00C9D2A6 /* compress.c in Sources */,
+				4B7C20FD1700B15D00C9D2A6 /* host.c in Sources */,
+				4B7C20FE1700B15D00C9D2A6 /* list.c in Sources */,
+				4B7C20FF1700B15D00C9D2A6 /* packet.c in Sources */,
+				4B7C21001700B15D00C9D2A6 /* peer.c in Sources */,
+				4B7C21011700B15D00C9D2A6 /* unix.c in Sources */,
+				4B7C21021700B15D00C9D2A6 /* win32.c in Sources */,
+				4B7C21041700B19D00C9D2A6 /* protocol.c in Sources */,
+				4B7C21071700B6F600C9D2A6 /* NetworkComponent.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +382,9 @@
 					/usr/local/include/,
 					"$(inherited)",
 				);
-				LIBRARY_SEARCH_PATHS = (
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include/;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
 					/usr/local/lib/,
 					"$(inherited)",
 				);
@@ -344,6 +410,7 @@
 				SFML_SYSTEM = "$(SFML_LINK_PREFIX)sfml-system$(SFML_LINK_SUFFIX)";
 				SFML_WINDOW = "$(SFML_LINK_PREFIX)sfml-window$(SFML_LINK_SUFFIX)";
 				SUPPORTED_PLATFORMS = macosx;
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = ./Island/include/;
 			};
 			name = Debug;
 		};
@@ -368,10 +435,7 @@
 					/usr/local/include/,
 					"$(inherited)",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					/usr/local/lib/,
-					"$(inherited)",
-				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -402,8 +466,16 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/,
+					"$(inherited)/../include/",
+				);
 				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include/;
 				INFOPLIST_FILE = "$(SRCROOT)/Island/OSX/Island-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Island/lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -414,6 +486,10 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				INFOPLIST_FILE = "$(SRCROOT)/Island/OSX/Island-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Island/lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

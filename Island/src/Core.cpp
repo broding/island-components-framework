@@ -12,11 +12,13 @@
 #include "TransformSystem.h"
 #include "PhysicsSystem.h"
 #include "PlayerInputSystem.h"
+#include "NetworkSystem.h"
 
 #include "RenderComponent.h"
 #include "TransformComponent.h"
 #include "PhysicsComponent.h"
 #include "PlayerInputComponent.h"
+#include "NetworkComponent.h"
 
 #include "Entity.h"
 #include "ResourcePath.hpp"
@@ -27,17 +29,20 @@ Core::Core(sf::RenderWindow* window)
     TransformSystem* transformSystem = new TransformSystem();
     PhysicsSystem* physicsSystem = new PhysicsSystem();
     PlayerInputSystem* playerInputSystem = new PlayerInputSystem();
+    NetworkSystem* networkSystem = new NetworkSystem();
     
     AddSubSystem(playerInputSystem);
     AddSubSystem(physicsSystem);
     AddSubSystem(transformSystem);
     AddSubSystem(renderSystem);
+    AddSubSystem(networkSystem);
     
     // setup subsystems in components
     RenderComponent::renderSystem = renderSystem;
     TransformComponent::transformSystem = transformSystem;
     PhysicsComponent::physicsSystem = physicsSystem;
     PlayerInputComponent::playerInputSystem = playerInputSystem;
+    NetworkComponent::networkSystem = networkSystem;
     
     Entity* player = new Entity();
     RenderComponent* renderComponent = new RenderComponent();
@@ -49,11 +54,13 @@ Core::Core(sf::RenderWindow* window)
     transformComponent->position = sf::Vector2f(40, 40);
     PlayerInputComponent* playerInputComponent = new PlayerInputComponent();
     PhysicsComponent* physicsComponent = new PhysicsComponent();
+    NetworkComponent* networkComponent = new NetworkComponent();
     
     player->AddComponent(renderComponent);
     player->AddComponent(transformComponent);
     player->AddComponent(physicsComponent);
     player->AddComponent(playerInputComponent);
+    player->AddComponent(networkComponent);
 }
 
 Core::~Core()
