@@ -25,6 +25,7 @@ protected:
     ComponentType _type;
     SubSystem* _subSystem;
     std::map<ComponentType, Component*> _componentSubscriptions;
+    bool IsSubscribedTo(ComponentType type);
 public:
     Component();
     virtual ~Component();

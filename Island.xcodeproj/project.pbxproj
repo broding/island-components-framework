@@ -11,6 +11,8 @@
 		4B68153216F8A0000032EF5E /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153016F89FFF0032EF5E /* Event.cpp */; };
 		4B68153516F8C6C40032EF5E /* PhysicsSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153316F8C6C30032EF5E /* PhysicsSystem.cpp */; };
 		4B68153B16F8C72B0032EF5E /* PhysicsComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153916F8C72B0032EF5E /* PhysicsComponent.cpp */; };
+		4BB7881516F9E3A200AC62F4 /* PlayerInputComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BB7881316F9E3A200AC62F4 /* PlayerInputComponent.cpp */; };
+		4BB7881816F9E57000AC62F4 /* PlayerInputSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BB7881616F9E57000AC62F4 /* PlayerInputSystem.cpp */; };
 		4BC25A2716F86B7C00B36B1E /* RenderComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC25A2516F86B7C00B36B1E /* RenderComponent.cpp */; };
 		4BC25A2B16F86C7700B36B1E /* RenderSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC25A2916F86C7700B36B1E /* RenderSystem.cpp */; };
 		4BC25A5016F885AB00B36B1E /* TransformComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC25A4E16F885AB00B36B1E /* TransformComponent.cpp */; };
@@ -37,6 +39,10 @@
 		4B68153416F8C6C30032EF5E /* PhysicsSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsSystem.h; sourceTree = "<group>"; };
 		4B68153916F8C72B0032EF5E /* PhysicsComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsComponent.cpp; sourceTree = "<group>"; };
 		4B68153A16F8C72B0032EF5E /* PhysicsComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsComponent.h; sourceTree = "<group>"; };
+		4BB7881316F9E3A200AC62F4 /* PlayerInputComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerInputComponent.cpp; sourceTree = "<group>"; };
+		4BB7881416F9E3A200AC62F4 /* PlayerInputComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerInputComponent.h; sourceTree = "<group>"; };
+		4BB7881616F9E57000AC62F4 /* PlayerInputSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerInputSystem.cpp; sourceTree = "<group>"; };
+		4BB7881716F9E57000AC62F4 /* PlayerInputSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerInputSystem.h; sourceTree = "<group>"; };
 		4BC25A2516F86B7C00B36B1E /* RenderComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RenderComponent.cpp; sourceTree = "<group>"; };
 		4BC25A2616F86B7C00B36B1E /* RenderComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderComponent.h; sourceTree = "<group>"; };
 		4BC25A2916F86C7700B36B1E /* RenderSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RenderSystem.cpp; sourceTree = "<group>"; };
@@ -84,6 +90,8 @@
 				4BC25A4F16F885AB00B36B1E /* TransformComponent.h */,
 				4B68153916F8C72B0032EF5E /* PhysicsComponent.cpp */,
 				4B68153A16F8C72B0032EF5E /* PhysicsComponent.h */,
+				4BB7881316F9E3A200AC62F4 /* PlayerInputComponent.cpp */,
+				4BB7881416F9E3A200AC62F4 /* PlayerInputComponent.h */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -123,6 +131,8 @@
 				4BC25A5216F885F200B36B1E /* TransformSystem.h */,
 				4B68153316F8C6C30032EF5E /* PhysicsSystem.cpp */,
 				4B68153416F8C6C30032EF5E /* PhysicsSystem.h */,
+				4BB7881616F9E57000AC62F4 /* PlayerInputSystem.cpp */,
+				4BB7881716F9E57000AC62F4 /* PlayerInputSystem.h */,
 			);
 			path = SubSystems;
 			sourceTree = "<group>";
@@ -275,6 +285,8 @@
 				4B68153216F8A0000032EF5E /* Event.cpp in Sources */,
 				4B68153516F8C6C40032EF5E /* PhysicsSystem.cpp in Sources */,
 				4B68153B16F8C72B0032EF5E /* PhysicsComponent.cpp in Sources */,
+				4BB7881516F9E3A200AC62F4 /* PlayerInputComponent.cpp in Sources */,
+				4BB7881816F9E57000AC62F4 /* PlayerInputSystem.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +402,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include/;
 				INFOPLIST_FILE = "$(SRCROOT)/Island/OSX/Island-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

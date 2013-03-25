@@ -7,6 +7,7 @@
 //
 
 #include "Component.h"
+#include <exception>
 
 Component::Component()
 {
@@ -65,5 +66,13 @@ void Component::RemoveNeighbourComponent(Component *component)
 
 Component* Component::GetNeighbourComponent(ComponentType type)
 {
-    return _componentSubscriptions.find(type)->second;
+    if(IsSubscribedTo(type))
+        return _componentSubscriptions.find(type)->second;
+    else
+        throw std::exception();
+}
+
+bool Component::IsSubscribedTo(ComponentType type)
+{
+    return _componentSubscriptions.find(type) != _componentSubscriptions.end();
 }
