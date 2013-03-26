@@ -9,6 +9,8 @@
 #include "TransformComponent.h"
 #include "TransformSystem.h"
 
+#include <SFML/Network.hpp>
+
 TransformSystem* TransformComponent::transformSystem;
 
 TransformComponent::TransformComponent()
@@ -25,4 +27,24 @@ TransformComponent::TransformComponent()
 TransformComponent::~TransformComponent()
 {
     transformSystem->RemoveComponent(this);
+}
+
+const void* TransformComponent::GenerateNetworkPacket()
+{
+    sf::Packet packet;
+    packet <<
+        position.x <<
+        position.y <<
+        scale.x <<
+        scale.y <<
+        rotation <<
+        origin.x <<
+        origin.y;
+    
+    return packet.getData();
+}
+
+void TransformComponent::ApplyNetworkPacket()
+{
+    
 }

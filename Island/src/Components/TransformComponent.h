@@ -12,14 +12,18 @@
 #include <iostream>
 #include "Component.h"
 #include "TransformSystem.h"
+#include "../Network/INetworkableComponent.h"
 #include <SFML/Graphics.hpp>
 
-class TransformComponent : public Component
+class TransformComponent : public Component, public INetworkableComponent
 {
 private:
 public:
     TransformComponent();
     ~TransformComponent();
+    
+    virtual const void* GenerateNetworkPacket();
+    virtual void ApplyNetworkPacket();
     
     static TransformSystem* transformSystem;
     
