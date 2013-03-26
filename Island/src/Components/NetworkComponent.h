@@ -10,8 +10,10 @@
 #define __Island__NetworkComponent__
 
 #include <iostream>
+#include <vector>
 #include "Component.h"
 #include "NetworkSystem.h"
+#include "INetworkableComponent.h"
 
 class NetworkComponent : public Component
 {
@@ -22,6 +24,7 @@ public:
     
     static NetworkSystem* networkSystem;
     
+    std::vector<INetworkableComponent*> networkableComponents;
 };
 
 #endif /* defined(__Island__NetworkComponent__) */

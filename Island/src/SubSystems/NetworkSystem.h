@@ -10,14 +10,14 @@
 #define __Island__NetworkSystem__
 
 #include <iostream>
-#include <enet/enet.h>
 
+#include "NetworkHandler.h"
 #include "SubSystem.h"
 
 class NetworkSystem : public SubSystem
 {
 private:
-    ENetHost* host;
+    NetworkHandler networkHandler;
     void ProcessEvent(Component* component, Event* event);
 public:
     NetworkSystem();

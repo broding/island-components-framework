@@ -55,6 +55,7 @@ Core::Core(sf::RenderWindow* window)
     PlayerInputComponent* playerInputComponent = new PlayerInputComponent();
     PhysicsComponent* physicsComponent = new PhysicsComponent();
     NetworkComponent* networkComponent = new NetworkComponent();
+    networkComponent->networkableComponents.push_back(transformComponent);
     
     player->AddComponent(renderComponent);
     player->AddComponent(transformComponent);

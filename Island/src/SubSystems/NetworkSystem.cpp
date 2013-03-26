@@ -10,12 +10,11 @@
 
 NetworkSystem::NetworkSystem()
 {
-    host = enet_host_create(NULL, 1, 2, 57600 /8, 14400 / 8);
+
 }
 
 NetworkSystem::~NetworkSystem()
 {
-    delete host;
 }
 
 void NetworkSystem::ProcessGameTick(float lastFrameTime)
