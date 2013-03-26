@@ -7,3 +7,8 @@
 //
 
 #include "Scene.h"
+
+void Scene::AddGUIObject(IGUIObject *object)
+{
+    this->guiObjects.push_back(object);
+}

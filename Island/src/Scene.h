@@ -10,5 +10,15 @@
 #define __Island__Scene__
 
 #include <iostream>
+#include <vector>
+#include "IGUIObject.h"
 
+class Scene
+{
+private:
+    std::vector<IGUIObject*> guiObjects;
+public:
+    void AddGUIObject(IGUIObject* object);
+};
+    
 #endif /* defined(__Island__Scene__) */
