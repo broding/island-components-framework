@@ -24,7 +24,7 @@ void RenderSystem::ProcessGameTick(float lastFrameTime)
 {
     for (std::list<Component*>::const_iterator iterator = _components.begin(), end = _components.end(); iterator != end; ++iterator)
     {
-        RenderComponent* renderComponent = dynamic_cast<RenderComponent*>(*iterator);
+        RenderComponent* renderComponent = static_cast<RenderComponent*>(*iterator);
         TransformComponent* transformComponent = static_cast<TransformComponent*>(renderComponent->GetNeighbourComponent(COMPONENT_TRANSFORM));
         
         if(transformComponent != 0)
