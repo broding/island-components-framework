@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4B16232E17026659008F7AE2 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B16232C17026659008F7AE2 /* Button.cpp */; };
+		4B16233217026776008F7AE2 /* ConnectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B16233017026776008F7AE2 /* ConnectScene.cpp */; };
+		4B16233417030A9E008F7AE2 /* GUIObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B16233317030A9E008F7AE2 /* GUIObject.cpp */; };
 		4B62A25016F8673400016A62 /* SubSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B62A24E16F8673400016A62 /* SubSystem.cpp */; };
 		4B68153216F8A0000032EF5E /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153016F89FFF0032EF5E /* Event.cpp */; };
 		4B68153516F8C6C40032EF5E /* PhysicsSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153316F8C6C30032EF5E /* PhysicsSystem.cpp */; };
@@ -44,9 +46,12 @@
 
 /* Begin PBXFileReference section */
 		4B16232917012194008F7AE2 /* INetworkableComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INetworkableComponent.h; sourceTree = "<group>"; };
-		4B16232B17026431008F7AE2 /* IGUIObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IGUIObject.h; sourceTree = "<group>"; };
+		4B16232B17026431008F7AE2 /* GUIObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUIObject.h; sourceTree = "<group>"; };
 		4B16232C17026659008F7AE2 /* Button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Button.cpp; sourceTree = "<group>"; };
 		4B16232D17026659008F7AE2 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
+		4B16233017026776008F7AE2 /* ConnectScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConnectScene.cpp; sourceTree = "<group>"; };
+		4B16233117026776008F7AE2 /* ConnectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectScene.h; sourceTree = "<group>"; };
+		4B16233317030A9E008F7AE2 /* GUIObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUIObject.cpp; sourceTree = "<group>"; };
 		4B62A24E16F8673400016A62 /* SubSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SubSystem.cpp; sourceTree = "<group>"; };
 		4B62A24F16F8673400016A62 /* SubSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubSystem.h; sourceTree = "<group>"; };
 		4B68152F16F89C7C0032EF5E /* ComponentType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComponentType.h; sourceTree = "<group>"; };
@@ -116,11 +121,21 @@
 		4B16232A170263DA008F7AE2 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				4B16232B17026431008F7AE2 /* IGUIObject.h */,
+				4B16233317030A9E008F7AE2 /* GUIObject.cpp */,
+				4B16232B17026431008F7AE2 /* GUIObject.h */,
 				4B16232C17026659008F7AE2 /* Button.cpp */,
 				4B16232D17026659008F7AE2 /* Button.h */,
 			);
 			path = GUI;
+			sourceTree = "<group>";
+		};
+		4B16232F17026765008F7AE2 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				4B16233017026776008F7AE2 /* ConnectScene.cpp */,
+				4B16233117026776008F7AE2 /* ConnectScene.h */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		4B62A25416F868DD00016A62 /* Components */ = {
@@ -143,6 +158,7 @@
 		4B68153C16F8DC9C0032EF5E /* src */ = {
 			isa = PBXGroup;
 			children = (
+				4B16232F17026765008F7AE2 /* Scenes */,
 				4B16232A170263DA008F7AE2 /* GUI */,
 				4B7C21081700CF3D00C9D2A6 /* Network */,
 				4BC25A5416F88AD600B36B1E /* Events */,
@@ -383,6 +399,8 @@
 				4B7C21071700B6F600C9D2A6 /* NetworkComponent.cpp in Sources */,
 				4B7C210B1700D05A00C9D2A6 /* NetworkHandler.cpp in Sources */,
 				4B16232E17026659008F7AE2 /* Button.cpp in Sources */,
+				4B16233217026776008F7AE2 /* ConnectScene.cpp in Sources */,
+				4B16233417030A9E008F7AE2 /* GUIObject.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,12 +10,19 @@
 #define __Island__Button__
 
 #include <iostream>
-#include "IGUIObject.h"
+#include "GUIObject.h"
+#include <SFML/Graphics.hpp>
 
-class Button : public IGUIObject
+class Button : public GUIObject
 {
 private:
+    sf::Texture _texture;
+    sf::Sprite _normalState;
 public:
+    Button();
+    ~Button();
+    virtual void Click();
+    virtual void Draw(sf::RenderWindow* window);
 };
 
 #endif /* defined(__Island__Button__) */

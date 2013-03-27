@@ -11,14 +11,19 @@
 
 #include <iostream>
 #include <vector>
-#include "IGUIObject.h"
+#include "GUIObject.h"
+#include <SFML/Graphics.hpp>
 
 class Scene
 {
 private:
-    std::vector<IGUIObject*> guiObjects;
+    std::vector<GUIObject*> _guiObjects;
 public:
-    void AddGUIObject(IGUIObject* object);
+    Scene();
+    ~Scene();
+    void AddGUIObject(GUIObject* object);
+    void Draw(sf::RenderWindow* window);
+    void Update(float lastFrameTime);
 };
     
 #endif /* defined(__Island__Scene__) */

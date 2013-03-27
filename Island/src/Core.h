@@ -12,11 +12,14 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "SubSystem.h"
+#include "Scene.h"
 
 class Core
 {
 private:
     std::vector<SubSystem*> _subSystems;
+    Scene* _currentScene;
+    sf::RenderWindow* _renderWindow;
 public:
     Core(sf::RenderWindow* window);
     ~Core();

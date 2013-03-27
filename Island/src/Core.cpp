@@ -20,11 +20,15 @@
 #include "PlayerInputComponent.h"
 #include "NetworkComponent.h"
 
+#include "ConnectScene.h"
+
 #include "Entity.h"
 #include "ResourcePath.hpp"
 
-Core::Core(sf::RenderWindow* window)
+Core::Core(sf::RenderWindow* window) : _renderWindow(window)
 {
+    GUIObject::window = window;
+    
     RenderSystem* renderSystem = new RenderSystem(window);
     TransformSystem* transformSystem = new TransformSystem();
     PhysicsSystem* physicsSystem = new PhysicsSystem();
@@ -57,11 +61,15 @@ Core::Core(sf::RenderWindow* window)
     NetworkComponent* networkComponent = new NetworkComponent();
     networkComponent->networkableComponents.push_back(transformComponent);
     
+    /*
     player->AddComponent(renderComponent);
     player->AddComponent(transformComponent);
     player->AddComponent(physicsComponent);
     player->AddComponent(playerInputComponent);
     player->AddComponent(networkComponent);
+     */
+    
+    _currentScene = new ConnectScene();
 }
 
 Core::~Core()
@@ -79,5 +87,11 @@ void Core::Update(float lastFrameTime)
     for (std::vector<SubSystem*>::const_iterator iterator = _subSystems.begin(), end = _subSystems.end(); iterator != end; ++iterator)
     {
         (*iterator)->ProcessGameTick(lastFrameTime);
+    }
+    
+    if(_currentScene != 0)
+    {
+        _currentScene->Update(lastFrameTime);
+        _currentScene->Draw(_renderWindow);
     }
 }
