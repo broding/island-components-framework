@@ -14,7 +14,7 @@
 #include "GUIObject.h"
 #include <SFML/Graphics.hpp>
 
-class Scene
+class Scene : public GUIObserver
 {
 private:
     std::vector<GUIObject*> _guiObjects;
@@ -25,6 +25,7 @@ public:
     void RemoveGUIObject(GUIObject* object);
     void Draw(sf::RenderWindow* window);
     void Update(float lastFrameTime);
+    virtual void ProcessGUIEvent(GUIEvent event) = 0;
 };
     
 #endif /* defined(__Island__Scene__) */
