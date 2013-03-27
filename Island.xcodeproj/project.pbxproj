@@ -141,6 +141,8 @@
 		4B16232F17026765008F7AE2 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4BDA14C416F7799A00359B94 /* Scene.h */,
+				4BDA14C316F7799A00359B94 /* Scene.cpp */,
 				4B16233017026776008F7AE2 /* ConnectScene.cpp */,
 				4B16233117026776008F7AE2 /* ConnectScene.h */,
 			);
@@ -150,6 +152,9 @@
 		4B62A25416F868DD00016A62 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4BDA14C916F77B4600359B94 /* Component.cpp */,
+				4BDA14CA16F77B4600359B94 /* Component.h */,
+				4B68152F16F89C7C0032EF5E /* ComponentType.h */,
 				4BC25A2516F86B7C00B36B1E /* RenderComponent.cpp */,
 				4BC25A2616F86B7C00B36B1E /* RenderComponent.h */,
 				4BC25A4E16F885AB00B36B1E /* TransformComponent.cpp */,
@@ -173,22 +178,13 @@
 				4BC25A5416F88AD600B36B1E /* Events */,
 				4BC25A2816F86C6C00B36B1E /* SubSystems */,
 				4B62A25416F868DD00016A62 /* Components */,
-				4BDA14C416F7799A00359B94 /* Scene.h */,
-				4BDA14C316F7799A00359B94 /* Scene.cpp */,
 				4BDA14AF16F7796700359B94 /* ResourcePath.mm */,
 				4BDA14B116F7796700359B94 /* ResourcePath.hpp */,
 				4BDA14B216F7796700359B94 /* main.cpp */,
 				4BDA14C616F779C300359B94 /* Core.cpp */,
 				4BDA14C716F779C300359B94 /* Core.h */,
-				4B68153016F89FFF0032EF5E /* Event.cpp */,
-				4B68153116F89FFF0032EF5E /* Event.h */,
-				4BDA14C916F77B4600359B94 /* Component.cpp */,
-				4BDA14CA16F77B4600359B94 /* Component.h */,
-				4B68152F16F89C7C0032EF5E /* ComponentType.h */,
 				4BDA14CC16F77B5900359B94 /* Entity.cpp */,
 				4BDA14CD16F77B5900359B94 /* Entity.h */,
-				4B62A24E16F8673400016A62 /* SubSystem.cpp */,
-				4B62A24F16F8673400016A62 /* SubSystem.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -230,6 +226,8 @@
 		4BC25A2816F86C6C00B36B1E /* SubSystems */ = {
 			isa = PBXGroup;
 			children = (
+				4B62A24E16F8673400016A62 /* SubSystem.cpp */,
+				4B62A24F16F8673400016A62 /* SubSystem.h */,
 				4BC25A2916F86C7700B36B1E /* RenderSystem.cpp */,
 				4BC25A2A16F86C7700B36B1E /* RenderSystem.h */,
 				4BC25A5116F885F200B36B1E /* TransformSystem.cpp */,
@@ -247,6 +245,8 @@
 		4BC25A5416F88AD600B36B1E /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				4B68153016F89FFF0032EF5E /* Event.cpp */,
+				4B68153116F89FFF0032EF5E /* Event.h */,
 			);
 			path = Events;
 			sourceTree = "<group>";
