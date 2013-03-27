@@ -8,7 +8,9 @@
 
 #include "NetworkHandler.h"
 
-NetworkHandler::NetworkHandler()
+ENetHost* NetworkHandler::host;
+
+void NetworkHandler::InitializeEnet()
 {
     if(enet_initialize() != 0)
     {
@@ -16,14 +18,10 @@ NetworkHandler::NetworkHandler()
     }
 }
 
-NetworkHandler::~NetworkHandler()
-{
-    enet_deinitialize();
-    enet_host_destroy(host);
-}
-
 void NetworkHandler::InitializeServer()
 {
+    InitializeEnet();
+    
     ENetAddress address;
     address.host = ENET_HOST_ANY;
     address.port = 1234;
@@ -33,5 +31,13 @@ void NetworkHandler::InitializeServer()
 
 void NetworkHandler::Connect(std::string ipAdress)
 {
+    InitializeEnet();
+    
     host = enet_host_create(NULL, 1, 2, 57600 /8, 14400 / 8);
+}
+
+void NetworkHandler::Disconnect()
+{
+    enet_host_destroy(host);
+    enet_deinitialize();
 }

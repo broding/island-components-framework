@@ -15,12 +15,12 @@
 class NetworkHandler
 {
 private:
-    ENetHost* host;
+    static ENetHost* host;
+    static void InitializeEnet();
 public:
-    NetworkHandler();
-    ~NetworkHandler();
-    void InitializeServer();
-    void Connect(std::string ipAdress);
+    static void InitializeServer();
+    static void Connect(std::string ipAdress);
+    static void Disconnect();
 };
 
 #endif /* defined(__Island__NetworkHandler__) */
