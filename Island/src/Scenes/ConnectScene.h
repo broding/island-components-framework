@@ -11,13 +11,16 @@
 
 #include <iostream>
 #include "Scene.h"
+#include "Button.h"
 
 class ConnectScene : public Scene
 {
 private:
+    Button makeServerButton;
 public:
     ConnectScene();
     ~ConnectScene();
+    virtual void ProcessGUIEvent(GUIEvent event);
 };
 
 #endif /* defined(__Island__ConnectScene__) */

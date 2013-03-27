@@ -9,6 +9,13 @@
 #include "GUIObject.h"
 
 sf::Window* GUIObject::window;
+unsigned int GUIObject::_nextUniqueId;
+
+GUIObject::GUIObject()
+{
+    _id = _nextUniqueId++;
+}
+
 
 void GUIObject::Select()
 {
@@ -49,4 +56,26 @@ bool GUIObject::IsHovered()
     _boundingBox.top = position.y;
     
     return _boundingBox.contains(sf::Mouse::getPosition(*window));
+}
+
+unsigned int GUIObject::GetId()
+{
+    return _id;
+}
+
+void GUIObject::RegisterObserver(GUIObserver *observer)
+{
+    _observers.push_back(observer);
+}
+
+void GUIObject::UnregisterObserver(GUIObserver *observer)
+{
+    _observers.remove(observer);
+}
+
+void GUIObject::SendEventToObservers(GUIEvent event)
+{
+    for (std::list<GUIObserver*>::iterator it = _observers.begin() ; it != _observers.end(); ++it)
+        (*it)->ProcessGUIEvent(event);
+
 }

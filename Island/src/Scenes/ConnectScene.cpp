@@ -8,15 +8,24 @@
 
 #include "ConnectScene.h"
 #include "Button.h"
+#include "NetworkHandler.h"
 
 ConnectScene::ConnectScene()
 {
-    Button* button = new Button();
-    button->position = sf::Vector2f(50, 50);
-    AddGUIObject(button);
+    makeServerButton.position = sf::Vector2f(50, 50);
+    AddGUIObject(&makeServerButton);
+    makeServerButton.RegisterObserver(this);
 }
 
 ConnectScene::~ConnectScene()
 {
     
+}
+
+void ConnectScene::ProcessGUIEvent(GUIEvent event)
+{
+    if(event.GetObjectId() == makeServerButton.GetId() && event.GetType() == GUIEvent::BUTTON_CLICKED)
+    {
+        NetworkHandler::InitializeServer();
+    }
 }

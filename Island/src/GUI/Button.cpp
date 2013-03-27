@@ -11,6 +11,8 @@
 
 Button::Button()
 {
+    GUIObject::GUIObject();
+    
     _texture.loadFromFile(resourcePath() + "testbutton.png");
     _sprite.setTexture(_texture);
     _boundingBox = sf::IntRect(0, 0, _texture.getSize().x, _texture.getSize().y / 3);
@@ -24,6 +26,9 @@ Button::~Button()
 
 void Button::Click()
 {
+    GUIEvent event(this->GetId(), GUIEvent::BUTTON_CLICKED);
+    
+    SendEventToObservers(event);
 }
 
 void Button::Update(float delta)
