@@ -22,6 +22,7 @@ public:
     Scene();
     ~Scene();
     void AddGUIObject(GUIObject* object);
+    void RemoveGUIObject(GUIObject* object);
     void Draw(sf::RenderWindow* window);
     void Update(float lastFrameTime);
 };

@@ -23,6 +23,17 @@ void Scene::AddGUIObject(GUIObject *object)
     this->_guiObjects.push_back(object);
 }
 
+void Scene::RemoveGUIObject(GUIObject *object)
+{
+    for (std::vector<GUIObject*>::iterator it = _guiObjects.begin() ; it != _guiObjects.end(); ++it)
+        if((*it) == object)
+        {
+            delete *it;
+            _guiObjects.erase(it);
+            break;
+        }
+}
+
 void Scene::Update(float lastFrameTime)
 {
     for (std::vector<GUIObject*>::iterator it = _guiObjects.begin() ; it != _guiObjects.end(); ++it)
