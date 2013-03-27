@@ -29,7 +29,18 @@ Core::Core(sf::RenderWindow* window) : _renderWindow(window)
 {
     GUIObject::window = window;
     
-    RenderSystem* renderSystem = new RenderSystem(window);
+    _currentScene = new ConnectScene();
+}
+
+Core::~Core()
+{
+    for (std::vector<SubSystem*>::const_iterator it = _subSystems.begin(), end = _subSystems.end(); it != end; ++it)
+        delete *it;
+}
+
+void Core::InitializeSubSystems()
+{
+    RenderSystem* renderSystem = new RenderSystem(_renderWindow);
     TransformSystem* transformSystem = new TransformSystem();
     PhysicsSystem* physicsSystem = new PhysicsSystem();
     PlayerInputSystem* playerInputSystem = new PlayerInputSystem();
@@ -47,34 +58,6 @@ Core::Core(sf::RenderWindow* window) : _renderWindow(window)
     PhysicsComponent::physicsSystem = physicsSystem;
     PlayerInputComponent::playerInputSystem = playerInputSystem;
     NetworkComponent::networkSystem = networkSystem;
-    
-    Entity* player = new Entity();
-    RenderComponent* renderComponent = new RenderComponent();
-    sf::Texture* texture = new sf::Texture();
-    texture->loadFromFile(resourcePath() + "icon.png");
-    renderComponent->sprite = *new sf::Sprite();
-    renderComponent->sprite.setTexture(*texture);
-    TransformComponent* transformComponent = new TransformComponent();
-    transformComponent->position = sf::Vector2f(40, 40);
-    PlayerInputComponent* playerInputComponent = new PlayerInputComponent();
-    PhysicsComponent* physicsComponent = new PhysicsComponent();
-    NetworkComponent* networkComponent = new NetworkComponent();
-    networkComponent->networkableComponents.push_back(transformComponent);
-    
-    /*
-    player->AddComponent(renderComponent);
-    player->AddComponent(transformComponent);
-    player->AddComponent(physicsComponent);
-    player->AddComponent(playerInputComponent);
-    player->AddComponent(networkComponent);
-     */
-    
-    _currentScene = new ConnectScene();
-}
-
-Core::~Core()
-{
-    
 }
 
 void Core::AddSubSystem(SubSystem *subSystem)
@@ -94,4 +77,9 @@ void Core::Update(float lastFrameTime)
         _currentScene->Update(lastFrameTime);
         _currentScene->Draw(_renderWindow);
     }
+}
+
+void Core::SwitchScene()
+{
+    
 }

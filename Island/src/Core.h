@@ -20,11 +20,15 @@ private:
     std::vector<SubSystem*> _subSystems;
     Scene* _currentScene;
     sf::RenderWindow* _renderWindow;
+    
+    void InitializeSubSystems();
+    void AddSubSystem(SubSystem* system);
+    
 public:
     Core(sf::RenderWindow* window);
     ~Core();
     void Update(float lastFrameTime);
-    void AddSubSystem(SubSystem* system);
+    void SwitchScene();
 };
 
 #endif /* defined(__Island__Core__) */
