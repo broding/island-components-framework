@@ -15,7 +15,8 @@ Scene::Scene()
 
 Scene::~Scene()
 {
-    
+    for (std::vector<GUIObject*>::iterator it = _guiObjects.begin() ; it != _guiObjects.end(); ++it)
+        delete *it;
 }
 
 void Scene::AddGUIObject(GUIObject *object)
@@ -28,7 +29,6 @@ void Scene::RemoveGUIObject(GUIObject *object)
     for (std::vector<GUIObject*>::iterator it = _guiObjects.begin() ; it != _guiObjects.end(); ++it)
         if((*it) == object)
         {
-            delete *it;
             _guiObjects.erase(it);
             break;
         }
