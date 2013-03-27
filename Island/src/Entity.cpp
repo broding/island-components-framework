@@ -21,7 +21,8 @@ Entity::Entity(std::string name) : _name(name)
 
 Entity::~Entity()
 {
-    
+    for (std::list<Component*>::const_iterator it = _components.begin(), end = _components.end(); it != end; ++it)
+        delete *it;
 }
 
 void Entity::AddComponent(Component *component)
