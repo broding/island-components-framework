@@ -26,6 +26,7 @@ protected:
     std::list<EventType> _subscribedEvents;
     virtual void ProcessEvent(Component* component, Event* event) = 0;
 public:
+    virtual ~SubSystem();
     virtual void ProcessGameTick(float lastFrameTime) = 0;
     void AddComponent(Component* component);
     void RemoveComponent(Component* component);

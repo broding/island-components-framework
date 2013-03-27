@@ -8,6 +8,11 @@
 
 #include "SubSystem.h"
 
+SubSystem::~SubSystem()
+{
+    
+}
+
 void SubSystem::AddComponent(Component* component)
 {
     _components.push_back(component);
