@@ -17,10 +17,13 @@ private:
     bool IsClicked();
     bool IsHovered();
 protected:
-    sf::Rect<int> _boundingBox;
+    sf::IntRect _boundingBox;
     bool _hovered;
+    bool _clicked;
 public:
     static sf::Window* window;
+    
+    sf::Vector2f position;
     
     virtual void Select();
     virtual void Click();

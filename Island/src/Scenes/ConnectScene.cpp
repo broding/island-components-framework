@@ -12,6 +12,7 @@
 ConnectScene::ConnectScene()
 {
     Button* button = new Button();
+    button->position = sf::Vector2f(50, 50);
     AddGUIObject(button);
 }
 

@@ -13,14 +13,23 @@
 #include "GUIObject.h"
 #include <SFML/Graphics.hpp>
 
+enum ButtonState
+{
+    BUTTON_NORMAL = 1,
+    BUTTON_HOVERED,
+    BUTTON_PUSHED
+};
+
 class Button : public GUIObject
 {
 private:
     sf::Texture _texture;
-    sf::Sprite _normalState;
+    sf::Sprite _sprite;
+    ButtonState _buttonState;
 public:
     Button();
     ~Button();
+    virtual void Update(float delta);
     virtual void Click();
     virtual void Draw(sf::RenderWindow* window);
 };

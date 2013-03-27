@@ -32,8 +32,9 @@ void GUIObject::Draw(sf::RenderWindow* window)
 void GUIObject::Update(float delta)
 {
     _hovered = IsHovered();
+    _clicked = IsClicked();
     
-    if(IsClicked())
+    if(_clicked)
         Click();
 }
 
@@ -44,5 +45,8 @@ bool GUIObject::IsClicked()
 
 bool GUIObject::IsHovered()
 {
+    _boundingBox.left = position.x;
+    _boundingBox.top = position.y;
+    
     return _boundingBox.contains(sf::Mouse::getPosition(*window));
 }
