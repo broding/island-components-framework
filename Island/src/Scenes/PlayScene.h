@@ -9,6 +9,15 @@
 #ifndef __Island__PlayScene__
 #define __Island__PlayScene__
 
-#include <iostream>
+#include "Scene.h"
+
+class PlayScene : public Scene
+{
+private:
+public:
+    PlayScene();
+    ~PlayScene();
+    virtual void ProcessGUIEvent(GUIEvent event);
+};
 
 #endif /* defined(__Island__PlayScene__) */

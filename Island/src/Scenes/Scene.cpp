@@ -7,11 +7,7 @@
 //
 
 #include "Scene.h"
-
-Scene::Scene()
-{
-    
-}
+#include "Core.h"
 
 Scene::~Scene()
 {
@@ -44,4 +40,14 @@ void Scene::Draw(sf::RenderWindow* window)
 {
     for (std::vector<GUIObject*>::iterator it = _guiObjects.begin() ; it != _guiObjects.end(); ++it)
         (*it)->Draw(window);
+}
+
+void Scene::SetCore(Core *core)
+{
+    _core = core;
+}
+
+void Scene::SwitchScene(Scene* scene)
+{
+    _core->SwitchScene(scene);
 }

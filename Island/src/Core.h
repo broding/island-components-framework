@@ -28,7 +28,7 @@ public:
     Core(sf::RenderWindow* window);
     ~Core();
     void Update(float lastFrameTime);
-    void SwitchScene();
+    void SwitchScene(Scene* scene);
 };
 
 #endif /* defined(__Island__Core__) */

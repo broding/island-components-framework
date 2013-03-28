@@ -29,7 +29,7 @@ Core::Core(sf::RenderWindow* window) : _renderWindow(window)
 {
     GUIObject::window = window;
     
-    _currentScene = new ConnectScene();
+    SwitchScene(new ConnectScene());
 }
 
 Core::~Core()
@@ -79,7 +79,10 @@ void Core::Update(float lastFrameTime)
     }
 }
 
-void Core::SwitchScene()
+void Core::SwitchScene(Scene* scene)
 {
+    //delete _currentScene
     
+    _currentScene = scene;
+    _currentScene->SetCore(this);
 }

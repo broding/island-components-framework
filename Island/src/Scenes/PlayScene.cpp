@@ -7,3 +7,18 @@
 //
 
 #include "PlayScene.h"
+
+PlayScene::PlayScene()
+{
+
+}
+
+PlayScene::~PlayScene()
+{
+    
+}
+
+void PlayScene::ProcessGUIEvent(GUIEvent event)
+{
+    
+}
