@@ -7,10 +7,11 @@
 //
 
 #include "PlayScene.h"
+#include "PlayerFactory.h"
 
 PlayScene::PlayScene()
 {
-
+    PlayerFactory::CreatePlayer();
 }
 
 PlayScene::~PlayScene()
