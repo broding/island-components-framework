@@ -17,6 +17,7 @@ PlayerInputComponent::PlayerInputComponent()
     playerInputSystem->AddComponent(this);
     
     this->AddComponentSubscription(COMPONENT_PHYSICS);
+    this->AddComponentSubscription(COMPONENT_TRANSFORM);
     
     left = sf::Keyboard::A;
     right = sf::Keyboard::D;
