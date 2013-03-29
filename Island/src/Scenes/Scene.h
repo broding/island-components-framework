@@ -13,6 +13,7 @@
 #include <vector>
 #include "GUIObject.h"
 #include <SFML/Graphics.hpp>
+#include "Entity.h"
 
 // forward declare Core
 class Core;
@@ -21,6 +22,7 @@ class Scene : public GUIObserver
 {
 private:
     std::vector<GUIObject*> _guiObjects;
+    std::vector<Entity*> _entities;
     Core* _core;
 protected:
     void SwitchScene(Scene* scene);
@@ -28,6 +30,8 @@ public:
     virtual ~Scene();
     void AddGUIObject(GUIObject* object);
     void RemoveGUIObject(GUIObject* object);
+    void AddEntity(Entity* entity);
+    void RemoveEntity(Entity* entity);
     void Draw(sf::RenderWindow* window);
     void Update(float lastFrameTime);
     virtual void ProcessGUIEvent(GUIEvent event) = 0;

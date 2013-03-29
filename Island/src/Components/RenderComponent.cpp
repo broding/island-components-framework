@@ -14,12 +14,8 @@ RenderComponent::RenderComponent()
 {
     _type = COMPONENT_RENDER;
     _subSystem = renderSystem;
-    renderSystem->AddComponent(this);
+    
+    this->AddToSystem();
     
     this->AddComponentSubscription(COMPONENT_TRANSFORM);
-}
-
-RenderComponent::~RenderComponent()
-{
-    renderSystem->RemoveComponent(this);
 }

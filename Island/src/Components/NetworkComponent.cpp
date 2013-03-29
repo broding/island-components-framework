@@ -14,12 +14,8 @@ NetworkComponent::NetworkComponent()
 {
     _type = COMPONENT_PLAYERINPUT;
     _subSystem = networkSystem;
-    networkSystem->AddComponent(this);
+    
+    this->AddToSystem();
     
     this->AddComponentSubscription(COMPONENT_NETWORK);
-}
-
-NetworkComponent::~NetworkComponent()
-{
-    networkSystem->RemoveComponent(this);
 }

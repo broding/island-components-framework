@@ -7,6 +7,7 @@
 //
 
 #include "SubSystem.h"
+#include "Component.h"
 
 SubSystem::~SubSystem()
 {
@@ -25,9 +26,20 @@ void SubSystem::RemoveComponent(Component *component)
 
 void SubSystem::HandleEvent(Component *component, Event* event)
 {
-    for (std::list<EventType>::const_iterator iterator = _subscribedEvents.begin(), end = _subscribedEvents.end(); iterator != end; ++iterator)
+    for (std::list<EventType>::const_iterator it = _subscribedEvents.begin(), end = _subscribedEvents.end(); it != end; ++it)
     {
-        if(*iterator == event->type)
+        if(*it == event->type)
             ProcessEvent(component, event);
     }
+}
+
+std::list<Component*> SubSystem::GetValidComponents()
+{
+    std::list<Component*> validComponents;
+    
+    for (std::list<Component*>::const_iterator it = _components.begin(), end = _components.end(); it != end; ++it)
+        if((*it)->enabled && (*it)->GetOwner()->addedToScene)
+            validComponents.push_back(*it);
+    
+    return validComponents;
 }

@@ -27,9 +27,12 @@ public:
     Entity();
     Entity(std::string name);
     ~Entity();
+    void InitializeComponents();
     void AddComponent(Component* component);
     void RemoveComponent(ComponentType type);
     void HandleEvent(Event* event);
+    
+    bool addedToScene;
 };
 
 #endif /* defined(__Island__Entity__) */

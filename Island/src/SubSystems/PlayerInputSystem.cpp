@@ -15,9 +15,9 @@
 #include "GUIObject.h"
 #include <math.h>
 
-void PlayerInputSystem::ProcessGameTick(float lastFrameTime)
+void PlayerInputSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> components)
 {
-    for (std::list<Component*>::const_iterator iterator = _components.begin(), end = _components.end(); iterator != end; ++iterator)
+    for (std::list<Component*>::const_iterator iterator = components.begin(), end = components.end(); iterator != end; ++iterator)
     {
         PlayerInputComponent* inputComponent = static_cast<PlayerInputComponent*>(*iterator);
         PhysicsComponent* physicsComponent = static_cast<PhysicsComponent*>(inputComponent->GetNeighbourComponent(COMPONENT_PHYSICS));

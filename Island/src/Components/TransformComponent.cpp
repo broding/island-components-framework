@@ -17,16 +17,12 @@ TransformComponent::TransformComponent()
 {
     _type = COMPONENT_TRANSFORM;
     _subSystem = transformSystem;
-    transformSystem->AddComponent(this);
+    
+    this->AddToSystem();
     
     scale = sf::Vector2f(1.0f, 1.0f);
     rotation = 0.0f;
     origin = sf::Vector2f(0.0f, 0.0f);
-}
-
-TransformComponent::~TransformComponent()
-{
-    transformSystem->RemoveComponent(this);
 }
 
 const void* TransformComponent::GenerateNetworkPacket()

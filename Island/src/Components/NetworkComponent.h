@@ -20,7 +20,6 @@ class NetworkComponent : public Component
 private:
 public:
     NetworkComponent();
-    ~NetworkComponent();
     
     static NetworkSystem* networkSystem;
     

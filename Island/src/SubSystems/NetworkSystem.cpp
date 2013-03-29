@@ -17,9 +17,9 @@ NetworkSystem::~NetworkSystem()
 {
 }
 
-void NetworkSystem::ProcessGameTick(float lastFrameTime)
+void NetworkSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> components)
 {
-    for (std::list<Component*>::const_iterator iterator = _components.begin(), end = _components.end(); iterator != end; ++iterator)
+    for (std::list<Component*>::const_iterator iterator = components.begin(), end = components.end(); iterator != end; ++iterator)
     {
     }
 }

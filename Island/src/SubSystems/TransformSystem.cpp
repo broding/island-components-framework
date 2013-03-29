@@ -10,7 +10,7 @@
 #include "TransformComponent.h"
 #include "Event.h"
 
-void TransformSystem::ProcessGameTick(float lastFrameTime)
+void TransformSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> components)
 {
 }
 

@@ -19,7 +19,6 @@ class PlayerInputComponent : public Component
 private:
 public:
     PlayerInputComponent();
-    ~PlayerInputComponent();
     
     static PlayerInputSystem* playerInputSystem;
     

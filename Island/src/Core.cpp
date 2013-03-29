@@ -70,7 +70,7 @@ void Core::Update(float lastFrameTime)
 {
     for (std::vector<SubSystem*>::const_iterator iterator = _subSystems.begin(), end = _subSystems.end(); iterator != end; ++iterator)
     {
-        (*iterator)->ProcessGameTick(lastFrameTime);
+        (*iterator)->ProcessGameTick(lastFrameTime, (*iterator)->GetValidComponents());
     }
     
     if(_currentScene != 0)

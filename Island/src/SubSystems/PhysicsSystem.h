@@ -21,7 +21,7 @@ private:
 protected:
     void ProcessEvent(Component* component, Event* event);
 public:
-    void ProcessGameTick(float lastFrameTime);
+    void ProcessGameTick(float lastFrameTime, std::list<Component*> components);
 };
 
 #endif /* defined(__Island__PhysicsSystem__) */

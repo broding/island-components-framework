@@ -13,6 +13,9 @@ Scene::~Scene()
 {
     for (std::vector<GUIObject*>::iterator it = _guiObjects.begin() ; it != _guiObjects.end(); ++it)
         delete *it;
+    
+    for (std::vector<Entity*>::iterator it = _entities.begin() ; it != _entities.end(); ++it)
+        delete *it;
 }
 
 void Scene::AddGUIObject(GUIObject *object)
@@ -28,6 +31,24 @@ void Scene::RemoveGUIObject(GUIObject *object)
             _guiObjects.erase(it);
             break;
         }
+}
+
+void Scene::AddEntity(Entity *entity)
+{
+    this->_entities.push_back(entity);
+    entity->addedToScene = true;
+}
+
+void Scene::RemoveEntity(Entity *entity)
+{
+    for (std::vector<Entity*>::iterator it = _entities.begin() ; it != _entities.end(); ++it)
+        if((*it) == entity)
+        {
+            _entities.erase(it);
+            break;
+        }
+    
+    entity->addedToScene = false;
 }
 
 void Scene::Update(float lastFrameTime)

@@ -20,7 +20,6 @@ class PhysicsComponent : public Component
 private:
 public:
     PhysicsComponent();
-    ~PhysicsComponent();
     
     static PhysicsSystem* physicsSystem;
     

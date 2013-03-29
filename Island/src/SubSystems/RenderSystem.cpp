@@ -20,9 +20,9 @@ RenderSystem::~RenderSystem()
     
 }
 
-void RenderSystem::ProcessGameTick(float lastFrameTime)
+void RenderSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> components)
 {
-    for (std::list<Component*>::const_iterator iterator = _components.begin(), end = _components.end(); iterator != end; ++iterator)
+    for (std::list<Component*>::const_iterator iterator = components.begin(), end = components.end(); iterator != end; ++iterator)
     {
         RenderComponent* renderComponent = static_cast<RenderComponent*>(*iterator);
         TransformComponent* transformComponent = static_cast<TransformComponent*>(renderComponent->GetNeighbourComponent(COMPONENT_TRANSFORM));

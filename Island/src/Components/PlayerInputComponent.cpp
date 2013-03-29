@@ -14,7 +14,8 @@ PlayerInputComponent::PlayerInputComponent()
 {
     _type = COMPONENT_PLAYERINPUT;
     _subSystem = playerInputSystem;
-    playerInputSystem->AddComponent(this);
+    
+    this->AddToSystem();
     
     this->AddComponentSubscription(COMPONENT_PHYSICS);
     this->AddComponentSubscription(COMPONENT_TRANSFORM);
@@ -23,9 +24,4 @@ PlayerInputComponent::PlayerInputComponent()
     right = sf::Keyboard::D;
     up = sf::Keyboard::W;
     down = sf::Keyboard::S;
-}
-
-PlayerInputComponent::~PlayerInputComponent()
-{
-    playerInputSystem->RemoveComponent(this);
 }

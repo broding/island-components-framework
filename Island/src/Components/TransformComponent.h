@@ -20,7 +20,6 @@ class TransformComponent : public Component, public INetworkableComponent
 private:
 public:
     TransformComponent();
-    ~TransformComponent();
     
     virtual const void* GenerateNetworkPacket();
     virtual void ApplyNetworkPacket();

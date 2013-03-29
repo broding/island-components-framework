@@ -19,7 +19,6 @@ class RenderComponent : public Component
 private:
 public:
     RenderComponent();
-    ~RenderComponent();
     
     static RenderSystem* renderSystem;
     

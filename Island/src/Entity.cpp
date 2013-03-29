@@ -16,7 +16,7 @@ Entity::Entity()
 
 Entity::Entity(std::string name) : _name(name)
 {
-    
+    addedToScene = false;
 }
 
 Entity::~Entity()

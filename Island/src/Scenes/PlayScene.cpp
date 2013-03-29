@@ -8,10 +8,12 @@
 
 #include "PlayScene.h"
 #include "PlayerFactory.h"
+#include "CommonFactory.h"
 
 PlayScene::PlayScene()
 {
-    PlayerFactory::CreatePlayer();
+    AddEntity(CommonFactory::CreateSprite("icon.png"));
+    AddEntity(PlayerFactory::CreatePlayer());
 }
 
 PlayScene::~PlayScene()

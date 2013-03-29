@@ -21,13 +21,14 @@ class Component;
 class SubSystem
 {
 private:
-protected:
     std::list<Component*> _components;
+protected:
     std::list<EventType> _subscribedEvents;
     virtual void ProcessEvent(Component* component, Event* event) = 0;
 public:
     virtual ~SubSystem();
-    virtual void ProcessGameTick(float lastFrameTime) = 0;
+    virtual void ProcessGameTick(float lastFrameTime, std::list<Component*> components) = 0;
+    std::list<Component*> GetValidComponents();
     void AddComponent(Component* component);
     void RemoveComponent(Component* component);
     void HandleEvent(Component* component, Event* event);

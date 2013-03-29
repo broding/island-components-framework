@@ -12,11 +12,12 @@
 Component::Component()
 {
     _type = COMPONENT_NULL;
+    enabled = true;
 }
 
 Component::~Component()
 {
-    
+    RemoveFromSystem();
 }
 
 ComponentType Component::GetComponentType()
@@ -32,6 +33,16 @@ Entity* Component::GetOwner()
 void Component::SetOwner(Entity *entity)
 {
     _owner = entity;
+}
+
+void Component::AddToSystem()
+{
+    _subSystem->AddComponent(this);
+}
+
+void Component::RemoveFromSystem()
+{
+    _subSystem->RemoveComponent(this);
 }
 
 void Component::HandleEvent(Event* event)

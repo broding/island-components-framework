@@ -25,11 +25,13 @@ protected:
     ComponentType _type;
     SubSystem* _subSystem;
     std::map<ComponentType, Component*> _componentSubscriptions;
+    
     bool IsSubscribedTo(ComponentType type);
 public:
     Component();
     virtual ~Component();
-    
+    void AddToSystem();
+    void RemoveFromSystem();
     ComponentType GetComponentType();
     void SetOwner(Entity* entity);
     Entity* GetOwner();
@@ -38,8 +40,9 @@ public:
     void RemoveComponentSubscription(ComponentType type);
     void AddNeighbourComponent(Component* component);
     void RemoveNeighbourComponent(Component* component);
-    
     Component* GetNeighbourComponent(ComponentType type);
+    
+    bool enabled;
 };
 
 #endif /* defined(__Island__Component__) */

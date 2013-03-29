@@ -22,7 +22,7 @@ private:
 public:
     NetworkSystem();
     ~NetworkSystem();
-    void ProcessGameTick(float lastFrameTime);
+    void ProcessGameTick(float lastFrameTime, std::list<Component*> components);
 };
 
 #endif /* defined(__Island__NetworkSystem__) */
