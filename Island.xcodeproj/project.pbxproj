@@ -33,6 +33,9 @@
 		4BC1E0E31704DCDC007117EC /* PlayScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1E0E11704DCDC007117EC /* PlayScene.cpp */; };
 		4BC1E0E71704DDC5007117EC /* PlayerFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1E0E51704DDC5007117EC /* PlayerFactory.cpp */; };
 		4BC1E0E91704E071007117EC /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC1E0E81704E071007117EC /* player.png */; };
+		4BC1E0EC1705BE9C007117EC /* CommonFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1E0EA1705BE9C007117EC /* CommonFactory.cpp */; };
+		4BC1E0EF1705C2EB007117EC /* CameraComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1E0ED1705C2EB007117EC /* CameraComponent.cpp */; };
+		4BC1E0F21705CA52007117EC /* CameraSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1E0F01705CA52007117EC /* CameraSystem.cpp */; };
 		4BC25A2716F86B7C00B36B1E /* RenderComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC25A2516F86B7C00B36B1E /* RenderComponent.cpp */; };
 		4BC25A2B16F86C7700B36B1E /* RenderSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC25A2916F86C7700B36B1E /* RenderSystem.cpp */; };
 		4BC25A5016F885AB00B36B1E /* TransformComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC25A4E16F885AB00B36B1E /* TransformComponent.cpp */; };
@@ -94,6 +97,12 @@
 		4BC1E0E51704DDC5007117EC /* PlayerFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerFactory.cpp; sourceTree = "<group>"; };
 		4BC1E0E61704DDC5007117EC /* PlayerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerFactory.h; sourceTree = "<group>"; };
 		4BC1E0E81704E071007117EC /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
+		4BC1E0EA1705BE9C007117EC /* CommonFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonFactory.cpp; sourceTree = "<group>"; };
+		4BC1E0EB1705BE9C007117EC /* CommonFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonFactory.h; sourceTree = "<group>"; };
+		4BC1E0ED1705C2EB007117EC /* CameraComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CameraComponent.cpp; sourceTree = "<group>"; };
+		4BC1E0EE1705C2EB007117EC /* CameraComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraComponent.h; sourceTree = "<group>"; };
+		4BC1E0F01705CA52007117EC /* CameraSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CameraSystem.cpp; sourceTree = "<group>"; };
+		4BC1E0F11705CA52007117EC /* CameraSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSystem.h; sourceTree = "<group>"; };
 		4BC25A2516F86B7C00B36B1E /* RenderComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RenderComponent.cpp; sourceTree = "<group>"; };
 		4BC25A2616F86B7C00B36B1E /* RenderComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderComponent.h; sourceTree = "<group>"; };
 		4BC25A2916F86C7700B36B1E /* RenderSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RenderSystem.cpp; sourceTree = "<group>"; };
@@ -175,6 +184,8 @@
 				4BB7881416F9E3A200AC62F4 /* PlayerInputComponent.h */,
 				4B7C21051700B6F600C9D2A6 /* NetworkComponent.cpp */,
 				4B7C21061700B6F600C9D2A6 /* NetworkComponent.h */,
+				4BC1E0ED1705C2EB007117EC /* CameraComponent.cpp */,
+				4BC1E0EE1705C2EB007117EC /* CameraComponent.h */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -239,6 +250,8 @@
 			children = (
 				4BC1E0E51704DDC5007117EC /* PlayerFactory.cpp */,
 				4BC1E0E61704DDC5007117EC /* PlayerFactory.h */,
+				4BC1E0EA1705BE9C007117EC /* CommonFactory.cpp */,
+				4BC1E0EB1705BE9C007117EC /* CommonFactory.h */,
 			);
 			name = Factories;
 			sourceTree = "<group>";
@@ -258,6 +271,8 @@
 				4BB7881716F9E57000AC62F4 /* PlayerInputSystem.h */,
 				4B900C4717004F3400D247FE /* NetworkSystem.cpp */,
 				4B900C4817004F3400D247FE /* NetworkSystem.h */,
+				4BC1E0F01705CA52007117EC /* CameraSystem.cpp */,
+				4BC1E0F11705CA52007117EC /* CameraSystem.h */,
 			);
 			path = SubSystems;
 			sourceTree = "<group>";
@@ -437,6 +452,9 @@
 				4B162339170342A4008F7AE2 /* GUIEvent.cpp in Sources */,
 				4BC1E0E31704DCDC007117EC /* PlayScene.cpp in Sources */,
 				4BC1E0E71704DDC5007117EC /* PlayerFactory.cpp in Sources */,
+				4BC1E0EC1705BE9C007117EC /* CommonFactory.cpp in Sources */,
+				4BC1E0EF1705C2EB007117EC /* CameraComponent.cpp in Sources */,
+				4BC1E0F21705CA52007117EC /* CameraSystem.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
