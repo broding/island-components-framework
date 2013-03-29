@@ -29,6 +29,7 @@ Core::Core(sf::RenderWindow* window) : _renderWindow(window)
 {
     GUIObject::window = window;
     
+    InitializeSubSystems();
     SwitchScene(new ConnectScene());
 }
 
