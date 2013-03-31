@@ -13,13 +13,20 @@
 #include "Component.h"
 #include "CollisionSystem.h"
 
-class BoxCollisionComponent : Component
+class BoxCollisionComponent : public Component
 {
 private:
 public:
     BoxCollisionComponent();
     
     static CollisionSystem* collisionSystem;
+    
+    virtual void DrawDebug(sf::RenderWindow* window);
+    
+    bool trigger;
+    sf::Vector2f center;
+    sf::Vector2f size;
+    
 };
 
 #endif /* defined(__Island__BoxCollisionComponent__) */
