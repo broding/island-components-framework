@@ -18,7 +18,7 @@ CameraComponent::CameraComponent()
     this->AddToSystem();
     this->AddComponentSubscription(COMPONENT_TRANSFORM);
     
-    halfSize = sf::Vector2f(1100, 1100);
+    halfSize = sf::Vector2f(1024, 768);
     maxTargetDistance = 25;
     snapSpeed = 1.5;
 }
