@@ -36,6 +36,16 @@ public:
     {
         vector = vector / Magnitude(vector);
     }
+    
+    static sf::Vector2f Perpendicular(const sf::Vector2f vector)
+    {
+        return sf::Vector2f(-vector.x, vector.y);
+    }
+    
+    static float DotProduct(const sf::Vector2f v1, const sf::Vector2f v2)
+    {
+        return v1.x * v2.x + v1.y * v2.y;
+    }
 };
 
 #endif /* defined(__Island__VectorUtil__) */

@@ -10,11 +10,20 @@
 #define Island_Contact_h
 
 #include <SFML/System.hpp>
+#include <vector>
+#include "Entity.h"
 
 struct Contact {
-    sf::Vector2f point;
+    Entity* entity1;
+    Entity* entity2;
     sf::Vector2f normal;
     float penetration;
+};
+
+struct ContactList
+{
+    std::vector<Contact> contacts;
+    int nrOfContacts;
 };
 
 #endif

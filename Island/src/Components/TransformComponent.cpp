@@ -52,6 +52,7 @@ void TransformComponent::DrawDebug(sf::RenderWindow *window)
     rect.setFillColor(sf::Color::Transparent);
     rect.setOutlineThickness(2);
     rect.setPosition(position);
+    rect.setRotation(rotation);
     rect.setOrigin(8, 8);
     rect.setOutlineColor(sf::Color::Blue);
         

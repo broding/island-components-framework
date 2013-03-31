@@ -35,8 +35,29 @@ void BoxCollisionComponent::DrawDebug(sf::RenderWindow *window)
         rect.setPosition(transform->position);
         rect.setOrigin(center);
         rect.setOutlineColor(sf::Color::Red);
+        rect.setRotation(transform->rotation);
         
         window->draw(rect);
     }
+}
+
+sf::ConvexShape BoxCollisionComponent::GetConvexShape()
+{
+    sf::ConvexShape shape(4);
+    TransformComponent* transformComponent = this->GetOwner()->GetComponent<TransformComponent>();
+    
+    sf::FloatRect rect(0, 0, size.x, size.y);
+    sf::Transform transform;
+    transform.translate(transformComponent->position);
+    transform.rotate(transformComponent->rotation);
+    transform.translate(-center);
+    
+    shape.setPoint(0, transform.transformPoint(sf::Vector2f(rect.left, rect.top)));
+    shape.setPoint(1, transform.transformPoint(sf::Vector2f(rect.left + rect.width, rect.top)));
+    shape.setPoint(2, transform.transformPoint(sf::Vector2f(rect.left + rect.width, rect.top + rect.height)));
+    shape.setPoint(3, transform.transformPoint(sf::Vector2f(rect.left, rect.top + rect.height)));
+    
+    
+    return shape;
     
 }

@@ -12,6 +12,7 @@
 #include <iostream>
 #include "Component.h"
 #include "CollisionSystem.h"
+#include "ConvexShape.h"
 
 class BoxCollisionComponent : public Component
 {
@@ -21,6 +22,8 @@ public:
     
     static CollisionSystem* collisionSystem;
     
+    static sf::FloatRect GetBoundingBox(BoxCollisionComponent box);
+    sf::ConvexShape GetConvexShape();
     virtual void DrawDebug(sf::RenderWindow* window);
     
     bool trigger;
