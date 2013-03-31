@@ -8,6 +8,7 @@
 
 #include "TransformComponent.h"
 #include "TransformSystem.h"
+#include "Entity.h"
 
 #include <SFML/Network.hpp>
 
@@ -43,4 +44,16 @@ const void* TransformComponent::GenerateNetworkPacket()
 void TransformComponent::ApplyNetworkPacket()
 {
     
+}
+
+void TransformComponent::DrawDebug(sf::RenderWindow *window)
+{
+    sf::RectangleShape rect = sf::RectangleShape(sf::Vector2f(16, 16));
+    rect.setFillColor(sf::Color::Transparent);
+    rect.setOutlineThickness(2);
+    rect.setPosition(position);
+    rect.setOrigin(8, 8);
+    rect.setOutlineColor(sf::Color::Blue);
+        
+    window->draw(rect);
 }

@@ -44,3 +44,9 @@ std::list<Component*> SubSystem::GetValidComponents()
     
     return validComponents;
 }
+
+void SubSystem::DrawDebug(sf::RenderWindow* window)
+{
+    for (std::list<Component*>::const_iterator it = _components.begin(), end = _components.end(); it != end; ++it)
+        (*it)->DrawDebug(window);
+}

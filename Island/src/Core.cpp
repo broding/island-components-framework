@@ -14,6 +14,7 @@
 #include "PlayerInputSystem.h"
 #include "NetworkSystem.h"
 #include "CameraSystem.h"
+#include "CollisionSystem.h"
 
 #include "RenderComponent.h"
 #include "TransformComponent.h"
@@ -21,6 +22,7 @@
 #include "PlayerInputComponent.h"
 #include "NetworkComponent.h"
 #include "CameraComponent.h"
+#include "BoxCollisionComponent.h"
 
 #include "ConnectScene.h"
 
@@ -49,6 +51,7 @@ void Core::InitializeSubSystems()
     PlayerInputSystem* playerInputSystem = new PlayerInputSystem(_renderWindow);
     NetworkSystem* networkSystem = new NetworkSystem();
     CameraSystem* cameraSystem = new CameraSystem(_renderWindow);
+    CollisionSystem* collisionSystem = new CollisionSystem();
     
     AddSubSystem(cameraSystem);
     AddSubSystem(playerInputSystem);
@@ -56,6 +59,7 @@ void Core::InitializeSubSystems()
     AddSubSystem(transformSystem);
     AddSubSystem(renderSystem);
     AddSubSystem(networkSystem);
+    AddSubSystem(collisionSystem);
     
     // setup subsystems in components
     RenderComponent::renderSystem = renderSystem;
@@ -64,6 +68,7 @@ void Core::InitializeSubSystems()
     PlayerInputComponent::playerInputSystem = playerInputSystem;
     NetworkComponent::networkSystem = networkSystem;
     CameraComponent::cameraSystem = cameraSystem;
+    BoxCollisionComponent::collisionSystem = collisionSystem;
 }
 
 void Core::AddSubSystem(SubSystem *subSystem)
@@ -76,6 +81,11 @@ void Core::Update(float lastFrameTime)
     for (std::vector<SubSystem*>::const_iterator iterator = _subSystems.begin(), end = _subSystems.end(); iterator != end; ++iterator)
     {
         (*iterator)->ProcessGameTick(lastFrameTime, (*iterator)->GetValidComponents());
+    }
+    
+    for (std::vector<SubSystem*>::const_iterator iterator = _subSystems.begin(), end = _subSystems.end(); iterator != end; ++iterator)
+    {
+        (*iterator)->DrawDebug(_renderWindow);
     }
     
     if(_currentScene != 0)

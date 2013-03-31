@@ -15,6 +15,7 @@
 #include "Event.h"
 #include "SubSystem.h"
 #include "ComponentType.h"
+#include <SFML/Graphics.hpp>
 
 class Entity;
 
@@ -42,6 +43,7 @@ public:
     void AddNeighbourComponent(Component* component);
     void RemoveNeighbourComponent(Component* component);
     Component* GetNeighbourComponent(ComponentType type);
+    virtual void DrawDebug(sf::RenderWindow* window);
     
     bool enabled;
 };

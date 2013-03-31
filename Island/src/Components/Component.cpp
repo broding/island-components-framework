@@ -88,3 +88,8 @@ bool Component::IsSubscribedTo(ComponentType type)
 {
     return _componentSubscriptions.find(type) != _componentSubscriptions.end();
 }
+
+void Component::DrawDebug(sf::RenderWindow *window)
+{
+    
+}

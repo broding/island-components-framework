@@ -23,6 +23,7 @@ public:
     
     virtual const void* GenerateNetworkPacket();
     virtual void ApplyNetworkPacket();
+    virtual void DrawDebug(sf::RenderWindow* window);
     
     static TransformSystem* transformSystem;
     

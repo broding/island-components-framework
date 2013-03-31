@@ -14,6 +14,7 @@
 #include <list>
 
 #include "Event.h"
+#include <SFML/Graphics.hpp>
 
 // forward declare Component
 class Component;
@@ -32,6 +33,7 @@ public:
     void AddComponent(Component* component);
     void RemoveComponent(Component* component);
     void HandleEvent(Component* component, Event* event);
+    virtual void DrawDebug(sf::RenderWindow* window);
 };
 
 #endif /* defined(__Island__SubSystem__) */
