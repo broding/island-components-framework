@@ -112,6 +112,7 @@
 		4BC1E0FC17083FE2007117EC /* BoxCollisionComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxCollisionComponent.h; sourceTree = "<group>"; };
 		4BC1E0FE1708408F007117EC /* CollisionSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CollisionSystem.cpp; sourceTree = "<group>"; };
 		4BC1E0FF17084091007117EC /* CollisionSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionSystem.h; sourceTree = "<group>"; };
+		4BC1E10217085492007117EC /* StructureFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StructureFactory.h; sourceTree = "<group>"; };
 		4BC25A2516F86B7C00B36B1E /* RenderComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RenderComponent.cpp; sourceTree = "<group>"; };
 		4BC25A2616F86B7C00B36B1E /* RenderComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderComponent.h; sourceTree = "<group>"; };
 		4BC25A2916F86C7700B36B1E /* RenderSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RenderSystem.cpp; sourceTree = "<group>"; };
@@ -264,6 +265,7 @@
 				4BC1E0E61704DDC5007117EC /* PlayerFactory.h */,
 				4BC1E0EA1705BE9C007117EC /* CommonFactory.cpp */,
 				4BC1E0EB1705BE9C007117EC /* CommonFactory.h */,
+				4BC1E10217085492007117EC /* StructureFactory.h */,
 			);
 			name = Factories;
 			sourceTree = "<group>";
