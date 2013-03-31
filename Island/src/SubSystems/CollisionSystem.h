@@ -11,11 +11,13 @@
 
 #include <iostream>
 #include "SubSystem.h"
+#include "Contact.h"
 
 class CollisionSystem : public SubSystem
 {
 private:
     void ProcessEvent(Component* component, Event* event);
+    void Resolve(Contact contact);
 public:
     void ProcessGameTick(float lastFrameTime, std::list<Component*> components);
 };

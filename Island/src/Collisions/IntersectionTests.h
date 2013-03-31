@@ -62,7 +62,7 @@ public:
         sf::Vector2f* axis1 = GetAxisOfShape(shape1);
         sf::Vector2f* axis2 = GetAxisOfShape(shape2);
         
-        float penetration = 0;
+        float penetration = INT_MAX;
         sf::Vector2f normal;
         
         for(int i = 0; i < shape1.getPointCount(); i++)
@@ -111,7 +111,7 @@ public:
         contact.entity1 = box1->GetOwner();
         contact.entity2 = box2->GetOwner();
         
-        contactList.contacts.push_back(contact);
+        contactList.AddContact(contact);
     }
 };
 

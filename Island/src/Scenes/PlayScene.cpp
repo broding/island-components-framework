@@ -14,7 +14,7 @@
 
 PlayScene::PlayScene()
 {
-    AddEntity(StructureFactory::CreateWall(sf::Vector2f(100, 100), 45, 200, 20));
+    AddEntity(StructureFactory::CreateWall(sf::Vector2f(300, 300), 45, 200, 20));
     
     Entity* camera = CommonFactory::CreateCamera();
     Entity* player = PlayerFactory::CreatePlayer();

@@ -7,9 +7,10 @@
 //
 
 #include "CollisionSystem.h"
-#include "Contact.h"
 #include "IntersectionTests.h"
 #include "BoxCollisionComponent.h"
+#include "TransformComponent.h"
+#include "PhysicsComponent.h"
 
 void CollisionSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> components)
 {
@@ -25,6 +26,21 @@ void CollisionSystem::ProcessGameTick(float lastFrameTime, std::list<Component*>
             IntersectionTests::BoxAndBox(static_cast<BoxCollisionComponent*>(*it1),static_cast<BoxCollisionComponent*>(*it2), contactList);
         }
     }
+    
+    for (std::vector<Contact>::const_iterator it = contactList.GetContacts().begin(), end = contactList.GetContacts().end(); it != end; ++it)
+        Resolve((*it));
+    
+}
+
+void CollisionSystem::Resolve(Contact contact)
+{
+    if(!contact.entity1->GetComponent<BoxCollisionComponent>()->trigger && !contact.entity2->GetComponent<BoxCollisionComponent>()->trigger)
+    {
+        contact.entity1->GetComponent<TransformComponent>()->position = contact.entity1->GetComponent<TransformComponent>()->previousPosition;
+        
+        contact.entity2->GetComponent<TransformComponent>()->position = contact.entity2->GetComponent<TransformComponent>()->previousPosition;
+    }
+        
 }
 
 void CollisionSystem::ProcessEvent(Component *component, Event* event)

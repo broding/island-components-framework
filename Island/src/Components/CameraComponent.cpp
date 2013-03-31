@@ -20,7 +20,7 @@ CameraComponent::CameraComponent()
     
     halfSize = sf::Vector2f(1024, 768);
     maxTargetDistance = 25;
-    snapSpeed = 1.5;
+    snapSpeed = 0.5;
 }
 
 void CameraComponent::UseCamera()

@@ -23,6 +23,9 @@ void PhysicsSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> c
 void PhysicsSystem::Integrate(PhysicsComponent* physicsComponent, TransformComponent* transformComponent, float lastFrameTime)
 {
     // update position
+    transformComponent->previousPosition = transformComponent->position;
+    transformComponent->previousRotation = transformComponent->rotation;
+    
     transformComponent->position += physicsComponent->velocity * lastFrameTime;
     
     // update the acceleration with the accumulated forces and inverse mass

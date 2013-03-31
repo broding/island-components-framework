@@ -41,7 +41,7 @@ void CameraSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> co
             if(distance > currentCamera->maxTargetDistance * currentCamera->maxTargetDistance)
                 cameraPhysics->velocity = VectorUtil::Normalized(delta) * (distance / currentCamera->maxTargetDistance) * currentCamera->snapSpeed;
             else
-                cameraPhysics->velocity *= 0.8f;
+                cameraPhysics->velocity *= 0.5f;
         }
         
         sf::View view(cameraTransform->position, currentCamera->halfSize);
