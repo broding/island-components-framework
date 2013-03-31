@@ -12,6 +12,7 @@
 #include "PhysicsComponent.h"
 #include "PlayerInputComponent.h"
 #include "NetworkComponent.h"
+#include "BoxCollisionComponent.h"
 #include "ResourcePath.hpp"
 
 Entity* PlayerFactory::CreatePlayer()
@@ -30,12 +31,15 @@ Entity* PlayerFactory::CreatePlayer()
     PhysicsComponent* physicsComponent = new PhysicsComponent();
     NetworkComponent* networkComponent = new NetworkComponent();
     networkComponent->networkableComponents.push_back(transformComponent);
+    BoxCollisionComponent* collisionComponent = new BoxCollisionComponent();
+    
     
     player->AddComponent(renderComponent);
     player->AddComponent(transformComponent);
     player->AddComponent(physicsComponent);
     player->AddComponent(playerInputComponent);
     player->AddComponent(networkComponent);
+    player->AddComponent(collisionComponent);
     
     return player;
 }
