@@ -22,11 +22,12 @@
 class StructureFactory
 {
 public:
-    static Entity* CreateWall(sf::Vector2f position, int length, int width)
+    static Entity* CreateWall(sf::Vector2f position, float rotation, int length, int width)
     {
         Entity* entity = new Entity();
         TransformComponent* transformComponent = new TransformComponent();
         transformComponent->position = sf::Vector2f(position);
+        transformComponent->rotation = rotation;
         PhysicsComponent* physicsComponent = new PhysicsComponent();
         NetworkComponent* networkComponent = new NetworkComponent();
         networkComponent->networkableComponents.push_back(transformComponent);

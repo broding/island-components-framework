@@ -9,11 +9,12 @@
 #include "PlayScene.h"
 #include "PlayerFactory.h"
 #include "CommonFactory.h"
+#include "StructureFactory.h"
 #include "CameraComponent.h"
 
 PlayScene::PlayScene()
 {
-    AddEntity(CommonFactory::CreateSprite("icon.png"));
+    AddEntity(StructureFactory::CreateWall(sf::Vector2f(100, 100), 45, 200, 20));
     
     Entity* camera = CommonFactory::CreateCamera();
     Entity* player = PlayerFactory::CreatePlayer();
