@@ -9,11 +9,19 @@
 #include "PlayScene.h"
 #include "PlayerFactory.h"
 #include "CommonFactory.h"
+#include "CameraComponent.h"
 
 PlayScene::PlayScene()
 {
     AddEntity(CommonFactory::CreateSprite("icon.png"));
-    AddEntity(PlayerFactory::CreatePlayer());
+    
+    Entity* camera = CommonFactory::CreateCamera();
+    Entity* player = PlayerFactory::CreatePlayer();
+    
+    camera->GetComponent<CameraComponent>()->targetEntity = player;
+    
+    AddEntity(camera);
+    AddEntity(player);
 }
 
 PlayScene::~PlayScene()

@@ -13,12 +13,14 @@
 #include "PhysicsSystem.h"
 #include "PlayerInputSystem.h"
 #include "NetworkSystem.h"
+#include "CameraSystem.h"
 
 #include "RenderComponent.h"
 #include "TransformComponent.h"
 #include "PhysicsComponent.h"
 #include "PlayerInputComponent.h"
 #include "NetworkComponent.h"
+#include "CameraComponent.h"
 
 #include "ConnectScene.h"
 
@@ -44,9 +46,11 @@ void Core::InitializeSubSystems()
     RenderSystem* renderSystem = new RenderSystem(_renderWindow);
     TransformSystem* transformSystem = new TransformSystem();
     PhysicsSystem* physicsSystem = new PhysicsSystem();
-    PlayerInputSystem* playerInputSystem = new PlayerInputSystem();
+    PlayerInputSystem* playerInputSystem = new PlayerInputSystem(_renderWindow);
     NetworkSystem* networkSystem = new NetworkSystem();
+    CameraSystem* cameraSystem = new CameraSystem(_renderWindow);
     
+    AddSubSystem(cameraSystem);
     AddSubSystem(playerInputSystem);
     AddSubSystem(physicsSystem);
     AddSubSystem(transformSystem);
@@ -59,6 +63,7 @@ void Core::InitializeSubSystems()
     PhysicsComponent::physicsSystem = physicsSystem;
     PlayerInputComponent::playerInputSystem = playerInputSystem;
     NetworkComponent::networkSystem = networkSystem;
+    CameraComponent::cameraSystem = cameraSystem;
 }
 
 void Core::AddSubSystem(SubSystem *subSystem)

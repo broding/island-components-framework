@@ -7,6 +7,7 @@
 //
 
 #include "Component.h"
+#include "Entity.h"
 #include <exception>
 
 Component::Component()

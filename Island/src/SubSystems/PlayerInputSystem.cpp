@@ -15,6 +15,11 @@
 #include "GUIObject.h"
 #include <math.h>
 
+PlayerInputSystem::PlayerInputSystem(sf::RenderWindow* window) : _window(window)
+{
+    
+}
+
 void PlayerInputSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> components)
 {
     for (std::list<Component*>::const_iterator iterator = components.begin(), end = components.end(); iterator != end; ++iterator)
@@ -38,13 +43,16 @@ void PlayerInputSystem::ProcessGameTick(float lastFrameTime, std::list<Component
             
             if(sf::Keyboard::isKeyPressed(inputComponent->right))
                 physicsComponent->velocity += sf::Vector2f(200, 0);
+            
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+                transformComponent->position = sf::Vector2f(0, 0);
         }
         
         if(transformComponent != 0)
         {
-            sf::Vector2f mousePosition = sf::Vector2f(sf::Mouse::getPosition(*GUIObject::window).x, sf::Mouse::getPosition(*GUIObject::window).y);
+            sf::Vector2i mousePosition = sf::Vector2i(sf::Mouse::getPosition(*GUIObject::window).x, sf::Mouse::getPosition(*GUIObject::window).y);
             
-            sf::Vector2f mouseDelta = mousePosition - transformComponent->position;
+            sf::Vector2f mouseDelta = _window->mapPixelToCoords(mousePosition) - transformComponent->position;
             
             const double degreesPerRadian = 57.2957;
             transformComponent->rotation = atan2(mouseDelta.x, -mouseDelta.y) * degreesPerRadian;

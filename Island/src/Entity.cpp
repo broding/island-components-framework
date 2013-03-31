@@ -53,6 +53,15 @@ void Entity::RemoveComponent(ComponentType type)
     }
 }
 
+Component* Entity::GetComponent(ComponentType type)
+{
+    for (std::list<Component*>::const_iterator iterator = _components.begin(), end = _components.end(); iterator != end; ++iterator)
+        if((*iterator)->GetComponentType() == type)
+            return (*iterator);
+    
+    return NULL;
+}
+
 void Entity::HandleEvent(Event* event)
 {
     for (std::list<Component*>::const_iterator iterator = _components.begin(), end = _components.end(); iterator != end; ++iterator)

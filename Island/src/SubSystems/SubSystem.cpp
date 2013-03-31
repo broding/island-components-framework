@@ -8,6 +8,7 @@
 
 #include "SubSystem.h"
 #include "Component.h"
+#include "Entity.h"
 
 SubSystem::~SubSystem()
 {

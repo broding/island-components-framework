@@ -13,9 +13,7 @@
 #include <list>
 #include "ComponentType.h"
 #include "Event.h"
-
-// forward declare Component
-class Component;
+#include "Component.h"
 
 class Entity
 {
@@ -31,6 +29,18 @@ public:
     void AddComponent(Component* component);
     void RemoveComponent(ComponentType type);
     void HandleEvent(Event* event);
+    Component* GetComponent(ComponentType type);
+    template <class T> T* GetComponent()
+    {
+        for (std::list<Component*>::const_iterator iterator = _components.begin(), end = _components.end(); iterator != end; ++iterator)
+        {
+            T* component = dynamic_cast<T*>(*iterator);
+            if(component)
+                return component;
+        }
+        
+        return NULL;
+    }
     
     bool addedToScene;
 };

@@ -11,12 +11,16 @@
 
 #include <iostream>
 #include "SubSystem.h"
+#include <SFML/Graphics.hpp>
 
 class PlayerInputSystem : public SubSystem
 {
 protected:
     void ProcessEvent(Component* component, Event* event);
+    
+    sf::RenderWindow* _window;
 public:
+    PlayerInputSystem(sf::RenderWindow* window);
     void ProcessGameTick(float lastFrameTime, std::list<Component*> components);
 };
 

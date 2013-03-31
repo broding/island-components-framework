@@ -12,15 +12,21 @@
 #include <iostream>
 
 #include "SubSystem.h"
+#include <SFML/Graphics.hpp>
+
+class CameraComponent;
 
 class CameraSystem : public SubSystem
 {
 private:
+    sf::RenderWindow* _window;
     void ProcessEvent(Component* component, Event* event);
 public:
-    CameraSystem();
+    CameraSystem(sf::RenderWindow* window);
     ~CameraSystem();
     void ProcessGameTick(float lastFrameTime, std::list<Component*> components);
+    
+    CameraComponent* currentCamera;
 };
 
 #endif /* defined(__Island__CameraSystem__) */

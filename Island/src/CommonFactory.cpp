@@ -9,6 +9,8 @@
 #include "CommonFactory.h"
 #include "RenderComponent.h"
 #include "TransformComponent.h"
+#include "PhysicsComponent.h"
+#include "CameraComponent.h"
 #include "ResourcePath.hpp"
 
 Entity* CommonFactory::CreateSprite(std::string path)
@@ -24,4 +26,19 @@ Entity* CommonFactory::CreateSprite(std::string path)
     sprite->AddComponent(renderComponent);
     
     return sprite;
+}
+
+Entity* CommonFactory::CreateCamera()
+{
+    Entity* camera = new Entity();
+    TransformComponent* transformComponent = new TransformComponent();
+    PhysicsComponent* physicsComponent = new PhysicsComponent();
+    CameraComponent* cameraComponent = new CameraComponent();
+    cameraComponent->UseCamera();
+    
+    camera->AddComponent(physicsComponent);
+    camera->AddComponent(cameraComponent);
+    camera->AddComponent(transformComponent);
+    
+    return camera;
 }

@@ -16,6 +16,7 @@ class CommonFactory
 {
 public:
     static Entity* CreateSprite(std::string path);
+    static Entity* CreateCamera();
 };
 
 #endif /* defined(__Island__CommonFactory__) */

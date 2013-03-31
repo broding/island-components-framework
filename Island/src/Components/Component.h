@@ -15,7 +15,8 @@
 #include "Event.h"
 #include "SubSystem.h"
 #include "ComponentType.h"
-#include "Entity.h"
+
+class Entity;
 
 class Component
 {

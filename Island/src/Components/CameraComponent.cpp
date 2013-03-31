@@ -16,4 +16,14 @@ CameraComponent::CameraComponent()
     _subSystem = cameraSystem;
     
     this->AddToSystem();
+    this->AddComponentSubscription(COMPONENT_TRANSFORM);
+    
+    halfSize = sf::Vector2f(1100, 1100);
+    maxTargetDistance = 25;
+    snapSpeed = 1.5;
+}
+
+void CameraComponent::UseCamera()
+{
+    cameraSystem->currentCamera = this;
 }

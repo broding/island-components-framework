@@ -11,8 +11,8 @@
 
 #include <vector>
 #include "Component.h"
-#include "CameraSystem.h"
 #include "INetworkableComponent.h"
+#include "CameraSystem.h"
 
 class CameraComponent : public Component
 {
@@ -22,7 +22,12 @@ public:
     
     static CameraSystem* cameraSystem;
     
-    sf::Vector2f position;
+    void UseCamera();
+    
+    Entity* targetEntity;
+    float maxTargetDistance;
+    float snapSpeed;
+    
     sf::Vector2f halfSize;
 };
 
