@@ -36,6 +36,8 @@
 		4BC1E0EC1705BE9C007117EC /* CommonFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1E0EA1705BE9C007117EC /* CommonFactory.cpp */; };
 		4BC1E0EF1705C2EB007117EC /* CameraComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1E0ED1705C2EB007117EC /* CameraComponent.cpp */; };
 		4BC1E0F21705CA52007117EC /* CameraSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1E0F01705CA52007117EC /* CameraSystem.cpp */; };
+		4BC1E0FD17083FE3007117EC /* BoxCollisionComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1E0FB17083FE1007117EC /* BoxCollisionComponent.cpp */; };
+		4BC1E10017084092007117EC /* CollisionSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1E0FE1708408F007117EC /* CollisionSystem.cpp */; };
 		4BC25A2716F86B7C00B36B1E /* RenderComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC25A2516F86B7C00B36B1E /* RenderComponent.cpp */; };
 		4BC25A2B16F86C7700B36B1E /* RenderSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC25A2916F86C7700B36B1E /* RenderSystem.cpp */; };
 		4BC25A5016F885AB00B36B1E /* TransformComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC25A4E16F885AB00B36B1E /* TransformComponent.cpp */; };
@@ -103,6 +105,13 @@
 		4BC1E0EE1705C2EB007117EC /* CameraComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraComponent.h; sourceTree = "<group>"; };
 		4BC1E0F01705CA52007117EC /* CameraSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CameraSystem.cpp; sourceTree = "<group>"; };
 		4BC1E0F11705CA52007117EC /* CameraSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSystem.h; sourceTree = "<group>"; };
+		4BC1E0F517073772007117EC /* VectorUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VectorUtil.h; path = Utils/VectorUtil.h; sourceTree = "<group>"; };
+		4BC1E0F817073B5B007117EC /* CommonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtil.h; sourceTree = "<group>"; };
+		4BC1E0FA170830A0007117EC /* EasingUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasingUtil.h; sourceTree = "<group>"; };
+		4BC1E0FB17083FE1007117EC /* BoxCollisionComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BoxCollisionComponent.cpp; sourceTree = "<group>"; };
+		4BC1E0FC17083FE2007117EC /* BoxCollisionComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxCollisionComponent.h; sourceTree = "<group>"; };
+		4BC1E0FE1708408F007117EC /* CollisionSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CollisionSystem.cpp; sourceTree = "<group>"; };
+		4BC1E0FF17084091007117EC /* CollisionSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionSystem.h; sourceTree = "<group>"; };
 		4BC25A2516F86B7C00B36B1E /* RenderComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RenderComponent.cpp; sourceTree = "<group>"; };
 		4BC25A2616F86B7C00B36B1E /* RenderComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderComponent.h; sourceTree = "<group>"; };
 		4BC25A2916F86C7700B36B1E /* RenderSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RenderSystem.cpp; sourceTree = "<group>"; };
@@ -186,6 +195,8 @@
 				4B7C21061700B6F600C9D2A6 /* NetworkComponent.h */,
 				4BC1E0ED1705C2EB007117EC /* CameraComponent.cpp */,
 				4BC1E0EE1705C2EB007117EC /* CameraComponent.h */,
+				4BC1E0FB17083FE1007117EC /* BoxCollisionComponent.cpp */,
+				4BC1E0FC17083FE2007117EC /* BoxCollisionComponent.h */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -193,6 +204,7 @@
 		4B68153C16F8DC9C0032EF5E /* src */ = {
 			isa = PBXGroup;
 			children = (
+				4BC1E0F317073762007117EC /* Utils */,
 				4BC1E0E41704DD9C007117EC /* Factories */,
 				4B16232F17026765008F7AE2 /* Scenes */,
 				4B16232A170263DA008F7AE2 /* GUI */,
@@ -256,6 +268,16 @@
 			name = Factories;
 			sourceTree = "<group>";
 		};
+		4BC1E0F317073762007117EC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4BC1E0F517073772007117EC /* VectorUtil.h */,
+				4BC1E0F817073B5B007117EC /* CommonUtil.h */,
+				4BC1E0FA170830A0007117EC /* EasingUtil.h */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		4BC25A2816F86C6C00B36B1E /* SubSystems */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +295,8 @@
 				4B900C4817004F3400D247FE /* NetworkSystem.h */,
 				4BC1E0F01705CA52007117EC /* CameraSystem.cpp */,
 				4BC1E0F11705CA52007117EC /* CameraSystem.h */,
+				4BC1E0FE1708408F007117EC /* CollisionSystem.cpp */,
+				4BC1E0FF17084091007117EC /* CollisionSystem.h */,
 			);
 			path = SubSystems;
 			sourceTree = "<group>";
@@ -455,6 +479,8 @@
 				4BC1E0EC1705BE9C007117EC /* CommonFactory.cpp in Sources */,
 				4BC1E0EF1705C2EB007117EC /* CameraComponent.cpp in Sources */,
 				4BC1E0F21705CA52007117EC /* CameraSystem.cpp in Sources */,
+				4BC1E0FD17083FE3007117EC /* BoxCollisionComponent.cpp in Sources */,
+				4BC1E10017084092007117EC /* CollisionSystem.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
