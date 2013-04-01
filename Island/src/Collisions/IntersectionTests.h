@@ -22,9 +22,9 @@
 class IntersectionTests
 {
 private:
-    static sf::Vector2f* GetAxisOfShape(sf::ConvexShape shape)
+    static sf::Vector2f* GetAxisOfShape(sf::ConvexShape shape, int additionalRoom = 0)
     {
-        sf::Vector2f* axis = new sf::Vector2f[shape.getPointCount()];
+        sf::Vector2f* axis = new sf::Vector2f[shape.getPointCount() + additionalRoom];
         
         for(int i = 0; i < shape.getPointCount(); i++)
         {
@@ -56,6 +56,25 @@ private:
         return Projection(min, max);
     }
     
+    static sf::Vector2f ClosestConvexPoint(sf::Vector2f point, sf::ConvexShape shape)
+    {
+        int closestPoint = 0;
+        float squaredLength = INT_MAX;
+        
+        for(int i = 0; i < shape.getPointCount(); i++)
+        {
+            float newLength = VectorUtil::Magnitude(shape.getPoint(i) - point);
+            
+            if(newLength < squaredLength)
+            {
+                squaredLength = newLength;
+                closestPoint = i;
+            }
+        }
+        
+        return shape.getPoint(closestPoint);
+    }
+    
 public:
     static void SphereAndSphere(SphereCollisionComponent* sphere1, SphereCollisionComponent* sphere2, ContactList &contactList)
     {
@@ -75,6 +94,48 @@ public:
             contactList.AddContact(contact);
         }
     }
+    
+    static void BoxAndSphere(BoxCollisionComponent* box, SphereCollisionComponent* sphere, ContactList &contactList)
+    {
+        sf::ConvexShape boxShape = box->GetConvexShape();
+        sf::ConvexShape circleShape = sphere->GetConvexShape();
+        sf::Vector2f* axis = GetAxisOfShape(boxShape, 1);
+        sf::Vector2f circlePosition = sphere->GetOwner()->GetComponent<TransformComponent>()->position;
+        sf::Vector2f circleAxis = ClosestConvexPoint(circlePosition, boxShape) - circlePosition;
+        axis[boxShape.getPointCount()] = circleAxis;
+        
+        float penetration = INT_MAX;
+        sf::Vector2f normal;
+        
+        for(int i = 0; i < boxShape.getPointCount() + 1; i++)
+        {
+            sf::Vector2f currentAxis = axis[i];
+            
+            Projection p1 = ProjectOnAxis(boxShape, currentAxis);
+            Projection p2 = ProjectOnAxis(circleShape, currentAxis);
+            
+            if(!p1.IsOverlapping(p2))
+                return;
+            else
+            {
+                float newPenetration = p1.GetOverlap(p2);
+                if(newPenetration < penetration)
+                {
+                    penetration = newPenetration;
+                    normal = currentAxis;
+                }
+            }
+        }
+        
+        Contact contact;
+        contact.penetration = penetration;
+        contact.normal = normal;
+        contact.entity1 = box->GetOwner();
+        contact.entity2 = sphere->GetOwner();
+        
+        contactList.AddContact(contact);
+    }
+
     
     static void BoxAndBox(BoxCollisionComponent* box1, BoxCollisionComponent* box2, ContactList &contactList)
     {

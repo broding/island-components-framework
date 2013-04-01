@@ -14,6 +14,8 @@
 class ICollisionComponent
 {
 public:
+    virtual sf::ConvexShape GetConvexShape() = 0;
+    
     bool trigger;
     bool solid;
 };

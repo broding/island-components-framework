@@ -23,7 +23,7 @@ public:
     
     static CollisionSystem* collisionSystem;
     
-    sf::ConvexShape GetConvexShape();
+    virtual sf::ConvexShape GetConvexShape();
     virtual void DrawDebug(sf::RenderWindow* window);
     
     sf::Vector2f center;

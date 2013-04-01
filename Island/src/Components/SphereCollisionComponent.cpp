@@ -42,3 +42,23 @@ void SphereCollisionComponent::DrawDebug(sf::RenderWindow *window)
         window->draw(circle);
     }
 }
+
+sf::ConvexShape SphereCollisionComponent::GetConvexShape()
+{
+    sf::ConvexShape shape(4);
+    TransformComponent* transformComponent = this->GetOwner()->GetComponent<TransformComponent>();
+    
+    sf::FloatRect rect(0, 0, radius * 2, radius * 2);
+    sf::Transform transform;
+    transform.translate(transformComponent->position);
+    transform.translate(-center);
+    
+    shape.setPoint(0, transform.transformPoint(sf::Vector2f(rect.left, rect.top)));
+    shape.setPoint(1, transform.transformPoint(sf::Vector2f(rect.left + rect.width, rect.top)));
+    shape.setPoint(2, transform.transformPoint(sf::Vector2f(rect.left + rect.width, rect.top + rect.height)));
+    shape.setPoint(3, transform.transformPoint(sf::Vector2f(rect.left, rect.top + rect.height)));
+    
+    
+    return shape;
+    
+}

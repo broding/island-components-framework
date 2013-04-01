@@ -27,9 +27,9 @@ void CollisionSystem::ProcessGameTick(float lastFrameTime, std::list<Component*>
             if((*it1)->GetComponentType() == COMPONENT_SPHERECOLLISION && (*it2)->GetComponentType() == COMPONENT_SPHERECOLLISION)
                 IntersectionTests::SphereAndSphere(static_cast<SphereCollisionComponent*>(*it1),static_cast<SphereCollisionComponent*>(*it2), contactList);
             else if((*it1)->GetComponentType() == COMPONENT_BOXCOLLISION && (*it2)->GetComponentType() == COMPONENT_SPHERECOLLISION)
-                continue;// box to sphere
+                IntersectionTests::BoxAndSphere(static_cast<BoxCollisionComponent*>(*it1),static_cast<SphereCollisionComponent*>(*it2), contactList);
             else if((*it1)->GetComponentType() == COMPONENT_SPHERECOLLISION && (*it2)->GetComponentType() == COMPONENT_BOXCOLLISION)
-                continue;// sphere to box
+                IntersectionTests::BoxAndSphere(static_cast<BoxCollisionComponent*>(*it2), static_cast<SphereCollisionComponent*>(*it1),contactList);
             else
                 IntersectionTests::BoxAndBox(static_cast<BoxCollisionComponent*>(*it1),static_cast<BoxCollisionComponent*>(*it2), contactList);
         }
@@ -44,6 +44,7 @@ void CollisionSystem::Resolve(Contact contact)
 {
     ICollisionComponent* entity1Collision = contact.entity1->GetComponent<ICollisionComponent>();
     ICollisionComponent* entity2Collision = contact.entity2->GetComponent<ICollisionComponent>();
+    
     if(!entity1Collision->trigger && !entity2Collision->trigger)
     {
         contact.entity1->GetComponent<TransformComponent>()->position = contact.entity1->GetComponent<TransformComponent>()->previousPosition;
@@ -70,7 +71,6 @@ void CollisionSystem::Resolve(Contact contact)
         if(!entity2Collision->solid)
              entity2Physics->velocity = v1x * massFormula2 + v2x * massFormula1 + v2y;
     }
-        
 }
 
 void CollisionSystem::ProcessEvent(Component *component, Event* event)
