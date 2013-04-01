@@ -13,6 +13,7 @@
 #include "PlayerInputComponent.h"
 #include "NetworkComponent.h"
 #include "BoxCollisionComponent.h"
+#include "SphereCollisionComponent.h"
 #include "ResourcePath.hpp"
 
 Entity* PlayerFactory::CreatePlayer()
@@ -31,7 +32,7 @@ Entity* PlayerFactory::CreatePlayer()
     PhysicsComponent* physicsComponent = new PhysicsComponent();
     NetworkComponent* networkComponent = new NetworkComponent();
     networkComponent->networkableComponents.push_back(transformComponent);
-    BoxCollisionComponent* collisionComponent = new BoxCollisionComponent();
+    SphereCollisionComponent* collisionComponent = new SphereCollisionComponent();
     
     
     player->AddComponent(renderComponent);

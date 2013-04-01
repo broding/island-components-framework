@@ -9,6 +9,7 @@
 #include "CollisionSystem.h"
 #include "IntersectionTests.h"
 #include "BoxCollisionComponent.h"
+#include "SphereCollisionComponent.h"
 #include "TransformComponent.h"
 #include "PhysicsComponent.h"
 
@@ -23,7 +24,14 @@ void CollisionSystem::ProcessGameTick(float lastFrameTime, std::list<Component*>
             if(it1 == it2)
                 continue;
             
-            IntersectionTests::BoxAndBox(static_cast<BoxCollisionComponent*>(*it1),static_cast<BoxCollisionComponent*>(*it2), contactList);
+            if((*it1)->GetComponentType() == COMPONENT_SPHERECOLLISION && (*it2)->GetComponentType() == COMPONENT_SPHERECOLLISION)
+                continue; // sphere to sphere
+            else if((*it1)->GetComponentType() == COMPONENT_BOXCOLLISION && (*it2)->GetComponentType() == COMPONENT_SPHERECOLLISION)
+                continue;// box to sphere
+            else if((*it1)->GetComponentType() == COMPONENT_SPHERECOLLISION && (*it2)->GetComponentType() == COMPONENT_BOXCOLLISION)
+                continue;// sphere to box
+            else
+                IntersectionTests::BoxAndBox(static_cast<BoxCollisionComponent*>(*it1),static_cast<BoxCollisionComponent*>(*it2), contactList);
         }
     }
     

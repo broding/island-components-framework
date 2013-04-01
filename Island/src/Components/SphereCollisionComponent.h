@@ -1,24 +1,23 @@
 //
-//  BoxCollisionComponent.h
+//  SphereCollisionComponent.h
 //  Island
 //
-//  Created by Bas Roding on 31-03-13.
+//  Created by Bas Roding on 01-04-13.
 //  Copyright (c) 2013 Bas Roding. All rights reserved.
 //
 
-#ifndef __Island__BoxCollisionComponent__
-#define __Island__BoxCollisionComponent__
+#ifndef __Island__SphereCollisionComponent__
+#define __Island__SphereCollisionComponent__
 
 #include <iostream>
 #include "Component.h"
 #include "CollisionSystem.h"
-#include "ConvexShape.h"
 
-class BoxCollisionComponent : public Component
+class SphereCollisionComponent : public Component
 {
 private:
 public:
-    BoxCollisionComponent();
+    SphereCollisionComponent();
     
     static CollisionSystem* collisionSystem;
     
@@ -26,9 +25,9 @@ public:
     virtual void DrawDebug(sf::RenderWindow* window);
     
     bool trigger;
+    float radius;
     sf::Vector2f center;
-    sf::Vector2f size;
     
 };
 
-#endif /* defined(__Island__BoxCollisionComponent__) */
+#endif /* defined(__Island__SphereCollisionComponent__) */

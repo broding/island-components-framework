@@ -23,6 +23,7 @@
 #include "NetworkComponent.h"
 #include "CameraComponent.h"
 #include "BoxCollisionComponent.h"
+#include "SphereCollisionComponent.h"
 
 #include "ConnectScene.h"
 
@@ -69,6 +70,7 @@ void Core::InitializeSubSystems()
     NetworkComponent::networkSystem = networkSystem;
     CameraComponent::cameraSystem = cameraSystem;
     BoxCollisionComponent::collisionSystem = collisionSystem;
+    SphereCollisionComponent::collisionSystem = collisionSystem;
 }
 
 void Core::AddSubSystem(SubSystem *subSystem)

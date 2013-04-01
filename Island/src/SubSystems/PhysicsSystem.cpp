@@ -24,7 +24,6 @@ void PhysicsSystem::Integrate(PhysicsComponent* physicsComponent, TransformCompo
 {
     // update position
     transformComponent->previousPosition = transformComponent->position;
-    transformComponent->previousRotation = transformComponent->rotation;
     
     transformComponent->position += physicsComponent->velocity * lastFrameTime;
     
