@@ -13,8 +13,9 @@
 #include "Component.h"
 #include "CollisionSystem.h"
 #include "ConvexShape.h"
+#include "ICollisionComponent.h"
 
-class BoxCollisionComponent : public Component
+class BoxCollisionComponent : public Component, public ICollisionComponent
 {
 private:
 public:
@@ -25,7 +26,6 @@ public:
     sf::ConvexShape GetConvexShape();
     virtual void DrawDebug(sf::RenderWindow* window);
     
-    bool trigger;
     sf::Vector2f center;
     sf::Vector2f size;
     

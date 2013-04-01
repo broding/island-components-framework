@@ -18,6 +18,7 @@
 #include "PlayerInputComponent.h"
 #include "NetworkComponent.h"
 #include "BoxCollisionComponent.h"
+#include "SphereCollisionComponent.h"
 
 class StructureFactory
 {
@@ -35,6 +36,27 @@ public:
         collisionComponent->center = sf::Vector2f(length / 2, width / 2);
         collisionComponent->size = sf::Vector2f(length, width);
 
+        entity->AddComponent(transformComponent);
+        entity->AddComponent(physicsComponent);
+        entity->AddComponent(networkComponent);
+        entity->AddComponent(collisionComponent);
+        
+        return entity;
+    }
+    
+    static Entity* CreateSphere(sf::Vector2f position, float radius)
+    {
+        Entity* entity = new Entity();
+        TransformComponent* transformComponent = new TransformComponent();
+        transformComponent->position = sf::Vector2f(position);
+        PhysicsComponent* physicsComponent = new PhysicsComponent();
+        NetworkComponent* networkComponent = new NetworkComponent();
+        networkComponent->networkableComponents.push_back(transformComponent);
+        SphereCollisionComponent* collisionComponent = new SphereCollisionComponent();
+        collisionComponent->center = sf::Vector2f(radius, radius);
+        collisionComponent->radius = radius;
+        collisionComponent->solid = true;
+        
         entity->AddComponent(transformComponent);
         entity->AddComponent(physicsComponent);
         entity->AddComponent(networkComponent);

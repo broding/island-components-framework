@@ -21,6 +21,8 @@ BoxCollisionComponent::BoxCollisionComponent()
     
     center = sf::Vector2f(32,32);
     size = sf::Vector2f(64, 64);
+    trigger = false;
+    solid = false;
 }
 
 void BoxCollisionComponent::DrawDebug(sf::RenderWindow *window)

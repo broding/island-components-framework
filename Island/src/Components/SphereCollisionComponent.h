@@ -12,8 +12,9 @@
 #include <iostream>
 #include "Component.h"
 #include "CollisionSystem.h"
+#include "ICollisionComponent.h"
 
-class SphereCollisionComponent : public Component
+class SphereCollisionComponent : public Component, public ICollisionComponent
 {
 private:
 public:
@@ -24,7 +25,6 @@ public:
     sf::ConvexShape GetConvexShape();
     virtual void DrawDebug(sf::RenderWindow* window);
     
-    bool trigger;
     float radius;
     sf::Vector2f center;
     

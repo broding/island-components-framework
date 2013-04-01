@@ -149,6 +149,7 @@
 		4BDA14CA16F77B4600359B94 /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Component.h; sourceTree = "<group>"; };
 		4BDA14CC16F77B5900359B94 /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
 		4BDA14CD16F77B5900359B94 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
+		4BEEDE71170990A5004C4C61 /* ICollisionComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICollisionComponent.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +304,7 @@
 				4B3ABF401708751B00491120 /* ConvexShape.h */,
 				4B3ABF431708930600491120 /* Projection.cpp */,
 				4B3ABF441708930600491120 /* Projection.h */,
+				4BEEDE71170990A5004C4C61 /* ICollisionComponent.h */,
 			);
 			path = Collisions;
 			sourceTree = "<group>";

@@ -21,6 +21,8 @@ SphereCollisionComponent::SphereCollisionComponent()
     
     radius = 32;
     center = sf::Vector2f(32, 32);
+    trigger = false;
+    solid = false;
 }
 
 void SphereCollisionComponent::DrawDebug(sf::RenderWindow *window)

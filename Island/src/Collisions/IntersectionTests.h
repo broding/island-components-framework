@@ -11,10 +11,13 @@
 
 #include "Contact.h"
 #include "BoxCollisionComponent.h"
+#include "SphereCollisionComponent.h"
+#include "TransformComponent.h"
 #include "ConvexShape.h"
 #include "VectorUtil.h"
 #include <SFML/System.hpp>
 #include "Projection.h"
+#include "Entity.h"
 
 class IntersectionTests
 {
@@ -54,6 +57,25 @@ private:
     }
     
 public:
+    static void SphereAndSphere(SphereCollisionComponent* sphere1, SphereCollisionComponent* sphere2, ContactList &contactList)
+    {
+        TransformComponent* sphere1Transform = sphere1->GetOwner()->GetComponent<TransformComponent>();
+        TransformComponent* sphere2Transform = sphere2->GetOwner()->GetComponent<TransformComponent>();
+        float radiusSum = sphere1->radius + sphere2->radius;
+        float distance = VectorUtil::Magnitude(sphere1Transform->position - sphere2Transform->position);
+        
+        if(distance < radiusSum)
+        {
+            Contact contact;
+            contact.penetration = sqrt(radiusSum - distance);
+            contact.normal = VectorUtil::Normalized(sphere1Transform->position - sphere2Transform->position);
+            contact.entity1 = sphere1->GetOwner();
+            contact.entity2 = sphere2->GetOwner();
+            
+            contactList.AddContact(contact);
+        }
+    }
+    
     static void BoxAndBox(BoxCollisionComponent* box1, BoxCollisionComponent* box2, ContactList &contactList)
     {
         sf::ConvexShape shape1 = box1->GetConvexShape();

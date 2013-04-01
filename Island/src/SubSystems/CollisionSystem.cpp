@@ -25,7 +25,7 @@ void CollisionSystem::ProcessGameTick(float lastFrameTime, std::list<Component*>
                 continue;
             
             if((*it1)->GetComponentType() == COMPONENT_SPHERECOLLISION && (*it2)->GetComponentType() == COMPONENT_SPHERECOLLISION)
-                continue; // sphere to sphere
+                IntersectionTests::SphereAndSphere(static_cast<SphereCollisionComponent*>(*it1),static_cast<SphereCollisionComponent*>(*it2), contactList);
             else if((*it1)->GetComponentType() == COMPONENT_BOXCOLLISION && (*it2)->GetComponentType() == COMPONENT_SPHERECOLLISION)
                 continue;// box to sphere
             else if((*it1)->GetComponentType() == COMPONENT_SPHERECOLLISION && (*it2)->GetComponentType() == COMPONENT_BOXCOLLISION)
@@ -42,11 +42,33 @@ void CollisionSystem::ProcessGameTick(float lastFrameTime, std::list<Component*>
 
 void CollisionSystem::Resolve(Contact contact)
 {
-    if(!contact.entity1->GetComponent<BoxCollisionComponent>()->trigger && !contact.entity2->GetComponent<BoxCollisionComponent>()->trigger)
+    ICollisionComponent* entity1Collision = contact.entity1->GetComponent<ICollisionComponent>();
+    ICollisionComponent* entity2Collision = contact.entity2->GetComponent<ICollisionComponent>();
+    if(!entity1Collision->trigger && !entity2Collision->trigger)
     {
         contact.entity1->GetComponent<TransformComponent>()->position = contact.entity1->GetComponent<TransformComponent>()->previousPosition;
         
         contact.entity2->GetComponent<TransformComponent>()->position = contact.entity2->GetComponent<TransformComponent>()->previousPosition;
+        
+        PhysicsComponent* entity1Physics = contact.entity1->GetComponent<PhysicsComponent>();
+        PhysicsComponent* entity2Physics = contact.entity2->GetComponent<PhysicsComponent>();
+        
+        float x1 = VectorUtil::DotProduct(contact.normal, entity1Physics->velocity);
+        sf::Vector2f v1x = contact.normal * x1;
+        sf::Vector2f v1y = entity1Physics->velocity - v1x;
+        
+        float x2 = VectorUtil::DotProduct(contact.normal, entity2Physics->velocity);
+        sf::Vector2f v2x = contact.normal * x2;
+        sf::Vector2f v2y = entity2Physics->velocity - v2x;
+        
+        float massFormula1 = (entity1Physics->mass - entity2Physics->mass) / (entity1Physics->mass + entity2Physics->mass);
+        float massFormula2 = (2 * entity1Physics->mass) / (entity1Physics->mass + entity2Physics->mass);
+        
+        if(!entity1Collision->solid)
+            entity1Physics->velocity = v1x * massFormula1 + v2x * massFormula2 + v1y;
+        
+        if(!entity2Collision->solid)
+             entity2Physics->velocity = v1x * massFormula2 + v2x * massFormula1 + v2y;
     }
         
 }
