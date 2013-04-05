@@ -17,12 +17,12 @@ class VectorUtil
 {
 public:
     
-    static float Magnitude(const sf::Vector2f vector)
+    static float MagnitudeSquared(const sf::Vector2f vector)
     {
-        return sqrt(MagnitudeSquared(vector));
+        return sqrt(Magnitude(vector));
     }
     
-    static float MagnitudeSquared(const sf::Vector2f vector)
+    static float Magnitude(const sf::Vector2f vector)
     {
         return vector.x * vector.x + vector.y * vector.y;
     }

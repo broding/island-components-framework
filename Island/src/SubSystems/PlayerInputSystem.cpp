@@ -30,19 +30,19 @@ void PlayerInputSystem::ProcessGameTick(float lastFrameTime, std::list<Component
         
         if(physicsComponent != 0)
         {
-            physicsComponent->velocity = sf::Vector2f(0,0);
+            //physicsComponent->velocity = sf::Vector2f(0,0);
             
             if(sf::Keyboard::isKeyPressed(inputComponent->up))
-                physicsComponent->velocity += sf::Vector2f(0, -200);
+                physicsComponent->forceAccumulated += sf::Vector2f(0, -9000);
             
             if(sf::Keyboard::isKeyPressed(inputComponent->down))
-                physicsComponent->velocity += sf::Vector2f(0, 200);
+                physicsComponent->forceAccumulated += sf::Vector2f(0, 9000);
             
             if(sf::Keyboard::isKeyPressed(inputComponent->left))
-                physicsComponent->velocity += sf::Vector2f(-200, 0);
+                physicsComponent->forceAccumulated += sf::Vector2f(-9000, 0);
             
             if(sf::Keyboard::isKeyPressed(inputComponent->right))
-                physicsComponent->velocity += sf::Vector2f(200, 0);
+                physicsComponent->forceAccumulated += sf::Vector2f(9000, 0);
             
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
                 transformComponent->position = sf::Vector2f(0, 0);

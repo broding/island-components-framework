@@ -32,7 +32,7 @@ Entity* PlayerFactory::CreatePlayer()
     PhysicsComponent* physicsComponent = new PhysicsComponent();
     NetworkComponent* networkComponent = new NetworkComponent();
     networkComponent->networkableComponents.push_back(transformComponent);
-    SphereCollisionComponent* collisionComponent = new SphereCollisionComponent();
+    BoxCollisionComponent* collisionComponent = new BoxCollisionComponent();
     
     
     player->AddComponent(renderComponent);

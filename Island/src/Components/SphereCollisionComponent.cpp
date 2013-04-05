@@ -41,6 +41,10 @@ void SphereCollisionComponent::DrawDebug(sf::RenderWindow *window)
         
         window->draw(circle);
     }
+    
+    sf::ConvexShape shape = GetConvexShape();
+    shape.setFillColor(sf::Color::Green);
+    //window->draw(shape);
 }
 
 sf::ConvexShape SphereCollisionComponent::GetConvexShape()
@@ -51,6 +55,7 @@ sf::ConvexShape SphereCollisionComponent::GetConvexShape()
     sf::FloatRect rect(0, 0, radius * 2, radius * 2);
     sf::Transform transform;
     transform.translate(transformComponent->position);
+    transform.rotate(-45);
     transform.translate(-center);
     
     shape.setPoint(0, transform.transformPoint(sf::Vector2f(rect.left, rect.top)));

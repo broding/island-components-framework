@@ -47,9 +47,9 @@ void CollisionSystem::Resolve(Contact contact)
     
     if(!entity1Collision->trigger && !entity2Collision->trigger)
     {
-        contact.entity1->GetComponent<TransformComponent>()->position = contact.entity1->GetComponent<TransformComponent>()->previousPosition;
+        contact.entity1->GetComponent<TransformComponent>()->position += contact.normal * contact.penetration;
         
-        contact.entity2->GetComponent<TransformComponent>()->position = contact.entity2->GetComponent<TransformComponent>()->previousPosition;
+        contact.entity2->GetComponent<TransformComponent>()->position -= contact.normal * contact.penetration;
         
         PhysicsComponent* entity1Physics = contact.entity1->GetComponent<PhysicsComponent>();
         PhysicsComponent* entity2Physics = contact.entity2->GetComponent<PhysicsComponent>();

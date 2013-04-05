@@ -34,7 +34,7 @@ void PhysicsSystem::Integrate(PhysicsComponent* physicsComponent, TransformCompo
     physicsComponent->velocity += resultingAcceleration * lastFrameTime;
     
     // simulate damping
-    physicsComponent->velocity *= 0.999f;
+    physicsComponent->velocity *= 0.9f;
     
     physicsComponent->forceAccumulated = sf::Vector2f(0,0);
 }

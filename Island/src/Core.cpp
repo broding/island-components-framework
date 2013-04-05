@@ -56,11 +56,11 @@ void Core::InitializeSubSystems()
     
     AddSubSystem(cameraSystem);
     AddSubSystem(playerInputSystem);
-    AddSubSystem(physicsSystem);
     AddSubSystem(transformSystem);
+    AddSubSystem(collisionSystem);
+    AddSubSystem(physicsSystem);
     AddSubSystem(renderSystem);
     AddSubSystem(networkSystem);
-    AddSubSystem(collisionSystem);
     
     // setup subsystems in components
     RenderComponent::renderSystem = renderSystem;

@@ -35,6 +35,7 @@ public:
         BoxCollisionComponent* collisionComponent = new BoxCollisionComponent();
         collisionComponent->center = sf::Vector2f(length / 2, width / 2);
         collisionComponent->size = sf::Vector2f(length, width);
+        collisionComponent->solid = true;
 
         entity->AddComponent(transformComponent);
         entity->AddComponent(physicsComponent);

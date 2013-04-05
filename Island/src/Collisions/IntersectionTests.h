@@ -22,7 +22,7 @@
 class IntersectionTests
 {
 private:
-    static sf::Vector2f* GetAxisOfShape(sf::ConvexShape shape, int additionalRoom = 0)
+    static sf::Vector2f* GetAxisOfShape(const sf::ConvexShape shape, const int additionalRoom = 0)
     {
         sf::Vector2f* axis = new sf::Vector2f[shape.getPointCount() + additionalRoom];
         
@@ -38,7 +38,7 @@ private:
         return axis;
     }
     
-    static Projection ProjectOnAxis(sf::ConvexShape shape, sf::Vector2f axis)
+    static Projection ProjectOnAxis(const sf::ConvexShape shape, const sf::Vector2f axis)
     {
         float min = VectorUtil::DotProduct(axis, shape.getPoint(0));
         float max = min;
@@ -56,7 +56,7 @@ private:
         return Projection(min, max);
     }
     
-    static sf::Vector2f ClosestConvexPoint(sf::Vector2f point, sf::ConvexShape shape)
+    static sf::Vector2f ClosestConvexPoint(const sf::Vector2f point, const sf::ConvexShape shape)
     {
         int closestPoint = 0;
         float squaredLength = INT_MAX;
@@ -86,7 +86,7 @@ public:
         if(distance < radiusSum)
         {
             Contact contact;
-            contact.penetration = sqrt(radiusSum - distance);
+            contact.penetration = radiusSum - distance;
             contact.normal = VectorUtil::Normalized(sphere1Transform->position - sphere2Transform->position);
             contact.entity1 = sphere1->GetOwner();
             contact.entity2 = sphere2->GetOwner();
@@ -101,7 +101,7 @@ public:
         sf::ConvexShape circleShape = sphere->GetConvexShape();
         sf::Vector2f* axis = GetAxisOfShape(boxShape, 1);
         sf::Vector2f circlePosition = sphere->GetOwner()->GetComponent<TransformComponent>()->position;
-        sf::Vector2f circleAxis = ClosestConvexPoint(circlePosition, boxShape) - circlePosition;
+        sf::Vector2f circleAxis = VectorUtil::Normalized(ClosestConvexPoint(circlePosition, boxShape) - circlePosition);
         axis[boxShape.getPointCount()] = circleAxis;
         
         float penetration = INT_MAX;
@@ -187,6 +187,8 @@ public:
                 }
             }
         }
+        
+        std::cout << penetration << "\n";
         
         Contact contact;
         contact.penetration = penetration;
