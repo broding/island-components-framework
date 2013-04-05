@@ -187,8 +187,6 @@ public:
             }
         }
         
-        std::cout << penetration << "\n";
-        
         Contact contact;
         contact.penetration = penetration;
         contact.normal = normal;
