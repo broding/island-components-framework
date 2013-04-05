@@ -12,7 +12,6 @@
 #include <iostream>
 #include "Component.h"
 #include "CollisionSystem.h"
-#include "ConvexShape.h"
 #include "ICollisionComponent.h"
 
 class BoxCollisionComponent : public Component, public ICollisionComponent

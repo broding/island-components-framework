@@ -29,12 +29,12 @@ public:
     
     static sf::Vector2f Normalized(const sf::Vector2f vector)
     {
-        return vector / Magnitude(vector);
+        return vector / MagnitudeSquared(vector);
     }
     
     static void Normalize(sf::Vector2f &vector)
     {
-        vector = vector / Magnitude(vector);
+        vector = vector / MagnitudeSquared(vector);
     }
     
     static sf::Vector2f Perpendicular(const sf::Vector2f vector)

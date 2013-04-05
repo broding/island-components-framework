@@ -13,7 +13,6 @@
 #include "BoxCollisionComponent.h"
 #include "SphereCollisionComponent.h"
 #include "TransformComponent.h"
-#include "ConvexShape.h"
 #include "VectorUtil.h"
 #include <SFML/System.hpp>
 #include "Projection.h"
@@ -63,7 +62,7 @@ private:
         
         for(int i = 0; i < shape.getPointCount(); i++)
         {
-            float newLength = VectorUtil::Magnitude(shape.getPoint(i) - point);
+            float newLength = VectorUtil::MagnitudeSquared(shape.getPoint(i) - point);
             
             if(newLength < squaredLength)
             {
@@ -81,7 +80,7 @@ public:
         TransformComponent* sphere1Transform = sphere1->GetOwner()->GetComponent<TransformComponent>();
         TransformComponent* sphere2Transform = sphere2->GetOwner()->GetComponent<TransformComponent>();
         float radiusSum = sphere1->radius + sphere2->radius;
-        float distance = VectorUtil::Magnitude(sphere1Transform->position - sphere2Transform->position);
+        float distance = VectorUtil::MagnitudeSquared(sphere1Transform->position - sphere2Transform->position);
         
         if(distance < radiusSum)
         {
