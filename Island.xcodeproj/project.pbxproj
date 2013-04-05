@@ -12,7 +12,6 @@
 		4B16233417030A9E008F7AE2 /* GUIObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B16233317030A9E008F7AE2 /* GUIObject.cpp */; };
 		4B1623361703164C008F7AE2 /* testbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B1623351703164C008F7AE2 /* testbutton.png */; };
 		4B162339170342A4008F7AE2 /* GUIEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B162337170342A3008F7AE2 /* GUIEvent.cpp */; };
-		4B3ABF411708751B00491120 /* ConvexShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B3ABF3F1708751B00491120 /* ConvexShape.cpp */; };
 		4B3ABF481709854400491120 /* SphereCollisionComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B3ABF461709854200491120 /* SphereCollisionComponent.cpp */; };
 		4B62A25016F8673400016A62 /* SubSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B62A24E16F8673400016A62 /* SubSystem.cpp */; };
 		4B68153216F8A0000032EF5E /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153016F89FFF0032EF5E /* Event.cpp */; };
@@ -86,8 +85,6 @@
 		4B162338170342A3008F7AE2 /* GUIEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIEvent.h; sourceTree = "<group>"; };
 		4B16233B17034455008F7AE2 /* GUIObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIObserver.h; sourceTree = "<group>"; };
 		4B3ABF3E17086F6C00491120 /* IntersectionTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntersectionTests.h; sourceTree = "<group>"; };
-		4B3ABF3F1708751B00491120 /* ConvexShape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConvexShape.cpp; sourceTree = "<group>"; };
-		4B3ABF401708751B00491120 /* ConvexShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvexShape.h; sourceTree = "<group>"; };
 		4B3ABF431708930600491120 /* Projection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Projection.cpp; sourceTree = "<group>"; };
 		4B3ABF441708930600491120 /* Projection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Projection.h; sourceTree = "<group>"; };
 		4B3ABF461709854200491120 /* SphereCollisionComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SphereCollisionComponent.cpp; sourceTree = "<group>"; };
@@ -362,8 +359,6 @@
 			children = (
 				4BC1E10517086015007117EC /* Contact.h */,
 				4B3ABF3E17086F6C00491120 /* IntersectionTests.h */,
-				4B3ABF3F1708751B00491120 /* ConvexShape.cpp */,
-				4B3ABF401708751B00491120 /* ConvexShape.h */,
 				4B3ABF431708930600491120 /* Projection.cpp */,
 				4B3ABF441708930600491120 /* Projection.h */,
 				4BEEDE71170990A5004C4C61 /* ICollisionComponent.h */,
@@ -604,7 +599,6 @@
 				4BC1E0F21705CA52007117EC /* CameraSystem.cpp in Sources */,
 				4BC1E0FD17083FE3007117EC /* BoxCollisionComponent.cpp in Sources */,
 				4BC1E10017084092007117EC /* CollisionSystem.cpp in Sources */,
-				4B3ABF411708751B00491120 /* ConvexShape.cpp in Sources */,
 				4B3ABF481709854400491120 /* SphereCollisionComponent.cpp in Sources */,
 				4B6E9A02170ECCD2002F9797 /* Projection.cpp in Sources */,
 			);
