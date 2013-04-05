@@ -13,12 +13,15 @@
 		4B1623361703164C008F7AE2 /* testbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B1623351703164C008F7AE2 /* testbutton.png */; };
 		4B162339170342A4008F7AE2 /* GUIEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B162337170342A3008F7AE2 /* GUIEvent.cpp */; };
 		4B3ABF411708751B00491120 /* ConvexShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B3ABF3F1708751B00491120 /* ConvexShape.cpp */; };
-		4B3ABF451708930600491120 /* Projection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B3ABF431708930600491120 /* Projection.cpp */; };
 		4B3ABF481709854400491120 /* SphereCollisionComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B3ABF461709854200491120 /* SphereCollisionComponent.cpp */; };
 		4B62A25016F8673400016A62 /* SubSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B62A24E16F8673400016A62 /* SubSystem.cpp */; };
 		4B68153216F8A0000032EF5E /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153016F89FFF0032EF5E /* Event.cpp */; };
 		4B68153516F8C6C40032EF5E /* PhysicsSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153316F8C6C30032EF5E /* PhysicsSystem.cpp */; };
 		4B68153B16F8C72B0032EF5E /* PhysicsComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153916F8C72B0032EF5E /* PhysicsComponent.cpp */; };
+		4B6E99FB170EC8DF002F9797 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B6E99FA170EC8DF002F9797 /* main.cpp */; };
+		4B6E99FD170EC8DF002F9797 /* UnitTests.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4B6E99FC170EC8DF002F9797 /* UnitTests.1 */; };
+		4B6E9A02170ECCD2002F9797 /* Projection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B3ABF431708930600491120 /* Projection.cpp */; };
+		4B6E9A03170ECCD3002F9797 /* Projection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B3ABF431708930600491120 /* Projection.cpp */; };
 		4B7C20FB1700B15D00C9D2A6 /* callbacks.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C20F31700B15D00C9D2A6 /* callbacks.c */; };
 		4B7C20FC1700B15D00C9D2A6 /* compress.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C20F41700B15D00C9D2A6 /* compress.c */; };
 		4B7C20FD1700B15D00C9D2A6 /* host.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C20F51700B15D00C9D2A6 /* host.c */; };
@@ -57,6 +60,19 @@
 		4BDA14CE16F77B5900359B94 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BDA14CC16F77B5900359B94 /* Entity.cpp */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4B6E99F6170EC8DF002F9797 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				4B6E99FD170EC8DF002F9797 /* UnitTests.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4B16232917012194008F7AE2 /* INetworkableComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INetworkableComponent.h; sourceTree = "<group>"; };
 		4B16232B17026431008F7AE2 /* GUIObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUIObject.h; sourceTree = "<group>"; };
@@ -85,6 +101,10 @@
 		4B68153416F8C6C30032EF5E /* PhysicsSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsSystem.h; sourceTree = "<group>"; };
 		4B68153916F8C72B0032EF5E /* PhysicsComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsComponent.cpp; sourceTree = "<group>"; };
 		4B68153A16F8C72B0032EF5E /* PhysicsComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsComponent.h; sourceTree = "<group>"; };
+		4B6E99F8170EC8DF002F9797 /* UnitTests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = UnitTests; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B6E99FA170EC8DF002F9797 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		4B6E99FC170EC8DF002F9797 /* UnitTests.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = UnitTests.1; sourceTree = "<group>"; };
+		4B6E9A01170EC8F7002F9797 /* catch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = catch.hpp; sourceTree = "<group>"; };
 		4B7C20F31700B15D00C9D2A6 /* callbacks.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = callbacks.c; path = lib/enet/callbacks.c; sourceTree = "<group>"; };
 		4B7C20F41700B15D00C9D2A6 /* compress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = compress.c; path = lib/enet/compress.c; sourceTree = "<group>"; };
 		4B7C20F51700B15D00C9D2A6 /* host.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = host.c; path = lib/enet/host.c; sourceTree = "<group>"; };
@@ -98,6 +118,11 @@
 		4B7C21061700B6F600C9D2A6 /* NetworkComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkComponent.h; sourceTree = "<group>"; };
 		4B7C21091700D05A00C9D2A6 /* NetworkHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkHandler.cpp; sourceTree = "<group>"; };
 		4B7C210A1700D05A00C9D2A6 /* NetworkHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkHandler.h; sourceTree = "<group>"; };
+		4B8C6FCF170EC4290005D9BA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		4B8C6FD1170EC4290005D9BA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		4B8C6FD4170EC4290005D9BA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		4B8C6FD5170EC4290005D9BA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4B8C6FD6170EC4290005D9BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4B900C4717004F3400D247FE /* NetworkSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkSystem.cpp; sourceTree = "<group>"; };
 		4B900C4817004F3400D247FE /* NetworkSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkSystem.h; sourceTree = "<group>"; };
 		4BB7881316F9E3A200AC62F4 /* PlayerInputComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerInputComponent.cpp; sourceTree = "<group>"; };
@@ -153,6 +178,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4B6E99F5170EC8DF002F9797 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4BDA14A616F7796700359B94 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -239,6 +271,16 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		4B6E99F9170EC8DF002F9797 /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				4B6E9A01170EC8F7002F9797 /* catch.hpp */,
+				4B6E99FA170EC8DF002F9797 /* main.cpp */,
+				4B6E99FC170EC8DF002F9797 /* UnitTests.1 */,
+			);
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
 		4B7C20EF1700B11D00C9D2A6 /* lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +313,26 @@
 				4B16232917012194008F7AE2 /* INetworkableComponent.h */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		4B8C6FCE170EC4290005D9BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B8C6FCF170EC4290005D9BA /* SenTestingKit.framework */,
+				4B8C6FD1170EC4290005D9BA /* Cocoa.framework */,
+				4B8C6FD3170EC4290005D9BA /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B8C6FD3170EC4290005D9BA /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B8C6FD4170EC4290005D9BA /* AppKit.framework */,
+				4B8C6FD5170EC4290005D9BA /* CoreData.framework */,
+				4B8C6FD6170EC4290005D9BA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
 		4BC1E0E41704DD9C007117EC /* Factories */ = {
@@ -345,6 +407,8 @@
 			isa = PBXGroup;
 			children = (
 				4BDA14AC16F7796700359B94 /* Island */,
+				4B6E99F9170EC8DF002F9797 /* UnitTests */,
+				4B8C6FCE170EC4290005D9BA /* Frameworks */,
 				4BDA14AB16F7796700359B94 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -353,6 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				4BDA14AA16F7796700359B94 /* Island.app */,
+				4B6E99F8170EC8DF002F9797 /* UnitTests */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -392,6 +457,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4B6E99F7170EC8DF002F9797 /* UnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B6E9A00170EC8DF002F9797 /* Build configuration list for PBXNativeTarget "UnitTests" */;
+			buildPhases = (
+				4B6E99F4170EC8DF002F9797 /* Sources */,
+				4B6E99F5170EC8DF002F9797 /* Frameworks */,
+				4B6E99F6170EC8DF002F9797 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UnitTests;
+			productName = UnitTests;
+			productReference = 4B6E99F8170EC8DF002F9797 /* UnitTests */;
+			productType = "com.apple.product-type.tool";
+		};
 		4BDA14A916F7796700359B94 /* Island */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BDA14BF16F7796700359B94 /* Build configuration list for PBXNativeTarget "Island" */;
@@ -432,6 +514,7 @@
 			projectRoot = "";
 			targets = (
 				4BDA14A916F7796700359B94 /* Island */,
+				4B6E99F7170EC8DF002F9797 /* UnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -469,6 +552,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4B6E99F4170EC8DF002F9797 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B6E99FB170EC8DF002F9797 /* main.cpp in Sources */,
+				4B6E9A03170ECCD3002F9797 /* Projection.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4BDA14A516F7796700359B94 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -513,14 +605,55 @@
 				4BC1E0FD17083FE3007117EC /* BoxCollisionComponent.cpp in Sources */,
 				4BC1E10017084092007117EC /* CollisionSystem.cpp in Sources */,
 				4B3ABF411708751B00491120 /* ConvexShape.cpp in Sources */,
-				4B3ABF451708930600491120 /* Projection.cpp in Sources */,
 				4B3ABF481709854400491120 /* SphereCollisionComponent.cpp in Sources */,
+				4B6E9A02170ECCD2002F9797 /* Projection.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		4B6E99FE170EC8DF002F9797 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4B6E99FF170EC8DF002F9797 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		4BDA14BD16F7796700359B94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -659,6 +792,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4B6E9A00170EC8DF002F9797 /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B6E99FE170EC8DF002F9797 /* Debug */,
+				4B6E99FF170EC8DF002F9797 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		4BDA14A416F7796700359B94 /* Build configuration list for PBXProject "Island" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
