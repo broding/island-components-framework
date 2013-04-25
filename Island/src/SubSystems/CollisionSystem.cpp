@@ -17,9 +17,9 @@ void CollisionSystem::ProcessGameTick(float lastFrameTime, std::list<Component*>
 {
     ContactList contactList;
     
-    for (std::list<Component*>::const_iterator it1 = components.begin(), end = components.end(); it1 != end; ++it1)
+    for (std::list<Component*>::const_iterator it1 = components.begin(), end1 = components.end(); it1 != end1; ++it1)
     {
-        for (std::list<Component*>::const_iterator it2 = components.begin(), end = components.end(); it2 != end; ++it2)
+        for (std::list<Component*>::const_iterator it2 = components.begin(), end2 = components.end(); it2 != end2; ++it2)
         {
             if(it1 == it2)
                 continue;
@@ -35,9 +35,8 @@ void CollisionSystem::ProcessGameTick(float lastFrameTime, std::list<Component*>
         }
     }
     
-    for (std::vector<Contact>::const_iterator it = contactList.GetContacts().begin(), end = contactList.GetContacts().end(); it != end; ++it)
-        Resolve((*it));
-    
+    for (int i = 0; i < contactList.GetContacts().size(); i++)
+        Resolve((contactList.GetContacts()[i]));
 }
 
 void CollisionSystem::Resolve(Contact contact)
@@ -45,11 +44,30 @@ void CollisionSystem::Resolve(Contact contact)
     ICollisionComponent* entity1Collision = contact.entity1->GetComponent<ICollisionComponent>();
     ICollisionComponent* entity2Collision = contact.entity2->GetComponent<ICollisionComponent>();
     
+    if(entity1Collision->trigger && entity2Collision->trigger)
+        return;
+    
+    if(entity2Collision->solid && entity1Collision->solid)
+        return;
+    
     if(!entity1Collision->trigger && !entity2Collision->trigger)
     {
-        contact.entity1->GetComponent<TransformComponent>()->position += contact.normal * contact.penetration;
+        sf::Vector2f delta = contact.entity1->GetComponent<TransformComponent>()->position - contact.entity2->GetComponent<TransformComponent>()->position;
         
-        contact.entity2->GetComponent<TransformComponent>()->position -= contact.normal * contact.penetration;
+        if(VectorUtil::DotProduct(contact.normal, delta) < 0)
+            contact.normal *= -1.0f;
+
+        if(!entity1Collision->solid && entity2Collision->solid)
+            contact.entity1->GetComponent<TransformComponent>()->position += contact.normal * (contact.penetration * 2);
+        
+        if(!entity2Collision->solid && entity1Collision->solid)
+            contact.entity2->GetComponent<TransformComponent>()->position -= contact.normal * (contact.penetration * 2);
+        
+        if(entity1Collision->solid && entity2Collision->solid)
+        {
+            contact.entity2->GetComponent<TransformComponent>()->position -= contact.normal * contact.penetration;
+            contact.entity1->GetComponent<TransformComponent>()->position += contact.normal * contact.penetration;
+        }
         
         PhysicsComponent* entity1Physics = contact.entity1->GetComponent<PhysicsComponent>();
         PhysicsComponent* entity2Physics = contact.entity2->GetComponent<PhysicsComponent>();

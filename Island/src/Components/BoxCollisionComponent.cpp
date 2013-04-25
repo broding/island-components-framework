@@ -54,9 +54,9 @@ sf::ConvexShape BoxCollisionComponent::GetConvexShape()
     transform.rotate(transformComponent->rotation);
     transform.translate(-center);
     
-    shape.setPoint(0, transform.transformPoint(sf::Vector2f(rect.left, rect.top)));
     shape.setPoint(1, transform.transformPoint(sf::Vector2f(rect.left + rect.width, rect.top)));
     shape.setPoint(2, transform.transformPoint(sf::Vector2f(rect.left + rect.width, rect.top + rect.height)));
+    shape.setPoint(0, transform.transformPoint(sf::Vector2f(rect.left, rect.top)));
     shape.setPoint(3, transform.transformPoint(sf::Vector2f(rect.left, rect.top + rect.height)));
     
     

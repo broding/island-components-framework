@@ -9,18 +9,22 @@
 #ifndef Island_IntersectionTests_h
 #define Island_IntersectionTests_h
 
+#include <iostream>
 #include "Contact.h"
 #include "BoxCollisionComponent.h"
 #include "SphereCollisionComponent.h"
 #include "TransformComponent.h"
 #include "VectorUtil.h"
 #include <SFML/System.hpp>
+#include <SFML/Graphics.hpp>
 #include "Projection.h"
 #include "Entity.h"
+#include "GUIObject.h"
 
 class IntersectionTests
 {
 private:
+    
     static sf::Vector2f* GetAxisOfShape(const sf::ConvexShape shape, const int additionalRoom = 0)
     {
         sf::Vector2f* axis = new sf::Vector2f[shape.getPointCount() + additionalRoom];
@@ -29,13 +33,34 @@ private:
         {
             sf::Vector2f p1 = shape.getPoint(i);
             sf::Vector2f p2 = shape.getPoint(i + 1 == shape.getPointCount() ? 0 : i + 1);
-            sf::Vector2f edge = p1 - p2;
-            sf::Vector2f normal = VectorUtil::Normalized(VectorUtil::Perpendicular(edge));
+            sf::Vector2f edge = p2 - p1;
+            sf::Vector2f normal = VectorUtil::Perpendicular(VectorUtil::Normalized(edge));
             axis[i] = normal;
         }
         
         return axis;
     }
+
+    static sf::Vector2f ClosestConvexPoint(const sf::Vector2f point, const sf::ConvexShape shape)
+    {
+        int closestPoint = 0;
+        float squaredLength = INT_MAX;
+        
+        for(int i = 0; i < shape.getPointCount(); i++)
+        {
+            float newLength = VectorUtil::Magnitude(shape.getPoint(i) - point);
+            
+            if(newLength < squaredLength)
+            {
+                squaredLength = newLength;
+                closestPoint = i;
+            }
+        }
+        
+        return shape.getPoint(closestPoint);
+    }
+    
+public:
     
     static Projection ProjectOnAxis(const sf::ConvexShape shape, const sf::Vector2f axis)
     {
@@ -54,33 +79,14 @@ private:
         
         return Projection(min, max);
     }
+
     
-    static sf::Vector2f ClosestConvexPoint(const sf::Vector2f point, const sf::ConvexShape shape)
-    {
-        int closestPoint = 0;
-        float squaredLength = INT_MAX;
-        
-        for(int i = 0; i < shape.getPointCount(); i++)
-        {
-            float newLength = VectorUtil::MagnitudeSquared(shape.getPoint(i) - point);
-            
-            if(newLength < squaredLength)
-            {
-                squaredLength = newLength;
-                closestPoint = i;
-            }
-        }
-        
-        return shape.getPoint(closestPoint);
-    }
-    
-public:
     static void SphereAndSphere(SphereCollisionComponent* sphere1, SphereCollisionComponent* sphere2, ContactList &contactList)
     {
         TransformComponent* sphere1Transform = sphere1->GetOwner()->GetComponent<TransformComponent>();
         TransformComponent* sphere2Transform = sphere2->GetOwner()->GetComponent<TransformComponent>();
         float radiusSum = sphere1->radius + sphere2->radius;
-        float distance = VectorUtil::MagnitudeSquared(sphere1Transform->position - sphere2Transform->position);
+        float distance = VectorUtil::Magnitude(sphere1Transform->position - sphere2Transform->position);
         
         if(distance < radiusSum)
         {
@@ -110,6 +116,8 @@ public:
         {
             sf::Vector2f currentAxis = axis[i];
             
+            currentAxis = VectorUtil::Normalized(currentAxis);
+            
             Projection p1 = ProjectOnAxis(boxShape, currentAxis);
             Projection p2 = ProjectOnAxis(circleShape, currentAxis);
             
@@ -126,6 +134,8 @@ public:
             }
         }
         
+        delete axis;
+        
         Contact contact;
         contact.penetration = penetration;
         contact.normal = normal;
@@ -134,7 +144,6 @@ public:
         
         contactList.AddContact(contact);
     }
-
     
     static void BoxAndBox(BoxCollisionComponent* box1, BoxCollisionComponent* box2, ContactList &contactList)
     {
@@ -186,6 +195,9 @@ public:
                 }
             }
         }
+        
+        delete axis1;
+        delete axis2;
         
         Contact contact;
         contact.penetration = penetration;

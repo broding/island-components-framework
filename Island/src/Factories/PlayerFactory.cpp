@@ -19,6 +19,7 @@
 Entity* PlayerFactory::CreatePlayer()
 {
     Entity* player = new Entity();
+    
     RenderComponent* renderComponent = new RenderComponent();
     sf::Texture* texture = new sf::Texture();
     texture->loadFromFile(resourcePath() + "player.png");
@@ -32,7 +33,7 @@ Entity* PlayerFactory::CreatePlayer()
     PhysicsComponent* physicsComponent = new PhysicsComponent();
     NetworkComponent* networkComponent = new NetworkComponent();
     networkComponent->networkableComponents.push_back(transformComponent);
-    BoxCollisionComponent* collisionComponent = new BoxCollisionComponent();
+    SphereCollisionComponent* collisionComponent = new SphereCollisionComponent();
     
     
     player->AddComponent(renderComponent);

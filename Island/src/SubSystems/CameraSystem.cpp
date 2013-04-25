@@ -36,7 +36,7 @@ void CameraSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> co
             PhysicsComponent* cameraPhysics = currentCamera->GetOwner()->GetComponent<PhysicsComponent>();
             
             sf::Vector2f delta = targetTransform->position - cameraTransform->position;
-            float distance = VectorUtil::Magnitude(delta);
+            float distance = VectorUtil::MagnitudeSquared(delta);
             
             if(distance > currentCamera->maxTargetDistance * currentCamera->maxTargetDistance)
                 cameraPhysics->velocity = VectorUtil::Normalized(delta) * (distance / currentCamera->maxTargetDistance) * currentCamera->snapSpeed;

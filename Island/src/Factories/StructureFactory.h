@@ -57,6 +57,7 @@ public:
         collisionComponent->center = sf::Vector2f(radius, radius);
         collisionComponent->radius = radius;
         collisionComponent->solid = true;
+        collisionComponent->trigger = true;
         
         entity->AddComponent(transformComponent);
         entity->AddComponent(physicsComponent);

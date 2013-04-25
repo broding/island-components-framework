@@ -8,7 +8,6 @@
 
 #include "ConnectScene.h"
 #include "Button.h"
-#include "NetworkHandler.h"
 #include "PlayScene.h"
 
 ConnectScene::ConnectScene()
@@ -20,14 +19,12 @@ ConnectScene::ConnectScene()
 
 ConnectScene::~ConnectScene()
 {
-    
 }
 
 void ConnectScene::ProcessGUIEvent(GUIEvent event)
 {
     if(event.GetObjectId() == makeServerButton.GetId() && event.GetType() == GUIEvent::BUTTON_CLICKED)
     {
-        NetworkHandler::InitializeServer();
         SwitchScene(new PlayScene());
     }
 }

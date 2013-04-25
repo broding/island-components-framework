@@ -41,10 +41,6 @@ void SphereCollisionComponent::DrawDebug(sf::RenderWindow *window)
         
         window->draw(circle);
     }
-    
-    sf::ConvexShape shape = GetConvexShape();
-    shape.setFillColor(sf::Color::Green);
-    //window->draw(shape);
 }
 
 sf::ConvexShape SphereCollisionComponent::GetConvexShape()

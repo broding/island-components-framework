@@ -8,7 +8,7 @@
 
 #include "GUIObject.h"
 
-sf::Window* GUIObject::window;
+sf::RenderWindow* GUIObject::window;
 unsigned int GUIObject::_nextUniqueId;
 
 GUIObject::GUIObject()

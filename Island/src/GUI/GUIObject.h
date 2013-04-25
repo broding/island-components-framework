@@ -27,7 +27,7 @@ protected:
     bool _hovered;
     bool _clicked;
 public:
-    static sf::Window* window;
+    static sf::RenderWindow* window;
     
     sf::Vector2f position;
     

@@ -19,6 +19,21 @@ struct Contact {
     sf::Vector2f normal;
     float penetration;
     
+    Contact()
+    {
+        entity1 = 0;
+        entity2 = 0;
+        penetration = 0;
+    }
+    
+    Contact(const Contact &other)
+    {
+        entity1 = other.entity1;
+        entity2 = other.entity2;
+        normal = other.normal;
+        penetration = other.penetration;
+    }
+    
     bool operator==(const Contact& other)
     {
         return (other.entity1 == entity1 && other.entity2 == entity2) || (other.entity1 == entity2 && other.entity2 == entity1);

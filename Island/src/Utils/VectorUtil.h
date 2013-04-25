@@ -19,27 +19,27 @@ public:
     
     static float MagnitudeSquared(const sf::Vector2f vector)
     {
-        return sqrt(Magnitude(vector));
+        return vector.x * vector.x + vector.y * vector.y;
     }
     
     static float Magnitude(const sf::Vector2f vector)
     {
-        return vector.x * vector.x + vector.y * vector.y;
+        return sqrt(MagnitudeSquared(vector));
     }
     
     static sf::Vector2f Normalized(const sf::Vector2f vector)
     {
-        return vector / MagnitudeSquared(vector);
+        return vector / Magnitude(vector);
     }
     
     static void Normalize(sf::Vector2f &vector)
     {
-        vector = vector / MagnitudeSquared(vector);
+        vector = vector / Magnitude(vector);
     }
     
     static sf::Vector2f Perpendicular(const sf::Vector2f vector)
     {
-        return sf::Vector2f(-vector.x, vector.y);
+        return sf::Vector2f(vector.y, -vector.x);
     }
     
     static float DotProduct(const sf::Vector2f v1, const sf::Vector2f v2)
