@@ -11,13 +11,11 @@
 
 #include <iostream>
 
-#include "NetworkHandler.h"
 #include "SubSystem.h"
 
 class NetworkSystem : public SubSystem
 {
 private:
-    NetworkHandler networkHandler;
     void ProcessEvent(Component* component, Event* event);
 public:
     NetworkSystem();

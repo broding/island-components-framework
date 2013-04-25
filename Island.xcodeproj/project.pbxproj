@@ -21,17 +21,7 @@
 		4B6E99FD170EC8DF002F9797 /* UnitTests.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4B6E99FC170EC8DF002F9797 /* UnitTests.1 */; };
 		4B6E9A02170ECCD2002F9797 /* Projection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B3ABF431708930600491120 /* Projection.cpp */; };
 		4B6E9A03170ECCD3002F9797 /* Projection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B3ABF431708930600491120 /* Projection.cpp */; };
-		4B7C20FB1700B15D00C9D2A6 /* callbacks.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C20F31700B15D00C9D2A6 /* callbacks.c */; };
-		4B7C20FC1700B15D00C9D2A6 /* compress.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C20F41700B15D00C9D2A6 /* compress.c */; };
-		4B7C20FD1700B15D00C9D2A6 /* host.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C20F51700B15D00C9D2A6 /* host.c */; };
-		4B7C20FE1700B15D00C9D2A6 /* list.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C20F61700B15D00C9D2A6 /* list.c */; };
-		4B7C20FF1700B15D00C9D2A6 /* packet.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C20F71700B15D00C9D2A6 /* packet.c */; };
-		4B7C21001700B15D00C9D2A6 /* peer.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C20F81700B15D00C9D2A6 /* peer.c */; };
-		4B7C21011700B15D00C9D2A6 /* unix.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C20F91700B15D00C9D2A6 /* unix.c */; };
-		4B7C21021700B15D00C9D2A6 /* win32.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C20FA1700B15D00C9D2A6 /* win32.c */; };
-		4B7C21041700B19D00C9D2A6 /* protocol.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C21031700B19D00C9D2A6 /* protocol.c */; };
 		4B7C21071700B6F600C9D2A6 /* NetworkComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C21051700B6F600C9D2A6 /* NetworkComponent.cpp */; };
-		4B7C210B1700D05A00C9D2A6 /* NetworkHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C21091700D05A00C9D2A6 /* NetworkHandler.cpp */; };
 		4B900C4917004F3400D247FE /* NetworkSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B900C4717004F3400D247FE /* NetworkSystem.cpp */; };
 		4BB7881516F9E3A200AC62F4 /* PlayerInputComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BB7881316F9E3A200AC62F4 /* PlayerInputComponent.cpp */; };
 		4BB7881816F9E57000AC62F4 /* PlayerInputSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BB7881616F9E57000AC62F4 /* PlayerInputSystem.cpp */; };
@@ -102,19 +92,8 @@
 		4B6E99FA170EC8DF002F9797 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		4B6E99FC170EC8DF002F9797 /* UnitTests.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = UnitTests.1; sourceTree = "<group>"; };
 		4B6E9A01170EC8F7002F9797 /* catch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = catch.hpp; sourceTree = "<group>"; };
-		4B7C20F31700B15D00C9D2A6 /* callbacks.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = callbacks.c; path = lib/enet/callbacks.c; sourceTree = "<group>"; };
-		4B7C20F41700B15D00C9D2A6 /* compress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = compress.c; path = lib/enet/compress.c; sourceTree = "<group>"; };
-		4B7C20F51700B15D00C9D2A6 /* host.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = host.c; path = lib/enet/host.c; sourceTree = "<group>"; };
-		4B7C20F61700B15D00C9D2A6 /* list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = list.c; path = lib/enet/list.c; sourceTree = "<group>"; };
-		4B7C20F71700B15D00C9D2A6 /* packet.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = packet.c; path = lib/enet/packet.c; sourceTree = "<group>"; };
-		4B7C20F81700B15D00C9D2A6 /* peer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = peer.c; path = lib/enet/peer.c; sourceTree = "<group>"; };
-		4B7C20F91700B15D00C9D2A6 /* unix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = unix.c; path = lib/enet/unix.c; sourceTree = "<group>"; };
-		4B7C20FA1700B15D00C9D2A6 /* win32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = win32.c; path = lib/enet/win32.c; sourceTree = "<group>"; };
-		4B7C21031700B19D00C9D2A6 /* protocol.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = protocol.c; path = lib/enet/protocol.c; sourceTree = "<group>"; };
 		4B7C21051700B6F600C9D2A6 /* NetworkComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkComponent.cpp; sourceTree = "<group>"; };
 		4B7C21061700B6F600C9D2A6 /* NetworkComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkComponent.h; sourceTree = "<group>"; };
-		4B7C21091700D05A00C9D2A6 /* NetworkHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkHandler.cpp; sourceTree = "<group>"; };
-		4B7C210A1700D05A00C9D2A6 /* NetworkHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkHandler.h; sourceTree = "<group>"; };
 		4B8C6FCF170EC4290005D9BA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		4B8C6FD1170EC4290005D9BA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		4B8C6FD4170EC4290005D9BA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -278,35 +257,9 @@
 			path = UnitTests;
 			sourceTree = "<group>";
 		};
-		4B7C20EF1700B11D00C9D2A6 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				4B7C20F01700B12200C9D2A6 /* enet */,
-			);
-			name = lib;
-			sourceTree = "<group>";
-		};
-		4B7C20F01700B12200C9D2A6 /* enet */ = {
-			isa = PBXGroup;
-			children = (
-				4B7C21031700B19D00C9D2A6 /* protocol.c */,
-				4B7C20F31700B15D00C9D2A6 /* callbacks.c */,
-				4B7C20F41700B15D00C9D2A6 /* compress.c */,
-				4B7C20F51700B15D00C9D2A6 /* host.c */,
-				4B7C20F61700B15D00C9D2A6 /* list.c */,
-				4B7C20F71700B15D00C9D2A6 /* packet.c */,
-				4B7C20F81700B15D00C9D2A6 /* peer.c */,
-				4B7C20F91700B15D00C9D2A6 /* unix.c */,
-				4B7C20FA1700B15D00C9D2A6 /* win32.c */,
-			);
-			name = enet;
-			sourceTree = "<group>";
-		};
 		4B7C21081700CF3D00C9D2A6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				4B7C21091700D05A00C9D2A6 /* NetworkHandler.cpp */,
-				4B7C210A1700D05A00C9D2A6 /* NetworkHandler.h */,
 				4B16232917012194008F7AE2 /* INetworkableComponent.h */,
 			);
 			path = Network;
@@ -420,7 +373,6 @@
 		4BDA14AC16F7796700359B94 /* Island */ = {
 			isa = PBXGroup;
 			children = (
-				4B7C20EF1700B11D00C9D2A6 /* lib */,
 				4BDA14AD16F7796700359B94 /* OSX */,
 				4B68153C16F8DC9C0032EF5E /* src */,
 				4BDA14B416F7796700359B94 /* assets */,
@@ -577,17 +529,7 @@
 				4BB7881516F9E3A200AC62F4 /* PlayerInputComponent.cpp in Sources */,
 				4BB7881816F9E57000AC62F4 /* PlayerInputSystem.cpp in Sources */,
 				4B900C4917004F3400D247FE /* NetworkSystem.cpp in Sources */,
-				4B7C20FB1700B15D00C9D2A6 /* callbacks.c in Sources */,
-				4B7C20FC1700B15D00C9D2A6 /* compress.c in Sources */,
-				4B7C20FD1700B15D00C9D2A6 /* host.c in Sources */,
-				4B7C20FE1700B15D00C9D2A6 /* list.c in Sources */,
-				4B7C20FF1700B15D00C9D2A6 /* packet.c in Sources */,
-				4B7C21001700B15D00C9D2A6 /* peer.c in Sources */,
-				4B7C21011700B15D00C9D2A6 /* unix.c in Sources */,
-				4B7C21021700B15D00C9D2A6 /* win32.c in Sources */,
-				4B7C21041700B19D00C9D2A6 /* protocol.c in Sources */,
 				4B7C21071700B6F600C9D2A6 /* NetworkComponent.cpp in Sources */,
-				4B7C210B1700D05A00C9D2A6 /* NetworkHandler.cpp in Sources */,
 				4B16232E17026659008F7AE2 /* Button.cpp in Sources */,
 				4B16233217026776008F7AE2 /* ConnectScene.cpp in Sources */,
 				4B16233417030A9E008F7AE2 /* GUIObject.cpp in Sources */,
@@ -761,10 +703,7 @@
 				);
 				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include/;
 				INFOPLIST_FILE = "$(SRCROOT)/Island/OSX/Island-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Island/lib\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -774,11 +713,14 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
-				INFOPLIST_FILE = "$(SRCROOT)/Island/OSX/Island-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Island/lib\"",
+				HEADER_SEARCH_PATHS = (
+					"<Multiple",
+					"values>",
+					/usr/local/boost_1_53_0,
+					/usr/local/include,
 				);
+				INFOPLIST_FILE = "$(SRCROOT)/Island/OSX/Island-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -793,6 +735,7 @@
 				4B6E99FF170EC8DF002F9797 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4BDA14A416F7796700359B94 /* Build configuration list for PBXProject "Island" */ = {
 			isa = XCConfigurationList;
