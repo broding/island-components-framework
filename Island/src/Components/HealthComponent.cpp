@@ -17,6 +17,10 @@ HealthComponent::HealthComponent()
     _subSystem = healthSystem;
     
     this->AddToSystem();
+    
+    health = 100;
+    maxHealth = 100;
+    regenRate = 0;
 }
 
 
