@@ -39,8 +39,3 @@ void RenderSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> co
     }
 }
 
-void RenderSystem::ProcessEvent(Component *component, Event* event)
-{
-    delete event;
-}
-

@@ -15,9 +15,7 @@
 
 class PlayerInputSystem : public SubSystem
 {
-protected:
-    void ProcessEvent(Component* component, Event* event);
-    
+private:
     sf::RenderWindow* _window;
 public:
     PlayerInputSystem(sf::RenderWindow* window);

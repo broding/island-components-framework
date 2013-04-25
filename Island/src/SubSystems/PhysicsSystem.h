@@ -18,8 +18,6 @@ class PhysicsSystem : public SubSystem
 {
 private:
     void Integrate(PhysicsComponent* physicsComponent, TransformComponent* transformComponent, float lastFrameTime);
-protected:
-    void ProcessEvent(Component* component, Event* event);
 public:
     void ProcessGameTick(float lastFrameTime, std::list<Component*> components);
 };

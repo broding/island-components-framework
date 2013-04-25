@@ -49,8 +49,3 @@ void CameraSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> co
         _window->setView(view);
     }
 }
-
-void CameraSystem::ProcessEvent(Component *component, Event* event)
-{
-    delete event;
-}

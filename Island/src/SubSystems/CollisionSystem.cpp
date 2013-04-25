@@ -90,8 +90,3 @@ void CollisionSystem::Resolve(Contact contact)
              entity2Physics->velocity = v1x * massFormula2 + v2x * massFormula1 + v2y;
     }
 }
-
-void CollisionSystem::ProcessEvent(Component *component, Event* event)
-{
-    delete event;
-}

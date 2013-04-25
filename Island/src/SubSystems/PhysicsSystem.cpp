@@ -38,8 +38,3 @@ void PhysicsSystem::Integrate(PhysicsComponent* physicsComponent, TransformCompo
     
     physicsComponent->forceAccumulated = sf::Vector2f(0,0);
 }
-
-void PhysicsSystem::ProcessEvent(Component *component, Event* event)
-{
-    delete event;
-}

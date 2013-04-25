@@ -15,8 +15,6 @@
 
 class TransformSystem : public SubSystem
 {
-protected:
-    void ProcessEvent(Component* component, Event* event);
 public:
     void ProcessGameTick(float lastFrameTime, std::list<Component*> components);
 };

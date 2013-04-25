@@ -24,15 +24,15 @@ class SubSystem
 private:
     std::list<Component*> _components;
 protected:
-    std::list<EventType> _subscribedEvents;
-    virtual void ProcessEvent(Component* component, Event* event) = 0;
+    virtual void ProcessEvent(Component* component, Event event);
+    bool _subscribedEvents[EVENT_LAST_TYPE];
 public:
     virtual ~SubSystem();
     virtual void ProcessGameTick(float lastFrameTime, std::list<Component*> components) = 0;
     std::list<Component*> GetValidComponents();
     void AddComponent(Component* component);
     void RemoveComponent(Component* component);
-    void HandleEvent(Component* component, Event* event);
+    void HandleEvent(Component* component, Event event);
     virtual void DrawDebug(sf::RenderWindow* window);
 };
 

@@ -46,7 +46,7 @@ void Component::RemoveFromSystem()
     _subSystem->RemoveComponent(this);
 }
 
-void Component::HandleEvent(Event* event)
+void Component::HandleEvent(Event event)
 {
     _subSystem->HandleEvent(this, event);
 }

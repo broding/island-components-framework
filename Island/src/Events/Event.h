@@ -14,7 +14,7 @@
 
 enum EventType
 {
-    
+    EVENT_LAST_TYPE = 0
 };
 
 struct Event

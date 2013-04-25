@@ -21,7 +21,6 @@ class RenderSystem : public SubSystem
 private:
     sf::RenderWindow* _renderWindow;
 protected:
-    void ProcessEvent(Component* component, Event* event);
 public:
     RenderSystem(sf::RenderWindow* renderWindow);
     ~RenderSystem();

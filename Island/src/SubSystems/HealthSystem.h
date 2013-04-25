@@ -14,8 +14,6 @@
 
 class HealthSystem : public SubSystem
 {
-private:
-    void ProcessEvent(Component* component, Event* event);
 public:
     void ProcessGameTick(float lastFrameTime, std::list<Component*> components);
 };

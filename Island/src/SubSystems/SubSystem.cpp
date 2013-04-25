@@ -12,7 +12,8 @@
 
 SubSystem::~SubSystem()
 {
-    
+    for(int i = 0; i < EVENT_LAST_TYPE; i++)
+        _subscribedEvents[i] = false;
 }
 
 void SubSystem::AddComponent(Component* component)
@@ -25,13 +26,10 @@ void SubSystem::RemoveComponent(Component *component)
     _components.remove(component);
 }
 
-void SubSystem::HandleEvent(Component *component, Event* event)
+void SubSystem::HandleEvent(Component *component, Event event)
 {
-    for (std::list<EventType>::const_iterator it = _subscribedEvents.begin(), end = _subscribedEvents.end(); it != end; ++it)
-    {
-        if(*it == event->type)
+    if(_subscribedEvents[event.type])
             ProcessEvent(component, event);
-    }
 }
 
 std::list<Component*> SubSystem::GetValidComponents()
@@ -49,4 +47,9 @@ void SubSystem::DrawDebug(sf::RenderWindow* window)
 {
     for (std::list<Component*>::const_iterator it = _components.begin(), end = _components.end(); it != end; ++it)
         (*it)->DrawDebug(window);
+}
+
+void SubSystem::ProcessEvent(Component *component, Event event)
+{
+    
 }

@@ -13,8 +13,3 @@
 void TransformSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> components)
 {
 }
-
-void TransformSystem::ProcessEvent(Component *component, Event* event)
-{
-    delete event;
-}

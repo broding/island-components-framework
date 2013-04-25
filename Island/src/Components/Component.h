@@ -37,7 +37,7 @@ public:
     ComponentType GetComponentType();
     void SetOwner(Entity* entity);
     Entity* GetOwner();
-    void HandleEvent(Event* event);
+    void HandleEvent(Event event);
     void AddComponentSubscription(ComponentType type);
     void RemoveComponentSubscription(ComponentType type);
     void AddNeighbourComponent(Component* component);

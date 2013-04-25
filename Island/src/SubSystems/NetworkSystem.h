@@ -15,8 +15,6 @@
 
 class NetworkSystem : public SubSystem
 {
-private:
-    void ProcessEvent(Component* component, Event* event);
 public:
     NetworkSystem();
     ~NetworkSystem();

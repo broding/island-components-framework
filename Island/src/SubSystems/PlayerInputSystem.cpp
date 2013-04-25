@@ -59,8 +59,3 @@ void PlayerInputSystem::ProcessGameTick(float lastFrameTime, std::list<Component
         }
     }
 }
-
-void PlayerInputSystem::ProcessEvent(Component *component, Event* event)
-{
-    delete event;
-}

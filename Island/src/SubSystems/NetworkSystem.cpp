@@ -23,8 +23,3 @@ void NetworkSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> c
     {
     }
 }
-
-void NetworkSystem::ProcessEvent(Component *component, Event* event)
-{
-    delete event;
-}
