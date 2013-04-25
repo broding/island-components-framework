@@ -13,6 +13,9 @@
 		4B1623361703164C008F7AE2 /* testbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B1623351703164C008F7AE2 /* testbutton.png */; };
 		4B162339170342A4008F7AE2 /* GUIEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B162337170342A3008F7AE2 /* GUIEvent.cpp */; };
 		4B3ABF481709854400491120 /* SphereCollisionComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B3ABF461709854200491120 /* SphereCollisionComponent.cpp */; };
+		4B54ABC91729DBA600434EEA /* QuadTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B54ABC81729DBA600434EEA /* QuadTree.cpp */; };
+		4B54ABCC1729E1AB00434EEA /* HealthComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B54ABCA1729E1AB00434EEA /* HealthComponent.cpp */; };
+		4B54ABCF1729E28D00434EEA /* HealthSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B54ABCD1729E28C00434EEA /* HealthSystem.cpp */; };
 		4B62A25016F8673400016A62 /* SubSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B62A24E16F8673400016A62 /* SubSystem.cpp */; };
 		4B68153216F8A0000032EF5E /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153016F89FFF0032EF5E /* Event.cpp */; };
 		4B68153516F8C6C40032EF5E /* PhysicsSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153316F8C6C30032EF5E /* PhysicsSystem.cpp */; };
@@ -79,6 +82,12 @@
 		4B3ABF441708930600491120 /* Projection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Projection.h; sourceTree = "<group>"; };
 		4B3ABF461709854200491120 /* SphereCollisionComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SphereCollisionComponent.cpp; sourceTree = "<group>"; };
 		4B3ABF471709854300491120 /* SphereCollisionComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SphereCollisionComponent.h; sourceTree = "<group>"; };
+		4B54ABC71729DAD800434EEA /* QuadTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadTree.h; sourceTree = "<group>"; };
+		4B54ABC81729DBA600434EEA /* QuadTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QuadTree.cpp; sourceTree = "<group>"; };
+		4B54ABCA1729E1AB00434EEA /* HealthComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HealthComponent.cpp; sourceTree = "<group>"; };
+		4B54ABCB1729E1AB00434EEA /* HealthComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthComponent.h; sourceTree = "<group>"; };
+		4B54ABCD1729E28C00434EEA /* HealthSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HealthSystem.cpp; sourceTree = "<group>"; };
+		4B54ABCE1729E28D00434EEA /* HealthSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthSystem.h; sourceTree = "<group>"; };
 		4B62A24E16F8673400016A62 /* SubSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SubSystem.cpp; sourceTree = "<group>"; };
 		4B62A24F16F8673400016A62 /* SubSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubSystem.h; sourceTree = "<group>"; };
 		4B68152F16F89C7C0032EF5E /* ComponentType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComponentType.h; sourceTree = "<group>"; };
@@ -220,6 +229,8 @@
 				4BC1E0FC17083FE2007117EC /* BoxCollisionComponent.h */,
 				4B3ABF461709854200491120 /* SphereCollisionComponent.cpp */,
 				4B3ABF471709854300491120 /* SphereCollisionComponent.h */,
+				4B54ABCA1729E1AB00434EEA /* HealthComponent.cpp */,
+				4B54ABCB1729E1AB00434EEA /* HealthComponent.h */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -315,6 +326,8 @@
 				4B3ABF431708930600491120 /* Projection.cpp */,
 				4B3ABF441708930600491120 /* Projection.h */,
 				4BEEDE71170990A5004C4C61 /* ICollisionComponent.h */,
+				4B54ABC71729DAD800434EEA /* QuadTree.h */,
+				4B54ABC81729DBA600434EEA /* QuadTree.cpp */,
 			);
 			path = Collisions;
 			sourceTree = "<group>";
@@ -338,6 +351,8 @@
 				4BC1E0F11705CA52007117EC /* CameraSystem.h */,
 				4BC1E0FE1708408F007117EC /* CollisionSystem.cpp */,
 				4BC1E0FF17084091007117EC /* CollisionSystem.h */,
+				4B54ABCD1729E28C00434EEA /* HealthSystem.cpp */,
+				4B54ABCE1729E28D00434EEA /* HealthSystem.h */,
 			);
 			path = SubSystems;
 			sourceTree = "<group>";
@@ -543,6 +558,9 @@
 				4BC1E10017084092007117EC /* CollisionSystem.cpp in Sources */,
 				4B3ABF481709854400491120 /* SphereCollisionComponent.cpp in Sources */,
 				4B6E9A02170ECCD2002F9797 /* Projection.cpp in Sources */,
+				4B54ABC91729DBA600434EEA /* QuadTree.cpp in Sources */,
+				4B54ABCC1729E1AB00434EEA /* HealthComponent.cpp in Sources */,
+				4B54ABCF1729E28D00434EEA /* HealthSystem.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

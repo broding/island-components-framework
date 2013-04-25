@@ -16,6 +16,7 @@
 #include "NetworkSystem.h"
 #include "CameraSystem.h"
 #include "CollisionSystem.h"
+#include "HealthSystem.h"
 
 #include "RenderComponent.h"
 #include "TransformComponent.h"
@@ -25,6 +26,7 @@
 #include "CameraComponent.h"
 #include "BoxCollisionComponent.h"
 #include "SphereCollisionComponent.h"
+#include "HealthComponent.h"
 
 #include "ConnectScene.h"
 
@@ -54,11 +56,13 @@ void Core::InitializeSubSystems()
     NetworkSystem* networkSystem = new NetworkSystem();
     CameraSystem* cameraSystem = new CameraSystem(_renderWindow);
     CollisionSystem* collisionSystem = new CollisionSystem();
+    HealthSystem* healthSystem = new HealthSystem();
     
     AddSubSystem(cameraSystem);
     AddSubSystem(playerInputSystem);
     AddSubSystem(transformSystem);
     AddSubSystem(collisionSystem);
+    AddSubSystem(healthSystem);
     AddSubSystem(physicsSystem);
     AddSubSystem(renderSystem);
     AddSubSystem(networkSystem);
@@ -72,6 +76,7 @@ void Core::InitializeSubSystems()
     CameraComponent::cameraSystem = cameraSystem;
     BoxCollisionComponent::collisionSystem = collisionSystem;
     SphereCollisionComponent::collisionSystem = collisionSystem;
+    HealthComponent::healthSystem = healthSystem;
 }
 
 void Core::AddSubSystem(SubSystem *subSystem)
