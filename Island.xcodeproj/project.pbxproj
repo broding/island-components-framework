@@ -16,6 +16,8 @@
 		4B54ABC91729DBA600434EEA /* QuadTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B54ABC81729DBA600434EEA /* QuadTree.cpp */; };
 		4B54ABCC1729E1AB00434EEA /* HealthComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B54ABCA1729E1AB00434EEA /* HealthComponent.cpp */; };
 		4B54ABCF1729E28D00434EEA /* HealthSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B54ABCD1729E28C00434EEA /* HealthSystem.cpp */; };
+		4B54ABD21729E9E300434EEA /* WeaponSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B54ABD01729E9E000434EEA /* WeaponSystem.cpp */; };
+		4B54ABD51729E9F100434EEA /* WeaponComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B54ABD31729E9EF00434EEA /* WeaponComponent.cpp */; };
 		4B62A25016F8673400016A62 /* SubSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B62A24E16F8673400016A62 /* SubSystem.cpp */; };
 		4B68153216F8A0000032EF5E /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153016F89FFF0032EF5E /* Event.cpp */; };
 		4B68153516F8C6C40032EF5E /* PhysicsSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153316F8C6C30032EF5E /* PhysicsSystem.cpp */; };
@@ -88,6 +90,10 @@
 		4B54ABCB1729E1AB00434EEA /* HealthComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthComponent.h; sourceTree = "<group>"; };
 		4B54ABCD1729E28C00434EEA /* HealthSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HealthSystem.cpp; sourceTree = "<group>"; };
 		4B54ABCE1729E28D00434EEA /* HealthSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthSystem.h; sourceTree = "<group>"; };
+		4B54ABD01729E9E000434EEA /* WeaponSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WeaponSystem.cpp; sourceTree = "<group>"; };
+		4B54ABD11729E9E100434EEA /* WeaponSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponSystem.h; sourceTree = "<group>"; };
+		4B54ABD31729E9EF00434EEA /* WeaponComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WeaponComponent.cpp; sourceTree = "<group>"; };
+		4B54ABD41729E9F000434EEA /* WeaponComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponComponent.h; sourceTree = "<group>"; };
 		4B62A24E16F8673400016A62 /* SubSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SubSystem.cpp; sourceTree = "<group>"; };
 		4B62A24F16F8673400016A62 /* SubSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubSystem.h; sourceTree = "<group>"; };
 		4B68152F16F89C7C0032EF5E /* ComponentType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComponentType.h; sourceTree = "<group>"; };
@@ -231,6 +237,8 @@
 				4B3ABF471709854300491120 /* SphereCollisionComponent.h */,
 				4B54ABCA1729E1AB00434EEA /* HealthComponent.cpp */,
 				4B54ABCB1729E1AB00434EEA /* HealthComponent.h */,
+				4B54ABD31729E9EF00434EEA /* WeaponComponent.cpp */,
+				4B54ABD41729E9F000434EEA /* WeaponComponent.h */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -353,6 +361,8 @@
 				4BC1E0FF17084091007117EC /* CollisionSystem.h */,
 				4B54ABCD1729E28C00434EEA /* HealthSystem.cpp */,
 				4B54ABCE1729E28D00434EEA /* HealthSystem.h */,
+				4B54ABD01729E9E000434EEA /* WeaponSystem.cpp */,
+				4B54ABD11729E9E100434EEA /* WeaponSystem.h */,
 			);
 			path = SubSystems;
 			sourceTree = "<group>";
@@ -561,6 +571,8 @@
 				4B54ABC91729DBA600434EEA /* QuadTree.cpp in Sources */,
 				4B54ABCC1729E1AB00434EEA /* HealthComponent.cpp in Sources */,
 				4B54ABCF1729E28D00434EEA /* HealthSystem.cpp in Sources */,
+				4B54ABD21729E9E300434EEA /* WeaponSystem.cpp in Sources */,
+				4B54ABD51729E9F100434EEA /* WeaponComponent.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
