@@ -11,7 +11,8 @@
 
 #include <iostream>
 #include "Component.h"
-#include "WeaponSystem.h"
+
+class WeaponSystem;
 
 class WeaponComponent : public Component
 {
@@ -20,8 +21,16 @@ public:
     
     static WeaponSystem* weaponSystem;
     
+    float currentMagazine;
+    float magazineSize;
+    
     float rateOfFire;
+    float timeToReload;
+    bool isReloading;
+    bool isFiring;
+    
     float reloadTime;
+    float fireTime;
 };
 
 #endif /* defined(__Island__WeaponComponent__) */

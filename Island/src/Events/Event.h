@@ -14,11 +14,19 @@
 
 enum EventType
 {
-    EVENT_LAST_TYPE = 0
+    EVENT_PLAYERINPUT_SHOOT = 0,
+    EVENT_LAST_TYPE
 };
 
 struct Event
 {
+    virtual ~Event() {};
+    
+    template <class T> T* GetEvent()
+    {
+        return dynamic_cast<T*>(this);
+    }
+    
     EventType type;
 };
 

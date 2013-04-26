@@ -14,6 +14,7 @@
 #include "NetworkComponent.h"
 #include "BoxCollisionComponent.h"
 #include "SphereCollisionComponent.h"
+#include "WeaponComponent.h"
 #include "ResourcePath.hpp"
 
 Entity* PlayerFactory::CreatePlayer()
@@ -34,6 +35,7 @@ Entity* PlayerFactory::CreatePlayer()
     NetworkComponent* networkComponent = new NetworkComponent();
     networkComponent->networkableComponents.push_back(transformComponent);
     SphereCollisionComponent* collisionComponent = new SphereCollisionComponent();
+    WeaponComponent* weaponComponent = new WeaponComponent();
     
     
     player->AddComponent(renderComponent);
@@ -42,6 +44,7 @@ Entity* PlayerFactory::CreatePlayer()
     player->AddComponent(playerInputComponent);
     player->AddComponent(networkComponent);
     player->AddComponent(collisionComponent);
+    player->AddComponent(weaponComponent);
     
     return player;
 }

@@ -12,8 +12,11 @@
 #include "PlayerInputComponent.h"
 #include "PhysicsComponent.h"
 #include "TransformComponent.h"
+#include "WeaponComponent.h"
 #include "GUIObject.h"
+#include "Entity.h"
 #include <math.h>
+#include "WeaponEvents.h"
 
 PlayerInputSystem::PlayerInputSystem(sf::RenderWindow* window) : _window(window)
 {
@@ -25,8 +28,9 @@ void PlayerInputSystem::ProcessGameTick(float lastFrameTime, std::list<Component
     for (std::list<Component*>::const_iterator iterator = components.begin(), end = components.end(); iterator != end; ++iterator)
     {
         PlayerInputComponent* inputComponent = static_cast<PlayerInputComponent*>(*iterator);
-        PhysicsComponent* physicsComponent = static_cast<PhysicsComponent*>(inputComponent->GetNeighbourComponent(COMPONENT_PHYSICS));
-        TransformComponent* transformComponent = static_cast<TransformComponent*>(inputComponent->GetNeighbourComponent(COMPONENT_TRANSFORM));
+        PhysicsComponent* physicsComponent = inputComponent->GetOwner()->GetComponent<PhysicsComponent>();
+        TransformComponent* transformComponent = inputComponent->GetOwner()->GetComponent<TransformComponent>();
+        WeaponComponent* weaponComponent = inputComponent->GetOwner()->GetComponent<WeaponComponent>();
         
         if(physicsComponent != 0)
         {
@@ -43,9 +47,6 @@ void PlayerInputSystem::ProcessGameTick(float lastFrameTime, std::list<Component
             
             if(sf::Keyboard::isKeyPressed(inputComponent->right))
                 physicsComponent->forceAccumulated += sf::Vector2f(9000, 0);
-            
-            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-                transformComponent->position = sf::Vector2f(0, 0);
         }
         
         if(transformComponent != 0)
@@ -53,9 +54,19 @@ void PlayerInputSystem::ProcessGameTick(float lastFrameTime, std::list<Component
             sf::Vector2i mousePosition = sf::Vector2i(sf::Mouse::getPosition(*GUIObject::window).x, sf::Mouse::getPosition(*GUIObject::window).y);
             
             sf::Vector2f mouseDelta = _window->mapPixelToCoords(mousePosition) - transformComponent->position;
-            
             const double degreesPerRadian = 57.2957;
             transformComponent->rotation = atan2(mouseDelta.x, -mouseDelta.y) * degreesPerRadian;
+        }
+        
+        if(weaponComponent != 0)
+        {
+            sf::Vector2f mousePosition = sf::Vector2f(sf::Mouse::getPosition(*GUIObject::window).x, sf::Mouse::getPosition(*GUIObject::window).y);
+            
+            if(sf::Keyboard::isKeyPressed(inputComponent->shoot))
+            {
+                ShootEvent event(mousePosition, weaponComponent);
+                inputComponent->GetOwner()->HandleEvent(&event);
+            }
         }
     }
 }

@@ -11,10 +11,16 @@
 
 #include <iostream>
 #include "SubSystem.h"
+#include "WeaponEvents.h"
 
 class WeaponSystem : public SubSystem
 {
+public:
+    WeaponSystem();
     void ProcessGameTick(float lastFrameTime, std::list<Component*> components);
+private:
+    virtual void ProcessEvent(Component* component, Event* event);
+    void Shoot(WeaponComponent* component, sf::Vector2f position);
 };
 
 #endif /* defined(__Island__WeaponSystem__) */

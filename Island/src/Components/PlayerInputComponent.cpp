@@ -24,4 +24,5 @@ PlayerInputComponent::PlayerInputComponent()
     right = sf::Keyboard::D;
     up = sf::Keyboard::W;
     down = sf::Keyboard::S;
+    shoot = sf::Keyboard::Space;
 }

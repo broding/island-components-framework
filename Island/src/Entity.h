@@ -28,7 +28,7 @@ public:
     void InitializeComponents();
     void AddComponent(Component* component);
     void RemoveComponent(ComponentType type);
-    void HandleEvent(Event event);
+    void HandleEvent(Event* event);
     Component* GetComponent(ComponentType type);
     template <class T> T* GetComponent()
     {

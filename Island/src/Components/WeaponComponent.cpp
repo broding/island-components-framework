@@ -7,6 +7,7 @@
 //
 
 #include "WeaponComponent.h"
+#include "WeaponSystem.h"
 
 WeaponSystem* WeaponComponent::weaponSystem;
 
@@ -17,6 +18,15 @@ WeaponComponent::WeaponComponent()
     
     this->AddToSystem();
     
-    rateOfFire = 0.5f;
-    reloadTime = 1.1f;
+    currentMagazine = 10;
+    magazineSize = 10;
+    
+    rateOfFire = 0.1f;
+    timeToReload = 1.1f;
+    
+    isReloading = false;
+    isFiring = false;
+    
+    reloadTime = 0.0f;
+    fireTime = 0.0f;
 }

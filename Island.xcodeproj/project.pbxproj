@@ -94,6 +94,7 @@
 		4B54ABD11729E9E100434EEA /* WeaponSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponSystem.h; sourceTree = "<group>"; };
 		4B54ABD31729E9EF00434EEA /* WeaponComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WeaponComponent.cpp; sourceTree = "<group>"; };
 		4B54ABD41729E9F000434EEA /* WeaponComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponComponent.h; sourceTree = "<group>"; };
+		4B54ABD61729F06400434EEA /* WeaponEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponEvents.h; sourceTree = "<group>"; };
 		4B62A24E16F8673400016A62 /* SubSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SubSystem.cpp; sourceTree = "<group>"; };
 		4B62A24F16F8673400016A62 /* SubSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubSystem.h; sourceTree = "<group>"; };
 		4B68152F16F89C7C0032EF5E /* ComponentType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComponentType.h; sourceTree = "<group>"; };
@@ -372,6 +373,7 @@
 			children = (
 				4B68153016F89FFF0032EF5E /* Event.cpp */,
 				4B68153116F89FFF0032EF5E /* Event.h */,
+				4B54ABD61729F06400434EEA /* WeaponEvents.h */,
 			);
 			path = Events;
 			sourceTree = "<group>";

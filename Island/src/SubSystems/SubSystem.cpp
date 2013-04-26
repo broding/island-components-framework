@@ -16,6 +16,16 @@ SubSystem::~SubSystem()
         _subscribedEvents[i] = false;
 }
 
+void SubSystem::SubscribeToEvent(EventType type)
+{
+    _subscribedEvents[type] = true;
+}
+
+void SubSystem::UnsubscribeToEvent(EventType type)
+{
+    _subscribedEvents[type] = false;
+}
+
 void SubSystem::AddComponent(Component* component)
 {
     _components.push_back(component);
@@ -26,9 +36,9 @@ void SubSystem::RemoveComponent(Component *component)
     _components.remove(component);
 }
 
-void SubSystem::HandleEvent(Component *component, Event event)
+void SubSystem::HandleEvent(Component *component, Event* event)
 {
-    if(_subscribedEvents[event.type])
+    if(_subscribedEvents[event->type])
             ProcessEvent(component, event);
 }
 
@@ -49,7 +59,7 @@ void SubSystem::DrawDebug(sf::RenderWindow* window)
         (*it)->DrawDebug(window);
 }
 
-void SubSystem::ProcessEvent(Component *component, Event event)
+void SubSystem::ProcessEvent(Component *component, Event* event)
 {
     
 }
