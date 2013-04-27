@@ -27,7 +27,7 @@ void RenderSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> co
         RenderComponent* renderComponent = static_cast<RenderComponent*>(*iterator);
         TransformComponent* transformComponent = static_cast<TransformComponent*>(renderComponent->GetNeighbourComponent(COMPONENT_TRANSFORM));
         
-        if(transformComponent != 0)
+        if(transformComponent != NULL)
         {
             renderComponent->sprite.setPosition(transformComponent->position);
             renderComponent->sprite.setScale(transformComponent->scale);

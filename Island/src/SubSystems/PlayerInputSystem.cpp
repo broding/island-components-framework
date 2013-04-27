@@ -32,7 +32,7 @@ void PlayerInputSystem::ProcessGameTick(float lastFrameTime, std::list<Component
         TransformComponent* transformComponent = inputComponent->GetOwner()->GetComponent<TransformComponent>();
         WeaponComponent* weaponComponent = inputComponent->GetOwner()->GetComponent<WeaponComponent>();
         
-        if(physicsComponent != 0)
+        if(physicsComponent != NULL)
         {
             //physicsComponent->velocity = sf::Vector2f(0,0);
             
@@ -49,7 +49,7 @@ void PlayerInputSystem::ProcessGameTick(float lastFrameTime, std::list<Component
                 physicsComponent->forceAccumulated += sf::Vector2f(9000, 0);
         }
         
-        if(transformComponent != 0)
+        if(transformComponent != NULL)
         {
             sf::Vector2i mousePosition = sf::Vector2i(sf::Mouse::getPosition(*GUIObject::window).x, sf::Mouse::getPosition(*GUIObject::window).y);
             
@@ -58,9 +58,11 @@ void PlayerInputSystem::ProcessGameTick(float lastFrameTime, std::list<Component
             transformComponent->rotation = atan2(mouseDelta.x, -mouseDelta.y) * degreesPerRadian;
         }
         
-        if(weaponComponent != 0)
+        if(weaponComponent != NULL)
         {
             sf::Vector2f mousePosition = sf::Vector2f(sf::Mouse::getPosition(*GUIObject::window).x, sf::Mouse::getPosition(*GUIObject::window).y);
+            
+            mousePosition = _window->mapPixelToCoords(sf::Vector2i(mousePosition));
             
             if(sf::Keyboard::isKeyPressed(inputComponent->shoot))
             {
