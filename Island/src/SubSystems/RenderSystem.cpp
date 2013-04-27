@@ -35,6 +35,26 @@ void RenderSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> co
             renderComponent->sprite.setOrigin(transformComponent->origin);
         }
         
+        if(renderComponent->frames.size() > 0)
+        {
+            // frame time is done in milliseconds
+            renderComponent->currentFrameTime += lastFrameTime;
+            
+            if(renderComponent->currentFrameTime > renderComponent->frames[renderComponent->currentFrame].time)
+            {
+                if(renderComponent->currentFrame >= renderComponent->frames.size() && renderComponent->looping)
+                    renderComponent->currentFrame = 0;
+                else if(renderComponent->currentFrame < renderComponent->frames.size())
+                    renderComponent->currentFrame++;
+                
+                renderComponent->currentFrameTime = 0;
+                
+            }
+            
+            renderComponent->textureRect.left = renderComponent->textureRect.width * renderComponent->currentFrame;
+            renderComponent->sprite.setTextureRect(renderComponent->textureRect);
+        }
+        
         _renderWindow->draw(renderComponent->sprite);
     }
 }

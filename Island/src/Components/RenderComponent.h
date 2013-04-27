@@ -13,6 +13,17 @@
 #include "Component.h"
 #include "RenderSystem.h"
 #include <SFML/Graphics.hpp>
+#include <vector>
+
+struct AnimationFrame
+{
+    int index;
+    float time;
+    
+    AnimationFrame(int index, float time) : index(index), time(time)
+    {
+    }
+};
 
 class RenderComponent : public Component
 {
@@ -23,6 +34,11 @@ public:
     static RenderSystem* renderSystem;
     
     sf::Sprite sprite;
+    sf::Rect<int> textureRect;
+    std::vector<AnimationFrame> frames;
+    int currentFrame;
+    float currentFrameTime;
+    bool looping;
 };
 
 #endif /* defined(__Island__RenderComponent__) */

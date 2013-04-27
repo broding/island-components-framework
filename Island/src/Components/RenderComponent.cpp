@@ -18,4 +18,8 @@ RenderComponent::RenderComponent()
     this->AddToSystem();
     
     this->AddComponentSubscription(COMPONENT_TRANSFORM);
+    
+    currentFrame = 0;
+    currentFrameTime = 0;
+    looping = true;
 }
