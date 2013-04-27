@@ -9,6 +9,8 @@
 #include "WeaponSystem.h"
 #include "WeaponComponent.h"
 #include "WeaponEvents.h"
+#include "BulletFactory.h"
+#include "Scene.h"
 
 WeaponSystem::WeaponSystem()
 {
@@ -77,7 +79,8 @@ void WeaponSystem::Shoot(WeaponComponent* component, sf::Vector2f position)
         {
             component->isFiring = true;
             component->currentMagazine--;
-            // fire this damn thing
+            Entity* bullet = BulletFactory::CreateBullet(component, position);
+            component->GetOwner()->GetParent()->AddEntity(bullet);
         }
         else
         {

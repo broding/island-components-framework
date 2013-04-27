@@ -36,7 +36,7 @@ void Scene::RemoveGUIObject(GUIObject *object)
 void Scene::AddEntity(Entity *entity)
 {
     this->_entities.push_back(entity);
-    entity->addedToScene = true;
+    entity->SetParent(this);
 }
 
 void Scene::RemoveEntity(Entity *entity)
@@ -48,7 +48,7 @@ void Scene::RemoveEntity(Entity *entity)
             break;
         }
     
-    entity->addedToScene = false;
+    entity->SetParent(NULL);
 }
 
 void Scene::Update(float lastFrameTime)

@@ -9,20 +9,30 @@
 #include "Entity.h"
 #include "Component.h"
 
-Entity::Entity()
-{
-    
-}
-
 Entity::Entity(std::string name) : _name(name)
 {
-    addedToScene = false;
+    _scene = NULL;
 }
 
 Entity::~Entity()
 {
     for (std::list<Component*>::const_iterator it = _components.begin(), end = _components.end(); it != end; ++it)
         delete *it;
+}
+
+void Entity::SetParent(Scene *scene)
+{
+    _scene = scene;
+}
+
+Scene* Entity::GetParent()
+{
+    return _scene;
+}
+
+bool Entity::IsAddedToScene()
+{
+    return _scene != NULL;
 }
 
 void Entity::AddComponent(Component *component)

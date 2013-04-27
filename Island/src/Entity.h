@@ -15,16 +15,24 @@
 #include "Event.h"
 #include "Component.h"
 
+class Scene;
+
 class Entity
 {
+    friend class Scene;
 private:
+    void SetParent(Scene* scene);
+    
     std::string _name;
     unsigned int _id;
     std::list<Component*> _components;
+    Scene* _scene;
 public:
-    Entity();
-    Entity(std::string name);
+    Entity(std::string name = "");
     ~Entity();
+    
+    Scene* GetParent();
+    bool IsAddedToScene();
     void InitializeComponents();
     void AddComponent(Component* component);
     void RemoveComponent(ComponentType type);
@@ -41,8 +49,6 @@ public:
         
         return NULL;
     }
-    
-    bool addedToScene;
 };
 
 #endif /* defined(__Island__Entity__) */

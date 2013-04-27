@@ -18,6 +18,7 @@
 #include "CollisionSystem.h"
 #include "HealthSystem.h"
 #include "WeaponSystem.h"
+#include "ScriptSystem.h"
 
 #include "RenderComponent.h"
 #include "TransformComponent.h"
@@ -29,6 +30,7 @@
 #include "SphereCollisionComponent.h"
 #include "HealthComponent.h"
 #include "WeaponComponent.h"
+#include "ScriptComponent.h"
 
 #include "ConnectScene.h"
 
@@ -60,8 +62,10 @@ void Core::InitializeSubSystems()
     CollisionSystem* collisionSystem = new CollisionSystem();
     HealthSystem* healthSystem = new HealthSystem();
     WeaponSystem* weaponSystem = new WeaponSystem();
+    ScriptSystem* scriptSystem = new ScriptSystem();
     
     AddSubSystem(cameraSystem);
+    AddSubSystem(scriptSystem);
     AddSubSystem(playerInputSystem);
     AddSubSystem(transformSystem);
     AddSubSystem(collisionSystem);
@@ -82,6 +86,7 @@ void Core::InitializeSubSystems()
     SphereCollisionComponent::collisionSystem = collisionSystem;
     HealthComponent::healthSystem = healthSystem;
     WeaponComponent::weaponSystem = weaponSystem;
+    ScriptComponent::scriptSystem = scriptSystem;
 }
 
 void Core::AddSubSystem(SubSystem *subSystem)
