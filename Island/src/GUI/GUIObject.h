@@ -32,6 +32,7 @@ public:
     sf::Vector2f position;
     
     GUIObject();
+    ~GUIObject();
     
     virtual void Select();
     virtual void Click();

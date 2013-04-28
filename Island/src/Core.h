@@ -23,6 +23,7 @@ private:
     
     void InitializeSubSystems();
     void AddSubSystem(SubSystem* system);
+    void DrawDebug();
     
 public:
     Core(sf::RenderWindow* window);

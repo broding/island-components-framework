@@ -24,9 +24,12 @@ private:
     std::vector<GUIObject*> _guiObjects;
     std::vector<Entity*> _entities;
     Core* _core;
+    bool _deleteFlag;
+    
 protected:
     void SwitchScene(Scene* scene);
 public:
+    Scene();
     virtual ~Scene();
     void AddGUIObject(GUIObject* object);
     void RemoveGUIObject(GUIObject* object);
@@ -36,6 +39,7 @@ public:
     void Update(float lastFrameTime);
     virtual void ProcessGUIEvent(GUIEvent event) = 0;
     void SetCore(Core* core);
+    void Delete();
 };
     
 #endif /* defined(__Island__Scene__) */

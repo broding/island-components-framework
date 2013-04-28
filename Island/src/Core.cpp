@@ -33,13 +33,16 @@
 #include "ScriptComponent.h"
 
 #include "ConnectScene.h"
+#include "DebugText.h"
 
 #include "Entity.h"
 #include "ResourcePath.hpp"
+#include "GameConfig.h"
 
 Core::Core(sf::RenderWindow* window) : _renderWindow(window)
 {
     GUIObject::window = window;
+    _currentScene = NULL;
     
     InitializeSubSystems();
     SwitchScene(new ConnectScene());
@@ -97,18 +100,27 @@ void Core::AddSubSystem(SubSystem *subSystem)
 void Core::Update(float lastFrameTime)
 {
     lastFrameTime = std::min(lastFrameTime, 1.0f);
+    lastFrameTime = std::max(lastFrameTime, 1 / 60.0f);
+    
     for (std::vector<SubSystem*>::const_iterator iterator = _subSystems.begin(), end = _subSystems.end(); iterator != end; ++iterator)
     {
         (*iterator)->ProcessGameTick(lastFrameTime, (*iterator)->GetValidComponents());
     }
     
-    for (std::vector<SubSystem*>::const_iterator iterator = _subSystems.begin(), end = _subSystems.end(); iterator != end; ++iterator)
+    if(GameConfig::GetInstance()->GetFlagConfig("debugMode"))
     {
-        (*iterator)->DrawDebug(_renderWindow);
+        for (std::vector<SubSystem*>::const_iterator iterator = _subSystems.begin(), end = _subSystems.end(); iterator != end; ++iterator)
+        {
+            (*iterator)->DrawDebug(_renderWindow);
+        }
     }
     
-    if(_currentScene != 0)
+    
+    
+    if(_currentScene != NULL)
     {
+        sf::View view(sf::Vector2f(400,300), sf::Vector2f(800,600));
+        _renderWindow->setView(view);
         _currentScene->Update(lastFrameTime);
         _currentScene->Draw(_renderWindow);
     }
@@ -116,8 +128,10 @@ void Core::Update(float lastFrameTime)
 
 void Core::SwitchScene(Scene* scene)
 {
-    //delete _currentScene
+    if(_currentScene != NULL)
+        _currentScene->Delete();
     
     _currentScene = scene;
     _currentScene->SetCore(this);
+    _currentScene->AddGUIObject(DebugText::GetInstance());
 }

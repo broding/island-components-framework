@@ -9,13 +9,16 @@
 #include "GUIObject.h"
 
 sf::RenderWindow* GUIObject::window;
-unsigned int GUIObject::_nextUniqueId;
+unsigned int GUIObject::_nextUniqueId = 0;
 
 GUIObject::GUIObject()
 {
     _id = _nextUniqueId++;
 }
 
+GUIObject::~GUIObject()
+{
+}
 
 void GUIObject::Select()
 {

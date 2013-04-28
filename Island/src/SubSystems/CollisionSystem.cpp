@@ -12,6 +12,7 @@
 #include "SphereCollisionComponent.h"
 #include "TransformComponent.h"
 #include "PhysicsComponent.h"
+#include "DebugText.h"
 
 void CollisionSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> components)
 {
@@ -37,6 +38,8 @@ void CollisionSystem::ProcessGameTick(float lastFrameTime, std::list<Component*>
     
     for (int i = 0; i < contactList.GetContacts().size(); i++)
         Resolve((contactList.GetContacts()[i]));
+    
+    DebugText::GetInstance()->AddText("Collision contacts", (float)contactList.GetContacts().size());
 }
 
 void CollisionSystem::Resolve(Contact contact)

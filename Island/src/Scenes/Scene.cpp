@@ -8,14 +8,17 @@
 
 #include "Scene.h"
 #include "Core.h"
+#include "DebugText.h"
+
+Scene::Scene()
+{
+    _deleteFlag = false;
+}
 
 Scene::~Scene()
 {
-    for (std::vector<GUIObject*>::iterator it = _guiObjects.begin() ; it != _guiObjects.end(); ++it)
-        delete *it;
-    
-    for (std::vector<Entity*>::iterator it = _entities.begin() ; it != _entities.end(); ++it)
-        delete *it;
+    while(!_guiObjects.empty()) delete _guiObjects.back(), _guiObjects.pop_back();
+    while(!_entities.empty()) delete _entities.back(), _entities.pop_back();
 }
 
 void Scene::AddGUIObject(GUIObject *object)
@@ -53,8 +56,13 @@ void Scene::RemoveEntity(Entity *entity)
 
 void Scene::Update(float lastFrameTime)
 {
+    if(_deleteFlag)
+        delete this;
+    
     for (std::vector<GUIObject*>::iterator it = _guiObjects.begin() ; it != _guiObjects.end(); ++it)
         (*it)->Update(lastFrameTime);
+    
+    DebugText::GetInstance()->AddText("Total entities", (float)_entities.size());
 }
 
 void Scene::Draw(sf::RenderWindow* window)
@@ -71,4 +79,9 @@ void Scene::SetCore(Core *core)
 void Scene::SwitchScene(Scene* scene)
 {
     _core->SwitchScene(scene);
+}
+
+void Scene::Delete()
+{
+    _deleteFlag = true;
 }

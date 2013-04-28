@@ -27,6 +27,9 @@ Entity* PlayerFactory::CreatePlayer()
     texture->setSmooth(true);
     renderComponent->sprite = *new sf::Sprite();
     renderComponent->sprite.setTexture(*texture);
+    renderComponent->textureRect = sf::Rect<int>(0,0,32,32);
+    renderComponent->frames.push_back(AnimationFrame(0, 0.1f));
+    renderComponent->frames.push_back(AnimationFrame(1, 0.55f));
     TransformComponent* transformComponent = new TransformComponent();
     transformComponent->position = sf::Vector2f(40, 40);
     transformComponent->origin = sf::Vector2f(32, 29);
