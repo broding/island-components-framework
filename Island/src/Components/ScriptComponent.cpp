@@ -17,3 +17,8 @@ ScriptComponent::ScriptComponent()
     
     this->AddToSystem();
 }
+
+ScriptComponent::~ScriptComponent()
+{
+    delete script;
+}

@@ -7,12 +7,14 @@
 //
 
 #include "ScriptSystem.h"
+#include "ScriptComponent.h"
 
 void ScriptSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> components)
 {
     for (std::list<Component*>::const_iterator iterator = components.begin(), end = components.end(); iterator != end; ++iterator)
     {
-        
+        ScriptComponent* component = static_cast<ScriptComponent*>(*iterator);
+        component->script->RunScript(component, lastFrameTime);
     }
 }
 
