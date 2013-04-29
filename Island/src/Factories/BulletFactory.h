@@ -20,6 +20,8 @@
 #include "BoxCollisionComponent.h"
 #include "SphereCollisionComponent.h"
 #include <SFML/System.hpp>
+#include "BulletScript.h"
+#include "ScriptComponent.h"
 
 class BulletFactory
 {
@@ -32,11 +34,15 @@ public:
         transformComponent->position = sf::Vector2f(position);
         PhysicsComponent* physicsComponent = new PhysicsComponent();
         SphereCollisionComponent* collisionComponent = new SphereCollisionComponent();
+        collisionComponent->collisionGroup = 1;
         collisionComponent->trigger = true;
+        ScriptComponent* scriptComponent = new ScriptComponent();
+        scriptComponent->script = new BulletScript();
         
         entity->AddComponent(transformComponent);
         entity->AddComponent(physicsComponent);
         entity->AddComponent(collisionComponent);
+        entity->AddComponent(scriptComponent);
         
         return entity;
     }

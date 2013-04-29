@@ -26,7 +26,6 @@
 		4B54ABF2172D3F7200434EEA /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4B54ABF1172D3F7200434EEA /* ResourcePath.mm */; };
 		4B54ABF5172D3F7200434EEA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B54ABF4172D3F7200434EEA /* main.cpp */; };
 		4B54AC06172D404A00434EEA /* Arial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B54AC05172D404A00434EEA /* Arial.ttf */; };
-		4B54AC0F172D486600434EEA /* BulletScript.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B54AC0D172D486500434EEA /* BulletScript.cpp */; };
 		4B62A25016F8673400016A62 /* SubSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B62A24E16F8673400016A62 /* SubSystem.cpp */; };
 		4B68153216F8A0000032EF5E /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153016F89FFF0032EF5E /* Event.cpp */; };
 		4B68153516F8C6C40032EF5E /* PhysicsSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153316F8C6C30032EF5E /* PhysicsSystem.cpp */; };
@@ -131,7 +130,6 @@
 		4B54ABF4172D3F7200434EEA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		4B54AC05172D404A00434EEA /* Arial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Arial.ttf; sourceTree = "<group>"; };
 		4B54AC0B172D47E400434EEA /* BaseScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseScript.h; sourceTree = "<group>"; };
-		4B54AC0D172D486500434EEA /* BulletScript.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BulletScript.cpp; sourceTree = "<group>"; };
 		4B54AC0E172D486500434EEA /* BulletScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletScript.h; sourceTree = "<group>"; };
 		4B62A24E16F8673400016A62 /* SubSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SubSystem.cpp; sourceTree = "<group>"; };
 		4B62A24F16F8673400016A62 /* SubSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubSystem.h; sourceTree = "<group>"; };
@@ -301,7 +299,6 @@
 			isa = PBXGroup;
 			children = (
 				4B54AC0B172D47E400434EEA /* BaseScript.h */,
-				4B54AC0D172D486500434EEA /* BulletScript.cpp */,
 				4B54AC0E172D486500434EEA /* BulletScript.h */,
 			);
 			path = Scripts;
@@ -734,7 +731,6 @@
 				4B54ABDF172BD41800434EEA /* ScriptSystem.cpp in Sources */,
 				4B54ABE2172C04A300434EEA /* DebugText.cpp in Sources */,
 				4B54ABE7172D32D000434EEA /* GameConfig.cpp in Sources */,
-				4B54AC0F172D486600434EEA /* BulletScript.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,7 +22,7 @@ class BulletScript : public BaseScript
         time += lastFrameTime;
         
         if(time > 2)
-            component->GetOwner()->RemoveComponent(COMPONENT_SPHERECOLLISION);
+            component->GetOwner()->Delete();
     }
 };
 

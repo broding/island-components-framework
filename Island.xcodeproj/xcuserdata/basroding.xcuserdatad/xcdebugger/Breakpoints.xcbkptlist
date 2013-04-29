@@ -670,11 +670,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Island/src/Collisions/IntersectionTests.h"
-         timestampString = "388604595.49277"
+         timestampString = "388933603.088956"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "208"
-         endingLineNumber = "208"
+         startingLineNumber = "217"
+         endingLineNumber = "217"
          landmarkName = "BoxAndBox(BoxCollisionComponent* box1, BoxCollisionComponent* box2, ContactList &amp;contactList)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -683,11 +683,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Island/src/Collisions/IntersectionTests.h"
-         timestampString = "388604595.49277"
+         timestampString = "388933603.088956"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "186"
-         endingLineNumber = "186"
+         startingLineNumber = "195"
+         endingLineNumber = "195"
          landmarkName = "BoxAndBox(BoxCollisionComponent* box1, BoxCollisionComponent* box2, ContactList &amp;contactList)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -696,11 +696,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Island/src/Collisions/IntersectionTests.h"
-         timestampString = "388604595.49277"
+         timestampString = "388933603.088956"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "166"
-         endingLineNumber = "166"
+         startingLineNumber = "175"
+         endingLineNumber = "175"
          landmarkName = "BoxAndBox(BoxCollisionComponent* box1, BoxCollisionComponent* box2, ContactList &amp;contactList)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -709,24 +709,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Island/src/Collisions/IntersectionTests.h"
-         timestampString = "388604595.49277"
+         timestampString = "388933603.088956"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "168"
+         endingLineNumber = "168"
+         landmarkName = "BoxAndBox(BoxCollisionComponent* box1, BoxCollisionComponent* box2, ContactList &amp;contactList)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Island/src/Collisions/IntersectionTests.h"
+         timestampString = "388933603.088956"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "159"
          endingLineNumber = "159"
-         landmarkName = "BoxAndBox(BoxCollisionComponent* box1, BoxCollisionComponent* box2, ContactList &amp;contactList)"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Island/src/Collisions/IntersectionTests.h"
-         timestampString = "388604595.49277"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "150"
-         endingLineNumber = "150"
          landmarkName = "BoxAndBox(BoxCollisionComponent* box1, BoxCollisionComponent* box2, ContactList &amp;contactList)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -761,11 +761,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Island/src/Collisions/IntersectionTests.h"
-         timestampString = "388604595.49277"
+         timestampString = "388933603.088956"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "168"
-         endingLineNumber = "168"
+         startingLineNumber = "177"
+         endingLineNumber = "177"
          landmarkName = "BoxAndBox(BoxCollisionComponent* box1, BoxCollisionComponent* box2, ContactList &amp;contactList)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -774,11 +774,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Island/src/Collisions/IntersectionTests.h"
-         timestampString = "388604595.49277"
+         timestampString = "388933603.088956"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "188"
-         endingLineNumber = "188"
+         startingLineNumber = "197"
+         endingLineNumber = "197"
          landmarkName = "BoxAndBox(BoxCollisionComponent* box1, BoxCollisionComponent* box2, ContactList &amp;contactList)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -787,11 +787,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Island/src/Collisions/IntersectionTests.h"
-         timestampString = "388604595.49277"
+         timestampString = "388933603.088956"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "173"
-         endingLineNumber = "173"
+         startingLineNumber = "182"
+         endingLineNumber = "182"
          landmarkName = "BoxAndBox(BoxCollisionComponent* box1, BoxCollisionComponent* box2, ContactList &amp;contactList)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -800,11 +800,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Island/src/Collisions/IntersectionTests.h"
-         timestampString = "388604595.49277"
+         timestampString = "388933603.088956"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "202"
-         endingLineNumber = "202"
+         startingLineNumber = "211"
+         endingLineNumber = "211"
          landmarkName = "BoxAndBox(BoxCollisionComponent* box1, BoxCollisionComponent* box2, ContactList &amp;contactList)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -813,11 +813,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Island/src/Collisions/IntersectionTests.h"
-         timestampString = "388604595.49277"
+         timestampString = "388933603.088956"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "191"
-         endingLineNumber = "191"
+         startingLineNumber = "200"
+         endingLineNumber = "200"
          landmarkName = "BoxAndBox(BoxCollisionComponent* box1, BoxCollisionComponent* box2, ContactList &amp;contactList)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -826,11 +826,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Island/src/Collisions/IntersectionTests.h"
-         timestampString = "388604595.49277"
+         timestampString = "388933603.088956"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "171"
-         endingLineNumber = "171"
+         startingLineNumber = "180"
+         endingLineNumber = "180"
          landmarkName = "BoxAndBox(BoxCollisionComponent* box1, BoxCollisionComponent* box2, ContactList &amp;contactList)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -839,11 +839,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Island/src/Collisions/IntersectionTests.h"
-         timestampString = "388604595.49277"
+         timestampString = "388933603.088956"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "175"
-         endingLineNumber = "175"
+         startingLineNumber = "184"
+         endingLineNumber = "184"
          landmarkName = "BoxAndBox(BoxCollisionComponent* box1, BoxCollisionComponent* box2, ContactList &amp;contactList)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -865,11 +865,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Island/src/Collisions/IntersectionTests.h"
-         timestampString = "388442615.120272"
+         timestampString = "388933603.088956"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "131"
-         endingLineNumber = "131"
+         startingLineNumber = "137"
+         endingLineNumber = "137"
          landmarkName = "BoxAndSphere(BoxCollisionComponent* box, SphereCollisionComponent* sphere, ContactList &amp;contactList)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -878,11 +878,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Island/src/Collisions/IntersectionTests.h"
-         timestampString = "388442615.120272"
+         timestampString = "388933603.088956"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "132"
-         endingLineNumber = "132"
+         startingLineNumber = "138"
+         endingLineNumber = "138"
          landmarkName = "BoxAndSphere(BoxCollisionComponent* box, SphereCollisionComponent* sphere, ContactList &amp;contactList)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -891,11 +891,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Island/src/Collisions/IntersectionTests.h"
-         timestampString = "388442615.120272"
+         timestampString = "388933603.088956"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "133"
-         endingLineNumber = "133"
+         startingLineNumber = "139"
+         endingLineNumber = "139"
          landmarkName = "BoxAndSphere(BoxCollisionComponent* box, SphereCollisionComponent* sphere, ContactList &amp;contactList)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -904,11 +904,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Island/src/Collisions/IntersectionTests.h"
-         timestampString = "388604595.49277"
+         timestampString = "388933603.088956"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "194"
-         endingLineNumber = "194"
+         startingLineNumber = "203"
+         endingLineNumber = "203"
          landmarkName = "BoxAndBox(BoxCollisionComponent* box1, BoxCollisionComponent* box2, ContactList &amp;contactList)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -969,11 +969,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Island/src/Collisions/IntersectionTests.h"
-         timestampString = "388604595.49277"
+         timestampString = "388933603.088956"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "156"
-         endingLineNumber = "156"
+         startingLineNumber = "165"
+         endingLineNumber = "165"
          landmarkName = "BoxAndBox(BoxCollisionComponent* box1, BoxCollisionComponent* box2, ContactList &amp;contactList)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -982,11 +982,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Island/src/Collisions/IntersectionTests.h"
-         timestampString = "388604595.49277"
+         timestampString = "388933603.088956"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "157"
-         endingLineNumber = "157"
+         startingLineNumber = "166"
+         endingLineNumber = "166"
          landmarkName = "BoxAndBox(BoxCollisionComponent* box1, BoxCollisionComponent* box2, ContactList &amp;contactList)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1144,6 +1144,136 @@
          startingLineNumber = "41"
          endingLineNumber = "41"
          landmarkName = "DebugText::Draw(sf::RenderWindow *window)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Island/src/Scripts/BulletScript.h"
+         timestampString = "388845118.78554"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "22"
+         endingLineNumber = "22"
+         landmarkName = "RunScript(Component* component, float lastFrameTime)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Island/src/SubSystems/ScriptSystem.cpp"
+         timestampString = "388845262.016103"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "17"
+         endingLineNumber = "17"
+         landmarkName = "ScriptSystem::ProcessGameTick(float lastFrameTime, std::list&lt;Component*&gt; components)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Island/src/SubSystems/ScriptSystem.cpp"
+         timestampString = "388845377.538721"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "18"
+         endingLineNumber = "18"
+         landmarkName = "ScriptSystem::ProcessGameTick(float lastFrameTime, std::list&lt;Component*&gt; components)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Island/src/SubSystems/ScriptSystem.cpp"
+         timestampString = "388845379.012084"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "19"
+         endingLineNumber = "19"
+         landmarkName = "ScriptSystem::ProcessGameTick(float lastFrameTime, std::list&lt;Component*&gt; components)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Island/src/Components/ScriptComponent.cpp"
+         timestampString = "388845513.495886"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "23"
+         endingLineNumber = "23"
+         landmarkName = "ScriptComponent::~ScriptComponent()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Island/src/SubSystems/CollisionSystem.cpp"
+         timestampString = "388927848.297479"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "24"
+         endingLineNumber = "24"
+         landmarkName = "CollisionSystem::ProcessGameTick(float lastFrameTime, std::list&lt;Component*&gt; components)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Island/src/SubSystems/CollisionSystem.cpp"
+         timestampString = "388927852.668913"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "61"
+         endingLineNumber = "61"
+         landmarkName = "CollisionSystem::Resolve(Contact contact)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Island/src/SubSystems/CollisionSystem.cpp"
+         timestampString = "388927889.756338"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "60"
+         endingLineNumber = "60"
+         landmarkName = "CollisionSystem::Resolve(Contact contact)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Island/src/SubSystems/CollisionSystem.cpp"
+         timestampString = "388927899.522012"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "54"
+         endingLineNumber = "54"
+         landmarkName = "CollisionSystem::Resolve(Contact contact)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Island/src/SubSystems/CollisionSystem.cpp"
+         timestampString = "388927901.602565"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "50"
+         endingLineNumber = "50"
+         landmarkName = "CollisionSystem::Resolve(Contact contact)"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

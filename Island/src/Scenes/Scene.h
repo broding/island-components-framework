@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <vector>
+#include <list>
 #include "GUIObject.h"
 #include <SFML/Graphics.hpp>
 #include "Entity.h"
@@ -22,9 +23,10 @@ class Scene : public GUIObserver
 {
 private:
     std::vector<GUIObject*> _guiObjects;
-    std::vector<Entity*> _entities;
+    std::list<Entity*> _entities;
     Core* _core;
     bool _deleteFlag;
+    std::vector<Entity*> _deletedEntities;
     
 protected:
     void SwitchScene(Scene* scene);

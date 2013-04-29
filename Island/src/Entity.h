@@ -34,6 +34,7 @@ public:
     Scene* GetParent();
     bool IsAddedToScene();
     void InitializeComponents();
+    void Delete();
     void AddComponent(Component* component);
     void RemoveComponent(ComponentType type);
     void HandleEvent(Event* event);
@@ -49,6 +50,8 @@ public:
         
         return NULL;
     }
+    
+    bool enabled;
 };
 
 #endif /* defined(__Island__Entity__) */

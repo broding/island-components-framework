@@ -44,20 +44,17 @@ void Scene::AddEntity(Entity *entity)
 
 void Scene::RemoveEntity(Entity *entity)
 {
-    for (std::vector<Entity*>::iterator it = _entities.begin() ; it != _entities.end(); ++it)
-        if((*it) == entity)
-        {
-            _entities.erase(it);
-            break;
-        }
-    
+    _entities.remove(entity);
     entity->SetParent(NULL);
+    _deletedEntities.push_back(entity);
 }
 
 void Scene::Update(float lastFrameTime)
 {
     if(_deleteFlag)
         delete this;
+    
+    while(!_deletedEntities.empty()) delete _deletedEntities.back(), _deletedEntities.pop_back();
     
     for (std::vector<GUIObject*>::iterator it = _guiObjects.begin() ; it != _guiObjects.end(); ++it)
         (*it)->Update(lastFrameTime);

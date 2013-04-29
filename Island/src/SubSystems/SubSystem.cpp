@@ -47,7 +47,7 @@ std::list<Component*> SubSystem::GetValidComponents()
     std::list<Component*> validComponents;
     
     for (std::list<Component*>::const_iterator it = _components.begin(), end = _components.end(); it != end; ++it)
-        if((*it)->enabled && (*it)->GetOwner()->IsAddedToScene())
+        if((*it)->enabled && (*it)->GetOwner()->IsAddedToScene() && (*it)->GetOwner()->enabled)
             validComponents.push_back(*it);
     
     return validComponents;
@@ -55,7 +55,9 @@ std::list<Component*> SubSystem::GetValidComponents()
 
 void SubSystem::DrawDebug(sf::RenderWindow* window)
 {
-    for (std::list<Component*>::const_iterator it = _components.begin(), end = _components.end(); it != end; ++it)
+    std::list<Component*> validComponents = GetValidComponents();
+    
+    for (std::list<Component*>::const_iterator it = validComponents.begin(), end = validComponents.end(); it != end; ++it)
         (*it)->DrawDebug(window);
 }
 

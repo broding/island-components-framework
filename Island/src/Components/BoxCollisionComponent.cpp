@@ -23,6 +23,11 @@ BoxCollisionComponent::BoxCollisionComponent()
     size = sf::Vector2f(64, 64);
     trigger = false;
     solid = false;
+    collisionGroup = 0;
+    collisionGroups[0] = true;
+    
+    for(int i = 1; i < 20; i++)
+        collisionGroups[i] = false;
 }
 
 void BoxCollisionComponent::DrawDebug(sf::RenderWindow *window)

@@ -8,16 +8,17 @@
 
 #include "Entity.h"
 #include "Component.h"
+#include "Scene.h"
 
 Entity::Entity(std::string name) : _name(name)
 {
     _scene = NULL;
+    enabled = true;
 }
 
 Entity::~Entity()
 {
-    for (std::list<Component*>::const_iterator it = _components.begin(), end = _components.end(); it != end; ++it)
-        delete *it;
+    while(!_components.empty()) delete _components.back(), _components.pop_back();
 }
 
 void Entity::SetParent(Scene *scene)
@@ -78,4 +79,10 @@ void Entity::HandleEvent(Event* event)
     {
         (*iterator)->HandleEvent(event);
     }
+}
+
+void Entity::Delete()
+{
+    if(IsAddedToScene())
+        _scene->RemoveEntity(this);
 }

@@ -83,6 +83,9 @@ public:
     
     static void SphereAndSphere(SphereCollisionComponent* sphere1, SphereCollisionComponent* sphere2, ContactList &contactList)
     {
+        if(!sphere1->collisionGroups[sphere2->collisionGroup] && !sphere2->collisionGroups[sphere1->collisionGroup])
+            return;
+        
         TransformComponent* sphere1Transform = sphere1->GetOwner()->GetComponent<TransformComponent>();
         TransformComponent* sphere2Transform = sphere2->GetOwner()->GetComponent<TransformComponent>();
         float radiusSum = sphere1->radius + sphere2->radius;
@@ -102,6 +105,9 @@ public:
     
     static void BoxAndSphere(BoxCollisionComponent* box, SphereCollisionComponent* sphere, ContactList &contactList)
     {
+        if(!sphere->collisionGroups[box->collisionGroup] && !box->collisionGroups[sphere->collisionGroup])
+            return;
+        
         sf::ConvexShape boxShape = box->GetConvexShape();
         sf::ConvexShape circleShape = sphere->GetConvexShape();
         sf::Vector2f* axis = GetAxisOfShape(boxShape, 1);
@@ -147,6 +153,9 @@ public:
     
     static void BoxAndBox(BoxCollisionComponent* box1, BoxCollisionComponent* box2, ContactList &contactList)
     {
+        if(!box1->collisionGroups[box2->collisionGroup] && !box2->collisionGroups[box1->collisionGroup])
+            return;
+        
         sf::ConvexShape shape1 = box1->GetConvexShape();
         sf::ConvexShape shape2 = box2->GetConvexShape();
         

@@ -18,6 +18,8 @@ public:
     
     bool trigger;
     bool solid;
+    bool collisionGroups[20];
+    int collisionGroup;
 };
 
 #endif /* defined(__Island__ICollisionComponent__) */
