@@ -36,7 +36,7 @@ void CollisionSystem::ProcessGameTick(float lastFrameTime, std::list<Component*>
         }
     }
     
-    for (int i = 0; i < contactList.GetContacts().size(); i++)
+    for (unsigned int i = 0; i < contactList.GetContacts().size(); i++)
         Resolve((contactList.GetContacts()[i]));
     
     DebugText::GetInstance()->AddText("Collision contacts", (float)contactList.GetContacts().size());

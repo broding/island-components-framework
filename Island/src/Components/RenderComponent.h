@@ -39,7 +39,7 @@ public:
     sf::Vector2<unsigned int> tiling;
     
     std::vector<AnimationFrame> frames;
-    int currentFrame;
+    unsigned int currentFrame;
     float currentFrameTime;
     bool looping;
 };

@@ -29,7 +29,7 @@ private:
     {
         sf::Vector2f* axis = new sf::Vector2f[shape.getPointCount() + additionalRoom];
         
-        for(int i = 0; i < shape.getPointCount(); i++)
+        for(unsigned int i = 0; i < shape.getPointCount(); i++)
         {
             sf::Vector2f p1 = shape.getPoint(i);
             sf::Vector2f p2 = shape.getPoint(i + 1 == shape.getPointCount() ? 0 : i + 1);
@@ -44,9 +44,9 @@ private:
     static sf::Vector2f ClosestConvexPoint(const sf::Vector2f point, const sf::ConvexShape shape)
     {
         int closestPoint = 0;
-        float squaredLength = INT_MAX;
+        float squaredLength = 9999999;
         
-        for(int i = 0; i < shape.getPointCount(); i++)
+        for(unsigned int i = 0; i < shape.getPointCount(); i++)
         {
             float newLength = VectorUtil::Magnitude(shape.getPoint(i) - point);
             
@@ -67,7 +67,7 @@ public:
         float min = VectorUtil::DotProduct(axis, shape.getPoint(0));
         float max = min;
         
-        for(int i = 1; i < shape.getPointCount(); i++)
+        for(unsigned int i = 1; i < shape.getPointCount(); i++)
         {
             float p = VectorUtil::DotProduct(axis, shape.getPoint(i));
             
@@ -115,10 +115,10 @@ public:
         sf::Vector2f circleAxis = VectorUtil::Normalized(ClosestConvexPoint(circlePosition, boxShape) - circlePosition);
         axis[boxShape.getPointCount()] = circleAxis;
         
-        float penetration = INT_MAX;
+        float penetration = 9999999;
         sf::Vector2f normal;
         
-        for(int i = 0; i < boxShape.getPointCount() + 1; i++)
+        for(unsigned int i = 0; i < boxShape.getPointCount() + 1; i++)
         {
             sf::Vector2f currentAxis = axis[i];
             
@@ -162,10 +162,10 @@ public:
         sf::Vector2f* axis1 = GetAxisOfShape(shape1);
         sf::Vector2f* axis2 = GetAxisOfShape(shape2);
         
-        float penetration = INT_MAX;
+        float penetration = 9999999;
         sf::Vector2f normal;
         
-        for(int i = 0; i < shape1.getPointCount(); i++)
+        for(unsigned int i = 0; i < shape1.getPointCount(); i++)
         {
             sf::Vector2f axis = axis1[i];
             
@@ -185,7 +185,7 @@ public:
             }
         }
         
-        for(int i = 0; i < shape2.getPointCount(); i++)
+        for(unsigned int i = 0; i < shape2.getPointCount(); i++)
         {
             sf::Vector2f axis = axis2[i];
             

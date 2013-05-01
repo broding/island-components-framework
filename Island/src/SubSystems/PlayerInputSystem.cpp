@@ -52,7 +52,6 @@ void PlayerInputSystem::ProcessGameTick(float lastFrameTime, std::list<Component
         if(transformComponent != NULL)
         {
             sf::Vector2i mousePosition = sf::Vector2i(sf::Mouse::getPosition(*GUIObject::window).x, sf::Mouse::getPosition(*GUIObject::window).y);
-            
             sf::Vector2f mouseDelta = _window->mapPixelToCoords(mousePosition) - transformComponent->position;
             const double degreesPerRadian = 57.2957;
             transformComponent->rotation = atan2(mouseDelta.x, -mouseDelta.y) * degreesPerRadian;
