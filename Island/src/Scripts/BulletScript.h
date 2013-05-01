@@ -15,8 +15,15 @@
 
 class BulletScript : public BaseScript
 {
-    float time = 0;
-    
+public:
+	BulletScript()
+	{
+		time = 0.0f;
+	}
+
+private:
+    float time;
+
     void RunScript(Component* component, float lastFrameTime)
     {
         time += lastFrameTime;
