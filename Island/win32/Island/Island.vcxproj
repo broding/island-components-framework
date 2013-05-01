@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\Collisions\Projection.cpp" />
+    <ClCompile Include="..\..\src\Collisions\QuadTree.cpp" />
+    <ClCompile Include="..\..\src\Components\BoxCollisionComponent.cpp" />
+    <ClCompile Include="..\..\src\Components\CameraComponent.cpp" />
+    <ClCompile Include="..\..\src\Components\Component.cpp" />
+    <ClCompile Include="..\..\src\Components\HealthComponent.cpp" />
+    <ClCompile Include="..\..\src\Components\NetworkComponent.cpp" />
+    <ClCompile Include="..\..\src\Components\PhysicsComponent.cpp" />
+    <ClCompile Include="..\..\src\Components\PlayerInputComponent.cpp" />
+    <ClCompile Include="..\..\src\Components\RenderComponent.cpp" />
+    <ClCompile Include="..\..\src\Components\ScriptComponent.cpp" />
+    <ClCompile Include="..\..\src\Components\SphereCollisionComponent.cpp" />
+    <ClCompile Include="..\..\src\Components\TransformComponent.cpp" />
+    <ClCompile Include="..\..\src\Components\WeaponComponent.cpp" />
+    <ClCompile Include="..\..\src\Core.cpp" />
+    <ClCompile Include="..\..\src\Entity.cpp" />
+    <ClCompile Include="..\..\src\Events\Event.cpp" />
+    <ClCompile Include="..\..\src\Factories\CommonFactory.cpp" />
+    <ClCompile Include="..\..\src\Factories\PlayerFactory.cpp" />
+    <ClCompile Include="..\..\src\GameConfig.cpp" />
+    <ClCompile Include="..\..\src\GUI\Button.cpp" />
+    <ClCompile Include="..\..\src\GUI\DebugText.cpp" />
+    <ClCompile Include="..\..\src\GUI\GUIEvent.cpp" />
+    <ClCompile Include="..\..\src\GUI\GUIObject.cpp" />
+    <ClCompile Include="..\..\src\main.cpp" />
+    <ClCompile Include="..\..\src\ResourcePath.cpp" />
+    <ClCompile Include="..\..\src\Scenes\ConnectScene.cpp" />
+    <ClCompile Include="..\..\src\Scenes\PlayScene.cpp" />
+    <ClCompile Include="..\..\src\Scenes\Scene.cpp" />
+    <ClCompile Include="..\..\src\SubSystems\CameraSystem.cpp" />
+    <ClCompile Include="..\..\src\SubSystems\CollisionSystem.cpp" />
+    <ClCompile Include="..\..\src\SubSystems\HealthSystem.cpp" />
+    <ClCompile Include="..\..\src\SubSystems\NetworkSystem.cpp" />
+    <ClCompile Include="..\..\src\SubSystems\PhysicsSystem.cpp" />
+    <ClCompile Include="..\..\src\SubSystems\PlayerInputSystem.cpp" />
+    <ClCompile Include="..\..\src\SubSystems\RenderSystem.cpp" />
+    <ClCompile Include="..\..\src\SubSystems\ScriptSystem.cpp" />
+    <ClCompile Include="..\..\src\SubSystems\SubSystem.cpp" />
+    <ClCompile Include="..\..\src\SubSystems\TransformSystem.cpp" />
+    <ClCompile Include="..\..\src\SubSystems\WeaponSystem.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\Collisions\Contact.h" />
+    <ClInclude Include="..\..\src\Collisions\ICollisionComponent.h" />
+    <ClInclude Include="..\..\src\Collisions\IntersectionTests.h" />
+    <ClInclude Include="..\..\src\Collisions\Projection.h" />
+    <ClInclude Include="..\..\src\Collisions\QuadTree.h" />
+    <ClInclude Include="..\..\src\Components\BoxCollisionComponent.h" />
+    <ClInclude Include="..\..\src\Components\CameraComponent.h" />
+    <ClInclude Include="..\..\src\Components\Component.h" />
+    <ClInclude Include="..\..\src\Components\ComponentType.h" />
+    <ClInclude Include="..\..\src\Components\HealthComponent.h" />
+    <ClInclude Include="..\..\src\Components\NetworkComponent.h" />
+    <ClInclude Include="..\..\src\Components\PhysicsComponent.h" />
+    <ClInclude Include="..\..\src\Components\PlayerInputComponent.h" />
+    <ClInclude Include="..\..\src\Components\RenderComponent.h" />
+    <ClInclude Include="..\..\src\Components\ScriptComponent.h" />
+    <ClInclude Include="..\..\src\Components\SphereCollisionComponent.h" />
+    <ClInclude Include="..\..\src\Components\TransformComponent.h" />
+    <ClInclude Include="..\..\src\Components\WeaponComponent.h" />
+    <ClInclude Include="..\..\src\Core.h" />
+    <ClInclude Include="..\..\src\Entity.h" />
+    <ClInclude Include="..\..\src\Events\Event.h" />
+    <ClInclude Include="..\..\src\Events\WeaponEvents.h" />
+    <ClInclude Include="..\..\src\Factories\BulletFactory.h" />
+    <ClInclude Include="..\..\src\Factories\CommonFactory.h" />
+    <ClInclude Include="..\..\src\Factories\PlayerFactory.h" />
+    <ClInclude Include="..\..\src\Factories\StructureFactory.h" />
+    <ClInclude Include="..\..\src\GameConfig.h" />
+    <ClInclude Include="..\..\src\GUI\Button.h" />
+    <ClInclude Include="..\..\src\GUI\DebugText.h" />
+    <ClInclude Include="..\..\src\GUI\GUIEvent.h" />
+    <ClInclude Include="..\..\src\GUI\GUIObject.h" />
+    <ClInclude Include="..\..\src\GUI\GUIObserver.h" />
+    <ClInclude Include="..\..\src\Network\INetworkableComponent.h" />
+    <ClInclude Include="..\..\src\ResourcePath.hpp" />
+    <ClInclude Include="..\..\src\Scenes\ConnectScene.h" />
+    <ClInclude Include="..\..\src\Scenes\PlayScene.h" />
+    <ClInclude Include="..\..\src\Scenes\Scene.h" />
+    <ClInclude Include="..\..\src\Scripts\BaseScript.h" />
+    <ClInclude Include="..\..\src\Scripts\BulletScript.h" />
+    <ClInclude Include="..\..\src\SubSystems\CameraSystem.h" />
+    <ClInclude Include="..\..\src\SubSystems\CollisionSystem.h" />
+    <ClInclude Include="..\..\src\SubSystems\HealthSystem.h" />
+    <ClInclude Include="..\..\src\SubSystems\NetworkSystem.h" />
+    <ClInclude Include="..\..\src\SubSystems\PhysicsSystem.h" />
+    <ClInclude Include="..\..\src\SubSystems\PlayerInputSystem.h" />
+    <ClInclude Include="..\..\src\SubSystems\RenderSystem.h" />
+    <ClInclude Include="..\..\src\SubSystems\ScriptSystem.h" />
+    <ClInclude Include="..\..\src\SubSystems\SubSystem.h" />
+    <ClInclude Include="..\..\src\SubSystems\TransformSystem.h" />
+    <ClInclude Include="..\..\src\SubSystems\WeaponSystem.h" />
+    <ClInclude Include="..\..\src\Utils\CommonUtil.h" />
+    <ClInclude Include="..\..\src\Utils\EasingUtil.h" />
+    <ClInclude Include="..\..\src\Utils\VectorUtil.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\ResourcePath.mm" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AE4E067B-177E-4EBE-91F1-99FBC3835CAF}</ProjectGuid>
+    <RootNamespace>Island</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(ProjectDir)../../src/Utils;$(ProjectDir)../../src/Scripts;$(ProjectDir)../../src/;$(ProjectDir)../../src/Network;$(ProjectDir)../../src/Scenes;$(ProjectDir)../../src/Factories;$(ProjectDir)../../src/GUI;$(ProjectDir)../../src/Events;$(ProjectDir)../../src/Components;$(ProjectDir)../../src/SubSystems/;$(ProjectDir)../../src/Collisions;$(IncludePath)</IncludePath>
+    <SourcePath>$(ProjectDir)../../src/Utils;$(ProjectDir)../../src/Scripts;$(ProjectDir)../../src/;$(ProjectDir)../../src/Network;$(ProjectDir)../../src/Scenes;$(ProjectDir)../../src/Factories;$(ProjectDir)../../src/GUI;$(ProjectDir)../../src/Events;$(ProjectDir)../../src/Components;$(ProjectDir)../../src/SubSystems/;$(ProjectDir)../../src/Collisions;$(SourcePath)</SourcePath>
+    <IntDir>$(Configuration)\</IntDir>
+    <LibraryPath>$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WINDOWS;SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>sfml-main.lib;sfml-network-s-d.lib;sfml-system-s-d.lib;sfml-graphics-s-d.lib;sfml-audio-s-d.lib;sfml-window-s-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../lib/SFML;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>sfml-main.lib;sfml-network-s-d.lib;sfml-system-s-d.lib;sfml-graphics-s-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
