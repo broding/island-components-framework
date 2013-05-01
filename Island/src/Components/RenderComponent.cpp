@@ -19,7 +19,13 @@ RenderComponent::RenderComponent()
     
     this->AddComponentSubscription(COMPONENT_TRANSFORM);
     
+    tiling = sf::Vector2<unsigned int>(1,1);
     currentFrame = 0;
     currentFrameTime = 0;
     looping = true;
+}
+
+RenderComponent::~RenderComponent()
+{
+    delete sprite.getTexture();
 }

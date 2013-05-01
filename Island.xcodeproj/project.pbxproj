@@ -23,9 +23,7 @@
 		4B54ABE2172C04A300434EEA /* DebugText.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B54ABE0172C04A300434EEA /* DebugText.cpp */; };
 		4B54ABE4172C0B9500434EEA /* Arial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B54ABE3172C0B9500434EEA /* Arial.ttf */; };
 		4B54ABE7172D32D000434EEA /* GameConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B54ABE5172D32BC00434EEA /* GameConfig.cpp */; };
-		4B54ABF2172D3F7200434EEA /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4B54ABF1172D3F7200434EEA /* ResourcePath.mm */; };
-		4B54ABF5172D3F7200434EEA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B54ABF4172D3F7200434EEA /* main.cpp */; };
-		4B54AC06172D404A00434EEA /* Arial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B54AC05172D404A00434EEA /* Arial.ttf */; };
+		4B54AC3A1731640A00434EEA /* ground001.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B54AC391731640900434EEA /* ground001.png */; };
 		4B62A25016F8673400016A62 /* SubSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B62A24E16F8673400016A62 /* SubSystem.cpp */; };
 		4B68153216F8A0000032EF5E /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153016F89FFF0032EF5E /* Event.cpp */; };
 		4B68153516F8C6C40032EF5E /* PhysicsSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153316F8C6C30032EF5E /* PhysicsSystem.cpp */; };
@@ -61,16 +59,6 @@
 		4BDA14CB16F77B4600359B94 /* Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BDA14C916F77B4600359B94 /* Component.cpp */; };
 		4BDA14CE16F77B5900359B94 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BDA14CC16F77B5900359B94 /* Entity.cpp */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		4B54AC07172D417F00434EEA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4BDA14A116F7796700359B94 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4BDA14A916F7796700359B94;
-			remoteInfo = Island;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		4B6E99F6170EC8DF002F9797 /* CopyFiles */ = {
@@ -123,14 +111,9 @@
 		4B54ABE3172C0B9500434EEA /* Arial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Arial.ttf; sourceTree = "<group>"; };
 		4B54ABE5172D32BC00434EEA /* GameConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameConfig.cpp; sourceTree = "<group>"; };
 		4B54ABE6172D32C600434EEA /* GameConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
-		4B54ABED172D3F6F00434EEA /* IslandEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IslandEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B54ABF0172D3F7200434EEA /* IslandEditor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IslandEditor-Info.plist"; sourceTree = "<group>"; };
-		4B54ABF1172D3F7200434EEA /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
-		4B54ABF3172D3F7200434EEA /* ResourcePath.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ResourcePath.hpp; sourceTree = "<group>"; };
-		4B54ABF4172D3F7200434EEA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		4B54AC05172D404A00434EEA /* Arial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Arial.ttf; sourceTree = "<group>"; };
 		4B54AC0B172D47E400434EEA /* BaseScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseScript.h; sourceTree = "<group>"; };
 		4B54AC0E172D486500434EEA /* BulletScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletScript.h; sourceTree = "<group>"; };
+		4B54AC391731640900434EEA /* ground001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground001.png; sourceTree = "<group>"; };
 		4B62A24E16F8673400016A62 /* SubSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SubSystem.cpp; sourceTree = "<group>"; };
 		4B62A24F16F8673400016A62 /* SubSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubSystem.h; sourceTree = "<group>"; };
 		4B68152F16F89C7C0032EF5E /* ComponentType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComponentType.h; sourceTree = "<group>"; };
@@ -206,13 +189,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4B54ABE9172D3F6F00434EEA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4B6E99F5170EC8DF002F9797 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -257,42 +233,6 @@
 				4BC1E0E21704DCDC007117EC /* PlayScene.h */,
 			);
 			path = Scenes;
-			sourceTree = "<group>";
-		};
-		4B54ABEE172D3F6F00434EEA /* IslandEditor */ = {
-			isa = PBXGroup;
-			children = (
-				4B54AC02172D401D00434EEA /* src */,
-				4B54AC04172D402800434EEA /* assets */,
-				4B54AC03172D402300434EEA /* osx */,
-			);
-			path = IslandEditor;
-			sourceTree = "<group>";
-		};
-		4B54AC02172D401D00434EEA /* src */ = {
-			isa = PBXGroup;
-			children = (
-				4B54ABF1172D3F7200434EEA /* ResourcePath.mm */,
-				4B54ABF3172D3F7200434EEA /* ResourcePath.hpp */,
-				4B54ABF4172D3F7200434EEA /* main.cpp */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		4B54AC03172D402300434EEA /* osx */ = {
-			isa = PBXGroup;
-			children = (
-				4B54ABF0172D3F7200434EEA /* IslandEditor-Info.plist */,
-			);
-			path = osx;
-			sourceTree = "<group>";
-		};
-		4B54AC04172D402800434EEA /* assets */ = {
-			isa = PBXGroup;
-			children = (
-				4B54AC05172D404A00434EEA /* Arial.ttf */,
-			);
-			path = assets;
 			sourceTree = "<group>";
 		};
 		4B54AC09172D479400434EEA /* Scripts */ = {
@@ -481,7 +421,6 @@
 			children = (
 				4BDA14AC16F7796700359B94 /* Island */,
 				4B6E99F9170EC8DF002F9797 /* UnitTests */,
-				4B54ABEE172D3F6F00434EEA /* IslandEditor */,
 				4B8C6FCE170EC4290005D9BA /* Frameworks */,
 				4BDA14AB16F7796700359B94 /* Products */,
 			);
@@ -492,7 +431,6 @@
 			children = (
 				4BDA14AA16F7796700359B94 /* Island.app */,
 				4B6E99F8170EC8DF002F9797 /* UnitTests */,
-				4B54ABED172D3F6F00434EEA /* IslandEditor.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -518,6 +456,7 @@
 		4BDA14B416F7796700359B94 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				4B54AC391731640900434EEA /* ground001.png */,
 				4B54ABE3172C0B9500434EEA /* Arial.ttf */,
 				4BC1E0E81704E071007117EC /* player.png */,
 				4B1623351703164C008F7AE2 /* testbutton.png */,
@@ -532,25 +471,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4B54ABEC172D3F6F00434EEA /* IslandEditor */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4B54ABFF172D3F7200434EEA /* Build configuration list for PBXNativeTarget "IslandEditor" */;
-			buildPhases = (
-				4B54ABE8172D3F6F00434EEA /* Sources */,
-				4B54ABE9172D3F6F00434EEA /* Frameworks */,
-				4B54ABEA172D3F6F00434EEA /* Resources */,
-				4B54ABEB172D3F6F00434EEA /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4B54AC08172D417F00434EEA /* PBXTargetDependency */,
-			);
-			name = IslandEditor;
-			productName = IslandEditor;
-			productReference = 4B54ABED172D3F6F00434EEA /* IslandEditor.app */;
-			productType = "com.apple.product-type.application";
-		};
 		4B6E99F7170EC8DF002F9797 /* UnitTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B6E9A00170EC8DF002F9797 /* Build configuration list for PBXNativeTarget "UnitTests" */;
@@ -608,21 +528,12 @@
 			projectRoot = "";
 			targets = (
 				4BDA14A916F7796700359B94 /* Island */,
-				4B54ABEC172D3F6F00434EEA /* IslandEditor */,
 				4B6E99F7170EC8DF002F9797 /* UnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4B54ABEA172D3F6F00434EEA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4B54AC06172D404A00434EEA /* Arial.ttf in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4BDA14A716F7796700359B94 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -634,25 +545,13 @@
 				4B1623361703164C008F7AE2 /* testbutton.png in Resources */,
 				4BC1E0E91704E071007117EC /* player.png in Resources */,
 				4B54ABE4172C0B9500434EEA /* Arial.ttf in Resources */,
+				4B54AC3A1731640A00434EEA /* ground001.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4B54ABEB172D3F6F00434EEA /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# This shell script simply copies required sfml dylibs/frameworks into the application bundle frameworks folder.\n# If you're using static libraries (which is not recommended) you should remove this script from your project.\n\n# Are we building a project that uses framework or dylibs ?\ncase \"$SFML_BINARY_TYPE\" in\n    DYLIBS)\n        frameworks=\"false\"\n        ;;\n    *)\n        frameworks=\"true\"\n        ;;\nesac\n\n# Echoes to stderr\nerror () # $* message to display\n{\n    echo $* 1>&2\n    exit 2\n}\n\nassert () # $1 is a boolean, $2...N is an error message\n{\n    if [ $# -lt 2 ]\n    then\n        error \"Internal error in assert : not enough args\"\n    fi\n\n    if [ $1 -ne 0 ]\n    then\n        shift\n        error \"$*\"\n    fi\n}\n\nforce_remove () # $1 is a path\n{\n    test $# -eq 1\n    assert $? \"force_remove() requires one parameter\"\n    rm -fr \"$1\"\n    assert $? \"couldn't remove $1\"\n}\n\ncopy () # $1 is a source, $2 is a destination\n{\n    test $# -eq 2\n    assert $? \"copy() requires two parameters\"\n    ditto \"$1\" \"$2\"\n    assert $? \"couldn't copy $1 to $2\"\n}\n\nrequire () # $1 is a SFML module like 'system' or 'audio'\n{\n    dest=\"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app/Contents/Frameworks\"\n    \n    if [ -z \"$1\" ]\n    then\n        error \"require() requires one parameter!\"\n    else\n        # clean potentially old stuff\n        force_remove \"$dest/libsfml-$1.2.dylib\"\n        force_remove \"$dest/libsfml-$1-d.2.dylib\"\n        force_remove \"$dest/sfml-$1.framework\"\n    \n        # copy SFML libraries\n        if [ \"$frameworks\" = \"true\" ]\n        then\n            copy \"/Library/Frameworks/sfml-$1.framework\" \"$dest/sfml-$1.framework\"\n        elif [ $CONFIGURATION = \"Debug\" ] && [ $SFML_LINK_DYLIBS_SUFFIX_DEBUG != \"\" ]\n        then\n            copy \"/usr/local/lib/libsfml-$1-d.2.dylib\" \"$dest/libsfml-$1-d.2.dylib\"\n        else\n            copy \"/usr/local/lib/libsfml-$1.2.dylib\" \"$dest/libsfml-$1.2.dylib\"\n        fi\n        \n        if [ \"$1\" = \"audio\" ]\n        then\n            # copy sndfile framework too\n            copy \"/Library/Frameworks/sndfile.framework\" \"$dest/sndfile.framework\"\n        fi\n\n        if [ \"$1\" = \"graphics\" ]\n        then\n            # copy freetype framework too\n            copy \"/Library/Frameworks/freetype.framework\" \"$dest/freetype.framework\"\n        fi\n    fi\n}\n\nif [ -n \"$SFML_SYSTEM\" ]\nthen\n    require \"system\"\nfi\n\nif [ -n \"$SFML_AUDIO\" ]\nthen\n    require \"audio\"\nfi\n\nif [ -n \"$SFML_NETWORK\" ]\nthen\n    require \"network\"\nfi\n\nif [ -n \"$SFML_WINDOW\" ]\nthen\n    require \"window\"\nfi\n\nif [ -n \"$SFML_GRAPHICS\" ]\nthen\n    require \"graphics\"\nfi\n\n                ";
-		};
 		4BDA14A816F7796700359B94 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -669,15 +568,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4B54ABE8172D3F6F00434EEA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4B54ABF2172D3F7200434EEA /* ResourcePath.mm in Sources */,
-				4B54ABF5172D3F7200434EEA /* main.cpp in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4B6E99F4170EC8DF002F9797 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -736,77 +626,7 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		4B54AC08172D417F00434EEA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4BDA14A916F7796700359B94 /* Island */;
-			targetProxy = 4B54AC07172D417F00434EEA /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		4B54AC00172D3F7200434EEA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
-				CLANG_CXX_LIBRARY = "compiler-default";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				FRAMEWORK_SEARCH_PATHS = (
-					/Library/Frameworks/,
-					"$(inherited)",
-				);
-				HEADER_SEARCH_PATHS = (
-					/usr/local/include/,
-					"$(inherited)",
-				);
-				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "$(inherited)/../Island/src";
-				INFOPLIST_FILE = "$(SRCROOT)/IslandEditor/osx/IslandEditor-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "";
-				LIBRARY_SEARCH_PATHS = (
-					/usr/local/lib/,
-					"$(inherited)",
-					./Island/src,
-				);
-				"LIBRARY_SEARCH_PATHS[arch=*]" = (
-					/usr/local/lib/,
-					"$(inherited)",
-					./Island/src/,
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
-			};
-			name = Debug;
-		};
-		4B54AC01172D3F7200434EEA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
-				CLANG_CXX_LIBRARY = "compiler-default";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				FRAMEWORK_SEARCH_PATHS = (
-					/Library/Frameworks/,
-					"$(inherited)",
-				);
-				HEADER_SEARCH_PATHS = (
-					/usr/local/include/,
-					"$(inherited)",
-				);
-				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "$(inherited)/../Island/src";
-				INFOPLIST_FILE = "$(SRCROOT)/IslandEditor/osx/IslandEditor-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "";
-				LIBRARY_SEARCH_PATHS = (
-					/usr/local/lib/,
-					"$(inherited)",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
-			};
-			name = Release;
-		};
 		4B6E99FE170EC8DF002F9797 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -986,14 +806,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4B54ABFF172D3F7200434EEA /* Build configuration list for PBXNativeTarget "IslandEditor" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4B54AC00172D3F7200434EEA /* Debug */,
-				4B54AC01172D3F7200434EEA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
 		4B6E9A00170EC8DF002F9797 /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -30,11 +30,14 @@ class RenderComponent : public Component
 private:
 public:
     RenderComponent();
+    ~RenderComponent();
     
     static RenderSystem* renderSystem;
     
     sf::Sprite sprite;
     sf::Rect<int> textureRect;
+    sf::Vector2<unsigned int> tiling;
+    
     std::vector<AnimationFrame> frames;
     int currentFrame;
     float currentFrameTime;

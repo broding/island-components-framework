@@ -55,7 +55,21 @@ void RenderSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> co
             renderComponent->sprite.setTextureRect(renderComponent->textureRect);
         }
         
-        _renderWindow->draw(renderComponent->sprite);
+        float spriteX = renderComponent->sprite.getPosition().x;
+        float spriteY = renderComponent->sprite.getPosition().y;
+        float spriteWidth = renderComponent->sprite.getScale().x * renderComponent->sprite.getTextureRect().width;
+        float spriteHeight = renderComponent->sprite.getScale().y * renderComponent->sprite.getTextureRect().height;
+        
+        for(int x = 0; x < renderComponent->tiling.x; x++)
+        {
+            for(int y = 0; y < renderComponent->tiling.y; y++)
+            {
+                
+                renderComponent->sprite.setPosition(spriteX + spriteWidth * x, spriteY + spriteHeight * y);
+                _renderWindow->draw(renderComponent->sprite);
+            }
+
+        }
     }
 }
 
