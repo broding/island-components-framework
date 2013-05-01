@@ -42,7 +42,7 @@ void RenderSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> co
             
             if(renderComponent->currentFrameTime > renderComponent->frames[renderComponent->currentFrame].time)
             {
-                if(renderComponent->currentFrame >= renderComponent->frames.size() && renderComponent->looping)
+                if(renderComponent->currentFrame >= renderComponent->frames.size() - 1 && renderComponent->looping)
                     renderComponent->currentFrame = 0;
                 else if(renderComponent->currentFrame < renderComponent->frames.size())
                     renderComponent->currentFrame++;
