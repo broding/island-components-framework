@@ -26,6 +26,7 @@
     <ClCompile Include="..\..\src\Components\TransformComponent.cpp" />
     <ClCompile Include="..\..\src\Components\WeaponComponent.cpp" />
     <ClCompile Include="..\..\src\Core.cpp" />
+    <ClCompile Include="..\..\src\EditorInterface.cpp" />
     <ClCompile Include="..\..\src\Entity.cpp" />
     <ClCompile Include="..\..\src\Events\Event.cpp" />
     <ClCompile Include="..\..\src\Factories\CommonFactory.cpp" />
@@ -72,6 +73,7 @@
     <ClInclude Include="..\..\src\Components\TransformComponent.h" />
     <ClInclude Include="..\..\src\Components\WeaponComponent.h" />
     <ClInclude Include="..\..\src\Core.h" />
+    <ClInclude Include="..\..\src\EditorInterface.h" />
     <ClInclude Include="..\..\src\Entity.h" />
     <ClInclude Include="..\..\src\Events\Event.h" />
     <ClInclude Include="..\..\src\Events\WeaponEvents.h" />
@@ -116,9 +118,9 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -141,6 +143,7 @@
     <SourcePath>$(ProjectDir)../../src/Utils;$(ProjectDir)../../src/Scripts;$(ProjectDir)../../src/;$(ProjectDir)../../src/Network;$(ProjectDir)../../src/Scenes;$(ProjectDir)../../src/Factories;$(ProjectDir)../../src/GUI;$(ProjectDir)../../src/Events;$(ProjectDir)../../src/Components;$(ProjectDir)../../src/SubSystems/;$(ProjectDir)../../src/Collisions;$(SourcePath)</SourcePath>
     <IntDir>$(Configuration)\</IntDir>
     <LibraryPath>$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib</LibraryPath>
+    <OutDir>..\..\build\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -151,7 +154,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>sfml-main-d.lib;sfml-system-s-d.lib;sfml-network-s-d.lib;sfml-graphics-s-d.lib;sfml-audio-s-d.lib;sfml-window-s-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-main.lib;sfml-system-s-d.lib;sfml-network-s-d.lib;sfml-graphics-s-d.lib;sfml-audio-s-d.lib;sfml-window-s-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>../../lib/SFML;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
