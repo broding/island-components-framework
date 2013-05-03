@@ -1,16 +1,22 @@
+#ifndef WINDOWS
+#define _declspec(dllexport)
+#endif
+
 #ifndef EDITOR_INTERFACE
 #define EDITOR_INTERFACE
 
+#include "Core.h"
 #include <SFML/Graphics.hpp>
 
-#define DllExport _declspec(dllexport)
+#define DllExport extern "C" _declspec(dllexport)
 
-extern "C" DllExport int OpenWindow();
-extern "C" DllExport void CloseWindow();
-extern "C" DllExport int Update();
-extern "C" DllExport void ChangeTool(int tool);
+DllExport int OpenWindow();
+DllExport void CloseWindow();
+DllExport int Update();
+DllExport void ChangeTool(int tool);
+DllExport int GetSelectEntity();
 
 sf::RenderWindow* window;
-Core* core;
+EditorCore* core;
 
 #endif

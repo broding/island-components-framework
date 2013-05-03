@@ -38,13 +38,13 @@ void Scene::RemoveGUIObject(GUIObject *object)
 
 void Scene::AddEntity(Entity *entity)
 {
-    this->_entities.push_back(entity);
+    _entities.push_back(entity);
     entity->SetParent(this);
 }
 
 void Scene::RemoveEntity(Entity *entity)
 {
-    _entities.remove(entity);
+    _entities.erase(std::remove(_entities.begin(), _entities.end(), entity), _entities.end());
     entity->SetParent(NULL);
     _deletedEntities.push_back(entity);
 }

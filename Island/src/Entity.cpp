@@ -14,6 +14,7 @@ Entity::Entity(std::string name) : _name(name)
 {
     _scene = NULL;
     enabled = true;
+    _id = _idIncrementer++;
 }
 
 Entity::~Entity()

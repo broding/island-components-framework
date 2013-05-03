@@ -21,13 +21,14 @@ class Entity
 {
     friend class Scene;
 private:
+    unsigned int _idIncrementer = 0;
     void SetParent(Scene* scene);
     
     std::string _name;
-    unsigned int _id;
     std::list<Component*> _components;
     Scene* _scene;
 public:
+    unsigned int _id;
     Entity(std::string name = "");
     ~Entity();
     

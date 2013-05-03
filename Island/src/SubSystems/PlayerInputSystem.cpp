@@ -17,6 +17,7 @@
 #include "Entity.h"
 #include <math.h>
 #include "WeaponEvents.h"
+#include "GameConfig.h"
 
 PlayerInputSystem::PlayerInputSystem(sf::RenderWindow* window) : _window(window)
 {
@@ -25,6 +26,9 @@ PlayerInputSystem::PlayerInputSystem(sf::RenderWindow* window) : _window(window)
 
 void PlayerInputSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> components)
 {
+    if(GameConfig::GetInstance()->GetFlagConfig("editorMode"))
+       return;
+       
     for (std::list<Component*>::const_iterator iterator = components.begin(), end = components.end(); iterator != end; ++iterator)
     {
         PlayerInputComponent* inputComponent = static_cast<PlayerInputComponent*>(*iterator);
@@ -34,8 +38,6 @@ void PlayerInputSystem::ProcessGameTick(float lastFrameTime, std::list<Component
         
         if(physicsComponent != NULL)
         {
-            //physicsComponent->velocity = sf::Vector2f(0,0);
-            
             if(sf::Keyboard::isKeyPressed(inputComponent->up))
                 physicsComponent->forceAccumulated += sf::Vector2f(0, -700);
             

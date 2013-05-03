@@ -19,6 +19,7 @@ public:
     
     float GetNumberConfig(std::string config);
     bool GetFlagConfig(std::string config);
+    void SetFlagConfig(std::string config, bool flag);
 private:
     GameConfig();
     

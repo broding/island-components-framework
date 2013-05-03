@@ -18,7 +18,7 @@
 #include <SFML/Graphics.hpp>
 #include "RenderComponent.h"
 #include "RenderSystem.h"
-#include "Core.h"
+#include "EditorCore.h"
 
 // Here is a small helper for you ! Have a look.
 #include "ResourcePath.hpp"
@@ -35,7 +35,7 @@ int main(int, char const**)
     }
     window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
     
-    Core core = Core(&window);
+    EditorCore core = EditorCore(&window);
     sf::Clock deltaClock;
     
     while (window.isOpen())

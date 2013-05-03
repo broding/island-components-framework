@@ -1,5 +1,6 @@
 #include "ResourcePath.hpp"
 #include "Core.h"
+#include "EditorCore.h"
 #include "EditorInterface.h"
 
 int OpenWindow()
@@ -14,7 +15,9 @@ int OpenWindow()
     }
     window->setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
     
-    core = new Core(window);
+    core = new EditorCore(window);
+    
+    return 1;
 }
 
 void CloseWindow()
@@ -57,4 +60,9 @@ int Update()
 void ChangeTool(int tool)
 {
 	
+}
+
+int GetSelectedEntity()
+{
+    return core->GetSelectedEntity()->_id;
 }

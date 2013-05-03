@@ -115,14 +115,16 @@ void Core::Update(float lastFrameTime)
         }
     }
     
-    
-    
     if(_currentScene != NULL)
     {
+        sf::View oldView = _renderWindow->getView();
+        
         sf::View view(sf::Vector2f(400,300), sf::Vector2f(800,600));
         _renderWindow->setView(view);
         _currentScene->Update(lastFrameTime);
         _currentScene->Draw(_renderWindow);
+        
+        _renderWindow->setView(oldView);
     }
 }
 

@@ -48,6 +48,9 @@
 		4BC25A2B16F86C7700B36B1E /* RenderSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC25A2916F86C7700B36B1E /* RenderSystem.cpp */; };
 		4BC25A5016F885AB00B36B1E /* TransformComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC25A4E16F885AB00B36B1E /* TransformComponent.cpp */; };
 		4BC25A5316F885F200B36B1E /* TransformSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC25A5116F885F200B36B1E /* TransformSystem.cpp */; };
+		4BCB69E21732AE20004CD712 /* EditorInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BCB69E01732AE20004CD712 /* EditorInterface.cpp */; };
+		4BCB69E51733AD46004CD712 /* EditorCore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BCB69E31733AD46004CD712 /* EditorCore.cpp */; };
+		4BCB69E81733AE10004CD712 /* EditorScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BCB69E61733AE10004CD712 /* EditorScene.cpp */; };
 		4BDA14B016F7796700359B94 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4BDA14AF16F7796700359B94 /* ResourcePath.mm */; };
 		4BDA14B316F7796700359B94 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BDA14B216F7796700359B94 /* main.cpp */; };
 		4BDA14B616F7796700359B94 /* cute_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4BDA14B516F7796700359B94 /* cute_image.jpg */; };
@@ -168,6 +171,12 @@
 		4BC25A4F16F885AB00B36B1E /* TransformComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransformComponent.h; sourceTree = "<group>"; };
 		4BC25A5116F885F200B36B1E /* TransformSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransformSystem.cpp; sourceTree = "<group>"; };
 		4BC25A5216F885F200B36B1E /* TransformSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransformSystem.h; sourceTree = "<group>"; };
+		4BCB69E01732AE20004CD712 /* EditorInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EditorInterface.cpp; sourceTree = "<group>"; };
+		4BCB69E11732AE20004CD712 /* EditorInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorInterface.h; sourceTree = "<group>"; };
+		4BCB69E31733AD46004CD712 /* EditorCore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EditorCore.cpp; sourceTree = "<group>"; };
+		4BCB69E41733AD46004CD712 /* EditorCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorCore.h; sourceTree = "<group>"; };
+		4BCB69E61733AE10004CD712 /* EditorScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EditorScene.cpp; sourceTree = "<group>"; };
+		4BCB69E71733AE10004CD712 /* EditorScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorScene.h; sourceTree = "<group>"; };
 		4BDA14AA16F7796700359B94 /* Island.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Island.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BDA14AE16F7796700359B94 /* Island-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Island-Info.plist"; sourceTree = "<group>"; };
 		4BDA14AF16F7796700359B94 /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
@@ -231,6 +240,8 @@
 				4B16233117026776008F7AE2 /* ConnectScene.h */,
 				4BC1E0E11704DCDC007117EC /* PlayScene.cpp */,
 				4BC1E0E21704DCDC007117EC /* PlayScene.h */,
+				4BCB69E61733AE10004CD712 /* EditorScene.cpp */,
+				4BCB69E71733AE10004CD712 /* EditorScene.h */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -296,8 +307,12 @@
 				4BDA14C716F779C300359B94 /* Core.h */,
 				4BDA14CC16F77B5900359B94 /* Entity.cpp */,
 				4BDA14CD16F77B5900359B94 /* Entity.h */,
+				4BCB69E01732AE20004CD712 /* EditorInterface.cpp */,
+				4BCB69E11732AE20004CD712 /* EditorInterface.h */,
 				4B54ABE5172D32BC00434EEA /* GameConfig.cpp */,
 				4B54ABE6172D32C600434EEA /* GameConfig.h */,
+				4BCB69E31733AD46004CD712 /* EditorCore.cpp */,
+				4BCB69E41733AD46004CD712 /* EditorCore.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -621,6 +636,9 @@
 				4B54ABDF172BD41800434EEA /* ScriptSystem.cpp in Sources */,
 				4B54ABE2172C04A300434EEA /* DebugText.cpp in Sources */,
 				4B54ABE7172D32D000434EEA /* GameConfig.cpp in Sources */,
+				4BCB69E21732AE20004CD712 /* EditorInterface.cpp in Sources */,
+				4BCB69E51733AD46004CD712 /* EditorCore.cpp in Sources */,
+				4BCB69E81733AE10004CD712 /* EditorScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,6 +702,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					OSX,
 				);
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -735,6 +754,7 @@
 					/Library/Frameworks/,
 					"$(inherited)",
 				);
+				GCC_PREPROCESSOR_DEFINITIONS = OSX;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;

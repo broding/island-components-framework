@@ -25,6 +25,7 @@ GameConfig* GameConfig::GetInstance()
 GameConfig::GameConfig()
 {
     _flagConfig.insert(std::pair<std::string,bool>("debugMode",true));
+    _flagConfig.insert(std::pair<std::string,bool>("editorMode",false));
 }
 
 float GameConfig::GetNumberConfig(std::string config)
@@ -35,4 +36,9 @@ float GameConfig::GetNumberConfig(std::string config)
 bool GameConfig::GetFlagConfig(std::string config)
 {
     return _flagConfig[config];
+}
+
+void GameConfig::SetFlagConfig(std::string config, bool flag)
+{
+    _flagConfig[config] = flag;
 }

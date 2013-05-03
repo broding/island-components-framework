@@ -18,17 +18,19 @@ class Core
 {
 private:
     std::vector<SubSystem*> _subSystems;
-    Scene* _currentScene;
-    sf::RenderWindow* _renderWindow;
     
     void InitializeSubSystems();
     void AddSubSystem(SubSystem* system);
     void DrawDebug();
     
+protected:
+    Scene* _currentScene;
+    sf::RenderWindow* _renderWindow;
+    
 public:
     Core(sf::RenderWindow* window);
     ~Core();
-    void Update(float lastFrameTime);
+    virtual void Update(float lastFrameTime);
     void SwitchScene(Scene* scene);
 };
 
