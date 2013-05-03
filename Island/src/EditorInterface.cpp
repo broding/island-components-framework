@@ -2,6 +2,7 @@
 #include "Core.h"
 #include "EditorCore.h"
 #include "EditorInterface.h"
+#include <sstream>
 
 int OpenWindow()
 {
@@ -62,18 +63,21 @@ void ChangeTool(int tool)
 	
 }
 
-char* GetSelectedEntity()
+const char* GetSelectedEntity()
 {
 	if(core->GetSelectedEntity() != 0)
     {
-        pugi::xml_document document;
-        core->GetSelectedEntity()->CreateXML(document.append_child());
+		xmlDocument.reset();
+        core->GetSelectedEntity()->CreateXML(xmlDocument.append_child());
         
-        char* xml = new char();
-        document.save_file(xml);
-        
-        return xml;
+		std::stringstream ss;
+		xmlDocument.save(ss);
+
+		char *p = new char[ss.str().size()+1];
+		strcpy(p, ss.str().c_str());
+
+		return p;
     }
-    
-    return 0;
+
+	return NULL;
 }

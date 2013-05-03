@@ -14,9 +14,10 @@ DllExport int OpenWindow();
 DllExport void CloseWindow();
 DllExport int Update();
 DllExport void ChangeTool(int tool);
-DllExport char* GetSelectedEntity();
+DllExport const char* GetSelectedEntity();
 
 sf::RenderWindow* window;
 EditorCore* core;
+pugi::xml_document xmlDocument;
 
 #endif
