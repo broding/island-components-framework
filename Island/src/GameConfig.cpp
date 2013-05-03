@@ -7,6 +7,7 @@
 //
 
 #include "GameConfig.h"
+#include <string>
 
 bool GameConfig::_isInitialized = false;
 GameConfig* GameConfig::_instance = NULL;

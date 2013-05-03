@@ -17,7 +17,7 @@ class EditorScene : public Scene
 public:
     EditorScene();
     virtual void ProcessGUIEvent(GUIEvent event);
-    const std::vector<Entity*> GetEntities();
+    const std::vector<Entity*>& GetEntities();
 };
 
 #endif /* defined(__Island__EditorScene__) */

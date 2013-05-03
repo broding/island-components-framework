@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Bas Roding. All rights reserved.
 //
 
+#include <string>
 #include "EditorCore.h"
 #include "EditorScene.h"
 #include "GameConfig.h"

@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 #include <set>
 #include "GUIObject.h"
 #include <SFML/Graphics.hpp>

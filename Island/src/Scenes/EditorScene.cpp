@@ -50,7 +50,7 @@ void EditorScene::ProcessGUIEvent(GUIEvent event)
     
 }
 
-const std::vector<Entity*> EditorScene::GetEntities()
+const std::vector<Entity*>& EditorScene::GetEntities()
 {
     return _entities;
 }

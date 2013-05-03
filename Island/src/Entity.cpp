@@ -10,6 +10,8 @@
 #include "Component.h"
 #include "Scene.h"
 
+unsigned int Entity::_idIncrementer = 0;
+
 Entity::Entity(std::string name) : _name(name)
 {
     _scene = NULL;

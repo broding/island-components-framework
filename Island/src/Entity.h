@@ -21,7 +21,7 @@ class Entity
 {
     friend class Scene;
 private:
-    unsigned int _idIncrementer = 0;
+    static unsigned int _idIncrementer;
     void SetParent(Scene* scene);
     
     std::string _name;
