@@ -18,6 +18,7 @@ EditorCore::EditorCore(sf::RenderWindow* window) : Core(window)
     SwitchScene(new EditorScene());
     
     currentTool = SELECT;
+	_selectedEntity = 0;
 }
 
 void EditorCore::Update(float lastFrameTime)

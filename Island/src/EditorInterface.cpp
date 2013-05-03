@@ -64,5 +64,6 @@ void ChangeTool(int tool)
 
 int GetSelectedEntity()
 {
-    return core->GetSelectedEntity()->_id;
+	if(core->GetSelectedEntity() != 0)
+		return core->GetSelectedEntity()->_id;
 }
