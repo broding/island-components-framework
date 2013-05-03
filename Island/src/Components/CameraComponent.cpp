@@ -30,11 +30,10 @@ void CameraComponent::UseCamera()
 
 
 
-pugi::xml_node CameraComponent::CreateXML()
+pugi::xml_node CameraComponent::CreateXML(pugi::xml_node &node)
 {
     pugi::xml_node dataNode;
     
-    pugi::xml_node node;
     node.set_name("component");
     node.append_attribute("type").set_value("transform");
     

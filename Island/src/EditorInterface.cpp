@@ -62,8 +62,18 @@ void ChangeTool(int tool)
 	
 }
 
-int GetSelectedEntity()
+char* GetSelectedEntity()
 {
 	if(core->GetSelectedEntity() != 0)
-		return core->GetSelectedEntity()->_id;
+    {
+        pugi::xml_document document;
+        core->GetSelectedEntity()->CreateXML(document.append_child());
+        
+        char* xml = new char();
+        document.save_file(xml);
+        
+        return xml;
+    }
+    
+    return 0;
 }

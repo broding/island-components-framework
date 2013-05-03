@@ -14,7 +14,7 @@ DllExport int OpenWindow();
 DllExport void CloseWindow();
 DllExport int Update();
 DllExport void ChangeTool(int tool);
-DllExport int GetSelectedEntity();
+DllExport char* GetSelectedEntity();
 
 sf::RenderWindow* window;
 EditorCore* core;

@@ -37,7 +37,6 @@ Entity* PlayerFactory::CreatePlayer()
     SphereCollisionComponent* collisionComponent = new SphereCollisionComponent();
     WeaponComponent* weaponComponent = new WeaponComponent();
     
-    
     player->AddComponent(renderComponent);
     player->AddComponent(transformComponent);
     player->AddComponent(physicsComponent);

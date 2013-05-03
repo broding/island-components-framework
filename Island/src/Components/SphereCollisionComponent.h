@@ -19,7 +19,7 @@ class SphereCollisionComponent : public Component, public ICollisionComponent
 private:
 public:
     SphereCollisionComponent();
-    pugi::xml_node CreateXML();
+    pugi::xml_node CreateXML(pugi::xml_node &node);
     void UpdateFromXML(pugi::xml_node node);
     
     static CollisionSystem* collisionSystem;

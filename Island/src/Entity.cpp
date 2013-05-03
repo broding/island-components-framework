@@ -89,3 +89,22 @@ void Entity::Delete()
     if(IsAddedToScene())
         _scene->RemoveEntity(this);
 }
+
+void Entity::CreateXML(pugi::xml_node node)
+{
+    node.set_name("entity");
+    node.append_attribute("name").set_value(_name.c_str());
+    node.append_attribute("id").set_value(_id);
+    pugi::xml_node componentParentNode = node.append_child("components");
+    
+    for (std::list<Component*>::const_iterator iterator = _components.begin(), end = _components.end(); iterator != end; ++iterator)
+    {
+        pugi::xml_node componentNode = componentParentNode.append_child();
+        (*iterator)->CreateXML(componentNode);
+    }
+}
+
+void Entity::UpdateFromXML(pugi::xml_node document)
+{
+    
+}

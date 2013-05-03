@@ -14,6 +14,7 @@
 #include "ComponentType.h"
 #include "Event.h"
 #include "Component.h"
+#include "pugixml.hpp"
 
 class Scene;
 
@@ -31,7 +32,6 @@ public:
     unsigned int _id;
     Entity(std::string name = "");
     ~Entity();
-    
     Scene* GetParent();
     bool IsAddedToScene();
     void InitializeComponents();
@@ -39,6 +39,8 @@ public:
     void AddComponent(Component* component);
     void RemoveComponent(ComponentType type);
     void HandleEvent(Event* event);
+    void CreateXML(pugi::xml_node node);
+    void UpdateFromXML(pugi::xml_node document);
     Component* GetComponent(ComponentType type);
     template <class T> T* GetComponent()
     {

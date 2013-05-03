@@ -25,11 +25,10 @@ ScriptComponent::~ScriptComponent()
 
 
 
-pugi::xml_node ScriptComponent::CreateXML()
+pugi::xml_node ScriptComponent::CreateXML(pugi::xml_node &node)
 {
     pugi::xml_node dataNode;
     
-    pugi::xml_node node;
     node.set_name("component");
     node.append_attribute("type").set_value("transform");
     
