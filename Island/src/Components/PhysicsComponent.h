@@ -19,6 +19,8 @@ class PhysicsComponent : public Component
 {
 public:
     PhysicsComponent();
+    pugi::xml_node CreateXML();
+    void UpdateFromXML(pugi::xml_node node);
     
     static PhysicsSystem* physicsSystem;
     

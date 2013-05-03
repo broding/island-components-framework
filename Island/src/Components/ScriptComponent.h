@@ -19,6 +19,8 @@ class ScriptComponent : public Component
 public:
     ScriptComponent();
     ~ScriptComponent();
+    pugi::xml_node CreateXML();
+    void UpdateFromXML(pugi::xml_node node);
     
     static ScriptSystem* scriptSystem;
     

@@ -18,6 +18,8 @@ class HealthComponent : public Component
 private:
 public:
     HealthComponent();
+    pugi::xml_node CreateXML();
+    void UpdateFromXML(pugi::xml_node node);
     
     static HealthSystem* healthSystem;
     

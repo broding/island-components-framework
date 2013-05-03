@@ -16,6 +16,7 @@
 #include "SubSystem.h"
 #include "ComponentType.h"
 #include <SFML/Graphics.hpp>
+#include "pugixml.hpp"
 
 class Entity;
 
@@ -44,6 +45,8 @@ public:
     void RemoveNeighbourComponent(Component* component);
     Component* GetNeighbourComponent(ComponentType type);
     virtual void DrawDebug(sf::RenderWindow* window);
+    virtual pugi::xml_node CreateXML() = 0;
+    virtual void UpdateFromXML(pugi::xml_node node) = 0;
     
     bool enabled;
 };

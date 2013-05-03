@@ -9,6 +9,8 @@
 #include "Component.h"
 #include "Entity.h"
 #include <exception>
+#include "pugixml.hpp"
+#include "ResourcePath.hpp"
 
 Component::Component()
 {
@@ -90,6 +92,30 @@ bool Component::IsSubscribedTo(ComponentType type)
 }
 
 void Component::DrawDebug(sf::RenderWindow *window)
+{
+    
+}
+
+pugi::xml_node Component::CreateXML()
+{
+    pugi::xml_node dataNode;
+    
+    pugi::xml_node node;
+    node.set_name("component");
+    node.append_attribute("type").set_value("transform");
+    
+    dataNode = node.append_child("data");
+    dataNode.append_attribute("type").set_value("position");
+    dataNode.append_attribute("value").set_value(145);
+    
+    dataNode = node.append_child("data");
+    dataNode.append_attribute("type").set_value("position");
+    dataNode.append_attribute("value").set_value(145);
+    
+    return node;
+}
+
+void Component::UpdateFromXML(pugi::xml_node node)
 {
     
 }

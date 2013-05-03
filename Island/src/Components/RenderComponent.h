@@ -31,6 +31,8 @@ private:
 public:
     RenderComponent();
     ~RenderComponent();
+    pugi::xml_node CreateXML();
+    void UpdateFromXML(pugi::xml_node node);
     
     static RenderSystem* renderSystem;
     

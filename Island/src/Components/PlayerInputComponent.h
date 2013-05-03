@@ -19,6 +19,8 @@ class PlayerInputComponent : public Component
 private:
 public:
     PlayerInputComponent();
+    pugi::xml_node CreateXML();
+    void UpdateFromXML(pugi::xml_node node);
     
     static PlayerInputSystem* playerInputSystem;
     

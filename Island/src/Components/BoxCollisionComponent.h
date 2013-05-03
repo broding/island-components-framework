@@ -19,6 +19,8 @@ class BoxCollisionComponent : public Component, public ICollisionComponent
 private:
 public:
     BoxCollisionComponent();
+    pugi::xml_node CreateXML();
+    void UpdateFromXML(pugi::xml_node node);
     
     static CollisionSystem* collisionSystem;
     

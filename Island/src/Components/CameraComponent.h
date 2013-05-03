@@ -19,6 +19,8 @@ class CameraComponent : public Component
 private:
 public:
     CameraComponent();
+    pugi::xml_node CreateXML();
+    void UpdateFromXML(pugi::xml_node node);
     
     static CameraSystem* cameraSystem;
     

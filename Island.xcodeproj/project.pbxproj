@@ -51,6 +51,7 @@
 		4BCB69E21732AE20004CD712 /* EditorInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BCB69E01732AE20004CD712 /* EditorInterface.cpp */; };
 		4BCB69E51733AD46004CD712 /* EditorCore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BCB69E31733AD46004CD712 /* EditorCore.cpp */; };
 		4BCB69E81733AE10004CD712 /* EditorScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BCB69E61733AE10004CD712 /* EditorScene.cpp */; };
+		4BCB69EA1733D16B004CD712 /* pugixml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BCB69E91733D16B004CD712 /* pugixml.cpp */; };
 		4BDA14B016F7796700359B94 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4BDA14AF16F7796700359B94 /* ResourcePath.mm */; };
 		4BDA14B316F7796700359B94 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BDA14B216F7796700359B94 /* main.cpp */; };
 		4BDA14B616F7796700359B94 /* cute_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4BDA14B516F7796700359B94 /* cute_image.jpg */; };
@@ -177,6 +178,7 @@
 		4BCB69E41733AD46004CD712 /* EditorCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorCore.h; sourceTree = "<group>"; };
 		4BCB69E61733AE10004CD712 /* EditorScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EditorScene.cpp; sourceTree = "<group>"; };
 		4BCB69E71733AE10004CD712 /* EditorScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorScene.h; sourceTree = "<group>"; };
+		4BCB69E91733D16B004CD712 /* pugixml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pugixml.cpp; sourceTree = "<group>"; };
 		4BDA14AA16F7796700359B94 /* Island.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Island.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BDA14AE16F7796700359B94 /* Island-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Island-Info.plist"; sourceTree = "<group>"; };
 		4BDA14AF16F7796700359B94 /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 		4BC1E0F317073762007117EC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4BCB69E91733D16B004CD712 /* pugixml.cpp */,
 				4BC1E0F517073772007117EC /* VectorUtil.h */,
 				4BC1E0F817073B5B007117EC /* CommonUtil.h */,
 				4BC1E0FA170830A0007117EC /* EasingUtil.h */,
@@ -639,6 +642,7 @@
 				4BCB69E21732AE20004CD712 /* EditorInterface.cpp in Sources */,
 				4BCB69E51733AD46004CD712 /* EditorCore.cpp in Sources */,
 				4BCB69E81733AE10004CD712 /* EditorScene.cpp in Sources */,
+				4BCB69EA1733D16B004CD712 /* pugixml.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,8 +712,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "/usr/local/boost_1_53_0/boost/**";
-				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include/;
+				HEADER_SEARCH_PATHS = ./../include;
+				"HEADER_SEARCH_PATHS[arch=*]" = ./../include;
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				"LIBRARY_SEARCH_PATHS[arch=*]" = (
 					/usr/local/lib/,

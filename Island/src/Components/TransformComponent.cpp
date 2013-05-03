@@ -41,6 +41,7 @@ const void* TransformComponent::GenerateNetworkPacket()
     return packet.getData();
 }
 
+
 void TransformComponent::ApplyNetworkPacket()
 {
     
@@ -57,4 +58,30 @@ void TransformComponent::DrawDebug(sf::RenderWindow *window)
     rect.setOutlineColor(sf::Color::Blue);
         
     window->draw(rect);
+}
+
+
+
+pugi::xml_node TransformComponent::CreateXML()
+{
+    pugi::xml_node dataNode;
+    
+    pugi::xml_node node;
+    node.set_name("component");
+    node.append_attribute("type").set_value("transform");
+    
+    dataNode = node.append_child("data");
+    dataNode.append_attribute("type").set_value("position");
+    dataNode.append_attribute("value").set_value(145);
+    
+    dataNode = node.append_child("data");
+    dataNode.append_attribute("type").set_value("position");
+    dataNode.append_attribute("value").set_value(145);
+    
+    return node;
+}
+
+void TransformComponent::UpdateFromXML(pugi::xml_node node)
+{
+    
 }
