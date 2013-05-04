@@ -26,6 +26,7 @@ void EditorCore::Update(float lastFrameTime)
 {
     Core::Update(lastFrameTime);
     
+    // entity selection
     if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && (currentTool == SELECT || currentTool == DRAG))
     {
 		Entity* newSelected = SelectEntity();
@@ -33,6 +34,23 @@ void EditorCore::Update(float lastFrameTime)
 		if(newSelected != NULL)
 			_selectedEntity = SelectEntity();
     }
+    
+    // camera drag
+    if(sf::Mouse::isButtonPressed(sf::Mouse::Right))
+    {
+        if(!_rightMouseWasPressed)
+        {
+            _dragMouseStart = sf::Mouse::getPosition();
+            _dragCameraStart = _cameraSystem->currentCamera->GetOwner()->GetComponent<TransformComponent>()->position;
+        }
+        else
+        {
+            sf::Vector2i mouseDelta = sf::Mouse::getPosition() - _dragMouseStart;
+            _cameraSystem->currentCamera->GetOwner()->GetComponent<TransformComponent>()->position = _dragCameraStart - sf::Vector2f(mouseDelta.x, mouseDelta.y);
+        }
+    }
+    
+    _rightMouseWasPressed = sf::Mouse::isButtonPressed(sf::Mouse::Right);
 
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 		_cameraSystem->currentCamera->GetOwner()->GetComponent<TransformComponent>()->position += sf::Vector2f(-20, 0);

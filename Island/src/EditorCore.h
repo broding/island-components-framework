@@ -27,6 +27,10 @@ public:
     
     Tool currentTool;
 private:
+    bool _rightMouseWasPressed;
+    sf::Vector2i _dragMouseStart;
+    sf::Vector2f _dragCameraStart;
+    
     Entity* SelectEntity();
     
     Entity* _selectedEntity;
