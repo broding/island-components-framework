@@ -14,7 +14,6 @@
 #include "PhysicsSystem.h"
 #include "PlayerInputSystem.h"
 #include "NetworkSystem.h"
-#include "CameraSystem.h"
 #include "CollisionSystem.h"
 #include "HealthSystem.h"
 #include "WeaponSystem.h"
@@ -61,13 +60,13 @@ void Core::InitializeSubSystems()
     PhysicsSystem* physicsSystem = new PhysicsSystem();
     PlayerInputSystem* playerInputSystem = new PlayerInputSystem(_renderWindow);
     NetworkSystem* networkSystem = new NetworkSystem();
-    CameraSystem* cameraSystem = new CameraSystem(_renderWindow);
+    _cameraSystem = new CameraSystem(_renderWindow);
     CollisionSystem* collisionSystem = new CollisionSystem();
     HealthSystem* healthSystem = new HealthSystem();
     WeaponSystem* weaponSystem = new WeaponSystem();
     ScriptSystem* scriptSystem = new ScriptSystem();
     
-    AddSubSystem(cameraSystem);
+    AddSubSystem(_cameraSystem);
     AddSubSystem(scriptSystem);
     AddSubSystem(playerInputSystem);
     AddSubSystem(transformSystem);
@@ -84,7 +83,7 @@ void Core::InitializeSubSystems()
     PhysicsComponent::physicsSystem = physicsSystem;
     PlayerInputComponent::playerInputSystem = playerInputSystem;
     NetworkComponent::networkSystem = networkSystem;
-    CameraComponent::cameraSystem = cameraSystem;
+    CameraComponent::cameraSystem = _cameraSystem;
     BoxCollisionComponent::collisionSystem = collisionSystem;
     SphereCollisionComponent::collisionSystem = collisionSystem;
     HealthComponent::healthSystem = healthSystem;

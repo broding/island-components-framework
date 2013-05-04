@@ -26,9 +26,15 @@ private:
     Entity* _owner;
 protected:
     ComponentType _type;
+	std::string _name;
     SubSystem* _subSystem;
     std::map<ComponentType, Component*> _componentSubscriptions;
     
+	void AppendDataNode(pugi::xml_node &node, pugi::char_t* name, pugi::char_t* value);
+	void AppendDataNode(pugi::xml_node &node, pugi::char_t* name, bool value);
+	void AppendDataNode(pugi::xml_node &node, pugi::char_t* name, int value);
+	void AppendDataNode(pugi::xml_node &node, pugi::char_t* name, float value);
+
     bool IsSubscribedTo(ComponentType type);
 public:
     Component();
@@ -36,6 +42,7 @@ public:
     void AddToSystem();
     void RemoveFromSystem();
     ComponentType GetComponentType();
+	std::string GetName();
     void SetOwner(Entity* entity);
     Entity* GetOwner();
     void HandleEvent(Event* event);

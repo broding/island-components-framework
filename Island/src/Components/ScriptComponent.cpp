@@ -29,15 +29,12 @@ pugi::xml_node ScriptComponent::CreateXML(pugi::xml_node &node)
 {
     pugi::xml_node dataNode;
     
-    node.set_name("component");
-    node.append_attribute("type").set_value("transform");
-    
     dataNode = node.append_child("data");
     dataNode.append_attribute("type").set_value("position");
     dataNode.append_attribute("value").set_value(145);
     
     dataNode = node.append_child("data");
-    dataNode.append_attribute("type").set_value("position");
+    dataNode.append_attribute("type").set_value("velocity");
     dataNode.append_attribute("value").set_value(145);
     
     return node;

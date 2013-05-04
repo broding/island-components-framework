@@ -10,7 +10,7 @@
 #include "Component.h"
 #include "Scene.h"
 
-unsigned int Entity::_idIncrementer = 0;
+unsigned int Entity::_idIncrementer = 1;
 
 Entity::Entity(std::string name) : _name(name)
 {
@@ -100,11 +100,22 @@ void Entity::CreateXML(pugi::xml_node node)
     for (std::list<Component*>::const_iterator iterator = _components.begin(), end = _components.end(); iterator != end; ++iterator)
     {
         pugi::xml_node componentNode = componentParentNode.append_child();
+
+		componentNode.set_name("component");
+		componentNode.append_attribute("type").set_value((*iterator)->GetComponentType());
+		componentNode.append_attribute("name").set_value((*iterator)->GetName().c_str());
         (*iterator)->CreateXML(componentNode);
     }
 }
 
 void Entity::UpdateFromXML(pugi::xml_node document)
 {
-    
+	_name = document.child("entity").attribute("name").as_string();
+	
+	pugi::xml_node components = document.child("entity").child("components");
+
+	for (pugi::xml_node component = components.first_child(); component; component = component.next_sibling())
+	{
+
+	}
 }

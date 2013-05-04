@@ -60,10 +60,20 @@ int Update()
 
 void ChangeTool(int tool)
 {
-	
+	core->currentTool = (Tool)tool;
 }
 
-const char* GetSelectedEntity()
+unsigned int GetSelectedEntityId()
+{
+	if(core->GetSelectedEntity() != 0)
+    {
+		return core->GetSelectedEntity()->_id;
+    }
+
+	return 0;
+}
+
+const char* GetSelectedEntityXML()
 {
 	if(core->GetSelectedEntity() != 0)
     {
@@ -80,4 +90,16 @@ const char* GetSelectedEntity()
     }
 
 	return NULL;
+}
+
+
+void SendEntityXML(const char* xml, int size)
+{
+	pugi::xml_document document;
+	pugi::xml_parse_result result = document.load_buffer(xml, size);
+	
+	if(result)
+		core->GetSelectedEntity()->UpdateFromXML(document);
+	else
+		core->GetSelectedEntity()->_id = 999;
 }

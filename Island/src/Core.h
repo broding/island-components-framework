@@ -13,6 +13,7 @@
 #include <SFML/Graphics.hpp>
 #include "SubSystem.h"
 #include "Scene.h"
+#include "CameraSystem.h"
 
 class Core
 {
@@ -26,7 +27,8 @@ private:
 protected:
     Scene* _currentScene;
     sf::RenderWindow* _renderWindow;
-    
+
+	CameraSystem* _cameraSystem;
 public:
     Core(sf::RenderWindow* window);
     ~Core();

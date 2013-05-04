@@ -15,6 +15,7 @@
 Component::Component()
 {
     _type = COMPONENT_NULL;
+	_name = "no_name_set";
     enabled = true;
 }
 
@@ -26,6 +27,11 @@ Component::~Component()
 ComponentType Component::GetComponentType()
 {
     return _type;
+}
+
+std::string  Component::GetName()
+{
+    return _name;
 }
 
 Entity* Component::GetOwner()
@@ -94,4 +100,40 @@ bool Component::IsSubscribedTo(ComponentType type)
 void Component::DrawDebug(sf::RenderWindow *window)
 {
     
+}
+
+void Component::AppendDataNode(pugi::xml_node &node, pugi::char_t* name, pugi::char_t* value)
+{
+	pugi::xml_node dataNode;
+    dataNode = node.append_child("data");
+
+	dataNode.append_attribute("type").set_value(name);
+    dataNode.append_attribute("value").set_value(value);
+}
+
+void Component::AppendDataNode(pugi::xml_node &node, pugi::char_t* name, bool value)
+{
+	pugi::xml_node dataNode;
+    dataNode = node.append_child("data");
+
+	dataNode.append_attribute("type").set_value(name);
+    dataNode.append_attribute("value").set_value(value);
+}
+
+void Component::AppendDataNode(pugi::xml_node &node, pugi::char_t* name, int value)
+{
+	pugi::xml_node dataNode;
+    dataNode = node.append_child("data");
+
+	dataNode.append_attribute("type").set_value(name);
+    dataNode.append_attribute("value").set_value(value);
+}
+
+void Component::AppendDataNode(pugi::xml_node &node, pugi::char_t* name, float value)
+{
+	pugi::xml_node dataNode;
+    dataNode = node.append_child("data");
+
+	dataNode.append_attribute("type").set_value(name);
+    dataNode.append_attribute("value").set_value(value);
 }

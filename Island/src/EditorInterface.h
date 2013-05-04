@@ -14,7 +14,9 @@ DllExport int OpenWindow();
 DllExport void CloseWindow();
 DllExport int Update();
 DllExport void ChangeTool(int tool);
-DllExport const char* GetSelectedEntity();
+DllExport unsigned int GetSelectedEntityId();
+DllExport const char* GetSelectedEntityXML();
+DllExport void SendEntityXML(const char* xmlWide, int size);
 
 sf::RenderWindow* window;
 EditorCore* core;

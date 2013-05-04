@@ -18,6 +18,7 @@ CameraComponent::CameraComponent()
     this->AddToSystem();
     this->AddComponentSubscription(COMPONENT_TRANSFORM);
     
+	targetEntity = NULL;
     halfSize = sf::Vector2f(1024, 768);
     maxTargetDistance = 25;
     snapSpeed = 0.5;
@@ -34,15 +35,12 @@ pugi::xml_node CameraComponent::CreateXML(pugi::xml_node &node)
 {
     pugi::xml_node dataNode;
     
-    node.set_name("component");
-    node.append_attribute("type").set_value("transform");
-    
     dataNode = node.append_child("data");
     dataNode.append_attribute("type").set_value("position");
     dataNode.append_attribute("value").set_value(145);
     
     dataNode = node.append_child("data");
-    dataNode.append_attribute("type").set_value("position");
+    dataNode.append_attribute("type").set_value("velocity");
     dataNode.append_attribute("value").set_value(145);
     
     return node;

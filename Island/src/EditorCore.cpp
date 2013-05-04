@@ -11,6 +11,7 @@
 #include "EditorScene.h"
 #include "GameConfig.h"
 #include "TransformComponent.h"
+#include "CameraComponent.h";
 
 EditorCore::EditorCore(sf::RenderWindow* window) : Core(window)
 {
@@ -27,8 +28,20 @@ void EditorCore::Update(float lastFrameTime)
     
     if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && (currentTool == SELECT || currentTool == DRAG))
     {
-        _selectedEntity = SelectEntity();
+		Entity* newSelected = SelectEntity();
+
+		if(newSelected != NULL)
+			_selectedEntity = SelectEntity();
     }
+
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+		_cameraSystem->currentCamera->GetOwner()->GetComponent<TransformComponent>()->position += sf::Vector2f(-20, 0);
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+		_cameraSystem->currentCamera->GetOwner()->GetComponent<TransformComponent>()->position += sf::Vector2f(20, 0);
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+		_cameraSystem->currentCamera->GetOwner()->GetComponent<TransformComponent>()->position += sf::Vector2f(0, -20);
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+		_cameraSystem->currentCamera->GetOwner()->GetComponent<TransformComponent>()->position += sf::Vector2f(0, 20);
 }
 
 Entity* EditorCore::SelectEntity()
@@ -38,7 +51,6 @@ Entity* EditorCore::SelectEntity()
     {
         for (std::vector<Entity*>::const_iterator iterator = scene->GetEntities().begin(), end = scene->GetEntities().end(); iterator != end; ++iterator)
         {
-            
             TransformComponent* transform = (*iterator)->GetComponent<TransformComponent>();
             
             if(transform != NULL)
