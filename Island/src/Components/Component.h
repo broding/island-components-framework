@@ -30,10 +30,10 @@ protected:
     SubSystem* _subSystem;
     std::map<ComponentType, Component*> _componentSubscriptions;
     
-	void AppendDataNode(pugi::xml_node &node, pugi::char_t* name, pugi::char_t* value);
-	void AppendDataNode(pugi::xml_node &node, pugi::char_t* name, bool value);
-	void AppendDataNode(pugi::xml_node &node, pugi::char_t* name, int value);
-	void AppendDataNode(pugi::xml_node &node, pugi::char_t* name, float value);
+	void AppendDataNode(pugi::xml_node &node, std::string name, pugi::char_t* value);
+	void AppendDataNode(pugi::xml_node &node, std::string name, bool value);
+	void AppendDataNode(pugi::xml_node &node, std::string name, int value);
+	void AppendDataNode(pugi::xml_node &node, std::string name, float value);
     pugi::xml_attribute GetXMLData(pugi::xml_node &node, std::string data);
 
     bool IsSubscribedTo(ComponentType type);

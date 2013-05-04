@@ -102,39 +102,39 @@ void Component::DrawDebug(sf::RenderWindow *window)
     
 }
 
-void Component::AppendDataNode(pugi::xml_node &node, pugi::char_t* name, pugi::char_t* value)
+void Component::AppendDataNode(pugi::xml_node &node, std::string name, pugi::char_t* value)
 {
 	pugi::xml_node dataNode;
     dataNode = node.append_child("data");
 
-	dataNode.append_attribute("type").set_value(name);
+	dataNode.append_attribute("type").set_value(name.c_str());
     dataNode.append_attribute("value").set_value(value);
 }
 
-void Component::AppendDataNode(pugi::xml_node &node, pugi::char_t* name, bool value)
+void Component::AppendDataNode(pugi::xml_node &node, std::string name, bool value)
 {
 	pugi::xml_node dataNode;
     dataNode = node.append_child("data");
 
-	dataNode.append_attribute("type").set_value(name);
+	dataNode.append_attribute("type").set_value(name.c_str());
     dataNode.append_attribute("value").set_value(value);
 }
 
-void Component::AppendDataNode(pugi::xml_node &node, pugi::char_t* name, int value)
+void Component::AppendDataNode(pugi::xml_node &node, std::string name, int value)
 {
 	pugi::xml_node dataNode;
     dataNode = node.append_child("data");
 
-	dataNode.append_attribute("type").set_value(name);
+	dataNode.append_attribute("type").set_value(name.c_str());
     dataNode.append_attribute("value").set_value(value);
 }
 
-void Component::AppendDataNode(pugi::xml_node &node, pugi::char_t* name, float value)
+void Component::AppendDataNode(pugi::xml_node &node, std::string name, float value)
 {
 	pugi::xml_node dataNode;
     dataNode = node.append_child("data");
 
-	dataNode.append_attribute("type").set_value(name);
+	dataNode.append_attribute("type").set_value(name.c_str());
     dataNode.append_attribute("value").set_value(value);
 }
 

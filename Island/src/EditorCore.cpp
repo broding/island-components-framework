@@ -11,7 +11,7 @@
 #include "EditorScene.h"
 #include "GameConfig.h"
 #include "TransformComponent.h"
-#include "CameraComponent.h";
+#include "CameraComponent.h"
 
 EditorCore::EditorCore(sf::RenderWindow* window) : Core(window)
 {
