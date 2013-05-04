@@ -51,15 +51,6 @@ void EditorCore::Update(float lastFrameTime)
     }
     
     _rightMouseWasPressed = sf::Mouse::isButtonPressed(sf::Mouse::Right);
-
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-		_cameraSystem->currentCamera->GetOwner()->GetComponent<TransformComponent>()->position += sf::Vector2f(-20, 0);
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-		_cameraSystem->currentCamera->GetOwner()->GetComponent<TransformComponent>()->position += sf::Vector2f(20, 0);
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-		_cameraSystem->currentCamera->GetOwner()->GetComponent<TransformComponent>()->position += sf::Vector2f(0, -20);
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-		_cameraSystem->currentCamera->GetOwner()->GetComponent<TransformComponent>()->position += sf::Vector2f(0, 20);
 }
 
 Entity* EditorCore::SelectEntity()
