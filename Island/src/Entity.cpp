@@ -116,6 +116,12 @@ void Entity::UpdateFromXML(pugi::xml_node document)
 
 	for (pugi::xml_node component = components.first_child(); component; component = component.next_sibling())
 	{
-
+        for (std::list<Component*>::const_iterator iterator = _components.begin(), end = _components.end(); iterator != end; ++iterator)
+        {
+            if((*iterator)->GetComponentType() == component.attribute("type").as_int())
+            {
+                (*iterator)->UpdateFromXML(component);
+            }
+        }
 	}
 }
