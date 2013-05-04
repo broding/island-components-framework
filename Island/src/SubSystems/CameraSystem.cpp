@@ -44,7 +44,7 @@ void CameraSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> co
                 cameraPhysics->velocity *= 0.5f;
         }
         
-        sf::View view(cameraTransform->position, currentCamera->halfSize);
+        sf::View view(cameraTransform->position, sf::Vector2f(1024 * currentCamera->zoom, 768 * currentCamera->zoom));
         
         _window->setView(view);
     }

@@ -30,7 +30,7 @@ public:
     float maxTargetDistance;
     float snapSpeed;
     
-    sf::Vector2f halfSize;
+    float zoom;
 };
 
 #endif /* defined(__Island__CameraComponent__) */

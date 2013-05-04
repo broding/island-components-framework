@@ -19,7 +19,7 @@ CameraComponent::CameraComponent()
     this->AddComponentSubscription(COMPONENT_TRANSFORM);
     
 	targetEntity = NULL;
-    halfSize = sf::Vector2f(1024, 768);
+    zoom = 1.0f;
     maxTargetDistance = 25;
     snapSpeed = 0.5;
 }
