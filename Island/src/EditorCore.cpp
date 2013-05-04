@@ -51,6 +51,18 @@ void EditorCore::Update(float lastFrameTime)
     }
     
     _rightMouseWasPressed = sf::Mouse::isButtonPressed(sf::Mouse::Right);
+    
+    // camera zoom
+    sf::Event event;
+    while (_renderWindow->pollEvent(event))
+    {
+        if (event.type == sf::Event::MouseWheelMoved)
+        {
+            if(event.mouseWheel.delta != 0)
+                _cameraSystem->currentCamera->zoom -= event.mouseWheel.delta * 0.07 * _cameraSystem->currentCamera->zoom;
+            
+        }
+    }
 }
 
 Entity* EditorCore::SelectEntity()
