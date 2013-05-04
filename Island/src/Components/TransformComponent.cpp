@@ -77,10 +77,11 @@ pugi::xml_node TransformComponent::CreateXML(pugi::xml_node &node)
 
 void TransformComponent::UpdateFromXML(pugi::xml_node node)
 {
-    position.x = node.child("data").attribute("positionX").as_float();
-    position.y = node.child("data").attribute("positionX").as_float();
-    scale.x = node.child("data").attribute("scaleX").as_float();
-    scale.y = node.child("data").attribute("scaleY").as_float();
-    origin.x = node.child("data").attribute("originX").as_float();
-    origin.y = node.child("data").attribute("originY").as_float();
+    
+    position.x = GetXMLData(node, "positionX").as_float();
+    position.y = GetXMLData(node, "positionY").as_float();
+    scale.x = GetXMLData(node, "scaleX").as_float();
+    scale.y = GetXMLData(node, "scaleY").as_float();
+    origin.x = GetXMLData(node, "originX").as_float();
+    origin.y = GetXMLData(node, "originY").as_float();
 }

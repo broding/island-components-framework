@@ -34,6 +34,7 @@ protected:
 	void AppendDataNode(pugi::xml_node &node, pugi::char_t* name, bool value);
 	void AppendDataNode(pugi::xml_node &node, pugi::char_t* name, int value);
 	void AppendDataNode(pugi::xml_node &node, pugi::char_t* name, float value);
+    pugi::xml_attribute GetXMLData(pugi::xml_node &node, std::string data);
 
     bool IsSubscribedTo(ComponentType type);
 public:
