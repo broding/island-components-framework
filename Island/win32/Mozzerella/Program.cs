@@ -7,6 +7,7 @@ namespace Mozzerella
 {
     static class Program
     {
+        private static Mozzerella mozzerella;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -18,12 +19,13 @@ namespace Mozzerella
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Idle += new EventHandler(Update);
-            Application.Run(new Mozzerella());
+            Application.Run(mozzerella = new Mozzerella());
         }
 
         public static void Update(object sender, EventArgs e)
         {
             GameCore.Update();
+            mozzerella.Update();
         }
     }
 }
