@@ -31,7 +31,7 @@ void CameraComponent::UseCamera()
 
 
 
-pugi::xml_node CameraComponent::CreateXML(pugi::xml_node &node)
+void CameraComponent::FillXML(pugi::xml_node &node)
 {
     pugi::xml_node dataNode;
     
@@ -42,8 +42,6 @@ pugi::xml_node CameraComponent::CreateXML(pugi::xml_node &node)
     dataNode = node.append_child("data");
     dataNode.append_attribute("type").set_value("velocity");
     dataNode.append_attribute("value").set_value(145);
-    
-    return node;
 }
 
 void CameraComponent::UpdateFromXML(pugi::xml_node node)

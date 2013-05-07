@@ -20,7 +20,7 @@ class TransformComponent : public Component, public INetworkableComponent
 private:
 public:
     TransformComponent();
-    pugi::xml_node CreateXML(pugi::xml_node &node);
+    void FillXML(pugi::xml_node &node);
     void UpdateFromXML(pugi::xml_node node);
     
     virtual const void* GenerateNetworkPacket();

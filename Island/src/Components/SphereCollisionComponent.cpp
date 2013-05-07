@@ -71,7 +71,7 @@ sf::ConvexShape SphereCollisionComponent::GetConvexShape()
 
 
 
-pugi::xml_node SphereCollisionComponent::CreateXML(pugi::xml_node &node)
+void SphereCollisionComponent::FillXML(pugi::xml_node &node)
 {
     pugi::xml_node dataNode;
     
@@ -82,8 +82,6 @@ pugi::xml_node SphereCollisionComponent::CreateXML(pugi::xml_node &node)
     dataNode = node.append_child("data");
     dataNode.append_attribute("type").set_value("velocity");
     dataNode.append_attribute("value").set_value(145);
-    
-    return node;
 }
 
 void SphereCollisionComponent::UpdateFromXML(pugi::xml_node node)

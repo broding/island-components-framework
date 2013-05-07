@@ -18,7 +18,7 @@ class WeaponComponent : public Component
 {
 public:
     WeaponComponent();
-    pugi::xml_node CreateXML(pugi::xml_node &node);
+    void FillXML(pugi::xml_node &node);
     void UpdateFromXML(pugi::xml_node node);
     
     static WeaponSystem* weaponSystem;

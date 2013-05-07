@@ -32,12 +32,10 @@ RenderComponent::~RenderComponent()
 
 
 
-pugi::xml_node RenderComponent::CreateXML(pugi::xml_node &node)
+void RenderComponent::FillXML(pugi::xml_node &node)
 {
 	AppendDataNode(node, "position", 145);
 	AppendDataNode(node, "velocity", 145);
-    
-    return node;
 }
 
 void RenderComponent::UpdateFromXML(pugi::xml_node node)

@@ -39,7 +39,7 @@ public:
     void AddComponent(Component* component);
     void RemoveComponent(ComponentType type);
     void HandleEvent(Event* event);
-    void CreateXML(pugi::xml_node node);
+    void FillXML(pugi::xml_node node);
     void UpdateFromXML(pugi::xml_node document);
     Component* GetComponent(ComponentType type);
     template <class T> T* GetComponent()

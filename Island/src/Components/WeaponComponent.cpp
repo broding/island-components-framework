@@ -33,7 +33,7 @@ WeaponComponent::WeaponComponent()
 
 
 
-pugi::xml_node WeaponComponent::CreateXML(pugi::xml_node &node)
+void WeaponComponent::FillXML(pugi::xml_node &node)
 {
     pugi::xml_node dataNode;
     
@@ -44,8 +44,6 @@ pugi::xml_node WeaponComponent::CreateXML(pugi::xml_node &node)
     dataNode = node.append_child("data");
     dataNode.append_attribute("type").set_value("velocity");
     dataNode.append_attribute("value").set_value(145);
-    
-    return node;
 }
 
 void WeaponComponent::UpdateFromXML(pugi::xml_node node)

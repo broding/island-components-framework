@@ -25,7 +25,7 @@ ScriptComponent::~ScriptComponent()
 
 
 
-pugi::xml_node ScriptComponent::CreateXML(pugi::xml_node &node)
+void ScriptComponent::FillXML(pugi::xml_node &node)
 {
     pugi::xml_node dataNode;
     
@@ -36,8 +36,6 @@ pugi::xml_node ScriptComponent::CreateXML(pugi::xml_node &node)
     dataNode = node.append_child("data");
     dataNode.append_attribute("type").set_value("velocity");
     dataNode.append_attribute("value").set_value(145);
-    
-    return node;
 }
 
 void ScriptComponent::UpdateFromXML(pugi::xml_node node)

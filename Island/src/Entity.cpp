@@ -90,7 +90,7 @@ void Entity::Delete()
         _scene->RemoveEntity(this);
 }
 
-void Entity::CreateXML(pugi::xml_node node)
+void Entity::FillXML(pugi::xml_node node)
 {
     node.set_name("entity");
     node.append_attribute("name").set_value(_name.c_str());
@@ -104,7 +104,7 @@ void Entity::CreateXML(pugi::xml_node node)
 		componentNode.set_name("component");
 		componentNode.append_attribute("type").set_value((*iterator)->GetComponentType());
 		componentNode.append_attribute("name").set_value((*iterator)->GetName().c_str());
-        (*iterator)->CreateXML(componentNode);
+        (*iterator)->FillXML(componentNode);
     }
 }
 
