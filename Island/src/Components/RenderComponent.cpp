@@ -34,8 +34,14 @@ RenderComponent::~RenderComponent()
 
 void RenderComponent::FillXML(pugi::xml_node &node)
 {
-	AppendDataNode(node, "position", 145);
-	AppendDataNode(node, "velocity", 145);
+	AppendDataNode(node, "Sprite name", "name of sprite in resourcemanager");
+	AppendDataNode(node, "Rectangle X", textureRect.left);
+	AppendDataNode(node, "Rectangle Y", textureRect.top);
+	AppendDataNode(node, "Rectangle Width", textureRect.width);
+	AppendDataNode(node, "Rectangle Height", textureRect.height);
+	AppendDataNode(node, "Current frame", currentFrame);
+	AppendDataNode(node, "Current frame", currentFrameTime);
+	AppendDataNode(node, "Looping", looping);
 }
 
 void RenderComponent::UpdateFromXML(pugi::xml_node node)
