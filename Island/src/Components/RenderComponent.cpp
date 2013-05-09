@@ -40,11 +40,15 @@ void RenderComponent::FillXML(pugi::xml_node &node)
 	AppendDataNode(node, "Rectangle Width", textureRect.width);
 	AppendDataNode(node, "Rectangle Height", textureRect.height);
 	AppendDataNode(node, "Current frame", currentFrame);
-	AppendDataNode(node, "Current frame", currentFrameTime);
 	AppendDataNode(node, "Looping", looping);
 }
 
 void RenderComponent::UpdateFromXML(pugi::xml_node node)
 {
+    // TODO: load sprite from resource manager
     
+    textureRect = sf::Rect<int>(GetXMLData(node, "Rectangle X").as_int(), GetXMLData(node, "Rectangle Y").as_int(), GetXMLData(node, "Rectangle Width").as_int(), GetXMLData(node, "Rectangle Height").as_int());
+    
+    currentFrame = GetXMLData(node, "Current Frame").as_int();
+    looping = GetXMLData(node, "Looping").as_bool();
 }
