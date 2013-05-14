@@ -38,17 +38,18 @@ void PlayerInputSystem::ProcessGameTick(float lastFrameTime, std::list<Component
         
         if(physicsComponent != NULL)
         {
+            int speed = 30;
             if(sf::Keyboard::isKeyPressed(inputComponent->up))
-                physicsComponent->forceAccumulated += sf::Vector2f(0, -700);
+                physicsComponent->forceAccumulated += sf::Vector2f(0, -speed);
             
             if(sf::Keyboard::isKeyPressed(inputComponent->down))
-                physicsComponent->forceAccumulated += sf::Vector2f(0, 700);
+                physicsComponent->forceAccumulated += sf::Vector2f(0, speed);
             
             if(sf::Keyboard::isKeyPressed(inputComponent->left))
-                physicsComponent->forceAccumulated += sf::Vector2f(-700, 0);
+                physicsComponent->forceAccumulated += sf::Vector2f(-speed, 0);
             
             if(sf::Keyboard::isKeyPressed(inputComponent->right))
-                physicsComponent->forceAccumulated += sf::Vector2f(700, 0);
+                physicsComponent->forceAccumulated += sf::Vector2f(speed, 0);
         }
         
         if(transformComponent != NULL)
@@ -56,7 +57,7 @@ void PlayerInputSystem::ProcessGameTick(float lastFrameTime, std::list<Component
             sf::Vector2i mousePosition = sf::Vector2i(sf::Mouse::getPosition(*GUIObject::window).x, sf::Mouse::getPosition(*GUIObject::window).y);
             sf::Vector2f mouseDelta = _window->mapPixelToCoords(mousePosition) - transformComponent->position;
             const double degreesPerRadian = 57.2957;
-            transformComponent->rotation = atan2(mouseDelta.x, -mouseDelta.y) * degreesPerRadian;
+            //transformComponent->rotation = atan2(mouseDelta.x, -mouseDelta.y) * degreesPerRadian;
         }
         
         if(weaponComponent != NULL)

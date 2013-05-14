@@ -25,7 +25,7 @@ GameConfig* GameConfig::GetInstance()
 
 GameConfig::GameConfig()
 {
-    _flagConfig.insert(std::pair<std::string,bool>("debugMode",true));
+    _flagConfig.insert(std::pair<std::string,bool>("debugMode",false));
     _flagConfig.insert(std::pair<std::string,bool>("editorMode",false));
 }
 

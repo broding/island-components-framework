@@ -20,17 +20,17 @@ public:
 	{
 		time = 0.0f;
 	}
-
-private:
-    float time;
-
-    void RunScript(Component* component, float lastFrameTime)
+    
+    void RunScript(Entity* entity, float lastFrameTime)
     {
         time += lastFrameTime;
         
         if(time > 2)
-            component->GetOwner()->Delete();
+            entity->Delete();
     }
+
+private:
+    float time;
 };
 
 #endif /* defined(__Island__BulletScript__) */

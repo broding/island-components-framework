@@ -13,6 +13,7 @@
 		4B1623361703164C008F7AE2 /* testbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B1623351703164C008F7AE2 /* testbutton.png */; };
 		4B162339170342A4008F7AE2 /* GUIEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B162337170342A3008F7AE2 /* GUIEvent.cpp */; };
 		4B3ABF481709854400491120 /* SphereCollisionComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B3ABF461709854200491120 /* SphereCollisionComponent.cpp */; };
+		4B5336F2173E6DB000C4EECC /* ground002.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B5336F1173E6DB000C4EECC /* ground002.png */; };
 		4B54ABC91729DBA600434EEA /* QuadTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B54ABC81729DBA600434EEA /* QuadTree.cpp */; };
 		4B54ABCC1729E1AB00434EEA /* HealthComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B54ABCA1729E1AB00434EEA /* HealthComponent.cpp */; };
 		4B54ABCF1729E28D00434EEA /* HealthSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B54ABCD1729E28C00434EEA /* HealthSystem.cpp */; };
@@ -25,7 +26,6 @@
 		4B54ABE7172D32D000434EEA /* GameConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B54ABE5172D32BC00434EEA /* GameConfig.cpp */; };
 		4B54AC3A1731640A00434EEA /* ground001.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B54AC391731640900434EEA /* ground001.png */; };
 		4B62A25016F8673400016A62 /* SubSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B62A24E16F8673400016A62 /* SubSystem.cpp */; };
-		4B68153216F8A0000032EF5E /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153016F89FFF0032EF5E /* Event.cpp */; };
 		4B68153516F8C6C40032EF5E /* PhysicsSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153316F8C6C30032EF5E /* PhysicsSystem.cpp */; };
 		4B68153B16F8C72B0032EF5E /* PhysicsComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B68153916F8C72B0032EF5E /* PhysicsComponent.cpp */; };
 		4B6E99FB170EC8DF002F9797 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B6E99FA170EC8DF002F9797 /* main.cpp */; };
@@ -62,6 +62,7 @@
 		4BDA14C816F779C300359B94 /* Core.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BDA14C616F779C300359B94 /* Core.cpp */; };
 		4BDA14CB16F77B4600359B94 /* Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BDA14C916F77B4600359B94 /* Component.cpp */; };
 		4BDA14CE16F77B5900359B94 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BDA14CC16F77B5900359B94 /* Entity.cpp */; };
+		4BEF1E681742BD3F000C2887 /* player2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BEF1E671742BD3F000C2887 /* player2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -94,6 +95,7 @@
 		4B3ABF441708930600491120 /* Projection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Projection.h; sourceTree = "<group>"; };
 		4B3ABF461709854200491120 /* SphereCollisionComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SphereCollisionComponent.cpp; sourceTree = "<group>"; };
 		4B3ABF471709854300491120 /* SphereCollisionComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SphereCollisionComponent.h; sourceTree = "<group>"; };
+		4B5336F1173E6DB000C4EECC /* ground002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground002.png; sourceTree = "<group>"; };
 		4B54ABC71729DAD800434EEA /* QuadTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadTree.h; sourceTree = "<group>"; };
 		4B54ABC81729DBA600434EEA /* QuadTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QuadTree.cpp; sourceTree = "<group>"; };
 		4B54ABCA1729E1AB00434EEA /* HealthComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HealthComponent.cpp; sourceTree = "<group>"; };
@@ -121,7 +123,6 @@
 		4B62A24E16F8673400016A62 /* SubSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SubSystem.cpp; sourceTree = "<group>"; };
 		4B62A24F16F8673400016A62 /* SubSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubSystem.h; sourceTree = "<group>"; };
 		4B68152F16F89C7C0032EF5E /* ComponentType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComponentType.h; sourceTree = "<group>"; };
-		4B68153016F89FFF0032EF5E /* Event.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Event.cpp; sourceTree = "<group>"; };
 		4B68153116F89FFF0032EF5E /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		4B68153316F8C6C30032EF5E /* PhysicsSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsSystem.cpp; sourceTree = "<group>"; };
 		4B68153416F8C6C30032EF5E /* PhysicsSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsSystem.h; sourceTree = "<group>"; };
@@ -197,6 +198,9 @@
 		4BDA14CC16F77B5900359B94 /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
 		4BDA14CD16F77B5900359B94 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
 		4BEEDE71170990A5004C4C61 /* ICollisionComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICollisionComponent.h; sourceTree = "<group>"; };
+		4BEF1E671742BD3F000C2887 /* player2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player2.png; sourceTree = "<group>"; };
+		4BEF1E691742C23C000C2887 /* RenderEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderEvents.h; sourceTree = "<group>"; };
+		4BEF1E6A1742C362000C2887 /* PlayerAnimationScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerAnimationScript.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +257,7 @@
 			children = (
 				4B54AC0B172D47E400434EEA /* BaseScript.h */,
 				4B54AC0E172D486500434EEA /* BulletScript.h */,
+				4BEF1E6A1742C362000C2887 /* PlayerAnimationScript.h */,
 			);
 			path = Scripts;
 			sourceTree = "<group>";
@@ -427,9 +432,9 @@
 		4BC25A5416F88AD600B36B1E /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				4B68153016F89FFF0032EF5E /* Event.cpp */,
 				4B68153116F89FFF0032EF5E /* Event.h */,
 				4B54ABD61729F06400434EEA /* WeaponEvents.h */,
+				4BEF1E691742C23C000C2887 /* RenderEvents.h */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -474,6 +479,8 @@
 		4BDA14B416F7796700359B94 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				4BEF1E671742BD3F000C2887 /* player2.png */,
+				4B5336F1173E6DB000C4EECC /* ground002.png */,
 				4B54AC391731640900434EEA /* ground001.png */,
 				4B54ABE3172C0B9500434EEA /* Arial.ttf */,
 				4BC1E0E81704E071007117EC /* player.png */,
@@ -564,6 +571,8 @@
 				4BC1E0E91704E071007117EC /* player.png in Resources */,
 				4B54ABE4172C0B9500434EEA /* Arial.ttf in Resources */,
 				4B54AC3A1731640A00434EEA /* ground001.png in Resources */,
+				4B5336F2173E6DB000C4EECC /* ground002.png in Resources */,
+				4BEF1E681742BD3F000C2887 /* player2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,7 +619,6 @@
 				4BC25A2B16F86C7700B36B1E /* RenderSystem.cpp in Sources */,
 				4BC25A5016F885AB00B36B1E /* TransformComponent.cpp in Sources */,
 				4BC25A5316F885F200B36B1E /* TransformSystem.cpp in Sources */,
-				4B68153216F8A0000032EF5E /* Event.cpp in Sources */,
 				4B68153516F8C6C40032EF5E /* PhysicsSystem.cpp in Sources */,
 				4B68153B16F8C72B0032EF5E /* PhysicsComponent.cpp in Sources */,
 				4BB7881516F9E3A200AC62F4 /* PlayerInputComponent.cpp in Sources */,

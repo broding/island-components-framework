@@ -7,6 +7,7 @@
 //
 
 #include "PhysicsSystem.h"
+#include <cmath>
 
 void PhysicsSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> components)
 {
@@ -31,10 +32,19 @@ void PhysicsSystem::Integrate(PhysicsComponent* physicsComponent, TransformCompo
     sf::Vector2f resultingAcceleration = physicsComponent->acceleration;
     resultingAcceleration += physicsComponent->forceAccumulated * (1 / physicsComponent->mass);
     
-    physicsComponent->velocity += resultingAcceleration * lastFrameTime;
+    physicsComponent->velocity += resultingAcceleration;
     
     // simulate damping
     physicsComponent->velocity *= 0.9f;
+    
+    // if velocity is veeeeery low, set it to 0
+    float threshold = 0.1f;
+    
+    if(fabs(physicsComponent->velocity.x) < threshold)
+        physicsComponent->velocity.x = 0;
+    
+    if(fabs(physicsComponent->velocity.y) < threshold)
+        physicsComponent->velocity.y = 0;
     
     physicsComponent->forceAccumulated = sf::Vector2f(0,0);
 }

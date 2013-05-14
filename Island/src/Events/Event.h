@@ -15,6 +15,7 @@
 enum EventType
 {
     EVENT_PLAYERINPUT_SHOOT = 0,
+    EVENT_PLAY_ANIMATION,
     EVENT_LAST_TYPE
 };
 

@@ -98,9 +98,6 @@ void Core::AddSubSystem(SubSystem *subSystem)
 
 void Core::Update(float lastFrameTime)
 {
-    lastFrameTime = std::min(lastFrameTime, 1.0f);
-    lastFrameTime = std::max(lastFrameTime, 1 / 60.0f);
-    
     for (std::vector<SubSystem*>::const_iterator iterator = _subSystems.begin(), end = _subSystems.end(); iterator != end; ++iterator)
     {
         (*iterator)->ProcessGameTick(lastFrameTime, (*iterator)->GetValidComponents());

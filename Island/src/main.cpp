@@ -35,12 +35,14 @@ int main(int, char const**)
     }
     window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
     
-    EditorCore core = EditorCore(&window);
+    Core core = Core(&window);
     sf::Clock deltaClock;
+    
+    float lastFrameTime = 0;
     
     while (window.isOpen())
     {
-        sf::Time dt = deltaClock.restart();
+        deltaClock.restart();
         
         sf::Event event;
         while (window.pollEvent(event))
@@ -58,10 +60,12 @@ int main(int, char const**)
         
         window.clear();
     
-        core.Update(dt.asSeconds());
+        core.Update(lastFrameTime);
 
         // Update the window
         window.display();
+        
+        lastFrameTime = deltaClock.getElapsedTime().asSeconds();
     }
     
     return EXIT_SUCCESS;
