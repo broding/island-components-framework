@@ -53,16 +53,21 @@ void Entity::AddComponent(Component *component)
 
 void Entity::RemoveComponent(ComponentType type)
 {
-    for (std::list<Component*>::const_iterator iterator = _components.begin(), end = _components.end(); iterator != end; ++iterator)
+    _deletedComponentTypes.push_back(type);
+}
+
+void Entity::CleanRemovedComponents()
+{
+    for (std::vector<ComponentType>::const_iterator typeIterator = _deletedComponentTypes.begin(), end = _deletedComponentTypes.end(); typeIterator != end; ++typeIterator)
     {
-        if((*iterator)->GetComponentType() == type)
+        for (std::list<Component*>::const_iterator iterator = _components.begin(), end = _components.end(); iterator != end; ++iterator)
         {
-            _components.remove(*iterator);
-            
-            for (std::list<Component*>::const_iterator iterator = _components.begin(), end = _components.end(); iterator != end; ++iterator)
-                (*iterator)->RemoveNeighbourComponent(*iterator);
-            
-            delete *iterator;
+            if((*iterator)->GetComponentType() == *typeIterator)
+            {
+                _components.remove(*iterator);
+                delete *iterator;
+                break;
+            }
         }
     }
 }

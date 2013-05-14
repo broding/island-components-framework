@@ -24,12 +24,16 @@ class Entity
 private:
     static unsigned int _idIncrementer;
     void SetParent(Scene* scene);
+    void CleanRemovedComponents();
     
     std::string _name;
     std::list<Component*> _components;
+    std::vector<ComponentType> _deletedComponentTypes;
     Scene* _scene;
 public:
     unsigned int _id;
+    bool enabled;
+    
     Entity(std::string name = "");
     ~Entity();
     Scene* GetParent();
@@ -53,8 +57,6 @@ public:
         
         return NULL;
     }
-    
-    bool enabled;
 };
 
 #endif /* defined(__Island__Entity__) */

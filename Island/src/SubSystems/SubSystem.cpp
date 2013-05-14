@@ -63,5 +63,4 @@ void SubSystem::DrawDebug(sf::RenderWindow* window)
 
 void SubSystem::ProcessEvent(Component *component, Event* event)
 {
-    
 }

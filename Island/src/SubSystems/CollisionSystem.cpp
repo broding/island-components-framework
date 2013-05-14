@@ -13,6 +13,7 @@
 #include "TransformComponent.h"
 #include "PhysicsComponent.h"
 #include "DebugText.h"
+#include "CollisionEvents.h"
 
 void CollisionSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> components)
 {
@@ -46,6 +47,12 @@ void CollisionSystem::Resolve(Contact contact)
 {
     ICollisionComponent* entity1Collision = contact.entity1->GetComponent<ICollisionComponent>();
     ICollisionComponent* entity2Collision = contact.entity2->GetComponent<ICollisionComponent>();
+    
+    CollisionEvent event1(contact.entity2);
+    contact.entity1->HandleEvent(&event1);
+    
+    CollisionEvent event2(contact.entity1);
+    contact.entity2->HandleEvent(&event2);
     
     if(entity1Collision->trigger && entity2Collision->trigger)
         return;

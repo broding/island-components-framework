@@ -63,6 +63,9 @@
 		4BDA14CB16F77B4600359B94 /* Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BDA14C916F77B4600359B94 /* Component.cpp */; };
 		4BDA14CE16F77B5900359B94 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BDA14CC16F77B5900359B94 /* Entity.cpp */; };
 		4BEF1E681742BD3F000C2887 /* player2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BEF1E671742BD3F000C2887 /* player2.png */; };
+		4BEF1E6C1742CAC7000C2887 /* bullet_hole.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BEF1E6B1742CAC7000C2887 /* bullet_hole.png */; };
+		4BEF1E701742D093000C2887 /* DamageComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF1E6E1742D093000C2887 /* DamageComponent.cpp */; };
+		4BEF1E731742D143000C2887 /* DamageSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF1E711742D142000C2887 /* DamageSystem.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -199,8 +202,13 @@
 		4BDA14CD16F77B5900359B94 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
 		4BEEDE71170990A5004C4C61 /* ICollisionComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICollisionComponent.h; sourceTree = "<group>"; };
 		4BEF1E671742BD3F000C2887 /* player2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player2.png; sourceTree = "<group>"; };
-		4BEF1E691742C23C000C2887 /* RenderEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderEvents.h; sourceTree = "<group>"; };
 		4BEF1E6A1742C362000C2887 /* PlayerAnimationScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerAnimationScript.h; sourceTree = "<group>"; };
+		4BEF1E6B1742CAC7000C2887 /* bullet_hole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet_hole.png; sourceTree = "<group>"; };
+		4BEF1E6D1742CC50000C2887 /* CollisionEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionEvents.h; sourceTree = "<group>"; };
+		4BEF1E6E1742D093000C2887 /* DamageComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DamageComponent.cpp; sourceTree = "<group>"; };
+		4BEF1E6F1742D093000C2887 /* DamageComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DamageComponent.h; sourceTree = "<group>"; };
+		4BEF1E711742D142000C2887 /* DamageSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DamageSystem.cpp; sourceTree = "<group>"; };
+		4BEF1E721742D143000C2887 /* DamageSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DamageSystem.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +298,8 @@
 				4B54ABD41729E9F000434EEA /* WeaponComponent.h */,
 				4B54ABDA172BD3DA00434EEA /* ScriptComponent.cpp */,
 				4B54ABDB172BD3DC00434EEA /* ScriptComponent.h */,
+				4BEF1E6E1742D093000C2887 /* DamageComponent.cpp */,
+				4BEF1E6F1742D093000C2887 /* DamageComponent.h */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -425,6 +435,8 @@
 				4B54ABD11729E9E100434EEA /* WeaponSystem.h */,
 				4B54ABDD172BD41300434EEA /* ScriptSystem.cpp */,
 				4B54ABDE172BD41600434EEA /* ScriptSystem.h */,
+				4BEF1E711742D142000C2887 /* DamageSystem.cpp */,
+				4BEF1E721742D143000C2887 /* DamageSystem.h */,
 			);
 			path = SubSystems;
 			sourceTree = "<group>";
@@ -434,7 +446,7 @@
 			children = (
 				4B68153116F89FFF0032EF5E /* Event.h */,
 				4B54ABD61729F06400434EEA /* WeaponEvents.h */,
-				4BEF1E691742C23C000C2887 /* RenderEvents.h */,
+				4BEF1E6D1742CC50000C2887 /* CollisionEvents.h */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -479,6 +491,7 @@
 		4BDA14B416F7796700359B94 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				4BEF1E6B1742CAC7000C2887 /* bullet_hole.png */,
 				4BEF1E671742BD3F000C2887 /* player2.png */,
 				4B5336F1173E6DB000C4EECC /* ground002.png */,
 				4B54AC391731640900434EEA /* ground001.png */,
@@ -573,6 +586,7 @@
 				4B54AC3A1731640A00434EEA /* ground001.png in Resources */,
 				4B5336F2173E6DB000C4EECC /* ground002.png in Resources */,
 				4BEF1E681742BD3F000C2887 /* player2.png in Resources */,
+				4BEF1E6C1742CAC7000C2887 /* bullet_hole.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,6 +665,8 @@
 				4BCB69E51733AD46004CD712 /* EditorCore.cpp in Sources */,
 				4BCB69E81733AE10004CD712 /* EditorScene.cpp in Sources */,
 				4BCB69EA1733D16B004CD712 /* pugixml.cpp in Sources */,
+				4BEF1E701742D093000C2887 /* DamageComponent.cpp in Sources */,
+				4BEF1E731742D143000C2887 /* DamageSystem.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

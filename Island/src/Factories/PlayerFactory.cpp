@@ -18,6 +18,7 @@
 #include "ResourcePath.hpp"
 #include "PlayerAnimationScript.h"
 #include "ScriptComponent.h"
+#include "HealthComponent.h"
 
 Entity* PlayerFactory::CreatePlayer()
 {
@@ -56,6 +57,8 @@ Entity* PlayerFactory::CreatePlayer()
     ScriptComponent* scriptComponent = new ScriptComponent();
     scriptComponent->script = new PlayerAnimationScript();
     
+    HealthComponent* healthComponent = new HealthComponent();
+    
     player->AddComponent(renderComponent);
     player->AddComponent(transformComponent);
     player->AddComponent(physicsComponent);
@@ -64,6 +67,7 @@ Entity* PlayerFactory::CreatePlayer()
     player->AddComponent(collisionComponent);
     player->AddComponent(weaponComponent);
     player->AddComponent(scriptComponent);
+    player->AddComponent(healthComponent);
     
     return player;
 }
