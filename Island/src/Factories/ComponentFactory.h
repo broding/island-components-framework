@@ -15,7 +15,8 @@
 class ComponentFactory
 {
 public:
-    static Component* CreateComponent(pugi::xml_node xml);
+    static Component* CreateComponentByType(ComponentType type);
+    static Component* CreateComponentFromXML(pugi::xml_node xml);
 };
 
 #endif /* defined(__Island__ComponentFactory__) */
