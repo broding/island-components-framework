@@ -20,6 +20,7 @@ EditorCore::EditorCore(sf::RenderWindow* window) : Core(window)
     
     currentTool = SELECT;
 	_selectedEntity = 0;
+	_draggingEntity = false;
 }
 
 void EditorCore::Update(float lastFrameTime)
@@ -27,14 +28,33 @@ void EditorCore::Update(float lastFrameTime)
     Core::Update(lastFrameTime);
     
     // entity selection
-    if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && (currentTool == SELECT || currentTool == DRAG))
+    if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && currentTool == SELECT)
     {
 		Entity* newSelected = SelectEntity();
 
 		if(newSelected != NULL)
 			_selectedEntity = SelectEntity();
     }
-    
+
+	// entity drag
+	if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && currentTool == DRAG &&  !_draggingEntity)
+    {
+		Entity* newSelected = SelectEntity();
+
+		if(newSelected != NULL)
+		{
+			_draggingEntity = true;
+			_selectedEntity = SelectEntity();
+		}
+    }
+
+	if(_draggingEntity)
+		_selectedEntity->GetComponent<TransformComponent>()->position = _renderWindow->mapPixelToCoords(sf::Mouse::getPosition(*_renderWindow));
+
+	if(currentTool == DRAG && !sf::Mouse::isButtonPressed(sf::Mouse::Left))
+		_draggingEntity = false;
+
+
     // camera drag
     if(sf::Mouse::isButtonPressed(sf::Mouse::Right))
     {
@@ -50,6 +70,7 @@ void EditorCore::Update(float lastFrameTime)
         }
     }
     
+	_leftMouseWasPressed = sf::Mouse::isButtonPressed(sf::Mouse::Left);
     _rightMouseWasPressed = sf::Mouse::isButtonPressed(sf::Mouse::Right);
     
     // camera zoom
