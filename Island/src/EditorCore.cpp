@@ -129,5 +129,6 @@ void EditorCore::FillXML(pugi::xml_node node)
 
 void EditorCore::ClearScene()
 {
+	_selectedEntity = 0;
 	SwitchScene(new EditorScene());
 }
