@@ -26,7 +26,13 @@ namespace Mozzerella
         [DllImport("Island.dll", CallingConvention = CallingConvention.Cdecl)]
         public extern static IntPtr GetSelectedEntityXML();
 
+        [DllImport("Island.dll", CallingConvention = CallingConvention.Cdecl)]
+        public extern static IntPtr GetSceneXML();
+
         [DllImport("Island.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
         public extern static void SendEntityXML(StringBuilder xml, int size);
+
+        [DllImport("Island.dll", CallingConvention = CallingConvention.Cdecl)]
+        public extern static IntPtr ClearScene();
     }
 }
