@@ -16,6 +16,8 @@
 EditorCore::EditorCore(sf::RenderWindow* window) : Core(window)
 {
     GameConfig::GetInstance()->SetFlagConfig("editorMode", true);
+	GameConfig::GetInstance()->SetFlagConfig("debugMode", true);
+
     SwitchScene(new EditorScene());
     
     currentTool = SELECT;
@@ -123,4 +125,9 @@ void EditorCore::FillXML(pugi::xml_node node)
     {
         (*iterator)->FillXML(node.append_child());
     }
+}
+
+void EditorCore::ClearScene()
+{
+	SwitchScene(new EditorScene());
 }

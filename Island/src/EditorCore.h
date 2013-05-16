@@ -24,6 +24,7 @@ public:
     EditorCore(sf::RenderWindow* window);
     void Update(float lastFrameTime);
     Entity* GetSelectedEntity();
+	void ClearScene();
     void FillXML(pugi::xml_node node);
     
     Tool currentTool;

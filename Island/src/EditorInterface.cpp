@@ -92,6 +92,20 @@ const char* GetSelectedEntityXML()
 	return NULL;
 }
 
+const char* GetSceneXML()
+{
+	xmlDocument.reset();
+    core->FillXML(xmlDocument.append_child("scene"));
+        
+	std::stringstream ss;
+	xmlDocument.save(ss);
+
+	char *p = new char[ss.str().size()+1];
+	strcpy(p, ss.str().c_str());
+
+	return p;
+}
+
 
 void SendEntityXML(const char* xml, int size)
 {
@@ -102,4 +116,9 @@ void SendEntityXML(const char* xml, int size)
 		core->GetSelectedEntity()->UpdateFromXML(document);
 	else
 		core->GetSelectedEntity()->_id = 999;
+}
+
+void ClearScene()
+{
+	core->ClearScene();
 }
