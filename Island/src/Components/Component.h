@@ -30,15 +30,16 @@ protected:
     SubSystem* _subSystem;
     std::map<ComponentType, Component*> _componentSubscriptions;
     
-	void AppendDataNode(pugi::xml_node &node, std::string name, pugi::char_t* value);
+	void AppendDataNode(pugi::xml_node &node, std::string name, std::string value);
 	void AppendDataNode(pugi::xml_node &node, std::string name, bool value);
+	void AppendDataNode(pugi::xml_node &node, std::string name, unsigned int value);
 	void AppendDataNode(pugi::xml_node &node, std::string name, int value);
 	void AppendDataNode(pugi::xml_node &node, std::string name, float value);
     pugi::xml_attribute GetXMLData(pugi::xml_node &node, std::string data);
 
     bool IsSubscribedTo(ComponentType type);
 public:
-    Component();
+    Component(ComponentType type, std::string name, SubSystem* subSystem);
     virtual ~Component();
     void AddToSystem();
     void RemoveFromSystem();
@@ -47,13 +48,8 @@ public:
     void SetOwner(Entity* entity);
     Entity* GetOwner();
     void HandleEvent(Event* event);
-    void AddComponentSubscription(ComponentType type);
-    void RemoveComponentSubscription(ComponentType type);
-    void AddNeighbourComponent(Component* component);
-    void RemoveNeighbourComponent(Component* component);
-    Component* GetNeighbourComponent(ComponentType type);
     virtual void DrawDebug(sf::RenderWindow* window);
-    virtual pugi::xml_node CreateXML(pugi::xml_node &node) = 0;
+    virtual void FillXML(pugi::xml_node &node) = 0;
     virtual void UpdateFromXML(pugi::xml_node node) = 0;
     
     bool enabled;

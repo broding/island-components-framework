@@ -15,6 +15,7 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 
+
 struct AnimationFrame
 {
     int index;
@@ -25,13 +26,28 @@ struct AnimationFrame
     }
 };
 
+
+struct Animation
+{
+    std::vector<AnimationFrame> frames;
+    std::string name;
+    unsigned int currentFrame;
+    float currentFrameTime;
+    bool looping;
+    
+    Animation(std::string name) : name(name), looping(true), currentFrame(0), currentFrameTime(0)
+    {
+    }
+};
+
 class RenderComponent : public Component
 {
 private:
 public:
     RenderComponent();
     ~RenderComponent();
-    pugi::xml_node CreateXML(pugi::xml_node &node);
+    void SetAnimation(std::string name);
+    void FillXML(pugi::xml_node &node);
     void UpdateFromXML(pugi::xml_node node);
     
     static RenderSystem* renderSystem;
@@ -40,10 +56,8 @@ public:
     sf::Rect<int> textureRect;
     sf::Vector2<unsigned int> tiling;
     
-    std::vector<AnimationFrame> frames;
-    unsigned int currentFrame;
-    float currentFrameTime;
-    bool looping;
+    std::vector<Animation> animations;
+    Animation* currentAnimation;
 };
 
 #endif /* defined(__Island__RenderComponent__) */

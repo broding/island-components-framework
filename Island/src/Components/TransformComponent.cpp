@@ -14,14 +14,8 @@
 
 TransformSystem* TransformComponent::transformSystem;
 
-TransformComponent::TransformComponent()
+TransformComponent::TransformComponent() : Component(COMPONENT_TRANSFORM, "Transform", transformSystem)
 {
-    _type = COMPONENT_TRANSFORM;
-	_name = "Transform";
-    _subSystem = transformSystem;
-    
-    this->AddToSystem();
-    
     scale = sf::Vector2f(1.0f, 1.0f);
     rotation = 0.0f;
     origin = sf::Vector2f(0.0f, 0.0f);
@@ -63,7 +57,7 @@ void TransformComponent::DrawDebug(sf::RenderWindow *window)
 
 
 
-pugi::xml_node TransformComponent::CreateXML(pugi::xml_node &node)
+void TransformComponent::FillXML(pugi::xml_node &node)
 {
 	this->AppendDataNode(node, "positionX", position.x);
 	this->AppendDataNode(node, "positionY", position.y);
@@ -71,8 +65,6 @@ pugi::xml_node TransformComponent::CreateXML(pugi::xml_node &node)
 	this->AppendDataNode(node, "scaleY", scale.y);
 	this->AppendDataNode(node, "originX", origin.x);
 	this->AppendDataNode(node, "originY", origin.y);
-
-	return node;
 }
 
 void TransformComponent::UpdateFromXML(pugi::xml_node node)

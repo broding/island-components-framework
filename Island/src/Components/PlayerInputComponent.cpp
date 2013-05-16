@@ -10,16 +10,8 @@
 
 PlayerInputSystem* PlayerInputComponent::playerInputSystem;
 
-PlayerInputComponent::PlayerInputComponent()
+PlayerInputComponent::PlayerInputComponent() : Component(COMPONENT_PLAYERINPUT, "Player Input", playerInputSystem)
 {
-    _type = COMPONENT_PLAYERINPUT;
-    _subSystem = playerInputSystem;
-    
-    this->AddToSystem();
-    
-    this->AddComponentSubscription(COMPONENT_PHYSICS);
-    this->AddComponentSubscription(COMPONENT_TRANSFORM);
-    
     left = sf::Keyboard::A;
     right = sf::Keyboard::D;
     up = sf::Keyboard::W;
@@ -27,9 +19,7 @@ PlayerInputComponent::PlayerInputComponent()
     shoot = sf::Keyboard::Space;
 }
 
-
-
-pugi::xml_node PlayerInputComponent::CreateXML(pugi::xml_node &node)
+void PlayerInputComponent::FillXML(pugi::xml_node &node)
 {
     pugi::xml_node dataNode;
     
@@ -40,8 +30,6 @@ pugi::xml_node PlayerInputComponent::CreateXML(pugi::xml_node &node)
     dataNode = node.append_child("data");
     dataNode.append_attribute("type").set_value("position");
     dataNode.append_attribute("value").set_value(145);
-    
-    return node;
 }
 
 void PlayerInputComponent::UpdateFromXML(pugi::xml_node node)

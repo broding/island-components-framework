@@ -20,7 +20,7 @@ class NetworkComponent : public Component
 private:
 public:
     NetworkComponent();
-    pugi::xml_node CreateXML(pugi::xml_node &node);
+    void FillXML(pugi::xml_node &node);
     void UpdateFromXML(pugi::xml_node node);
     
     static NetworkSystem* networkSystem;

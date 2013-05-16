@@ -10,19 +10,13 @@
 
 NetworkSystem* NetworkComponent::networkSystem;
 
-NetworkComponent::NetworkComponent()
+NetworkComponent::NetworkComponent() : Component(COMPONENT_NETWORK, "Network", networkSystem)
 {
-    _type = COMPONENT_PLAYERINPUT;
-    _subSystem = networkSystem;
-    
-    this->AddToSystem();
-    
-    this->AddComponentSubscription(COMPONENT_NETWORK);
 }
 
 
 
-pugi::xml_node NetworkComponent::CreateXML(pugi::xml_node &node)
+void NetworkComponent::FillXML(pugi::xml_node &node)
 {
     pugi::xml_node dataNode;
     
@@ -33,8 +27,6 @@ pugi::xml_node NetworkComponent::CreateXML(pugi::xml_node &node)
     dataNode = node.append_child("data");
     dataNode.append_attribute("type").set_value("position");
     dataNode.append_attribute("value").set_value(145);
-    
-    return node;
 }
 
 void NetworkComponent::UpdateFromXML(pugi::xml_node node)

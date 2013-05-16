@@ -18,6 +18,7 @@
 #include "HealthSystem.h"
 #include "WeaponSystem.h"
 #include "ScriptSystem.h"
+#include "DamageSystem.h"
 
 #include "RenderComponent.h"
 #include "TransformComponent.h"
@@ -30,6 +31,7 @@
 #include "HealthComponent.h"
 #include "WeaponComponent.h"
 #include "ScriptComponent.h"
+#include "DamageComponent.h"
 
 #include "ConnectScene.h"
 #include "DebugText.h"
@@ -65,6 +67,7 @@ void Core::InitializeSubSystems()
     HealthSystem* healthSystem = new HealthSystem();
     WeaponSystem* weaponSystem = new WeaponSystem();
     ScriptSystem* scriptSystem = new ScriptSystem();
+    DamageSystem* damageSystem = new DamageSystem();
     
     AddSubSystem(_cameraSystem);
     AddSubSystem(scriptSystem);
@@ -76,6 +79,7 @@ void Core::InitializeSubSystems()
     AddSubSystem(physicsSystem);
     AddSubSystem(renderSystem);
     AddSubSystem(networkSystem);
+    AddSubSystem(damageSystem);
     
     // setup subsystems in components
     RenderComponent::renderSystem = renderSystem;
@@ -89,6 +93,7 @@ void Core::InitializeSubSystems()
     HealthComponent::healthSystem = healthSystem;
     WeaponComponent::weaponSystem = weaponSystem;
     ScriptComponent::scriptSystem = scriptSystem;
+    DamageComponent::damageSystem = damageSystem;
 }
 
 void Core::AddSubSystem(SubSystem *subSystem)
@@ -98,9 +103,6 @@ void Core::AddSubSystem(SubSystem *subSystem)
 
 void Core::Update(float lastFrameTime)
 {
-    lastFrameTime = std::min(lastFrameTime, 1.0f);
-    lastFrameTime = std::max(lastFrameTime, 1 / 60.0f);
-    
     for (std::vector<SubSystem*>::const_iterator iterator = _subSystems.begin(), end = _subSystems.end(); iterator != end; ++iterator)
     {
         (*iterator)->ProcessGameTick(lastFrameTime, (*iterator)->GetValidComponents());

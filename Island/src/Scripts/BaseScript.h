@@ -10,13 +10,13 @@
 #define __Island__BaseScript__
 
 #include <iostream>
-#include "Component.h"
+#include "Entity.h"
 
 class BaseScript
 {
 public:
     virtual ~BaseScript() {};
-    virtual void RunScript(Component* component, float lastFrameTime) = 0;
+    virtual void RunScript(Entity* entity, float lastFrameTime) = 0;
 };
 
 #endif /* defined(__Island__BaseScript__) */

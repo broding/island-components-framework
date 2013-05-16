@@ -114,3 +114,13 @@ Entity* EditorCore::GetSelectedEntity()
 {
     return _selectedEntity;
 }
+
+void EditorCore::FillXML(pugi::xml_node node)
+{
+    EditorScene* scene = dynamic_cast<EditorScene*>(_currentScene);
+    
+    for (std::vector<Entity*>::const_iterator iterator = scene->GetEntities().begin(), end = scene->GetEntities().end(); iterator != end; ++iterator)
+    {
+        (*iterator)->FillXML(node.append_child());
+    }
+}

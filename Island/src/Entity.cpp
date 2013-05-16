@@ -41,28 +41,27 @@ bool Entity::IsAddedToScene()
 
 void Entity::AddComponent(Component *component)
 {
-    for (std::list<Component*>::const_iterator iterator = _components.begin(), end = _components.end(); iterator != end; ++iterator)
-    {
-        (*iterator)->AddNeighbourComponent(component);
-        component->AddNeighbourComponent(*iterator);
-    }
-    
     _components.push_back(component);
     component->SetOwner(this);
 }
 
 void Entity::RemoveComponent(ComponentType type)
 {
-    for (std::list<Component*>::const_iterator iterator = _components.begin(), end = _components.end(); iterator != end; ++iterator)
+    _deletedComponentTypes.push_back(type);
+}
+
+void Entity::CleanRemovedComponents()
+{
+    for (std::vector<ComponentType>::const_iterator typeIterator = _deletedComponentTypes.begin(), end = _deletedComponentTypes.end(); typeIterator != end; ++typeIterator)
     {
-        if((*iterator)->GetComponentType() == type)
+        for (std::list<Component*>::const_iterator iterator = _components.begin(), end = _components.end(); iterator != end; ++iterator)
         {
-            _components.remove(*iterator);
-            
-            for (std::list<Component*>::const_iterator iterator = _components.begin(), end = _components.end(); iterator != end; ++iterator)
-                (*iterator)->RemoveNeighbourComponent(*iterator);
-            
-            delete *iterator;
+            if((*iterator)->GetComponentType() == *typeIterator)
+            {
+                _components.remove(*iterator);
+                delete *iterator;
+                break;
+            }
         }
     }
 }
@@ -90,7 +89,7 @@ void Entity::Delete()
         _scene->RemoveEntity(this);
 }
 
-void Entity::CreateXML(pugi::xml_node node)
+void Entity::FillXML(pugi::xml_node node)
 {
     node.set_name("entity");
     node.append_attribute("name").set_value(_name.c_str());
@@ -104,7 +103,7 @@ void Entity::CreateXML(pugi::xml_node node)
 		componentNode.set_name("component");
 		componentNode.append_attribute("type").set_value((*iterator)->GetComponentType());
 		componentNode.append_attribute("name").set_value((*iterator)->GetName().c_str());
-        (*iterator)->CreateXML(componentNode);
+        (*iterator)->FillXML(componentNode);
     }
 }
 

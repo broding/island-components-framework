@@ -78,7 +78,7 @@ const char* GetSelectedEntityXML()
 	if(core->GetSelectedEntity() != 0)
     {
 		xmlDocument.reset();
-        core->GetSelectedEntity()->CreateXML(xmlDocument.append_child());
+        core->GetSelectedEntity()->FillXML(xmlDocument.append_child());
         
 		std::stringstream ss;
 		xmlDocument.save(ss);

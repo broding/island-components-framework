@@ -10,19 +10,10 @@
 
 RenderSystem* RenderComponent::renderSystem;
 
-RenderComponent::RenderComponent()
+RenderComponent::RenderComponent() : Component(COMPONENT_RENDER, "Render", renderSystem)
 {
-    _type = COMPONENT_RENDER;
-    _subSystem = renderSystem;
-    
-    this->AddToSystem();
-    
-    this->AddComponentSubscription(COMPONENT_TRANSFORM);
-    
     tiling = sf::Vector2<unsigned int>(1,1);
-    currentFrame = 0;
-    currentFrameTime = 0;
-    looping = true;
+    currentAnimation = 0;
 }
 
 RenderComponent::~RenderComponent()
@@ -30,17 +21,27 @@ RenderComponent::~RenderComponent()
     delete sprite.getTexture();
 }
 
-
-
-pugi::xml_node RenderComponent::CreateXML(pugi::xml_node &node)
+void RenderComponent::SetAnimation(std::string name)
 {
-	AppendDataNode(node, "position", 145);
-	AppendDataNode(node, "velocity", 145);
-    
-    return node;
+    for (std::vector<Animation>::iterator it = animations.begin(), end = animations.end(); it != end; ++it)
+    {
+        if((*it).name == name)
+            currentAnimation = &(*it);
+    }
+}
+
+void RenderComponent::FillXML(pugi::xml_node &node)
+{
+	AppendDataNode(node, "Sprite name", "name of sprite in resourcemanager");
+	AppendDataNode(node, "Rectangle X", textureRect.left);
+	AppendDataNode(node, "Rectangle Y", textureRect.top);
+	AppendDataNode(node, "Rectangle Width", textureRect.width);
+	AppendDataNode(node, "Rectangle Height", textureRect.height);
 }
 
 void RenderComponent::UpdateFromXML(pugi::xml_node node)
 {
+    // TODO: load sprite from resource manager
     
+    textureRect = sf::Rect<int>(GetXMLData(node, "Rectangle X").as_int(), GetXMLData(node, "Rectangle Y").as_int(), GetXMLData(node, "Rectangle Width").as_int(), GetXMLData(node, "Rectangle Height").as_int());
 }

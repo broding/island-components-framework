@@ -12,21 +12,14 @@
 
 PhysicsSystem* PhysicsComponent::physicsSystem;
 
-PhysicsComponent::PhysicsComponent()
+PhysicsComponent::PhysicsComponent() : Component(COMPONENT_PHYSICS, "Physics", physicsSystem)
 {
-    _type = COMPONENT_PHYSICS;
-    _subSystem = physicsSystem;
-    
-    this->AddToSystem();
-    
-    this->AddComponentSubscription(COMPONENT_TRANSFORM);
-    
     mass = 1;
 }
 
 
 
-pugi::xml_node PhysicsComponent::CreateXML(pugi::xml_node &node)
+void PhysicsComponent::FillXML(pugi::xml_node &node)
 {
     pugi::xml_node dataNode;
     
@@ -37,8 +30,6 @@ pugi::xml_node PhysicsComponent::CreateXML(pugi::xml_node &node)
     dataNode = node.append_child("data");
     dataNode.append_attribute("type").set_value("velocity");
     dataNode.append_attribute("value").set_value(145);
-    
-    return node;
 }
 
 void PhysicsComponent::UpdateFromXML(pugi::xml_node node)

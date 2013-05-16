@@ -10,6 +10,7 @@
 #include "RenderComponent.h"
 #include "TransformComponent.h"
 #include <SFML/Graphics.hpp>
+#include "Entity.h"
 
 RenderSystem::RenderSystem(sf::RenderWindow* renderWindow) : _renderWindow(renderWindow)
 {
@@ -25,9 +26,9 @@ void RenderSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> co
     for (std::list<Component*>::const_iterator iterator = components.begin(), end = components.end(); iterator != end; ++iterator)
     {
         RenderComponent* renderComponent = static_cast<RenderComponent*>(*iterator);
-        TransformComponent* transformComponent = static_cast<TransformComponent*>(renderComponent->GetNeighbourComponent(COMPONENT_TRANSFORM));
+        TransformComponent* transformComponent = renderComponent->GetOwner()->GetComponent<TransformComponent>();
         
-        if(transformComponent != NULL)
+        if(transformComponent != 0)
         {
             renderComponent->sprite.setPosition(transformComponent->position);
             renderComponent->sprite.setScale(transformComponent->scale);
@@ -35,23 +36,22 @@ void RenderSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> co
             renderComponent->sprite.setOrigin(transformComponent->origin);
         }
         
-        if(renderComponent->frames.size() > 0)
+        if(renderComponent->currentAnimation != 0)
         {
-            // frame time is done in milliseconds
-            renderComponent->currentFrameTime += lastFrameTime;
+            Animation* animation = renderComponent->currentAnimation;
+            animation->currentFrameTime += lastFrameTime;
             
-            if(renderComponent->currentFrameTime > renderComponent->frames[renderComponent->currentFrame].time)
+            if(animation->currentFrameTime > renderComponent->currentAnimation->frames[animation->currentFrame].time)
             {
-                if(renderComponent->currentFrame >= renderComponent->frames.size() - 1 && renderComponent->looping)
-                    renderComponent->currentFrame = 0;
-                else if(renderComponent->currentFrame < renderComponent->frames.size())
-                    renderComponent->currentFrame++;
+                if(animation->currentFrame >= animation->frames.size() - 1 && animation->looping)
+                    animation->currentFrame = 0;
+                else if(animation->currentFrame < animation->frames.size())
+                    animation->currentFrame++;
                 
-                renderComponent->currentFrameTime = 0;
-                
+                animation->currentFrameTime = 0;
             }
             
-            renderComponent->textureRect.left = renderComponent->textureRect.width * renderComponent->currentFrame;
+            renderComponent->textureRect.left = renderComponent->textureRect.width * animation->currentFrame;
             renderComponent->sprite.setTextureRect(renderComponent->textureRect);
         }
         
@@ -68,7 +68,6 @@ void RenderSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> co
                 renderComponent->sprite.setPosition(spriteX + spriteWidth * x, spriteY + spriteHeight * y);
                 _renderWindow->draw(renderComponent->sprite);
             }
-
         }
     }
 }

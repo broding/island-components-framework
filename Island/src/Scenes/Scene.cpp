@@ -59,6 +59,9 @@ void Scene::Update(float lastFrameTime)
     for (std::vector<GUIObject*>::iterator it = _guiObjects.begin() ; it != _guiObjects.end(); ++it)
         (*it)->Update(lastFrameTime);
     
+    for (std::vector<Entity*>::iterator it = _entities.begin() ; it != _entities.end(); ++it)
+        (*it)->CleanRemovedComponents();
+    
     DebugText::GetInstance()->AddText("Total entities", (float)_entities.size());
 }
 

@@ -17,7 +17,7 @@ PlayScene::PlayScene()
 {
     RenderComponent* renderComponent = new RenderComponent();
     sf::Texture* texture = new sf::Texture();
-    texture->loadFromFile(resourcePath() + "ground001.png");
+    texture->loadFromFile(resourcePath() + "ground002.png");
     texture->setSmooth(true);
     renderComponent->sprite.setTexture(*texture);
     renderComponent->tiling = sf::Vector2<unsigned int>(5, 5);
