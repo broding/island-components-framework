@@ -26,6 +26,7 @@ private:
     
 protected:
     Scene* _currentScene;
+    Scene* _deletedScene;
     sf::RenderWindow* _renderWindow;
 
 	CameraSystem* _cameraSystem;

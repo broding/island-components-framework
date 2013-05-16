@@ -12,12 +12,11 @@
 
 Scene::Scene()
 {
-    _deleteFlag = false;
 }
 
 Scene::~Scene()
 {
-    while(!_guiObjects.empty()) delete _guiObjects.back(), _guiObjects.pop_back();
+    _guiObjects.clear();
     while(!_entities.empty()) delete _entities.back(), _entities.pop_back();
 }
 
@@ -51,9 +50,6 @@ void Scene::RemoveEntity(Entity *entity)
 
 void Scene::Update(float lastFrameTime)
 {
-    if(_deleteFlag)
-        delete this;
-    
     while(!_deletedEntities.empty()) delete _deletedEntities.back(), _deletedEntities.pop_back();
     
     for (std::vector<GUIObject*>::iterator it = _guiObjects.begin() ; it != _guiObjects.end(); ++it)
@@ -79,9 +75,4 @@ void Scene::SetCore(Core *core)
 void Scene::SwitchScene(Scene* scene)
 {
     _core->SwitchScene(scene);
-}
-
-void Scene::Delete()
-{
-    _deleteFlag = true;
 }

@@ -19,11 +19,6 @@ Button::Button()
     _buttonState = BUTTON_NORMAL;
 }
 
-Button::~Button()
-{
-    
-}
-
 void Button::Click()
 {
     GUIEvent event(this->GetId(), GUIEvent::BUTTON_CLICKED);

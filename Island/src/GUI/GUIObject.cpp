@@ -18,6 +18,7 @@ GUIObject::GUIObject()
 
 GUIObject::~GUIObject()
 {
+    _observers.clear();
 }
 
 void GUIObject::Select()

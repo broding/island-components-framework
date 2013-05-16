@@ -18,6 +18,7 @@ Component::Component(ComponentType type, std::string name, SubSystem* subSystem)
 	_name = name;
     _subSystem = subSystem;
     enabled = true;
+    _owner = 0;
 
     this->AddToSystem();
 }

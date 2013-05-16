@@ -43,7 +43,8 @@
 Core::Core(sf::RenderWindow* window) : _renderWindow(window)
 {
     GUIObject::window = window;
-    _currentScene = NULL;
+    _currentScene = 0;
+    _deletedScene = 0;
     
     InitializeSubSystems();
     SwitchScene(new ConnectScene());
@@ -103,6 +104,12 @@ void Core::AddSubSystem(SubSystem *subSystem)
 
 void Core::Update(float lastFrameTime)
 {
+    if(_deletedScene != 0)
+    {
+       delete _deletedScene;
+        _deletedScene = 0;
+    }
+    
     for (std::vector<SubSystem*>::const_iterator iterator = _subSystems.begin(), end = _subSystems.end(); iterator != end; ++iterator)
     {
         (*iterator)->ProcessGameTick(lastFrameTime, (*iterator)->GetValidComponents());
@@ -131,8 +138,8 @@ void Core::Update(float lastFrameTime)
 
 void Core::SwitchScene(Scene* scene)
 {
-    if(_currentScene != NULL)
-        _currentScene->Delete();
+    if(_currentScene != 0)
+        _deletedScene = _currentScene;
     
     _currentScene = scene;
     _currentScene->SetCore(this);

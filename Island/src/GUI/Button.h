@@ -28,7 +28,6 @@ private:
     ButtonState _buttonState;
 public:
     Button();
-    ~Button();
     virtual void Update(float delta);
     virtual void Click();
     virtual void Draw(sf::RenderWindow* window);

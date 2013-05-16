@@ -25,7 +25,6 @@ class Scene : public GUIObserver
 private:
     std::vector<GUIObject*> _guiObjects;
     Core* _core;
-    bool _deleteFlag;
     std::vector<Entity*> _deletedEntities;
     
 protected:
@@ -43,7 +42,6 @@ public:
     void Update(float lastFrameTime);
     virtual void ProcessGUIEvent(GUIEvent event) = 0;
     void SetCore(Core* core);
-    void Delete();
 };
     
 #endif /* defined(__Island__Scene__) */
