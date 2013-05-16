@@ -12,15 +12,8 @@
 
 PhysicsSystem* PhysicsComponent::physicsSystem;
 
-PhysicsComponent::PhysicsComponent()
+PhysicsComponent::PhysicsComponent() : Component(COMPONENT_PHYSICS, "Physics", physicsSystem)
 {
-    _type = COMPONENT_PHYSICS;
-    _subSystem = physicsSystem;
-    
-    this->AddToSystem();
-    
-    this->AddComponentSubscription(COMPONENT_TRANSFORM);
-    
     mass = 1;
 }
 

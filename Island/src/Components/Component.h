@@ -39,7 +39,7 @@ protected:
 
     bool IsSubscribedTo(ComponentType type);
 public:
-    Component();
+    Component(ComponentType type, std::string name, SubSystem* subSystem);
     virtual ~Component();
     void AddToSystem();
     void RemoveFromSystem();
@@ -48,11 +48,6 @@ public:
     void SetOwner(Entity* entity);
     Entity* GetOwner();
     void HandleEvent(Event* event);
-    void AddComponentSubscription(ComponentType type);
-    void RemoveComponentSubscription(ComponentType type);
-    void AddNeighbourComponent(Component* component);
-    void RemoveNeighbourComponent(Component* component);
-    Component* GetNeighbourComponent(ComponentType type);
     virtual void DrawDebug(sf::RenderWindow* window);
     virtual void FillXML(pugi::xml_node &node) = 0;
     virtual void UpdateFromXML(pugi::xml_node node) = 0;

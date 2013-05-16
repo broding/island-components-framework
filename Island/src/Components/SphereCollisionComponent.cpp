@@ -12,13 +12,8 @@
 
 CollisionSystem* SphereCollisionComponent::collisionSystem;
 
-SphereCollisionComponent::SphereCollisionComponent()
+SphereCollisionComponent::SphereCollisionComponent() : Component(COMPONENT_SPHERECOLLISION, "Sphere Collision", collisionSystem)
 {
-    _type = COMPONENT_SPHERECOLLISION;
-    _subSystem = collisionSystem;
-    
-    this->AddToSystem();
-    
     radius = 32;
     center = sf::Vector2f(32, 32);
     trigger = false;

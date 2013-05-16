@@ -10,6 +10,7 @@
 #include "RenderComponent.h"
 #include "TransformComponent.h"
 #include <SFML/Graphics.hpp>
+#include "Entity.h"
 
 RenderSystem::RenderSystem(sf::RenderWindow* renderWindow) : _renderWindow(renderWindow)
 {
@@ -25,9 +26,9 @@ void RenderSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> co
     for (std::list<Component*>::const_iterator iterator = components.begin(), end = components.end(); iterator != end; ++iterator)
     {
         RenderComponent* renderComponent = static_cast<RenderComponent*>(*iterator);
-        TransformComponent* transformComponent = static_cast<TransformComponent*>(renderComponent->GetNeighbourComponent(COMPONENT_TRANSFORM));
+        TransformComponent* transformComponent = renderComponent->GetOwner()->GetComponent<TransformComponent>();
         
-        if(transformComponent != NULL)
+        if(transformComponent != 0)
         {
             renderComponent->sprite.setPosition(transformComponent->position);
             renderComponent->sprite.setScale(transformComponent->scale);

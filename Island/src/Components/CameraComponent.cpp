@@ -10,14 +10,8 @@
 
 CameraSystem* CameraComponent::cameraSystem;
 
-CameraComponent::CameraComponent()
+CameraComponent::CameraComponent() : Component(COMPONENT_CAMERA, "Camera", cameraSystem)
 {
-    _type = COMPONENT_CAMERA;
-    _subSystem = cameraSystem;
-    
-    this->AddToSystem();
-    this->AddComponentSubscription(COMPONENT_TRANSFORM);
-    
 	targetEntity = NULL;
     zoom = 1.0f;
     maxTargetDistance = 25;

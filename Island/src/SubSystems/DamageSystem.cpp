@@ -20,7 +20,7 @@ void DamageSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> co
 {
     for (std::list<Component*>::const_iterator iterator = components.begin(), end = components.end(); iterator != end; ++iterator)
     {
-        DamageComponent* component = static_cast<DamageComponent*>(*iterator);
+        //DamageComponent* component = static_cast<DamageComponent*>(*iterator);
     }
 }
 
@@ -46,5 +46,9 @@ void DamageSystem::HandleCollisionEvent(CollisionEvent *event, DamageComponent *
     health->health -= 5;
     
     if(component->deleteOnImpact)
+    {
         component->GetOwner()->RemoveComponent(COMPONENT_DAMAGE);
+        component->GetOwner()->RemoveComponent(COMPONENT_SPHERECOLLISION);
+        component->GetOwner()->RemoveComponent(COMPONENT_BOXCOLLISION);
+    }
 }

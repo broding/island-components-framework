@@ -10,24 +10,14 @@
 
 PlayerInputSystem* PlayerInputComponent::playerInputSystem;
 
-PlayerInputComponent::PlayerInputComponent()
+PlayerInputComponent::PlayerInputComponent() : Component(COMPONENT_PLAYERINPUT, "Player Input", playerInputSystem)
 {
-    _type = COMPONENT_PLAYERINPUT;
-    _subSystem = playerInputSystem;
-    
-    this->AddToSystem();
-    
-    this->AddComponentSubscription(COMPONENT_PHYSICS);
-    this->AddComponentSubscription(COMPONENT_TRANSFORM);
-    
     left = sf::Keyboard::A;
     right = sf::Keyboard::D;
     up = sf::Keyboard::W;
     down = sf::Keyboard::S;
     shoot = sf::Keyboard::Space;
 }
-
-
 
 void PlayerInputComponent::FillXML(pugi::xml_node &node)
 {

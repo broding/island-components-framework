@@ -12,11 +12,14 @@
 #include "pugixml.hpp"
 #include "ResourcePath.hpp"
 
-Component::Component()
+Component::Component(ComponentType type, std::string name, SubSystem* subSystem)
 {
-    _type = COMPONENT_NULL;
-	_name = "no_name_set";
+    _type = type;
+	_name = name;
+    _subSystem = subSystem;
     enabled = true;
+
+    this->AddToSystem();
 }
 
 Component::~Component()
@@ -57,44 +60,6 @@ void Component::RemoveFromSystem()
 void Component::HandleEvent(Event* event)
 {
     _subSystem->HandleEvent(this, event);
-}
-
-void Component::AddComponentSubscription(ComponentType type)
-{
-    if(_componentSubscriptions.find(type) == _componentSubscriptions.end())
-        _componentSubscriptions[type] = 0;
-    else
-        throw new std::exception();
-}
-
-void Component::RemoveComponentSubscription(ComponentType type)
-{
-    _componentSubscriptions.erase(type);
-}
-
-void Component::AddNeighbourComponent(Component *component)
-{
-    if(_componentSubscriptions.find(component->GetComponentType()) != _componentSubscriptions.end())
-        _componentSubscriptions[component->GetComponentType()] = component;
-}
-
-void Component::RemoveNeighbourComponent(Component *component)
-{
-    if(_componentSubscriptions.find(component->GetComponentType()) != _componentSubscriptions.end())
-        _componentSubscriptions[component->GetComponentType()] = 0;
-}
-
-Component* Component::GetNeighbourComponent(ComponentType type)
-{
-    if(IsSubscribedTo(type))
-        return _componentSubscriptions.find(type)->second;
-    else
-        throw std::exception();
-}
-
-bool Component::IsSubscribedTo(ComponentType type)
-{
-    return _componentSubscriptions.find(type) != _componentSubscriptions.end();
 }
 
 void Component::DrawDebug(sf::RenderWindow *window)

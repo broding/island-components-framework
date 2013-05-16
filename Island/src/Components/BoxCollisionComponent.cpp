@@ -12,13 +12,8 @@
 
 CollisionSystem* BoxCollisionComponent::collisionSystem;
 
-BoxCollisionComponent::BoxCollisionComponent()
+BoxCollisionComponent::BoxCollisionComponent() : Component(COMPONENT_BOXCOLLISION, "Box Collision", collisionSystem)
 {
-    _type = COMPONENT_BOXCOLLISION;
-    _subSystem = collisionSystem;
-    
-    this->AddToSystem();
-    
     center = sf::Vector2f(32,32);
     size = sf::Vector2f(64, 64);
     trigger = false;

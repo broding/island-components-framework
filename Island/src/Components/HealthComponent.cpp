@@ -11,13 +11,8 @@
 HealthSystem* HealthComponent::healthSystem;
 
 
-HealthComponent::HealthComponent()
+HealthComponent::HealthComponent() : Component(COMPONENT_HEALTH, "Health", healthSystem)
 {
-    _type = COMPONENT_HEALTH;
-    _subSystem = healthSystem;
-    
-    this->AddToSystem();
-    
     health = 100;
     maxHealth = 100;
     regenRate = 0;

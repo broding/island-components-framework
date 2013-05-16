@@ -41,12 +41,6 @@ bool Entity::IsAddedToScene()
 
 void Entity::AddComponent(Component *component)
 {
-    for (std::list<Component*>::const_iterator iterator = _components.begin(), end = _components.end(); iterator != end; ++iterator)
-    {
-        (*iterator)->AddNeighbourComponent(component);
-        component->AddNeighbourComponent(*iterator);
-    }
-    
     _components.push_back(component);
     component->SetOwner(this);
 }

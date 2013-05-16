@@ -14,14 +14,8 @@
 
 TransformSystem* TransformComponent::transformSystem;
 
-TransformComponent::TransformComponent()
+TransformComponent::TransformComponent() : Component(COMPONENT_TRANSFORM, "Transform", transformSystem)
 {
-    _type = COMPONENT_TRANSFORM;
-	_name = "Transform";
-    _subSystem = transformSystem;
-    
-    this->AddToSystem();
-    
     scale = sf::Vector2f(1.0f, 1.0f);
     rotation = 0.0f;
     origin = sf::Vector2f(0.0f, 0.0f);

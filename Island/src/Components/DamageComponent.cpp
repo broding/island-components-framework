@@ -10,13 +10,8 @@
 
 DamageSystem* DamageComponent::damageSystem;
 
-DamageComponent::DamageComponent()
+DamageComponent::DamageComponent() : Component(COMPONENT_DAMAGE, "Damage", damageSystem)
 {
-    _type = COMPONENT_DAMAGE;
-    _subSystem = damageSystem;
-    
-    this->AddToSystem();
-    
     deleteOnImpact = true;
 }
 

@@ -10,15 +10,8 @@
 
 RenderSystem* RenderComponent::renderSystem;
 
-RenderComponent::RenderComponent()
+RenderComponent::RenderComponent() : Component(COMPONENT_RENDER, "Render", renderSystem)
 {
-    _type = COMPONENT_RENDER;
-    _subSystem = renderSystem;
-    
-    this->AddToSystem();
-    
-    this->AddComponentSubscription(COMPONENT_TRANSFORM);
-    
     tiling = sf::Vector2<unsigned int>(1,1);
     currentAnimation = 0;
 }

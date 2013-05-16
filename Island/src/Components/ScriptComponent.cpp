@@ -10,12 +10,8 @@
 
 ScriptSystem* ScriptComponent::scriptSystem;
 
-ScriptComponent::ScriptComponent()
+ScriptComponent::ScriptComponent() : Component(COMPONENT_SCRIPT, "Script", scriptSystem)
 {
-    _type = COMPONENT_SCRIPT;
-    _subSystem = scriptSystem;
-    
-    this->AddToSystem();
 }
 
 ScriptComponent::~ScriptComponent()

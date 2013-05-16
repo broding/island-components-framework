@@ -10,14 +10,8 @@
 
 NetworkSystem* NetworkComponent::networkSystem;
 
-NetworkComponent::NetworkComponent()
+NetworkComponent::NetworkComponent() : Component(COMPONENT_NETWORK, "Network", networkSystem)
 {
-    _type = COMPONENT_PLAYERINPUT;
-    _subSystem = networkSystem;
-    
-    this->AddToSystem();
-    
-    this->AddComponentSubscription(COMPONENT_NETWORK);
 }
 
 

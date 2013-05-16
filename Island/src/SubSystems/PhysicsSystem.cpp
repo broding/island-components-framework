@@ -8,13 +8,14 @@
 
 #include "PhysicsSystem.h"
 #include <cmath>
+#include "Entity.h"
 
 void PhysicsSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> components)
 {
     for (std::list<Component*>::const_iterator iterator = components.begin(), end = components.end(); iterator != end; ++iterator)
     {
         PhysicsComponent* physicsComponent = static_cast<PhysicsComponent*>(*iterator);
-        TransformComponent* transformComponent = static_cast<TransformComponent*>(physicsComponent->GetNeighbourComponent(COMPONENT_TRANSFORM));
+        TransformComponent* transformComponent = physicsComponent->GetOwner()->GetComponent<TransformComponent>();
         
         if(transformComponent != 0)
             this->Integrate(physicsComponent, transformComponent, lastFrameTime);

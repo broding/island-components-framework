@@ -11,13 +11,8 @@
 
 WeaponSystem* WeaponComponent::weaponSystem;
 
-WeaponComponent::WeaponComponent()
+WeaponComponent::WeaponComponent() : Component(COMPONENT_WEAPON, "Weapon", weaponSystem)
 {
-    _type = COMPONENT_WEAPON;
-    _subSystem = weaponSystem;
-    
-    this->AddToSystem();
-    
     currentMagazine = 10;
     magazineSize = 10;
     
