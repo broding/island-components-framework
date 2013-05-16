@@ -39,14 +39,16 @@
             this.inspector = new System.Windows.Forms.GroupBox();
             this.componentDataGroup = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.componentsMenu = new System.Windows.Forms.ComboBox();
             this.nameTextbox = new System.Windows.Forms.TextBox();
             this.nameLabel = new System.Windows.Forms.Label();
             this.idText = new System.Windows.Forms.Label();
             this.idLabel = new System.Windows.Forms.Label();
-            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolText = new System.Windows.Forms.Label();
+            this.newSceneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.inspector.SuspendLayout();
@@ -99,23 +101,25 @@
             // levelToolStripMenuItem
             // 
             this.levelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newSceneToolStripMenuItem,
             this.loadLevelToolStripMenuItem,
             this.saveLevelToolStripMenuItem});
             this.levelToolStripMenuItem.Name = "levelToolStripMenuItem";
-            this.levelToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
-            this.levelToolStripMenuItem.Text = "Level";
+            this.levelToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.levelToolStripMenuItem.Text = "Scene";
             // 
             // loadLevelToolStripMenuItem
             // 
             this.loadLevelToolStripMenuItem.Name = "loadLevelToolStripMenuItem";
-            this.loadLevelToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.loadLevelToolStripMenuItem.Text = "Load level";
+            this.loadLevelToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loadLevelToolStripMenuItem.Text = "Load Scene";
             // 
             // saveLevelToolStripMenuItem
             // 
             this.saveLevelToolStripMenuItem.Name = "saveLevelToolStripMenuItem";
-            this.saveLevelToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.saveLevelToolStripMenuItem.Text = "Save level";
+            this.saveLevelToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveLevelToolStripMenuItem.Text = "Save Scene";
+            this.saveLevelToolStripMenuItem.Click += new System.EventHandler(this.saveLevelToolStripMenuItem_Click);
             // 
             // inspector
             // 
@@ -163,6 +167,20 @@
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.Size = new System.Drawing.Size(178, 258);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // type
+            // 
+            this.type.HeaderText = "type";
+            this.type.Name = "type";
+            this.type.ReadOnly = true;
+            this.type.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Value
+            // 
+            this.Value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Value.HeaderText = "Value";
+            this.Value.Name = "Value";
+            this.Value.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // label1
             // 
@@ -213,25 +231,29 @@
             this.idLabel.TabIndex = 3;
             this.idLabel.Text = "Id:";
             // 
-            // type
+            // toolText
             // 
-            this.type.HeaderText = "type";
-            this.type.Name = "type";
-            this.type.ReadOnly = true;
-            this.type.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.toolText.AutoSize = true;
+            this.toolText.Location = new System.Drawing.Point(194, 24);
+            this.toolText.Name = "toolText";
+            this.toolText.Size = new System.Drawing.Size(37, 13);
+            this.toolText.TabIndex = 3;
+            this.toolText.Text = "Select";
+            this.toolText.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // Value
+            // newSceneToolStripMenuItem
             // 
-            this.Value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Value.HeaderText = "Value";
-            this.Value.Name = "Value";
-            this.Value.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.newSceneToolStripMenuItem.Name = "newSceneToolStripMenuItem";
+            this.newSceneToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newSceneToolStripMenuItem.Text = "New Scene";
+            this.newSceneToolStripMenuItem.Click += new System.EventHandler(this.newSceneToolStripMenuItem_Click);
             // 
             // Mozzerella
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(239, 476);
+            this.Controls.Add(this.toolText);
             this.Controls.Add(this.inspector);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -272,6 +294,8 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Value;
+        private System.Windows.Forms.Label toolText;
+        private System.Windows.Forms.ToolStripMenuItem newSceneToolStripMenuItem;
     }
 }
 

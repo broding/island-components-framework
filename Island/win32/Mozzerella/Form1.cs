@@ -10,6 +10,8 @@ using System.Runtime.InteropServices;
 using System.Xml.Linq;
 using System.Collections;
 using System.Collections.Specialized;
+using System.IO;
+using System.Security.Cryptography;
 
 
 namespace Mozzerella
@@ -43,12 +45,14 @@ namespace Mozzerella
 
         private void SelectButton_Click(object sender, EventArgs e)
         {
+            toolText.Text = "Select";
             currentTool = Tool.SELECT;
             GameCore.ChangeTool((int)Tool.SELECT);
         }
 
         private void DragButton_Click(object sender, EventArgs e)
         {
+            toolText.Text = "Drag";
             currentTool = Tool.DRAG;
             GameCore.ChangeTool((int)Tool.DRAG);
         }
@@ -118,6 +122,73 @@ namespace Mozzerella
                 selectedId = GameCore.GetSelectedEntityId();
                 LoadNewEntity();
             }
+        }
+
+        private void saveLevelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string xml = Marshal.PtrToStringAnsi(GameCore.GetSceneXML());
+
+            if (xml == null)
+                return;
+
+            XDocument document = XDocument.Parse(xml);
+
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "Scene (*.scn)|*.scn";
+            save.Title = "Save Scene";
+
+            if (save.ShowDialog() == DialogResult.OK) 
+            {
+                using (StreamWriter writer = new StreamWriter(save.OpenFile()))
+                {
+                    writer.WriteLine(EncryptString(document.ToString()));
+                }
+            } 
+        }
+
+        public string EncryptString(string ClearText)
+        {
+
+            byte[] clearTextBytes = Encoding.UTF8.GetBytes(ClearText);
+
+            System.Security.Cryptography.SymmetricAlgorithm rijn = SymmetricAlgorithm.Create();
+
+            MemoryStream ms = new MemoryStream();
+            byte[] rgbIV = Encoding.ASCII.GetBytes("ryojvlzmdalyglrj");
+            byte[] key = Encoding.ASCII.GetBytes("hcxilkqbbhczfeultgbskdmaunivmfuo"); 
+            CryptoStream cs = new CryptoStream(ms, rijn.CreateEncryptor(key, rgbIV),CryptoStreamMode.Write);
+
+            cs.Write(clearTextBytes, 0, clearTextBytes.Length);
+
+            cs.Close();
+
+            return Convert.ToBase64String(ms.ToArray());
+        }
+
+        private string DecryptString(string EncryptedText)
+        {
+            byte[] encryptedTextBytes = Convert.FromBase64String(EncryptedText);
+
+            MemoryStream ms = new MemoryStream();
+
+            System.Security.Cryptography.SymmetricAlgorithm rijn = SymmetricAlgorithm.Create();
+
+            byte[] rgbIV = Encoding.ASCII.GetBytes("ryojvlzmdalyglrj");
+            byte[] key = Encoding.ASCII.GetBytes("hcxilkqbbhczfeultgbskdmaunivmfuo"); 
+
+            CryptoStream cs = new CryptoStream(ms, rijn.CreateDecryptor(key, rgbIV),
+            CryptoStreamMode.Write);
+
+            cs.Write(encryptedTextBytes, 0, encryptedTextBytes.Length);
+
+            cs.Close();
+
+            return Encoding.UTF8.GetString(ms.ToArray());
+        }
+
+        private void newSceneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GameCore.ClearScene();
         }
     }
 }

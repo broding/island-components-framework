@@ -20,6 +20,7 @@
     <ClCompile Include="..\..\src\Components\BoxCollisionComponent.cpp" />
     <ClCompile Include="..\..\src\Components\CameraComponent.cpp" />
     <ClCompile Include="..\..\src\Components\Component.cpp" />
+    <ClCompile Include="..\..\src\Components\DamageComponent.cpp" />
     <ClCompile Include="..\..\src\Components\HealthComponent.cpp" />
     <ClCompile Include="..\..\src\Components\NetworkComponent.cpp" />
     <ClCompile Include="..\..\src\Components\PhysicsComponent.cpp" />
@@ -33,7 +34,6 @@
     <ClCompile Include="..\..\src\EditorCore.cpp" />
     <ClCompile Include="..\..\src\EditorInterface.cpp" />
     <ClCompile Include="..\..\src\Entity.cpp" />
-    <ClCompile Include="..\..\src\Events\Event.cpp" />
     <ClCompile Include="..\..\src\Factories\CommonFactory.cpp" />
     <ClCompile Include="..\..\src\Factories\PlayerFactory.cpp" />
     <ClCompile Include="..\..\src\GameConfig.cpp" />
@@ -49,6 +49,7 @@
     <ClCompile Include="..\..\src\Scenes\Scene.cpp" />
     <ClCompile Include="..\..\src\SubSystems\CameraSystem.cpp" />
     <ClCompile Include="..\..\src\SubSystems\CollisionSystem.cpp" />
+    <ClCompile Include="..\..\src\SubSystems\DamageSystem.cpp" />
     <ClCompile Include="..\..\src\SubSystems\HealthSystem.cpp" />
     <ClCompile Include="..\..\src\SubSystems\NetworkSystem.cpp" />
     <ClCompile Include="..\..\src\SubSystems\PhysicsSystem.cpp" />
@@ -70,6 +71,7 @@
     <ClInclude Include="..\..\src\Components\CameraComponent.h" />
     <ClInclude Include="..\..\src\Components\Component.h" />
     <ClInclude Include="..\..\src\Components\ComponentType.h" />
+    <ClInclude Include="..\..\src\Components\DamageComponent.h" />
     <ClInclude Include="..\..\src\Components\HealthComponent.h" />
     <ClInclude Include="..\..\src\Components\NetworkComponent.h" />
     <ClInclude Include="..\..\src\Components\PhysicsComponent.h" />
@@ -105,6 +107,7 @@
     <ClInclude Include="..\..\src\Scripts\BulletScript.h" />
     <ClInclude Include="..\..\src\SubSystems\CameraSystem.h" />
     <ClInclude Include="..\..\src\SubSystems\CollisionSystem.h" />
+    <ClInclude Include="..\..\src\SubSystems\DamageSystem.h" />
     <ClInclude Include="..\..\src\SubSystems\HealthSystem.h" />
     <ClInclude Include="..\..\src\SubSystems\NetworkSystem.h" />
     <ClInclude Include="..\..\src\SubSystems\PhysicsSystem.h" />
