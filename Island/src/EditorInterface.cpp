@@ -113,7 +113,7 @@ void SendEntityXML(const char* xml, int size)
 	pugi::xml_parse_result result = document.load_buffer(xml, size);
 	
 	if(result)
-		core->GetSelectedEntity()->UpdateFromXML(document);
+		core->GetSelectedEntity()->UpdateFromXML(document.child("entity"));
 }
 
 void SendSceneXML(const char* xml, int size)
