@@ -117,7 +117,6 @@ pugi::xml_attribute Component::GetXMLData(pugi::xml_node &node, std::string data
 {
     for (pugi::xml_node dataNode = node.first_child(); dataNode; dataNode = dataNode.next_sibling())
 	{
-        std::cout << dataNode.attribute("type").as_string() << std::endl;
         if(!strcmp(dataNode.attribute("type").as_string(), data.c_str()))
             return dataNode.attribute("value");
     }

@@ -41,6 +41,10 @@ namespace Mozzerella
             componentsMenu.SelectedIndexChanged += LoadNewComponentData;
             dataGridView1.CellValueChanged += ComponentDataChanged;
             nameTextbox.TextChanged += NameChanged;
+
+            addComponentToolStripMenuItem.DropDownItemClicked += addComponent_Click;
+
+            FillAddComponentMenu();
         }
 
         private void SelectButton_Click(object sender, EventArgs e)
@@ -63,6 +67,19 @@ namespace Mozzerella
                 selectedEntity.UpdateComponentData(componentsMenu.SelectedIndex, row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString());
 
             SendEntityXML();
+        }
+
+        private void FillAddComponentMenu()
+        {
+            string xml = Marshal.PtrToStringAnsi(GameCore.GetComponentXML());
+
+            if (xml == null)
+                return;
+
+            XDocument doc = XDocument.Parse(xml);
+
+            foreach (XElement component in doc.Element("components").Elements("component"))
+                addComponentToolStripMenuItem.DropDownItems.Add(component.Attribute("name").Value).Tag = component.Attribute("type").Value;
         }
 
         private void NameChanged(object sender, EventArgs e)
@@ -117,6 +134,9 @@ namespace Mozzerella
 
         new public void Update()
         {
+            if (selectedId != 0)
+                componentsToolStripMenuItem.Enabled = true;
+
             if (selectedId != GameCore.GetSelectedEntityId())
             {
                 selectedId = GameCore.GetSelectedEntityId();
@@ -154,8 +174,8 @@ namespace Mozzerella
             System.Security.Cryptography.SymmetricAlgorithm rijn = SymmetricAlgorithm.Create();
 
             MemoryStream ms = new MemoryStream();
-            byte[] rgbIV = Encoding.ASCII.GetBytes("ryojvlzmdalyglrj");
-            byte[] key = Encoding.ASCII.GetBytes("hcxilkqbbhczfeultgbskdmaunivmfuo"); 
+            byte[] rgbIV = Encoding.ASCII.GetBytes("bcajvlzmdalyglrj");
+            byte[] key = Encoding.ASCII.GetBytes("ccxilkqbbhczfeultgbskdmaunivmfuo"); 
             CryptoStream cs = new CryptoStream(ms, rijn.CreateEncryptor(key, rgbIV),CryptoStreamMode.Write);
 
             cs.Write(clearTextBytes, 0, clearTextBytes.Length);
@@ -173,8 +193,8 @@ namespace Mozzerella
 
             System.Security.Cryptography.SymmetricAlgorithm rijn = SymmetricAlgorithm.Create();
 
-            byte[] rgbIV = Encoding.ASCII.GetBytes("ryojvlzmdalyglrj");
-            byte[] key = Encoding.ASCII.GetBytes("hcxilkqbbhczfeultgbskdmaunivmfuo"); 
+            byte[] rgbIV = Encoding.ASCII.GetBytes("bcajvlzmdalyglrj");
+            byte[] key = Encoding.ASCII.GetBytes("ccxilkqbbhczfeultgbskdmaunivmfuo"); 
 
             CryptoStream cs = new CryptoStream(ms, rijn.CreateDecryptor(key, rgbIV),
             CryptoStreamMode.Write);
@@ -189,6 +209,41 @@ namespace Mozzerella
         private void newSceneToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GameCore.ClearScene();
+        }
+
+        private void loadLevelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Scene (*.scn)|*.scn";
+            dialog.Title = "Load Scene";
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                string text = DecryptString(File.ReadAllText(dialog.FileName));
+            } 
+        }
+
+        private void addEntityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GameCore.AddEntity();
+        }
+
+        private void addComponent_Click(object sender, ToolStripItemClickedEventArgs e)
+        {
+            string componentName = e.ClickedItem.Text;
+
+            GameCore.AddComponent(int.Parse(e.ClickedItem.Tag.ToString()));
+            RefreshSelectedEntity();
+
+            // set the previous component index back to the component added
+            for (int i = 0; i < componentsMenu.Items.Count; i++)
+                if (componentsMenu.Items[i].ToString() == componentName)
+                    componentsMenu.SelectedIndex = i;
+        }
+
+        private void RefreshSelectedEntity()
+        {
+            LoadNewEntity();
         }
     }
 }

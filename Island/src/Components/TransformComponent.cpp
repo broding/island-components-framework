@@ -69,7 +69,6 @@ void TransformComponent::FillXML(pugi::xml_node &node)
 
 void TransformComponent::UpdateFromXML(pugi::xml_node node)
 {
-    
     position.x = GetXMLData(node, "positionX").as_float();
     position.y = GetXMLData(node, "positionY").as_float();
     scale.x = GetXMLData(node, "scaleX").as_float();

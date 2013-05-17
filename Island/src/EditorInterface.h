@@ -17,9 +17,12 @@ DllExport void ChangeTool(int tool);
 DllExport unsigned int GetSelectedEntityId();
 DllExport const char* GetSelectedEntityXML();
 DllExport const char* GetSceneXML();
+DllExport const char* GetComponentXML();
 DllExport void SendEntityXML(const char* xmlWide, int size);
 DllExport void SendSceneXML(const char* xmlWide, int size);
 DllExport void ClearScene();
+DllExport void AddEntity();
+DllExport void AddComponent(int type);
 
 sf::RenderWindow* window;
 EditorCore* core;

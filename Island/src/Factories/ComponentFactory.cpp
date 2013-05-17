@@ -61,9 +61,6 @@ Component* ComponentFactory::CreateComponentByType(ComponentType type)
         case COMPONENT_DAMAGE:
             return new DamageComponent();
             break;
-        case COMPONENT_NULL:
-            return 0;
-            break;
     }
     
     return 0;
@@ -71,5 +68,5 @@ Component* ComponentFactory::CreateComponentByType(ComponentType type)
 
 Component* ComponentFactory::CreateComponentFromXML(pugi::xml_node xml)
 {
-    
+    return 0;
 }

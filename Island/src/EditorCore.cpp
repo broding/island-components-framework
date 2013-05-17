@@ -146,3 +146,10 @@ void EditorCore::ClearScene()
 	_selectedEntity = 0;
 	SwitchScene(new EditorScene());
 }
+
+void EditorCore::AddEntity()
+{
+	Entity* entity = new Entity();
+	_selectedEntity = entity;
+	_currentScene->AddEntity(entity);
+}

@@ -46,7 +46,10 @@ namespace Mozzerella
             foreach (XElement element in componentsXML[componentIndex].Elements("data"))
             {
                 if (element.Attribute("type").Value == key)
+                {
                     element.Attribute("value").Value = value;
+                    return;
+                }
             }
         }
 

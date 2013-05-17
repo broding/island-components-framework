@@ -2,6 +2,7 @@
 #include "Core.h"
 #include "EditorCore.h"
 #include "EditorInterface.h"
+#include "ComponentFactory.h"
 #include <sstream>
 
 int OpenWindow()
@@ -106,6 +107,20 @@ const char* GetSceneXML()
 	return p;
 }
 
+const char* GetComponentXML()
+{
+	xmlDocument.reset();
+    GetComponentList(xmlDocument);
+        
+	std::stringstream ss;
+	xmlDocument.save(ss);
+
+	char *p = new char[ss.str().size()+1];
+	strcpy(p, ss.str().c_str());
+
+	return p;
+}
+
 
 void SendEntityXML(const char* xml, int size)
 {
@@ -131,4 +146,15 @@ void SendSceneXML(const char* xml, int size)
 void ClearScene()
 {
 	core->ClearScene();
+}
+
+void AddEntity()
+{
+	core->AddEntity();
+}
+
+void AddComponent(int type)
+{
+	if(core->GetSelectedEntity() != 0)
+		core->GetSelectedEntity()->AddComponent(ComponentFactory::CreateComponentByType((ComponentType)type));
 }

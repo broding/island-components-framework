@@ -126,6 +126,9 @@ void Entity::UpdateComponentFromXML(pugi::xml_node componentNode)
     
     for (std::list<Component*>::const_iterator iterator = _components.begin(), end = _components.end(); iterator != end; ++iterator)
     {
+
+		std::cout << componentNode.attribute("type").as_int() << std::endl;
+
         if((*iterator)->GetComponentType() == componentNode.attribute("type").as_int())
         {
             componentExists = true;

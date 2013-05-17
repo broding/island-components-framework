@@ -49,6 +49,10 @@
             this.idLabel = new System.Windows.Forms.Label();
             this.toolText = new System.Windows.Forms.Label();
             this.newSceneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.entityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addEntityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.componentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addComponentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.inspector.SuspendLayout();
@@ -91,7 +95,9 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.levelToolStripMenuItem});
+            this.levelToolStripMenuItem,
+            this.entityToolStripMenuItem,
+            this.componentsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(239, 24);
@@ -113,6 +119,7 @@
             this.loadLevelToolStripMenuItem.Name = "loadLevelToolStripMenuItem";
             this.loadLevelToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.loadLevelToolStripMenuItem.Text = "Load Scene";
+            this.loadLevelToolStripMenuItem.Click += new System.EventHandler(this.loadLevelToolStripMenuItem_Click);
             // 
             // saveLevelToolStripMenuItem
             // 
@@ -248,6 +255,36 @@
             this.newSceneToolStripMenuItem.Text = "New Scene";
             this.newSceneToolStripMenuItem.Click += new System.EventHandler(this.newSceneToolStripMenuItem_Click);
             // 
+            // entityToolStripMenuItem
+            // 
+            this.entityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addEntityToolStripMenuItem});
+            this.entityToolStripMenuItem.Name = "entityToolStripMenuItem";
+            this.entityToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.entityToolStripMenuItem.Text = "Entity";
+            // 
+            // addEntityToolStripMenuItem
+            // 
+            this.addEntityToolStripMenuItem.Name = "addEntityToolStripMenuItem";
+            this.addEntityToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addEntityToolStripMenuItem.Text = "Add Entity";
+            this.addEntityToolStripMenuItem.Click += new System.EventHandler(this.addEntityToolStripMenuItem_Click);
+            // 
+            // componentsToolStripMenuItem
+            // 
+            this.componentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addComponentToolStripMenuItem});
+            this.componentsToolStripMenuItem.Enabled = false;
+            this.componentsToolStripMenuItem.Name = "componentsToolStripMenuItem";
+            this.componentsToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
+            this.componentsToolStripMenuItem.Text = "Components";
+            // 
+            // addComponentToolStripMenuItem
+            // 
+            this.addComponentToolStripMenuItem.Name = "addComponentToolStripMenuItem";
+            this.addComponentToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.addComponentToolStripMenuItem.Text = "Add Component";
+            // 
             // Mozzerella
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,6 +333,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Value;
         private System.Windows.Forms.Label toolText;
         private System.Windows.Forms.ToolStripMenuItem newSceneToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem entityToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addEntityToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem componentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addComponentToolStripMenuItem;
     }
 }
 

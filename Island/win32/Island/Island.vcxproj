@@ -35,6 +35,7 @@
     <ClCompile Include="..\..\src\EditorInterface.cpp" />
     <ClCompile Include="..\..\src\Entity.cpp" />
     <ClCompile Include="..\..\src\Factories\CommonFactory.cpp" />
+    <ClCompile Include="..\..\src\Factories\ComponentFactory.cpp" />
     <ClCompile Include="..\..\src\Factories\PlayerFactory.cpp" />
     <ClCompile Include="..\..\src\GameConfig.cpp" />
     <ClCompile Include="..\..\src\GUI\Button.cpp" />
@@ -89,6 +90,7 @@
     <ClInclude Include="..\..\src\Events\WeaponEvents.h" />
     <ClInclude Include="..\..\src\Factories\BulletFactory.h" />
     <ClInclude Include="..\..\src\Factories\CommonFactory.h" />
+    <ClInclude Include="..\..\src\Factories\ComponentFactory.h" />
     <ClInclude Include="..\..\src\Factories\PlayerFactory.h" />
     <ClInclude Include="..\..\src\Factories\StructureFactory.h" />
     <ClInclude Include="..\..\src\GameConfig.h" />
