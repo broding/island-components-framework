@@ -9,6 +9,7 @@
 #include "Entity.h"
 #include "Component.h"
 #include "Scene.h"
+#include "ComponentFactory.h"
 
 unsigned int Entity::_idIncrementer = 1;
 
@@ -107,20 +108,34 @@ void Entity::FillXML(pugi::xml_node node)
     }
 }
 
-void Entity::UpdateFromXML(pugi::xml_node document)
+void Entity::UpdateFromXML(pugi::xml_node entityNode)
 {
-	_name = document.child("entity").attribute("name").as_string();
+	_name = entityNode.child("entity").attribute("name").as_string();
 	
-	pugi::xml_node components = document.child("entity").child("components");
+	pugi::xml_node components = entityNode.child("components");
 
 	for (pugi::xml_node component = components.first_child(); component; component = component.next_sibling())
 	{
-        for (std::list<Component*>::const_iterator iterator = _components.begin(), end = _components.end(); iterator != end; ++iterator)
-        {
-            if((*iterator)->GetComponentType() == component.attribute("type").as_int())
-            {
-                (*iterator)->UpdateFromXML(component);
-            }
-        }
+        UpdateComponentFromXML(component);
 	}
+}
+
+void Entity::UpdateComponentFromXML(pugi::xml_node componentNode)
+{    
+    bool componentExists = false;
+    
+    for (std::list<Component*>::const_iterator iterator = _components.begin(), end = _components.end(); iterator != end; ++iterator)
+    {
+        if((*iterator)->GetComponentType() == componentNode.attribute("type").as_int())
+        {
+            componentExists = true;
+            (*iterator)->UpdateFromXML(componentNode);
+        }
+    }
+    
+    if(!componentExists)
+    {
+        Component* component = ComponentFactory::CreateComponentByType((ComponentType)componentNode.attribute("type").as_int());
+        AddComponent(component);
+    }
 }

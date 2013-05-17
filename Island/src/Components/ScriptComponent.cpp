@@ -12,14 +12,13 @@ ScriptSystem* ScriptComponent::scriptSystem;
 
 ScriptComponent::ScriptComponent() : Component(COMPONENT_SCRIPT, "Script", scriptSystem)
 {
+    script = 0;
 }
 
 ScriptComponent::~ScriptComponent()
 {
     delete script;
 }
-
-
 
 void ScriptComponent::FillXML(pugi::xml_node &node)
 {

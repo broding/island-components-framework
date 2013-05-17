@@ -45,6 +45,7 @@ public:
     void HandleEvent(Event* event);
     void FillXML(pugi::xml_node node);
     void UpdateFromXML(pugi::xml_node document);
+    void UpdateComponentFromXML(pugi::xml_node document);
     Component* GetComponent(ComponentType type);
     template <class T> T* GetComponent()
     {

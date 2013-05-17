@@ -12,6 +12,7 @@
 #include "GameConfig.h"
 #include "TransformComponent.h"
 #include "CameraComponent.h"
+#include "ComponentFactory.h"
 
 EditorCore::EditorCore(sf::RenderWindow* window) : Core(window)
 {
@@ -132,8 +133,11 @@ void EditorCore::UpdateFromXML(pugi::xml_node node)
 {
 	EditorScene* scene = dynamic_cast<EditorScene*>(_currentScene);
     
-    for (std::vector<Entity*>::const_iterator iterator = scene->GetEntities().begin(), end = scene->GetEntities().end(); iterator != end; ++iterator)
-    {
+    for (pugi::xml_node entityNode = node.child("scene").child("entity"); entityNode; entityNode = entityNode.next_sibling())
+	{
+        Entity* entity = new Entity();
+        entity->UpdateFromXML(entityNode);
+        scene->AddEntity(entity);
     }
 }
 
