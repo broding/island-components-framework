@@ -26,6 +26,7 @@ public:
     Entity* GetSelectedEntity();
 	void ClearScene();
     void FillXML(pugi::xml_node node);
+	void UpdateFromXML(pugi::xml_node node);
     
     Tool currentTool;
 private:

@@ -127,6 +127,16 @@ void EditorCore::FillXML(pugi::xml_node node)
     }
 }
 
+
+void EditorCore::UpdateFromXML(pugi::xml_node node)
+{
+	EditorScene* scene = dynamic_cast<EditorScene*>(_currentScene);
+    
+    for (std::vector<Entity*>::const_iterator iterator = scene->GetEntities().begin(), end = scene->GetEntities().end(); iterator != end; ++iterator)
+    {
+    }
+}
+
 void EditorCore::ClearScene()
 {
 	_selectedEntity = 0;

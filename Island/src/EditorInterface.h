@@ -18,6 +18,7 @@ DllExport unsigned int GetSelectedEntityId();
 DllExport const char* GetSelectedEntityXML();
 DllExport const char* GetSceneXML();
 DllExport void SendEntityXML(const char* xmlWide, int size);
+DllExport void SendSceneXML(const char* xmlWide, int size);
 DllExport void ClearScene();
 
 sf::RenderWindow* window;
