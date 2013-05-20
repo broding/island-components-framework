@@ -28,6 +28,8 @@ void RenderSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> co
         RenderComponent* renderComponent = static_cast<RenderComponent*>(*iterator);
         TransformComponent* transformComponent = renderComponent->GetOwner()->GetComponent<TransformComponent>();
         
+        sf::IntRect originalRect = renderComponent->sprite.getTextureRect();
+        
         if(transformComponent != 0)
         {
             renderComponent->sprite.setPosition(transformComponent->position);
@@ -51,8 +53,8 @@ void RenderSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> co
                 animation->currentFrameTime = 0;
             }
             
-            renderComponent->textureRect.left = renderComponent->textureRect.width * animation->currentFrame;
-            renderComponent->sprite.setTextureRect(renderComponent->textureRect);
+            renderComponent->animationRect.left = renderComponent->animationRect.width * animation->currentFrame + originalRect.left;
+            renderComponent->sprite.setTextureRect(renderComponent->animationRect);
         }
         
         float spriteX = renderComponent->sprite.getPosition().x;
@@ -64,11 +66,12 @@ void RenderSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> co
         {
             for(unsigned int y = 0; y < renderComponent->tiling.y; y++)
             {
-                
                 renderComponent->sprite.setPosition(spriteX + spriteWidth * x, spriteY + spriteHeight * y);
                 _renderWindow->draw(renderComponent->sprite);
             }
         }
+        
+        renderComponent->sprite.setTextureRect(originalRect);
     }
 }
 

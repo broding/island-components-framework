@@ -20,7 +20,7 @@ Entity* CommonFactory::CreateSprite(std::string path)
     sf::Texture* texture = new sf::Texture();
     texture->loadFromFile(resourcePath() + path);
     texture->setSmooth(true);
-    renderComponent->sprite = *new sf::Sprite();
+    renderComponent->sprite = *new Sprite();
     renderComponent->sprite.setTexture(*texture);
     
     sprite->AddComponent(renderComponent);

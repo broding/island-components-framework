@@ -14,6 +14,7 @@
 #include "RenderSystem.h"
 #include <SFML/Graphics.hpp>
 #include <vector>
+#include "Sprite.h"
 
 
 struct AnimationFrame
@@ -52,8 +53,8 @@ public:
     
     static RenderSystem* renderSystem;
     
-    sf::Sprite sprite;
-    sf::Rect<int> textureRect;
+    Sprite sprite;
+    sf::Rect<int> animationRect;
     sf::Vector2<unsigned int> tiling;
     
     std::vector<Animation> animations;

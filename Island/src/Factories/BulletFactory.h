@@ -24,6 +24,7 @@
 #include "ScriptComponent.h"
 #include "ResourcePath.hpp"
 #include "DamageComponent.h"
+#include "ResourceManager.h"
 
 class BulletFactory
 {
@@ -33,11 +34,7 @@ public:
         Entity* entity = new Entity();
         
         RenderComponent* renderComponent = new RenderComponent();
-        sf::Texture* texture = new sf::Texture();
-        texture->loadFromFile(resourcePath() + "bullet_hole.png");
-        texture->setSmooth(true);
-        renderComponent->sprite = *new sf::Sprite();
-        renderComponent->sprite.setTexture(*texture);
+        renderComponent->sprite = ResourceManager::GetInstance()->GetSprite("bullet_hole.png");
 
         TransformComponent* transformComponent = new TransformComponent();
         transformComponent->position = sf::Vector2f(position);

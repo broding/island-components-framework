@@ -20,17 +20,17 @@
 #include "ScriptComponent.h"
 #include "HealthComponent.h"
 
+#include "ResourceManager.h"
+
 Entity* PlayerFactory::CreatePlayer()
 {
+    ResourceManager::GetInstance()->LoadPack("common");
+    
     Entity* player = new Entity();
     
     RenderComponent* renderComponent = new RenderComponent();
-    sf::Texture* texture = new sf::Texture();
-    texture->loadFromFile(resourcePath() + "player2.png");
-    texture->setSmooth(true);
-    renderComponent->sprite = *new sf::Sprite();
-    renderComponent->sprite.setTexture(*texture);
-    renderComponent->textureRect = sf::Rect<int>(0, 0, 110, 128);
+    renderComponent->sprite = ResourceManager::GetInstance()->GetSprite("player2.png");
+    renderComponent->animationRect = sf::Rect<int>(0, 0, 110, 128);
     
     Animation animation("walk");
     animation.frames.push_back(AnimationFrame(0, 0.1f));

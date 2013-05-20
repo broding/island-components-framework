@@ -12,14 +12,14 @@
 #include "StructureFactory.h"
 #include "CameraComponent.h"
 #include "ResourcePath.hpp"
+#include "ResourceManager.h"
 
 PlayScene::PlayScene()
 {
+    ResourceManager::GetInstance()->LoadPack("common");
+    
     RenderComponent* renderComponent = new RenderComponent();
-    sf::Texture* texture = new sf::Texture();
-    texture->loadFromFile(resourcePath() + "ground002.png");
-    texture->setSmooth(true);
-    renderComponent->sprite.setTexture(*texture);
+    renderComponent->sprite = ResourceManager::GetInstance()->GetSprite("ground002.png", "common");
     renderComponent->tiling = sf::Vector2<unsigned int>(5, 5);
     TransformComponent* transformComponent = new TransformComponent();
     Entity* entity = new Entity();

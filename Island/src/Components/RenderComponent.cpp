@@ -7,6 +7,8 @@
 //
 
 #include "RenderComponent.h"
+#include "ResourceManager.h"
+#include <string>
 
 RenderSystem* RenderComponent::renderSystem;
 
@@ -32,16 +34,17 @@ void RenderComponent::SetAnimation(std::string name)
 
 void RenderComponent::FillXML(pugi::xml_node &node)
 {
-	AppendDataNode(node, "Sprite name", "name of sprite in resourcemanager");
-	AppendDataNode(node, "Rectangle X", textureRect.left);
-	AppendDataNode(node, "Rectangle Y", textureRect.top);
-	AppendDataNode(node, "Rectangle Width", textureRect.width);
-	AppendDataNode(node, "Rectangle Height", textureRect.height);
+	AppendDataNode(node, "Sprite name", sprite.getName());
+	AppendDataNode(node, "Rectangle X", animationRect.left);
+	AppendDataNode(node, "Rectangle Y", animationRect.top);
+	AppendDataNode(node, "Rectangle Width", animationRect.width);
+	AppendDataNode(node, "Rectangle Height", animationRect.height);
 }
 
 void RenderComponent::UpdateFromXML(pugi::xml_node node)
 {
-    // TODO: load sprite from resource manager
+    if(sprite.getName().compare(GetXMLData(node, "Sprite name").as_string()))
+        sprite = ResourceManager::GetInstance()->GetSprite(GetXMLData(node, "Sprite name").as_string());
     
-    textureRect = sf::Rect<int>(GetXMLData(node, "Rectangle X").as_int(), GetXMLData(node, "Rectangle Y").as_int(), GetXMLData(node, "Rectangle Width").as_int(), GetXMLData(node, "Rectangle Height").as_int());
+    animationRect = sf::Rect<int>(GetXMLData(node, "Rectangle X").as_int(), GetXMLData(node, "Rectangle Y").as_int(), GetXMLData(node, "Rectangle Width").as_int(), GetXMLData(node, "Rectangle Height").as_int());
 }
