@@ -1,0 +1,23 @@
+#!/bin/bin/env bash
+
+TP="C:\TexturePacker\bin\TexturePacker"
+path="./build"	
+
+mkdir ${path}/data/textures/
+
+cd ./assets/
+dirs=$(find . -maxdepth 1 -mindepth 1 -type d -exec basename '{}' \;)
+cd ..
+
+for dir in ${dirs}
+do
+	echo "Directory: ${dir}"
+	${TP} --smart-update \
+    --max-size 4096 \
+	--format xml \
+	--data ${path}/data/textures/${dir}.xml \
+	--sheet ${path}/data/textures/${dir}.png \
+    --trim-mode None \
+    --disable-rotation \
+	./assets/"$dir"/*.png
+done
