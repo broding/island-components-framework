@@ -46,5 +46,8 @@ namespace Mozzerella
 
         [DllImport("Island.dll", CallingConvention = CallingConvention.Cdecl)]
         public extern static IntPtr AddComponent(int type);
+
+        [DllImport("Island.dll", CallingConvention = CallingConvention.Cdecl)]
+        public extern static void SetSelectedEntity(int id);
     }
 }

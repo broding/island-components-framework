@@ -43,8 +43,14 @@ void RenderComponent::FillXML(pugi::xml_node &node)
 
 void RenderComponent::UpdateFromXML(pugi::xml_node node)
 {
+	std::cout << sprite.getName() << std::endl;
+	std::cout << GetXMLData(node, "Sprite name").as_string() << std::endl;
+
     if(sprite.getName().compare(GetXMLData(node, "Sprite name").as_string()))
-        sprite = ResourceManager::GetInstance()->GetSprite(GetXMLData(node, "Sprite name").as_string());
+	{
+		std::cout << "change please" << std::endl;
+		sprite = ResourceManager::GetInstance()->GetSprite(GetXMLData(node, "Sprite name").as_string());
+	}
     
     animationRect = sf::Rect<int>(GetXMLData(node, "Rectangle X").as_int(), GetXMLData(node, "Rectangle Y").as_int(), GetXMLData(node, "Rectangle Width").as_int(), GetXMLData(node, "Rectangle Height").as_int());
 }

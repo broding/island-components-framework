@@ -16,9 +16,9 @@
 EditorScene::EditorScene()
 {
     Entity* camera = CommonFactory::CreateCamera();
-    
+    Entity* player = PlayerFactory::CreatePlayer();
+    AddEntity(player);
     AddEntity(camera);
-
 }
 
 void EditorScene::ProcessGUIEvent(GUIEvent event)

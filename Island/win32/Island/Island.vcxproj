@@ -44,6 +44,9 @@
     <ClCompile Include="..\..\src\GUI\GUIObject.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
     <ClCompile Include="..\..\src\ResourcePath.cpp" />
+    <ClCompile Include="..\..\src\Resources\Pack.cpp" />
+    <ClCompile Include="..\..\src\Resources\ResourceManager.cpp" />
+    <ClCompile Include="..\..\src\Resources\Texture.cpp" />
     <ClCompile Include="..\..\src\Scenes\ConnectScene.cpp" />
     <ClCompile Include="..\..\src\Scenes\EditorScene.cpp" />
     <ClCompile Include="..\..\src\Scenes\PlayScene.cpp" />
@@ -101,6 +104,10 @@
     <ClInclude Include="..\..\src\GUI\GUIObserver.h" />
     <ClInclude Include="..\..\src\Network\INetworkableComponent.h" />
     <ClInclude Include="..\..\src\ResourcePath.hpp" />
+    <ClInclude Include="..\..\src\Resources\Pack.h" />
+    <ClInclude Include="..\..\src\Resources\ResourceManager.h" />
+    <ClInclude Include="..\..\src\Resources\Sprite.h" />
+    <ClInclude Include="..\..\src\Resources\Texture.h" />
     <ClInclude Include="..\..\src\Scenes\ConnectScene.h" />
     <ClInclude Include="..\..\src\Scenes\EditorScene.h" />
     <ClInclude Include="..\..\src\Scenes\PlayScene.h" />
@@ -156,8 +163,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(ProjectDir)../../src/Utils;$(ProjectDir)../../src/Scripts;$(ProjectDir)../../src/;$(ProjectDir)../../src/Network;$(ProjectDir)../../src/Scenes;$(ProjectDir)../../src/Factories;$(ProjectDir)../../src/GUI;$(ProjectDir)../../src/Events;$(ProjectDir)../../src/Components;$(ProjectDir)../../src/SubSystems/;$(ProjectDir)../../src/Collisions;$(IncludePath)</IncludePath>
-    <SourcePath>$(ProjectDir)../../src/Utils;$(ProjectDir)../../src/Scripts;$(ProjectDir)../../src/;$(ProjectDir)../../src/Network;$(ProjectDir)../../src/Scenes;$(ProjectDir)../../src/Factories;$(ProjectDir)../../src/GUI;$(ProjectDir)../../src/Events;$(ProjectDir)../../src/Components;$(ProjectDir)../../src/SubSystems/;$(ProjectDir)../../src/Collisions;$(SourcePath)</SourcePath>
+    <IncludePath>$(ProjectDir)../../src/Utils;$(ProjectDir)../../src/Scripts;$(ProjectDir)../../src/;$(ProjectDir)../../src/Network;$(ProjectDir)../../src/Scenes;$(ProjectDir)../../src/Factories;$(ProjectDir)../../src/GUI;$(ProjectDir)../../src/Events;$(ProjectDir)../../src/Components;$(ProjectDir)../../src/SubSystems/;$(ProjectDir)../../src/Collisions;$(ProjectDir)../../src/Resources;$(IncludePath)</IncludePath>
+    <SourcePath>$(ProjectDir)../../src/Utils;$(ProjectDir)../../src/Scripts;$(ProjectDir)../../src/;$(ProjectDir)../../src/Network;$(ProjectDir)../../src/Scenes;$(ProjectDir)../../src/Factories;$(ProjectDir)../../src/GUI;$(ProjectDir)../../src/Events;$(ProjectDir)../../src/Components;$(ProjectDir)../../src/SubSystems/;$(ProjectDir)../../src/Collisions;$(ProjectDir)../../src/Resources;$(SourcePath)</SourcePath>
     <IntDir>$(Configuration)\</IntDir>
     <LibraryPath>$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib</LibraryPath>
     <OutDir>..\..\build\</OutDir>

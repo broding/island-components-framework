@@ -153,3 +153,14 @@ void EditorCore::AddEntity()
 	_selectedEntity = entity;
 	_currentScene->AddEntity(entity);
 }
+
+void EditorCore::SelectEntity(int id)
+{
+	EditorScene* scene = dynamic_cast<EditorScene*>(_currentScene);
+
+	for (std::vector<Entity*>::const_iterator iterator = scene->GetEntities().begin(), end = scene->GetEntities().end(); iterator != end; ++iterator)
+    {
+		if((*iterator)->GetId() == id)
+			this->_selectedEntity = (*iterator);
+    }
+}

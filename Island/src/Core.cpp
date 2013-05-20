@@ -112,7 +112,10 @@ void Core::Update(float lastFrameTime)
     
     for (std::vector<SubSystem*>::const_iterator iterator = _subSystems.begin(), end = _subSystems.end(); iterator != end; ++iterator)
     {
-        (*iterator)->ProcessGameTick(lastFrameTime, (*iterator)->GetValidComponents());
+		if(!(*iterator)->runInEditor && GameConfig::GetInstance()->GetFlagConfig("editorMode"))
+			continue;
+			
+		(*iterator)->ProcessGameTick(lastFrameTime, (*iterator)->GetValidComponents());
     }
     
     if(GameConfig::GetInstance()->GetFlagConfig("debugMode"))

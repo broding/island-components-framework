@@ -14,6 +14,12 @@
 #include "PhysicsComponent.h"
 #include "DebugText.h"
 #include "CollisionEvents.h"
+#include "GameConfig.h"
+
+CollisionSystem::CollisionSystem()
+{
+	runInEditor = false;
+}
 
 void CollisionSystem::ProcessGameTick(float lastFrameTime, std::list<Component*> components)
 {

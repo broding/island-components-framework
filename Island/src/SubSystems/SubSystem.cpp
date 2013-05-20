@@ -45,7 +45,7 @@ void SubSystem::HandleEvent(Component *component, Event* event)
 std::list<Component*> SubSystem::GetValidComponents()
 {
     std::list<Component*> validComponents;
-    
+
     for (std::list<Component*>::const_iterator it = _components.begin(), end = _components.end(); it != end; ++it)
         if((*it)->GetOwner() != 0 && (*it)->enabled && (*it)->GetOwner()->IsAddedToScene() && (*it)->GetOwner()->enabled)
             validComponents.push_back(*it);

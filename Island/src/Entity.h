@@ -37,6 +37,7 @@ public:
     Entity(std::string name = "");
     ~Entity();
     Scene* GetParent();
+	unsigned int GetId();
     bool IsAddedToScene();
     void InitializeComponents();
     void Delete();

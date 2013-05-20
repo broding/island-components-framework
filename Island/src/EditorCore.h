@@ -28,6 +28,7 @@ public:
     void FillXML(pugi::xml_node node);
 	void UpdateFromXML(pugi::xml_node node);
 	void AddEntity();
+	void SelectEntity(int id);
     
     Tool currentTool;
 private:

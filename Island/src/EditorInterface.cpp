@@ -158,3 +158,8 @@ void AddComponent(int type)
 	if(core->GetSelectedEntity() != 0)
 		core->GetSelectedEntity()->AddComponent(ComponentFactory::CreateComponentByType((ComponentType)type));
 }
+
+void SetSelectedEntity(int id)
+{
+	core->SelectEntity(id);
+}

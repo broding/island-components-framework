@@ -38,7 +38,7 @@ PlayScene::PlayScene()
     Entity* camera = CommonFactory::CreateCamera();
     Entity* player = PlayerFactory::CreatePlayer();
     
-    camera->GetComponent<CameraComponent>()->targetEntity = player;
+    //camera->GetComponent<CameraComponent>()->targetEntity = player;
     
     AddEntity(camera);
     AddEntity(player);

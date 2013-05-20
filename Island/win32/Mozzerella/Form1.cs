@@ -43,6 +43,7 @@ namespace Mozzerella
             nameTextbox.TextChanged += NameChanged;
 
             addComponentToolStripMenuItem.DropDownItemClicked += addComponent_Click;
+            entityList.MouseClick += entityListClick;
 
             FillAddComponentMenu();
         }
@@ -141,6 +142,7 @@ namespace Mozzerella
             {
                 selectedId = GameCore.GetSelectedEntityId();
                 LoadNewEntity();
+                RefreshEntityList();
             }
         }
 
@@ -244,6 +246,37 @@ namespace Mozzerella
         private void RefreshSelectedEntity()
         {
             LoadNewEntity();
+        }
+
+        private void RefreshEntityList()
+        {
+            int previousIndex = entityList.SelectedIndex;
+
+            entityList.Items.Clear();
+
+            string xml = Marshal.PtrToStringAnsi(GameCore.GetSceneXML());
+
+            if (xml == null)
+                return;
+
+            XDocument document = XDocument.Parse(xml);
+
+            foreach (XElement entity in document.Element("scene").Elements("entity"))
+            {
+                entityList.Items.Add(entity.Attribute("id").Value + ": " + entity.Attribute("name").Value);
+            }
+
+            if (entityList.Items.Count > previousIndex)
+                entityList.SelectedIndex = previousIndex;
+        }
+
+        private void entityListClick(object sender, EventArgs e)
+        {
+            string idString = ((string)entityList.SelectedItem).Split(':')[0];
+            int id = Int32.Parse(idString);
+            GameCore.SetSelectedEntity(id);
+
+            RefreshSelectedEntity();
         }
     }
 }

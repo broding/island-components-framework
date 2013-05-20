@@ -18,6 +18,7 @@ class CollisionSystem : public SubSystem
 private:
     void Resolve(Contact contact);
 public:
+	CollisionSystem();
     void ProcessGameTick(float lastFrameTime, std::list<Component*> components);
 };
 

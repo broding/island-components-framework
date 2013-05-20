@@ -36,6 +36,8 @@ public:
     void RemoveComponent(Component* component);
     void HandleEvent(Component* component, Event* event);
     virtual void DrawDebug(sf::RenderWindow* window);
+	
+	bool runInEditor;
 };
 
 #endif /* defined(__Island__SubSystem__) */

@@ -61,25 +61,23 @@ sf::ConvexShape SphereCollisionComponent::GetConvexShape()
     
     
     return shape;
-    
 }
 
 
 
 void SphereCollisionComponent::FillXML(pugi::xml_node &node)
 {
-    pugi::xml_node dataNode;
-    
-    dataNode = node.append_child("data");
-    dataNode.append_attribute("type").set_value("position");
-    dataNode.append_attribute("value").set_value(145);
-    
-    dataNode = node.append_child("data");
-    dataNode.append_attribute("type").set_value("velocity");
-    dataNode.append_attribute("value").set_value(145);
+    AppendDataNode(node, "Radius", radius);
+	AppendDataNode(node, "Center X", center.x);
+	AppendDataNode(node, "Center Y", center.y);
+	AppendDataNode(node, "Trigger", trigger);
+	AppendDataNode(node, "Collision Group", collisionGroup);
 }
 
 void SphereCollisionComponent::UpdateFromXML(pugi::xml_node node)
 {
-    
+	radius = GetXMLData(node, "Radius").as_float();
+	center = sf::Vector2f(GetXMLData(node, "Center X").as_float(), GetXMLData(node, "Center Y").as_float());
+	trigger = GetXMLData(node, "Trigger").as_bool();
+	collisionGroup = GetXMLData(node, "Collision Group").as_int();
 }

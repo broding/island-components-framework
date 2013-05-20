@@ -23,6 +23,7 @@ DllExport void SendSceneXML(const char* xmlWide, int size);
 DllExport void ClearScene();
 DllExport void AddEntity();
 DllExport void AddComponent(int type);
+DllExport void SetSelectedEntity(int id);
 
 sf::RenderWindow* window;
 EditorCore* core;
